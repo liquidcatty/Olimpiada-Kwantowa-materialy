@@ -9,33 +9,7 @@ Każdy temat ma: **teorię** (z wyprowadzeniami), **przykłady rozwiązane krok 
 który pozwala sprawdzić rachunek numerycznie. Przewodnik jest nieoficjalny;
 prawa do tekstów zadań organizatora należą do Fundacji Quantum AI.
 
-
-## 1. Najważniejsze informacje o Olimpiadzie (I edycja, 2026/2027)
-
-| Element | Szczegóły |
-| --- | --- |
-| Organizator | Fundacja Quantum AI, ul. Sanocka 9/103, 02-110 Warszawa |
-| Charakter | ogólnopolski, indywidualny, trzyetapowy konkurs edukacyjny |
-| Dla kogo | uczniowie szkół ponadpodstawowych (także zdolni uczniowie szkół podstawowych z rekomendacją) |
-| Rejestracja | 10.09.2026 – 28.02.2027, bezpłatnie, przez system na stronie Olimpiady |
-| Etap I | zdalny · otwarcie 15.11.2026 12:00 · oddanie rozwiązań **28.02.2027 23:59** · wyniki do 31.03.2027 |
-| Etap II | rozmowa kwalifikacyjna online · 01.04–30.04.2027 · 20–30 min, komisja ≥ 3 osoby · zakres = zadania Etapu I |
-| Etap III | finał stacjonarny w Krakowie · 4–7.06.2027 |
-| Wynik końcowy | **tylko punkty finału** (punkty I i II etapu nie są doliczane) |
-| Dozwolone w Etapie I | podręczniki, publikacje, notatki, kalkulator, narzędzia obliczeniowe, AI jako pomoc (użycie trzeba opisać w pracy i **nie wolno** oddać pracy wygenerowanej w całości przez AI) |
-
-Terminy i zasady weryfikuj na stronie organizatora — powyższe pochodzi z publicznego
-regulaminu i harmonogramu w dniu tworzenia przewodnika.
-
-## 2. Jak korzystać z przewodnika
-
-Trzy ścieżki — wybierz swoją:
-
-| Masz | Ścieżka | Od czego zacząć |
-| --- | --- | --- |
-| 5–6 miesięcy do deadline'u Etapu I | **pełna** | [plan nauki 20 tygodni](docs/01-plan-nauki.md) → rozdziały 01–16 → PD-1…PD-4 |
-| 4 tygodnie | **skrócona** | [plan nauki](docs/01-plan-nauki.md) → rdzeń: 02, 05, 06, 08, 09, 13 |
-| 3 dni | **ratunkowa** | [ściąga wzorów](docs/06-sciaga-wzorow.md) → [zadania przykładowe P1–P4](zadania/treningowe/README.md) z rozwiązaniami → [strategia rozwiązywania zadań](docs/04-strategia-rozwiazywania-zadan.md) |
+## 1. Jak korzystać z przewodnika
 
 Kolejność czytania:
 
@@ -47,7 +21,7 @@ Kolejność czytania:
    w całym repo (Dirac, sfera Blocha, kolejność kubitów).
 4. [Zadania przykładowe organizatora (P1–P4) z pełnymi rozwiązaniami](zadania/treningowe/README.md).
 
-## 3. Struktura repozytorium
+## 2. Struktura repozytorium
 
 ```
 .
@@ -72,7 +46,7 @@ Kolejność czytania:
 └── .github/workflows/            ← CI: uruchamia verify_all.py i kontrolę linków
 ```
 
-## 4. Spis rozdziałów teorii
+## 3. Spis rozdziałów teorii
 
 ### Moduł 1 — matematyka (rozdziały 01–05)
 
@@ -117,7 +91,7 @@ Kolejność czytania:
 Każdy rozdział `NN` ma lustrzany plik z rozwiązaniami:
 `zadania/rozwiazania/rozwiazania-NN.md`.
 
-## 5. Prace domowe
+## 4. Prace domowe
 
 | Zestaw | Zakres | Plik |
 | --- | --- | --- |
@@ -129,7 +103,7 @@ Każdy rozdział `NN` ma lustrzany plik z rozwiązaniami:
 Każdy zestaw: 10 zadań, 20 punktów, kryteria oceny, wskazówki i odpowiedzi.
 Szczegóły: [praca-domowa/README.md](praca-domowa/README.md).
 
-## 6. Kod — sprawdzaj rachunki numerycznie
+## 5. Kod — sprawdzaj rachunki numerycznie
 
 ```powershell
 python -m pip install numpy            # wymagane
@@ -153,7 +127,7 @@ python kod/verify_all.py               # uruchamia wszystkie skrypty i wypisuje 
 | `kod/metrologia_faza.py` | estymacja fazy: granica śrutowa vs Heisenberga |
 | `kod/analiza_danych.py` | dopasowanie, χ², niepewności, bootstrap, FFT |
 
-## 7. Dokumenty pomocnicze
+## 6. Dokumenty pomocnicze
 
 | Plik | Zawartość |
 | --- | --- |
@@ -173,7 +147,7 @@ python kod/verify_all.py               # uruchamia wszystkie skrypty i wypisuje 
 | [tools/audit_content.py](tools/audit_content.py) | kontrola składni LaTeX i pozostałości meta-komentarzy |
 | [tools/verify_structure.py](tools/verify_structure.py) | kontrola struktury rozdziałów, zadań i prac domowych (używana w CI) |
 
-## 8. Publikacja tego repo na GitHub
+## 7. Publikacja tego repo na GitHub
 
 Repozytorium jest już zainicjalizowane lokalnie (branch `main`). Aby opublikować je
 na GitHubie:
@@ -190,7 +164,7 @@ git push -u origin main
 CI (`.github/workflows/verify.yml`) automatycznie uruchomi `python kod/verify_all.py`
 oraz `python tools/check_links.py` przy każdym pushu i pull requeście.
 
-## 9. Współpraca i licencja
+## 8. Współpraca i licencja
 
 - Znalazłeś błąd albo chcesz dodać zadanie? Zobacz [CONTRIBUTING.md](CONTRIBUTING.md).
 - Kod: licencja MIT (plik [LICENSE](LICENSE)).
