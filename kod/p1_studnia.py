@@ -18,6 +18,9 @@ N = 400_001                 # liczba punktow siatki
 X = np.linspace(0.0, L, N)
 NORM = np.sqrt(2.0 / L)     # czynnik normalizacyjny stanu wlasnego
 
+# NumPy >= 2.0 nazywa calkowanie trapezem np.trapezoid; starsze wersje: np.trapz
+trapezoid = getattr(np, "trapezoid", None) or np.trapz
+
 
 def psi(n: int) -> np.ndarray:
     """N-ty stan wlasny nieskonczonej studni: sqrt(2/L) sin(n pi x / L)."""
@@ -26,7 +29,7 @@ def psi(n: int) -> np.ndarray:
 
 def integrate(f: np.ndarray) -> float:
     """Calka po x (metoda trapezow)."""
-    return float(np.trapezoid(f, X))
+    return float(trapezoid(f, X))
 
 
 def main() -> None:
