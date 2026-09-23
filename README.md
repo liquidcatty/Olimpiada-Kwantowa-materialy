@@ -167,9 +167,11 @@ python kod/verify_all.py               # uruchamia wszystkie skrypty i wypisuje 
 | [docs/07-faq-i-organizacja.md](docs/07-faq-i-organizacja.md) | rejestracja, wysyłka pracy, co wolno, check-lista |
 | [docs/08-slownik-pojec-pl-en.md](docs/08-slownik-pojec-pl-en.md) | słownik pojęć polsko-angielski |
 | [docs/bibliografia.md](docs/bibliografia.md) | książki, kursy, dokumentacje, filmy |
+| [tools/README.md](tools/README.md) | opis wszystkich narzędzi kontroli jakości |
 | [tools/check_links.py](tools/check_links.py) | kontrola linków relatywnych (używana w CI) |
 | [tools/audit_github_math.py](tools/audit_github_math.py) | kontrola renderowania matematyki na GitHub (używana w CI) |
 | [tools/audit_content.py](tools/audit_content.py) | kontrola składni LaTeX i pozostałości meta-komentarzy |
+| [tools/verify_structure.py](tools/verify_structure.py) | kontrola struktury rozdziałów, zadań i prac domowych (używana w CI) |
 
 ## 8. Publikacja tego repo na GitHub
 
