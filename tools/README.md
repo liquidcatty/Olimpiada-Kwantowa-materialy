@@ -7,7 +7,8 @@ Wszystkie uruchamia się z katalogu głównego repo.
 | --- | --- | --- |
 | `verify_all.py` (w `kod/`) | uruchamia 12 skryptów numerycznych z `kod/` | `12/12 OK` |
 | `check_links.py` | sprawdza wszystkie linki relatywne w plikach `.md` | `wszystkie linki ... poprawne` |
-| `audit_github_math.py` | sprawdza, czy matematyka renderuje się na GitHubie (bloki `$$` w akapicie, `$$` w tabeli, `\|` w tabeli) | `problemow: 0` |
+| `audit_github_math.py` | sprawdza, czy matematyka renderuje się na GitHubie (blok `$$` po tekście, `$$` w tabeli, kreska `\|` w tabeli, inline złamane na dwa wiersze) | `problemow: 0` |
+| `audit_github_math.py --self-test` | 13 przypadków kontrolnych: audyt musi flagować błędy i **nie** flagować poprawnych zapisów (w tym przykładów w code-spanach) | `self-test OK` |
 | `audit_content.py --math` | skladnia LaTeX: ryzykowne makra, `\left`/`\right`, nieparzyste `$` | `problemow: 0` |
 | `audit_content.py --mot` | pozostałości komentarzy motywacyjnych i meta | `trafien: 0` |
 | `verify_structure.py` | sekcje 1–8 w rozdziałach, zadania Z-NN i ich rozwiązania, 10 zadań w PD | `problemow: 0` |

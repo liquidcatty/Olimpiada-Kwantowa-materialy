@@ -24,6 +24,9 @@ jobs:
         run: python kod/verify_all.py
       - name: Kontrola linków relatywnych w plikach Markdown
         run: python tools/check_links.py
+      - name: Self-test narzędzi audytu (regresja kontrolerów)
+        run: |
+          python tools/audit_github_math.py --self-test
       - name: Kontrola renderowania matematyki na GitHub
         run: python tools/audit_github_math.py
       - name: Kontrola zapisu matematyki (skladnia LaTeX)
