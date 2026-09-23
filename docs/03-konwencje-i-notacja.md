@@ -132,17 +132,17 @@ wymienionych niżej jako błędne.
 | Zapis | Czy GitHub renderuje |
 | --- | --- |
 | inline `$\psi$` w akapicie, w liście, w tabeli, w nagłówku | tak |
-| `$`\`...\`$` (gdy wzór zawiera znaki kolidujące z Markdownem) | tak |
+| inline w wariancie z backtickami (gdy wzór zawiera znaki kolidujące z Markdownem) | tak |
 | blok `$$...$$` rozpoczynający akapit (pusta linia przed nim) | tak |
 | blok `$$...$$` bezpośrednio po nagłówku | tak |
 | dwa bloki `$$` pod rząd | tak |
-| blok `$$` w tej samej linii co tekst („…dlatego $$x=y$$ jest…”) | **nie** |
+| blok `$$` w tej samej linii co tekst | **nie** |
 | blok `$$` w akapicie, w linii zaraz po tekście (bez pustej linii) | **nie** |
 | blok `$$` w elemencie listy bez pustej linii przed nim | **nie** |
-| blok `$$` wewnątrz cytatu (`> $$`) | **nie** |
-| `$$` w wierszu tabeli | **nie** |
+| blok `$$` wewnątrz cytatu | **nie** |
+| blok `$$` w wierszu tabeli | **nie** |
 | inline `$...$` złamane na dwa wiersze | **nie** |
-| znak `\|` (nie `\lvert`) wewnątrz wzoru w tabeli | **nie** (rozbija tabelę) |
+| goła kreska pionowa wewnątrz wzoru w tabeli (zamiast `\lvert`) | **nie** (rozbija tabelę) |
 
 Praktyczne konsekwencje dla autora:
 

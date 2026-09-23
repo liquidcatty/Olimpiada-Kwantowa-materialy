@@ -28,3 +28,5 @@ jobs:
         run: python tools/audit_github_math.py
       - name: Kontrola zapisu matematyki (skladnia LaTeX)
         run: python tools/audit_content.py --math
+      - name: Kontrola struktury rozdzialow, zadan i prac domowych
+        run: python tools/verify_structure.py
