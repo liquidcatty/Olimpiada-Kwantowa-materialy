@@ -1,0 +1,5 @@
+numpy>=1.24
+# opcjonalne (tylko wykresy w kod/analiza_danych.py):
+# matplotlib>=3.7
+# opcjonalne (dopasowanie krzywych w kod/analiza_danych.py):
+# scipy>=1.10

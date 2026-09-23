@@ -1,0 +1,26 @@
+name: Weryfikacja numeryczna przewodnika
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Instalacja zależności
+        run: python -m pip install --upgrade pip numpy
+      - name: Weryfikacja wszystkich przykładów numerycznych
+        run: python kod/verify_all.py
+      - name: Kontrola linków relatywnych w plikach Markdown
+        run: python tools/check_links.py

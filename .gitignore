@@ -1,0 +1,22 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# --- Narzędzia / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Lokalne, robocze pliki pobrane ze strony Olimpiady ---
+_tmp/
+*.tmp
+
+# --- System ---
+Thumbs.db
+desktop.ini
+.DS_Store
