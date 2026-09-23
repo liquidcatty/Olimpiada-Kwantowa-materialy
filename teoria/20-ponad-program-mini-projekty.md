@@ -1,24 +1,17 @@
 # 20. Mini-projekty zaliczeniowe
 
-> **Ponad program:** rozdział wykracza poza warsztaty, bo zbiera w formę projektów rzeczy, które
-> trzeba **samodzielnie zaimplementować i zaraportować** — to najlepszy trening przed finałem.
-> **Czas nauki:** ~4 h czytania + 6 projektów po 6–12 h.
-> **Wymagana wiedza wstępna:** [06 — kubity, bramki, obwody](06-kubity-bramki-obwody-pomiary.md), [08 — algorytmy kwantowe](08-algorytmy-kwantowe.md), [10 — kryptografia kwantowa](10-kryptografia-kwantowa.md), [11 — metrologia](11-metrologia-kwantowa.md), [16 — analiza danych](16-analiza-danych-i-obliczenia-naukowe.md), [19 — algorytmy zaawansowane](19-ponad-program-algorytmy-zaawansowane-i-granice.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Olimpiada sprawdza nie tylko „czy umiesz policzyć”, ale „czy umiesz **zbudować i opisać**”.
-Mini-projekt to najmniejsze możliwe zadanie inżynierskie: **cel → kod → dane → wynik →
-raport**. Sześć projektów poniżej pokrywa cały przekrój przewodnika: symulację (rozdziały 06, 08),
-protokoły (10), metrologię (11), teleportację (19) i analizę danych (16).
+Rozdział zawiera sześć mini-projektów zaliczeniowych o jednakowej strukturze: **cel, wymagania,
+plan krok po kroku, kryteria oceny, wariant trudniejszy, czas**. Projekty obejmują symulację
+(rozdziały 06, 08), protokoły (10), metrologię (11), teleportację (19) i analizę danych (16), a
+każdy z nich kończy się **raportem** (2–5 stron + kod w załączniku). Schemat projektu to
+**cel → kod → dane → wynik → raport**.
 
-Każdy projekt ma tę samą strukturę: **cel, wymagania, plan krok po kroku, kryteria oceny,
-wariant trudniejszy, czas**. Wszystkie da się wykonać w czystym NumPy (matplotlib opcjonalnie),
-bez SciPy i bez chmury — dokładnie jak skrypty w [`kod/`](../kod/README.md). Zaleca się
-wersjonowanie kodu (`git`) i zapisanie **ziarna** generatora losowego.
-
-Efektem każdego projektu jest **raport** (2–5 stron + kod w załączniku) — dlatego w podsekcji 3.2
-znajdziesz gotowy szablon, a w 3.3 listę błędów, które najczęściej obniżają ocenę.
+Projekty wykonuje się w czystym NumPy (matplotlib opcjonalnie), bez SciPy i bez chmury; kod
+wersjonuje się w `git`, a w raporcie podaje się **ziarno** generatora losowego. Podsekcja 3.2
+zawiera szablon raportu, a 3.3 listę najczęstszych błędów obniżających ocenę.
 
 ## 2. Najważniejsze definicje
 
@@ -41,7 +34,7 @@ znajdziesz gotowy szablon, a w 3.3 listę błędów, które najczęściej obniż
    $N=4,8$ i znaleźć $k_{\rm opt}$” to cel.
 2. **Podziel na kroki.** Każdy krok kończy się działającym skryptem i **asercją**.
 3. **Trzymaj stałą strukturę kodu.** Funkcje czyste (`build_state`, `measure`, `fit_curve`),
-   `main()` z wypisaniem wyników i `OK/FAIL` (konwencja z [`kod/README.md`](../kod/README.md)).
+   `main()` z wypisaniem wyników i `OK/FAIL`.
 4. **Zapisuj dane do CSV.** Wyniki uzupełniaj do pliku `wyniki.csv` (jedno uruchomienie = jeden plik).
 5. **Rysuj jeden wykres na wynik.** Oś $x$, oś $y$ z jednostką, legenda, tytuł.
 6. **Wersjonuj.** `git commit` po każdym działającym kroku; w raporcie podaj **hash commita**.
@@ -79,8 +72,7 @@ znajdziesz gotowy szablon, a w 3.3 listę błędów, które najczęściej obniż
 
 **Cel.** Policzyć $P_{\rm sukces}(k)$ dla $k=0,1,2,3$ i wskazać $k_{\rm opt}$.
 
-**Metoda.** $\sin\theta=1/\sqrt N$, $P(k)=\sin^2((2k+1)\theta)$; kontrola symulacją wektorową
-(`kod/grover.py`).
+**Metoda.** $\sin\theta=1/\sqrt N$, $P(k)=\sin^2((2k+1)\theta)$; kontrola symulacją wektorową.
 
 **Rachunek.** $N=4$: $\theta=\pi/6=0{,}5236$, więc $P(0)=\sin^2(\pi/6)=0{,}25$,
 $P(1)=\sin^2(\pi/2)=1$, $P(2)=\sin^2(5\pi/6)=0{,}25$.
@@ -208,6 +200,3 @@ podać $\chi^2_{\rm red}$, niepewności i wykres z resztami.
 - Wskazówki realizacji i punkty kontrolne: [zadania/rozwiazania/rozwiazania-20.md](../zadania/rozwiazania/rozwiazania-20.md).
 - Praca domowa: [PD-4](../praca-domowa/praca-domowa-04.md).
 
-> **Weryfikacja numeryczna.** Policzone w NumPy: Grover $P(0..3)$ dla $N=8$: $0{,}125;0{,}781;0{,}945;0{,}330$;
-> dla $N=4$: $0{,}25;1{,}00;0{,}25;0{,}25$; BB84 $\mathrm{QBER}=0{,}25f$ i próg $f^\star=0{,}44$;
-> estymacja fazy $N=100$: $0{,}1$ vs $0{,}01$ (zysk $10$).

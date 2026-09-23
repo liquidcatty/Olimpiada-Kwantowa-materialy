@@ -1,11 +1,11 @@
 # Jak korzystać z tego przewodnika
 
-## 1. Pętla nauki (rób to zawsze tak samo)
+## 1. Kolejność pracy z rozdziałem
 
 1. **Teoria** — przeczytaj rozdział z `teoria/`. Nie notuj całych wyprowadzeń:
    notuj tylko definicje, wzory i „dlaczego tak”.
 2. **Przykłady rozwiązane** — przeczytaj, zamknij plik i rozwiąż je **jeszcze raz
-   na kartce**, bez podglądania. To najważniejszy krok.
+   na kartce**, bez podglądania.
 3. **Zadania Z-NN** — rozwiąż samodzielnie. Wskazówki są w rozdziale, pełne
    rozwiązania w `zadania/rozwiazania/rozwiazania-NN.md`. Zajrzyj tam
    **dopiero po** własnej próbie.
@@ -14,14 +14,11 @@
 5. **Praca domowa** — raz w tygodniu zrób pełny zestaw PD-N w warunkach
    egzaminacyjnych: bez podglądania, z czasem, na czystej kartce.
 6. **Powtórka** — po tygodniu wróć do rozdziału i spróbuj rozwiązać 2 zadania
-   z pamięci. To ujawnia prawdziwe braki.
+   z pamięci.
 
-## 2. Notatnik wzorów
+## 2. Ściąga wzorów
 
-Prowadź własny plik `moja-sciaga.md`. Zasada: **jeden wzór = jedna linia + jedno
-zdanie, kiedy go użyć**. Po każdym rozdziale dopisz 5–10 pozycji. Ściąga wzorów tego
-repozytorium (`docs/06-sciaga-wzorow.md`) jest wzorem do naśladowania, nie do
-wkuwania — wzory trzeba umieć **wyprowadzić**, nie tylko rozpoznać.
+Wszystkie wzory z materiału są zebrane w [`docs/06-sciaga-wzorow.md`](06-sciaga-wzorow.md).
 
 ## 3. Jak rozwiązywać zadania olimpijskie
 
@@ -53,10 +50,9 @@ python kod/verify_all.py
 ```
 
 Skrypt uruchamia wszystkie moduły numeryczne i wypisuje `OK`/`FAIL` oraz tabelę
-wyników. Jeśli wszystko przejdzie, Twoje rachunki z teorii zgadzają się z
-symulacją. To jest Twoja najszybsza metoda autokorekty.
+wyników. Zgodność z symulacją oznacza, że rachunki z teorii są poprawne.
 
-## 5. Zasady pracy domowej (PD-N)
+## 5. Praca domowa (PD-N)
 
 - Zestaw rozwiąż **na kartce** albo w Jupyterze — jak na Olimpiadzie.
 - Nagłówek pracy: numer zestawu, data, czas pracy.
@@ -78,5 +74,4 @@ symulacją. To jest Twoja najszybsza metoda autokorekty.
 
 Podawaj źródła, których użyłeś (podręcznik, wykład, artykuł). Nie kopiuj cudzych
 rozwiązań: to podstawa dyskwalifikacji ([Regulamin](https://olimpiadakwantowa.pl/regulamin/),
-Rozdział VII). Ten przewodnik ma Cię nauczyć rozumieć, a nie dać gotowca do
-przepisania — w Etapie II i tak zapytają Cię o każdy krok Twojego rozwiązania.
+Rozdział VII).

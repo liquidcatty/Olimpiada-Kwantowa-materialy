@@ -2,7 +2,6 @@
 
 Pełne rozwiązania Z-03.1–Z-03.8 z rozdziału
 [03. Rachunek prawdopodobieństwa i statystyka](../../teoria/03-rachunek-prawdopodobienstwa-i-statystyka.md).
-Wyniki sprawdzono w numpy i wzorami analitycznymi.
 
 ## Z-03.1
 
@@ -30,10 +29,12 @@ $7$ warunek „pierwsza $=3$” nie zmienia prawdopodobieństwa, bo $7$ jest „
 **(a)** Prawdopodobieństwo całkowite wyniku dodatniego:
 $P(+)=0{,}99\cdot0{,}001+0{,}05\cdot0{,}999=0{,}00099+0{,}04995=0{,}05094$.
 Z Bayesa
+
 $$P(C\mid +)=\frac{0{,}99\cdot0{,}001}{0{,}05094}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.$$
 
 **(b)** Dla wyniku negatywnego prawdopodobieństwo całkowite
 $P(-)=0{,}01\cdot0{,}001+0{,}95\cdot0{,}999=0{,}00001+0{,}94905=0{,}94906$;
+
 $$P(H\mid -)=\frac{0{,}95\cdot0{,}999}{0{,}94906}\approx0{,}99999.$$
 
 **(c)** Dodatni wynik daje tylko $\approx1{,}9\%$ szansy choroby, choć test jest
@@ -52,8 +53,7 @@ zwykle szumem; potrzebna jest powtórna weryfikacja.
 **(a)** $\mathbb{E}X=\dfrac16(1+2+3+4+5+6)=\dfrac{21}{6}=3{,}5$.
 
 **(b)** $\mathbb{E}X^2=\dfrac16(1+4+9+16+25+36)=\dfrac{91}{6}\approx15{,}167$,
-więc $\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=\dfrac{91}{6}-\dfrac{49}{4}
-=\dfrac{182-147}{12}=\dfrac{35}{12}\approx2{,}917$.
+więc $\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=\dfrac{91}{6}-\dfrac{49}{4} =\dfrac{182-147}{12}=\dfrac{35}{12}\approx2{,}917$.
 
 **(c)** Otrzymaliśmy $\mathbb{E}X^2=\dfrac{91}{6}\approx15{,}17$, a związek
 $\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=15{,}167-12{,}25=2{,}917$ się zgadza.
@@ -88,7 +88,9 @@ dlatego zliczenia fotonów cechuje charakterystyczny szum $\sqrt\lambda$.
 
 **(b)** $X\sim\mathrm{Bin}(100,\tfrac12)$: $\mu=np=50$, $\sigma=\sqrt{np(1-p)}=\sqrt{25}=5$.
 Z korekcją ciągłości zamieniamy $45\le X\le55$ na $44{,}5\le X\le55{,}5$:
+
 $$z_1=\frac{44{,}5-50}{5}=-1{,}1,\qquad z_2=\frac{55{,}5-50}{5}=1{,}1,$$
+
 $$P\approx\Phi(1{,}1)-\Phi(-1{,}1)=2\Phi(1{,}1)-1\approx0{,}7287.$$
 
 **(c)** Dokładnie $\sum_{k=45}^{55}\binom{100}{k}/2^{100}\approx0{,}7287$ — zgadza się
@@ -106,8 +108,10 @@ standardowym kryterium rozrzutu, także przy pomiarach kwantowych.
 **(a)** $\rho=\dfrac{m}{V}=\dfrac{200\ \text{g}}{50{,}0\ \text{mL}}=4{,}00\ \text{g/mL}$.
 
 **(b)** Dla ilorazu niepewności względne dodają się kwadratowo:
+
 $$\frac{\sigma_\rho}{\rho}=\sqrt{\Bigl(\frac{\sigma_m}{m}\Bigr)^2+\Bigl(\frac{\sigma_V}{V}\Bigr)^2}
 =\sqrt{(0{,}01)^2+(0{,}01)^2}=0{,}01414,$$
+
 skąd $\sigma_\rho=4{,}00\cdot0{,}01414\approx0{,}0566\ \text{g/mL}$.
 
 **(c)** Oba pomiary mają **taką samą** niepewność względną $1\%$, więc poprawa
@@ -122,11 +126,9 @@ są zrównoważone, więc oba pomiary wymagają poprawy, aby istotnie zwiększy�
 
 ## Z-03.7
 
-**(a)** $\chi^2=\dfrac{(12-10)^2}{10}+\dfrac{(8-10)^2}{10}+\dfrac{(10-10)^2}{10}
-=\dfrac{4+4+0}{10}=0{,}8$.
+**(a)** $\chi^2=\dfrac{(12-10)^2}{10}+\dfrac{(8-10)^2}{10}+\dfrac{(10-10)^2}{10} =\dfrac{4+4+0}{10}=0{,}8$.
 
-**(b)** Dla $\mathrm{df}=k-1=2$ zachodzi $p=P(\chi^2>0{,}8)=e^{-0{,}8/2}=e^{-0{,}4}
-\approx0{,}670$. Ponieważ $p\gg0{,}05$, **nie ma podstaw do odrzucenia** hipotezy —
+**(b)** Dla $\mathrm{df}=k-1=2$ zachodzi $p=P(\chi^2>0{,}8)=e^{-0{,}8/2}=e^{-0{,}4} \approx0{,}670$. Ponieważ $p\gg0{,}05$, **nie ma podstaw do odrzucenia** hipotezy —
 obserwacje zgadzają się z rozkładem równomiernym.
 
 **(c)** $H(0{,}5)=-0{,}5\log_2 0{,}5-0{,}5\log_2 0{,}5=1$ bit;
@@ -148,11 +150,15 @@ otrzymujemy $\hat\pi\approx3{,}1446$, z błędem
 $\sigma_{\hat\pi}=4\sqrt{\hat p(1-\hat p)/N}\approx0{,}0052$.
 
 **(b)** $\bar x=3$, $\bar y=4$. Liczymy
+
 $$\mathbb{E}XY=\tfrac{1\cdot2+2\cdot4+3\cdot5+4\cdot4+5\cdot5}{5}
 =\tfrac{2+8+15+16+25}{5}=\tfrac{66}{5}=13{,}2,$$
+
 $$\operatorname{Cov}(X,Y)=\mathbb{E}XY-\bar x\,\bar y=13{,}2-3\cdot4=1{,}2.$$
+
 Wariancje: $\sigma_x^2=\tfrac{1+4+9+16+25}{5}-3^2=11-9=2$,
 $\sigma_y^2=\tfrac{4+16+25+16+25}{5}-4^2=17{,}2-16=1{,}2$, więc
+
 $$\rho=\frac{1{,}2}{\sqrt{2\cdot1{,}2}}=\frac{1{,}2}{\sqrt{2{,}4}}\approx0{,}7746.$$
 
 **(c)** $|\rho|<1$ oznacza, że związki są **liniowe tylko częściowo** — punkty nie

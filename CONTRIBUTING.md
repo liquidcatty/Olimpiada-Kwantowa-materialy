@@ -16,6 +16,11 @@ Wzór błędu: `[literówka]` / `[rachunek]` / `[merytoryczny]` / `[niespójnoś
 ## 2. Zasady dla nowych treści
 
 - **Notacja**: obowiązkowo zgodna z [docs/03-konwencje-i-notacja.md](docs/03-konwencje-i-notacja.md).
+- **Matematyka (GitHub)**: inline `$...$` musi zmieścić się w jednej linii; przed każdym
+  blokiem `$$` i po nim zostaw pustą linię; w tabelach używaj `\lvert`/`\rvert`, nigdy
+  gołego `|`. Pełna tabela przypadków i uzasadnienie: sekcja 6 w
+  [docs/03-konwencje-i-notacja.md](docs/03-konwencje-i-notacja.md).
+  Kontrola: `python tools/audit_github_math.py` (0 problemów przed commitem).
 - **Struktura rozdziału teorii**: obowiązkowo wg [docs/_szablon-rozdzialu.md](docs/_szablon-rozdzialu.md)
   (sekcje 1–8, w tym „Przykłady rozwiązane”, „Typowe pułapki”, „Zadania (Z-NN)”,
   „Wskazówki do zadań”).

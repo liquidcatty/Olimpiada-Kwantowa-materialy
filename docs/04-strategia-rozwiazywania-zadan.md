@@ -90,8 +90,7 @@ trzeba spróbować rozkładu; pomaga rozkład Schmidta.
 
 ## 4. Technika egzaminacyjna
 
-1. **Przeczytaj wszystkie zadania** przed startem i zacznij od tego, które umiesz
-   najlepiej (buduje czas i pewność siebie).
+1. **Przeczytaj wszystkie zadania** przed startem i zacznij od tego, które umiesz najlepiej.
 2. **Budżet czasu**: tyle minut, ile (punktów za zadanie × 2), minimum 10 min.
 3. **Najpierw szkic rozwiązania** (pół strony), potem czystopis.
 4. **Nie zostawiaj pustych miejsc** — nawet niepełne rozwiązanie z widocznym

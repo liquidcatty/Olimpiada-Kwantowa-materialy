@@ -1,30 +1,23 @@
 # 12. Realizacje komputerów kwantowych
 
-> **Warsztat źródłowy:** „Realizacje komputerów kwantowych” (Grzegorz Czelusta, PCSS).
-> **Czas nauki:** ~6 h teorii + ~6 h zadań.
-> **Wymagana wiedza wstępna:** [05 — podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md), [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [07 — kwantowa teoria informacji](07-kwantowa-teoria-informacji.md), [09 — splątanie i twierdzenie Bella](09-splatanie-i-twierdzenie-bella.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Rozdziały 06–10 opisywały obwody i algorytmy zakładając, że bramki są idealne. Ten rozdział
-pokazuje, **z czego naprawdę robi się kubity**: nadprzewodzące obwody w 10 mK, pojedyncze
-jony w pułapkach, atomy w pęsetach optycznych, fotony, centra barwne w diamencie, spiny
-w krzemie. Okazuje się, że każda technologia to inny kompromis: szybkość kontra wierność,
-liczba kubitów kontra łączność, temperatura pracy kontra koszt chłodzenia.
+Rozdział obejmuje realizacje komputerów kwantowych: technologie kubitów fizycznych (obwody
+nadprzewodzące, jony w pułapkach, atomy w pęsetach optycznych, fotony, centra barwne w diamencie,
+spiny w krzemie), kryteria DiVincenzy, parametry sprzętu ($T_1$, $T_2$, $T_2^\ast$, czas i wierność
+bramki, łączność), transpilację, benchmarki (XEB, wolumetryka kwantowa, CLOPS, EPLG) oraz kubity
+topologiczne i dostęp do urządzeń przez chmurę.
 
-Ta wiedza jest na Olimpiadzie potrzebna z trzech powodów. Po pierwsze, pytania typu
-„dlaczego kubity nadprzewodzące są w 10 mK?” albo „czym jest $T_1$ i $T_2$?” pojawiają się
-w warsztatach i na finale. Po drugie, **realne zadania algorytmiczne i programistyczne**
-(kod na IBM Quantum, IQM, chmurę PCSS) wymagają rozumienia transpilacji, kolejkowania zadań
-i kalibracji. Po trzecie, to tu widać, dlaczego korekcja błędów (rozdział 13) jest
-koniecznością, a nie ciekawostką: dzisiejsze bramki mają wierność $99{,}5\%$–$99{,}9\%$,
-czyli 1000 bramek psuje algorytm z prawdopodobieństwem kilkudziesięciu procent.
+Rozdział wprowadza rozróżnienie NISQ i FTQC: *NISQ* (*noisy intermediate-scale quantum*, termin
+J. Preskilla z 2018 r.) to era 50–1000 fizycznych kubitów bez pełnej korekcji błędów — wyniki są
+„zaszumione”, a algorytmy muszą być płytkie; *FTQC* (*fault-tolerant quantum computing*) to era
+kubitów logicznych korygowanych kodami, w której możliwe są pełne wersje algorytmu Shora czy
+symulacji chemii.
 
-> **Ponad program:** rozróżnienie NISQ i FTQC. *NISQ* (*noisy intermediate-scale quantum*,
-> termin J. Preskilla z 2018 r.) to era 50–1000 fizycznych kubitów bez pełnej korekcji
-> błędów: wyniki są „zaszumione”, a algorytmy muszą być płytkie. *FTQC* (*fault-tolerant
-> quantum computing*) to era kubitów logicznych korygowanych kodami — pełne wersje algorytmu
-> Shora czy symulacji chemii są możliwe dopiero tam.
+Materiał dotyczy zadań Z-12 (kryteria DiVincenzy, budżet bramek, porównanie technologii, koszt
+transpilacji, benchmarki, polskie systemy w chmurze) i wiąże się z korekcją błędów (rozdział 13)
+oraz oprogramowaniem kwantowym (rozdział 15).
 
 ## 2. Najważniejsze definicje
 
@@ -106,7 +99,7 @@ bramkach prawdopodobieństwo, że obwód zadziała bez błędu, wynosi w przybli
 | $99{,}7\%$ | $74\%$ | $5{,}0\%$ | $\approx0$ |
 | $99{,}5\%$ | $61\%$ | $0{,}67\%$ | $\approx0$ |
 
-Wniosek: **bez korekcji błędów algorytmy potrzebujące $10^4$+ bramek są bezużyteczne.**
+**Bez korekcji błędów algorytmy potrzebujące $10^4$+ bramek są bezużyteczne.**
 Algorytm Shora dla RSA-2048 wymaga rzędów $10^9$ bramek $T$; przy wierności $99{,}7\%$
 już po $10^6$ bramkach szansa sukcesu spada do $\approx10^{-1305}$ (bo
 $0{,}997^{10^6}=e^{-3004{,}5}$).
@@ -225,7 +218,7 @@ u klienta; PCSS udostępnia go naukowcom i szkołom oraz prowadzi warsztaty i ko
 (m.in. Quantum Computing Hackathon). Prowadzący warsztat „Realizacje komputerów kwantowych”
 związany jest właśnie z PCSS.
 
-**Uwaga o D-Wave:** to nie jest komputer bramkowy, lecz **annealer kwantowy** — rozwiązuje
+D-Wave to nie jest komputer bramkowy, lecz **annealer kwantowy** — rozwiązuje
 zadania optymalizacyjne zapisane jako problem Isinga. Nie jest uniwersalny (nie realizuje
 dowolnego obwodu), ale ma tysiące kubitów i służy jako realny test „czy kwantowe fluktuacje
 pomagają w optymalizacji”.
@@ -336,8 +329,5 @@ szybkie, „cieknące” w czasie).
 - Pełne rozwiązania: [zadania/rozwiazania/rozwiazania-12.md](../zadania/rozwiazania/rozwiazania-12.md); praca domowa: [PD-3](../praca-domowa/praca-domowa-03.md).
 - Bibliografia: Kjaergaard i in., *Superconducting qubits* (2019); Bruzewicz i in., *Trapped-ion quantum computing* (2019); Saffman, *Quantum computing with atomic qubits* (2016) — zob. [bibliografia](../docs/bibliografia.md).
 
-> **Weryfikacja numeryczna.** Liczby w rozdziale policzono w NumPy: $T_2/t_g=1470$ i $4000$;
-> $0{,}997^{1000}=0{,}0496$, $0{,}998^{1000}=0{,}135$, $0{,}999^{1000}=0{,}368$; $0{,}997^{12}=0{,}965$;
-> $0{,}997^{10^6}=e^{-3004{,}5}$; $2d^2-1$ dla $d=7,17$.
 
 

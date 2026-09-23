@@ -23,7 +23,9 @@ $ad=\frac14=bc$ — **iloczynowy** ($=\lvert+\rangle\otimes\lvert+\rangle$), wi�
 (a) Macierz współczynników stanu $\lvert\Psi^-\rangle=\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$:
 $M=\frac{1}{\sqrt2}\begin{pmatrix}0&1\\-1&0\end{pmatrix}$. $MM^\dagger=\frac12 I$, wartości szczególne
 $\frac{1}{\sqrt2},\frac{1}{\sqrt2}$, więc $\lambda_1=\lambda_2=\frac12$:
+
 $$\lvert\Psi^-\rangle=\tfrac{1}{\sqrt2}\lvert u_1\rangle\lvert v_1\rangle-\tfrac{1}{\sqrt2}\lvert u_2\rangle\lvert v_2\rangle$$
+
 (rozkład Schmidta z równymi współczynnikami — stan maksymalnie splątany).
 
 (b) $S=-\frac12\log_2\frac12-\frac12\log_2\frac12=1$ bit.
@@ -39,13 +41,14 @@ dla dwóch kubitów.
 ## Z-09.3
 
 (a) $\rho_W^{T_B}$ dla $\rho_W=p\lvert\Phi^+\rangle\langle\Phi^+\rvert+\frac{1-p}{4}I$ ma wartości własne
+
 $$\lambda=\frac{1+p}{4}\ (\times3),\qquad \lambda=\frac{1-3p}{4}\ (\times1).$$
+
 (Suma $=3\frac{1+p}{4}+\frac{1-3p}{4}=1$; zgadza się z $\mathrm{Tr}\,\rho_W^{T_B}=1$.)
 
 (b) Najmniejsza wartość własna $\frac{1-3p}{4}<0\iff p>\frac13$.
 
-(c) $\mathrm{Tr}(W\rho_W)=p\,\mathrm{Tr}(W\lvert\Phi^+\rangle\langle\Phi^+\rvert)+\frac{1-p}{4}\mathrm{Tr}(W)
-=\frac12-\big(p+\frac{1-p}{4}\big)=\frac{1-3p}{4}<0\iff p>\frac13.$ Próg identyczny z PPT.
+(c) $\mathrm{Tr}(W\rho_W)=p\,\mathrm{Tr}(W\lvert\Phi^+\rangle\langle\Phi^+\rvert)+\frac{1-p}{4}\mathrm{Tr}(W) =\frac12-\big(p+\frac{1-p}{4}\big)=\frac{1-3p}{4}<0\iff p>\frac13.$ Próg identyczny z PPT.
 
 **Odpowiedź:** (a) $\frac{1+p}{4}$ (×3) i $\frac{1-3p}{4}$; (b) $p>\frac13$; (c) $\mathrm{Tr}(W\rho_W)=\frac{1-3p}{4}$.
 
@@ -60,6 +63,7 @@ więc $\lvert S\rvert=\lvert\int S(\lambda)\rho\,d\lambda\rvert\le\int\lvert S\r
 
 (b) Z $E(a,b)=-\cos(\theta_a-\theta_b)$:
 $E(0,45)=-\frac{\sqrt2}{2}$, $E(0,135)=+\frac{\sqrt2}{2}$, $E(90,45)=-\frac{\sqrt2}{2}$, $E(90,135)=-\frac{\sqrt2}{2}$,
+
 $$S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2\ \Rightarrow\ \lvert S\rvert=2\sqrt2.$$
 
 (c) Brak korelacji $\Rightarrow$ każda $E(a,b)=0$, więc $S=0$ — trywialnie w granicach LHV.
@@ -74,7 +78,7 @@ $$S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\
 kubicie: $\rho_{AB}=\frac12(\lvert00\rangle\langle00\rvert+\lvert11\rangle\langle11\rvert)$.
 
 (b) $\rho_{AB}$ jest diagonalne (klasyczna mieszanina stanów $\lvert00\rangle,\lvert11\rangle$),
-więc $C(A,B)=0$ (potwierdzone numerycznie). Z monogamii $C(A,B)^2+C(A,C)^2\le C(A,BC)^2$: całe splątanie
+więc $C(A,B)=0$. Z monogamii $C(A,B)^2+C(A,C)^2\le C(A,BC)^2$: całe splątanie
 jest „zarezerwowane” dla pary $A$–$BC$.
 
 (c) GHZ nie ma splątania dwustronnego po odrzuceniu kubita; stan W
@@ -92,6 +96,7 @@ splątanie dwustronne.
 
 (a) $\rho=(1-p)\lvert\Phi^+\rangle\langle\Phi^+\rvert+p\,\frac{I}{4}$ w bazie Bella ma wagi
 $\lambda_{\Phi^+}=1-\frac{3p}{4}$ oraz $\frac p4$ dla pozostałych. Concurrence dla stanów Bella-diagonalnych:
+
 $$C=\max\!\Big(0,\,2\big(1-\tfrac{3p}{4}\big)-1\Big)=\max\!\big(0,\,1-\tfrac{3p}{2}\big).$$
 
 (b) $C=0\iff 1-\frac{3p}{2}\le0\iff p\ge\frac23$. W Z-09.3(b) (parametr „sygnału” $p'=1-p$) próg PPT

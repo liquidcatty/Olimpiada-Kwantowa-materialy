@@ -5,8 +5,8 @@ Arkusz **„Zadania przykładowe”** to oficjalna publikacja Olimpiady Kwantowe
 przed startem Olimpiady można było zorientować się w zakresie materiału i poziomie
 trudności.”* Źródło: <https://olimpiadakwantowa.pl/zadania/>.
 
-> Materiał wykorzystany wyłącznie w celach edukacyjnych. Prawa do tekstu zadań
-> należą do Fundacji Quantum AI / Komitetu Merytorycznego Olimpiady Kwantowej.
+Materiał wykorzystany wyłącznie w celach edukacyjnych. Prawa do tekstu zadań
+należą do Fundacji Quantum AI / Komitetu Merytorycznego Olimpiady Kwantowej.
 
 ## Jak z nich korzystać
 

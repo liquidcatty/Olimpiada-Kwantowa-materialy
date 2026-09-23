@@ -1,29 +1,15 @@
 # 03. Rachunek prawdopodobieństwa i statystyka
 
-> **Warsztat źródłowy:** „Rachunek prawdopodobieństwa i statystyka” (Paweł Gora).
-> **Czas nauki:** ~5 h teorii + ~4 h zadań.
-> **Wymagana wiedza wstępna:** liczby zespolone ([01](01-liczby-zespolone.md)),
-> podstawy analizy (granice, całki — [04](04-elementy-analizy-matematycznej.md)).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Mechanika kwantowa jest **probabilistyczna u podstaw**: reguła Borna przypisuje
-wynikom pomiaru prawdopodobieństwa, a nie wartości. Dlatego cała „statystyka” z tego
-rozdziału wraca w każdym zadaniu — od zliczania fotonów w zadaniu P2, przez
-rozkłady wyników pomiaru w zadaniu P1, po analizę danych na finale.
-
-Ten rozdział daje narzędzia w trzech warstwach:
-
-1. **prawdopodobieństwo** — aksjomaty, prawdopodobieństwo warunkowe, niezależność,
-   twierdzenie Bayesa;
-2. **zmienne losowe i rozkłady** — wartość oczekiwana, wariancja, rozkłady
-   Bernoulliego, dwumianowy, Poissona, jednostajny, normalny, prawo wielkich liczb,
-   twierdzenie graniczne (CTG);
-3. **statystyka** — propagacja niepewności, estymacja, przedział ufności, test
-   chi-kwadrat, $p$-value, kowariancja, entropia Shannona, Monte Carlo.
-
-Zwieńczeniem jest interpretacja **zliczeń fotonów** (rozkład Poissona) i **statystyki
-pomiarów kwantowych** — dokładnie to, co robimy w laboratorium kwantowym.
+Rozdział obejmuje aksjomaty prawdopodobieństwa, prawdopodobieństwo warunkowe,
+niezależność i twierdzenie Bayesa. Omawia zmienne losowe i rozkłady (Bernoulliego,
+dwumianowy, Poissona, jednostajny, normalny), wartość oczekiwaną, wariancję, prawo
+wielkich liczb i twierdzenie graniczne (CTG). Obejmuje też propagację niepewności,
+estymację, przedział ufności, test chi-kwadrat, $p$-value, kowariancję, entropię
+Shannona i Monte Carlo. Materiał dotyczy zadań P1 i P2 (rozkłady wyników pomiaru,
+zliczenia fotonów) oraz analizy danych.
 
 ## 2. Najważniejsze definicje
 
@@ -58,16 +44,18 @@ Aksjomaty to reguły „księgowości” prawdopodobieństw — cała reszta roz
 
 $P(A\mid B)=P(A\cap B)/P(B)$ mierzy „udział $B$ w $A$”. Z tego wynika reguła iloczynu
 $P(A\cap B)=P(A\mid B)P(B)$. Zdarzenia są niezależne, gdy warunkowanie nic nie zmienia.
-Uwaga: **niezależność $\ne$ rozłączność** — zdarzenia rozłączne ($A\cap B=\emptyset$)
+Niezależność $\ne$ rozłączność — zdarzenia rozłączne ($A\cap B=\emptyset$)
 są wręcz maksymalnie zależne (znając $A$, wiesz, że $B$ nie zaszło).
 
 ### 3.3 Twierdzenie Bayesa
 
 Z $P(A\cap B)=P(A\mid B)P(B)=P(B\mid A)P(A)$:
+
 $$P(B\mid A)=\frac{P(A\mid B)P(B)}{P(A)},\qquad
 P(A)=\sum_i P(A\mid B_i)P(B_i).$$
+
 Bayes „odwraca” warunkowanie: ze znajomości $P(\text{wynik}\mid\text{hipoteza})$
-wnioskujemy o $P(\text{hipoteza}\mid\text{wynik})$. To serce diagnostyki i analizy
+wnioskujemy o $P(\text{hipoteza}\mid\text{wynik})$. To podstawa diagnostyki i analizy
 danych pomiarowych.
 
 ### 3.4 Zmienne losowe, $E$ i $\operatorname{Var}$
@@ -99,7 +87,9 @@ prawdopodobieństwo”.
 
 **Centralne twierdzenie graniczne (CTG).** Dla $n$ niezależnych zmiennych o skończonej
 wariancji suma (po standaryzacji) dąży do rozkładu normalnego:
+
 $$\frac{\sum_i X_i-n\mu}{\sigma\sqrt n}\xrightarrow{\,d\,}\mathcal{N}(0,1).$$
+
 Praktycznie: sumy i średnie z wielu małych, niezależnych przyczyn są w przybliżeniu
 normalne. Wartości krytyczne: $P(|Z|<1)\approx0{,}683$, $P(|Z|<2)\approx0{,}954$,
 $P(|Z|<3)\approx0{,}997$.
@@ -107,9 +97,11 @@ $P(|Z|<3)\approx0{,}997$.
 ### 3.7 Propagacja niepewności
 
 Dla wielkości $f(x_1,\dots,x_n)$ o **niezależnych** niepewnościach $\sigma_{x_i}$:
+
 $$\sigma_f^2=\sum_i\left(\frac{\partial f}{\partial x_i}\right)^2\sigma_{x_i}^2,
 \qquad\text{a dla iloczynu/ilorazu}\qquad
 \left(\frac{\sigma_f}{|f|}\right)^2=\sum_i\left(\frac{\sigma_{x_i}}{x_i}\right)^2.$$
+
 Szczególnie dla $f=x/y$ niepewności względne dodają się **kwadratowo**.
 
 ### 3.8 Estymacja punktowa i przedziałowa
@@ -176,8 +168,7 @@ teorię (np. prawo Malusa z zadania P2).
 **Metoda:** $X\sim\mathrm{Bin}(10,\tfrac12)$; wzór $\binom nk p^k(1-p)^{n-k}$;
 $\mathbb{E}X=np$, $\operatorname{Var}X=np(1-p)$.
 
-**Rachunek:** $P(X=3)=\binom{10}{3}\bigl(\tfrac12\bigr)^{10}=\dfrac{120}{1024}
-\approx0{,}1172$. Wartość oczekiwana $\mathbb{E}X=10\cdot\tfrac12=5$, wariancja
+**Rachunek:** $P(X=3)=\binom{10}{3}\bigl(\tfrac12\bigr)^{10}=\dfrac{120}{1024} \approx0{,}1172$. Wartość oczekiwana $\mathbb{E}X=10\cdot\tfrac12=5$, wariancja
 $\operatorname{Var}X=10\cdot\tfrac12\cdot\tfrac12=2{,}5$, odchylenie $\sqrt{2{,}5}\approx1{,}58$.
 
 **Wynik:** $P(X=3)\approx0{,}117$, $\mathbb{E}X=5$, $\sigma_X\approx1{,}58$.
@@ -193,11 +184,13 @@ $P({+}\mid C)=0{,}99$ i swoistość $P({-}\mid H)=0{,}95$ ($H$ = zdrowy).
 **Metoda:** prawdopodobieństwo całkowite w mianowniku + Bayes.
 
 **Rachunek:**
+
 $$P(+)={0{,}99\cdot0{,}001}+{0{,}05\cdot0{,}999}=0{,}00099+0{,}04995=0{,}05094,$$
+
 $$P(C\mid{+})=\frac{P({+}\mid C)P(C)}{P(+)}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.$$
+
 Dla wyniku negatywnego:
-$P(H\mid{-})=\dfrac{0{,}95\cdot0{,}999}{0{,}95\cdot0{,}999+0{,}01\cdot0{,}001}
-\approx0{,}99999$.
+$P(H\mid{-})=\dfrac{0{,}95\cdot0{,}999}{0{,}95\cdot0{,}999+0{,}01\cdot0{,}001} \approx0{,}99999$.
 
 **Wynik:** $P(C\mid{+})\approx1{,}9\%$, $P(H\mid{-})\approx99{,}999\%$.
 
@@ -284,14 +277,9 @@ $\operatorname{Cov}$ i $\rho$. (c) Zinterpretuj $|\rho|<1$.
 
 ## 8. Co dalej
 
-Statystyka współtworzy metodę Monte Carlo (rozdział 16), metrologię kwantową
-(rozdział 11) i weryfikację wyników na finale. Równania różniczkowe i całki — w
-rozdziale [04](04-elementy-analizy-matematycznej.md), a probabilistyczna
-interpretacja funkcji falowej — w [05](05-podstawy-mechaniki-kwantowej.md).
-Rozwiąż zadania i porównaj z
-[rozwiązaniami](../zadania/rozwiazania/rozwiazania-03.md); zadania łączące rozdziały
-01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
-
-**Kod.** Rozkłady i symulacje Monte Carlo odtwarzamy w numpy
-(`np.random.default_rng`, `rng.binomial`, `rng.poisson`, `np.mean`), a gęstości i
-dystrybuanty — wzorami analitycznymi, żeby nie zakładać `scipy`.
+Statystyka jest podstawą metody Monte Carlo (rozdział 16) i metrologii kwantowej
+(rozdział 11). Równania różniczkowe i całki są w rozdziale
+[04](04-elementy-analizy-matematycznej.md), a probabilistyczna interpretacja funkcji
+falowej — w [05](05-podstawy-mechaniki-kwantowej.md). Rozwiązania zadań są w
+[rozwiazania-03.md](../zadania/rozwiazania/rozwiazania-03.md); zadania łączące
+rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).

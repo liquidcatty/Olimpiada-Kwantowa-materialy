@@ -2,8 +2,8 @@
 
 Pełne rozwiązania Z-05.1–Z-05.8 z rozdziału
 [05. Podstawy mechaniki kwantowej](../../teoria/05-podstawy-mechaniki-kwantowej.md).
-Wyniki sprawdzono numerycznie (stałe: $\hbar=1{,}0546\cdot10^{-34}$ J·s,
-$m_e=9{,}109\cdot10^{-31}$ kg, $1$ eV $=1{,}602\cdot10^{-19}$ J).
+Stałe: $\hbar=1{,}0546\cdot10^{-34}$ J·s,
+$m_e=9{,}109\cdot10^{-31}$ kg, $1$ eV $=1{,}602\cdot10^{-19}$ J.
 
 ## Z-05.1
 
@@ -13,8 +13,7 @@ $c_0=\cos\tfrac\pi8\approx0{,}9239$, $c_1=\sin\tfrac\pi8\approx0{,}3827$.
 **(a)** $P(0)=\cos^2\tfrac\pi8\approx0{,}8536$, $P(1)=\sin^2\tfrac\pi8\approx0{,}1464$
 (sumujemy do $1$ ✓).
 
-**(b)** $\langle Z\rangle=P(0)-P(1)=\cos^2\tfrac\pi8-\sin^2\tfrac\pi8=\cos\tfrac\pi4
-=\tfrac{1}{\sqrt2}\approx0{,}7071$. Ponieważ współczynniki są rzeczywiste,
+**(b)** $\langle Z\rangle=P(0)-P(1)=\cos^2\tfrac\pi8-\sin^2\tfrac\pi8=\cos\tfrac\pi4 =\tfrac{1}{\sqrt2}\approx0{,}7071$. Ponieważ współczynniki są rzeczywiste,
 $\langle X\rangle=2c_0c_1=\sin\tfrac\pi4=\tfrac{1}{\sqrt2}\approx0{,}7071$.
 
 **(c)** $\operatorname{Var}(Z)=\langle Z^2\rangle-\langle Z\rangle^2=1-\tfrac12=\tfrac12$,
@@ -31,6 +30,7 @@ $|\vec r|=1$ — stan „przechylony” między osiami $X$ i $Z$, w płaszczyźn
 ## Z-05.2
 
 **(a)** $E_1=\dfrac{\pi^2\hbar^2}{2m_eL^2}$ dla $L=2$ nm:
+
 $$E_1=\frac{\pi^2(1{,}0546\cdot10^{-34})^2}{2\cdot9{,}109\cdot10^{-31}\cdot(2\cdot10^{-9})^2}
 \approx1{,}506\cdot10^{-20}\ \text{J}\approx0{,}0940\ \text{eV}.$$
 
@@ -64,8 +64,10 @@ ustalony względem osi $X$ — komplementarność osi pomiarowych.
 
 **(a)** Działamy komutatorem na $\psi$: $\hat x\psi=x\psi$,
 $\hat p\psi=-i\hbar\psi'$. Wtedy
+
 $$\hat x\hat p\psi=-i\hbar x\psi',\qquad
 \hat p\hat x\psi=-i\hbar(x\psi)'=-i\hbar(\psi+x\psi'),$$
+
 skąd $[\hat x,\hat p]\psi=-i\hbar x\psi'+i\hbar\psi+i\hbar x\psi'=i\hbar\psi$, czyli
 $[\hat x,\hat p]=i\hbar$.
 
@@ -101,13 +103,14 @@ nowy stan, nie będący prostopadłym do wejściowego — efekt nieklasyczny.
 ## Z-05.6
 
 **(a)** Bariera prostokątna $V_0>E$:
+
 $$T=\Bigl[1+\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)}\Bigr]^{-1},\qquad
 \kappa=\frac{\sqrt{2m_e(V_0-E)}}{\hbar}.$$
 
-**(b)** $\kappa=\dfrac{\sqrt{2\cdot9{,}109\cdot10^{-31}\cdot4\cdot1{,}602\cdot10^{-19}}}{1{,}0546\cdot10^{-34}}
-\approx1{,}025\cdot10^{10}\ \text{m}^{-1}$, więc
+**(b)** $\kappa=\dfrac{\sqrt{2\cdot9{,}109\cdot10^{-31}\cdot4\cdot1{,}602\cdot10^{-19}}}{1{,}0546\cdot10^{-34}} \approx1{,}025\cdot10^{10}\ \text{m}^{-1}$, więc
 $\kappa a\approx1{,}025\cdot10^{10}\cdot0{,}5\cdot10^{-9}\approx5{,}12$.
 Wtedy $\sinh(5{,}12)\approx83{,}6$ i
+
 $$T=\Bigl[1+\frac{(5\cdot1{,}602\cdot10^{-19})^2\cdot(83{,}6)^2}
 {4\cdot1{,}602\cdot10^{-19}\cdot4\cdot1{,}602\cdot10^{-19}}\Bigr]^{-1}
 \approx9{,}08\cdot10^{-5}.$$
@@ -125,6 +128,7 @@ prąd STM zmienia się o rzędy wielkości przy zmianie odległości o jedną wa
 
 **(a)** Dla studni $L=1$ nm: $E_1=\dfrac{\pi^2\hbar^2}{2m_eL^2}\approx6{,}025\cdot10^{-20}$ J.
 Wtedy $E_2=4E_1$ i
+
 $$\omega_{21}=\frac{E_2-E_1}{\hbar}=\frac{3E_1}{\hbar}\approx1{,}71\cdot10^{15}\ \text{rad/s}.$$
 
 **(b)** Okres dudnień $T=\dfrac{2\pi}{\omega_{21}}\approx3{,}67\cdot10^{-15}$ s
@@ -143,6 +147,7 @@ prawdopodobieństwa — klasycznie cząstka jakby „odbijała się” między �
 ## Z-05.8 [★]
 
 **(a)** Rozwiązujemy $i\hbar\frac{d}{dt}\lvert\psi\rangle=\tfrac{\hbar\Omega}{2}X\lvert\psi\rangle$:
+
 $$\lvert\psi(t)\rangle=e^{-iHt/\hbar}\lvert0\rangle
 =\Bigl(\cos\tfrac{\Omega t}{2}I-i\sin\tfrac{\Omega t}{2}X\Bigr)\lvert0\rangle
 =\cos\tfrac{\Omega t}{2}\lvert0\rangle-i\sin\tfrac{\Omega t}{2}\lvert1\rangle.$$
@@ -166,5 +171,5 @@ bramce $R_X(\theta)$ (rozdział 06): czas impulsu ustala kąt $\Omega t=\theta$.
 Zadania te pokrywają cały rdzeń I etapu: pomiar i wartości oczekiwane (Z-05.1, Z-05.3),
 studnię potencjału (P1, Z-05.2), zasadę nieoznaczoności (Z-05.4), prawo Malusa
 (P2, Z-05.5), tunelowanie (Z-05.6), dudnienia (Z-05.7) i oscylacje Rabiego (Z-05.8).
-Wszystkie wyniki odtwarzają się numerycznie — stany i operatory w konwencji
+Stany i operatory podano w konwencji
 [konwencji](../../docs/03-konwencje-i-notacja.md).

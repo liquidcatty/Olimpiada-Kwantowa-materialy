@@ -1,26 +1,17 @@
 # 06. Kubity, bramki, obwody, pomiary
 
-> **Warsztat źródłowy:** „Kubity, bramki, obwody, pomiary” (Krzysztof Pawłowski).
-> **Czas nauki:** ~6 h teorii + ~8 h zadań.
-> **Wymagana wiedza wstępna:** [01 — liczby zespolone](01-liczby-zespolone.md), [02 — algebra liniowa](02-algebra-liniowa.md), [05 — podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Model obwodowy (ang. *circuit model*) to uniwersalny język współczesnej informatyki
-kwantowej: każdy algorytm — od Deutscha po Shora — zapisujemy jako sekwencję bramek
-działających na rejestrze kubitów i zakończonych pomiarem. W Olimpiadzie Kwantowej ten
-język pojawia się wprost w zadaniach przykładowych **P3** (sekwencja H–Z–H na kubicie) i
-**P4** (obwód dwukubitowy H, $R_Y(\theta)$, CNOT). Oba rozwiązujemy tu w całości w sekcji 4.
+Rozdział obejmuje model obwodowy informatyki kwantowej: kubit i sferę Blocha, macierze bramek
+jedno- i dwukubitowych, składanie bramek w obwody (iloczyn macierzy), pomiar pełny i częściowy
+oraz konwencję małoendianowego indeksowania kubitów. Podaje kryterium iloczynowości stanu
+i concurrence jako miarę splątania oraz opisuje stany Bella.
 
-Rozdział domyka najważniejszą lukę między „fizyką kwantową” (rozdział 05) a „informatyką
-kwantową” (rozdziały 08–10): pokazuje, jak **zapisać** ewolucję układu (iloczyn macierzy),
-jak **odczytać** z niej przewidywania (prawdopodobieństwa) oraz jak postępować z **wieloma
-kubitami**, gdzie kluczowa jest kolejność i sposób indeksowania (konwencja małoendianowa).
-Bez tych trzech umiejętności każde zadanie obwodowe na finał stanie się zgadywaniem.
-
-Szczególnie ważne jest **splątanie**: to ono odróżnia obliczenia kwantowe od klasycznych.
-Pokazujemy je na dwóch stanach Bella uzyskanych w P4 i tłumaczymy, dlaczego obwód z P4 jest
-„generatorem splątania” o regulowanej sile ($\theta$).
+Materiał dotyczy zadań przykładowych **P3** (sekwencja H–Z–H na jednym kubicie) i **P4**
+(obwód dwukubitowy H, $R_Y(\theta)$, CNOT), których pełne rozwiązania zawiera sekcja 4.
+Rozdział łączy podstawy mechaniki kwantowej (rozdział 05) z rozdziałami o algorytmach
+i kryptografii (08–10).
 
 ## 2. Najważniejsze definicje
 
@@ -52,7 +43,9 @@ Pokazujemy je na dwóch stanach Bella uzyskanych w P4 i tłumaczymy, dlaczego ob
 ### 3.1 Kubit i sfera Blocha
 
 Każdy stan czysty jednego kubita można zapisać w postaci parametrycznej
+
 $$\lvert\psi(\theta,\varphi)\rangle=\cos\frac{\theta}{2}\,\lvert0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\,\lvert1\rangle,$$
+
 gdzie $\theta\in[0,\pi]$ to kąt od osi $z$, a $\varphi\in[0,2\pi)$ to faza. **Skąd to się
 bierze:** z rozwiązania warunku normalizacji $\lvert\alpha\rvert^2+\lvert\beta\rvert^2=1$ —
 dowolne $(\alpha,\beta)$ leżą na sferze jednostkowej w $\mathbb{C}^2$; globalna faza jest
@@ -60,15 +53,17 @@ nieobserwowalna, więc pozostają dwa rzeczywiste parametry. Dla $\theta=0$: $\l
 $\theta=\pi/2,\varphi=0$: $\lvert+\rangle$; $\theta=\pi$: $\lvert1\rangle$.
 
 Wektor Blocha $\vec r=(r_x,r_y,r_z)$ odczytujemy z wartości oczekiwanych macierzy Pauliego:
+
 $$r_x=\langle X\rangle,\quad r_y=\langle Y\rangle,\quad r_z=\langle Z\rangle,\qquad
 \lvert\psi\rangle\ \text{czysty}\iff \lvert\vec r\rvert=1.$$
+
 Zapis macierzowy: $\rho=\tfrac12(I+\vec r\cdot\vec\sigma)$. Bieguny sfery to $\lvert0\rangle$
 i $\lvert1\rangle$ (stany własne $Z$), a równik — superpozycje z równymi modułami ($\lvert+\rangle$,
 $\lvert-\rangle$, stany własne $X$ i $Y$).
 
 ### 3.2 Bramki jednokubitowe
 
-Wszystkie macierze w bazie $\{\lvert0\rangle,\lvert1\rangle\}$ (por. `docs/03-konwencje-i-notacja.md`, tabela 2.4):
+Wszystkie macierze w bazie $\{\lvert0\rangle,\lvert1\rangle\}$:
 
 | Bramka | Macierz | Uwaga |
 | --- | --- | --- |
@@ -83,9 +78,9 @@ Wszystkie macierze w bazie $\{\lvert0\rangle,\lvert1\rangle\}$ (por. `docs/03-ko
 | $R_Y(\theta)$ | $\begin{pmatrix}\cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}$ | obrót $\theta$ wokół $Y$ |
 | $R_Z(\theta)$ | $\mathrm{diag}(e^{-i\theta/2},e^{i\theta/2})$ | obrót $\theta$ wokół $Z$ |
 
-**Zapamiętaj dwie tożsamości** (sprawdzone macierzowo): $HZH=X$ oraz $HXH=Z$ — Hadamard
+**Dwie tożsamości**: $HZH=X$ oraz $HXH=Z$ — Hadamard
 „zamienia” osie $X$ i $Z$. Ponadto $T^2=S$, $S^2=Z$, a $H=X\,R_Y(\pi/2)$. Bramki $S$ i $T$
-wprowadzają fazę **bez zmiany prawdopodobieństw** w bazie obliczeniowej, dlatego są kluczowe
+wprowadzają fazę **bez zmiany prawdopodobieństw** w bazie obliczeniowej, dlatego mają zastosowanie
 przy interferencji (rozdział 08).
 
 ### 3.3 Bramki dwukubitowe
@@ -94,17 +89,21 @@ Podstawowa bramka dwukubitowa to **CNOT** (controlled-NOT). W konwencji małoend
 stan zapisujemy $\lvert q_1 q_0\rangle$, gdzie $q_1$ to górny (starszy) kubit, a $q_0$
 dolny. Bierzemy CNOT z **kontrolą na górnym kubicie ($q_1$) i celem na dolnym ($q_0$)** —
 dokładnie jak w P4:
+
 $$\mathrm{CNOT}=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes X
 =\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix},$$
+
 w bazie $(\lvert00\rangle,\lvert01\rangle,\lvert10\rangle,\lvert11\rangle)$. Działanie na
 stany bazowe (kolumna = wejście, przejście = wyjście): $\lvert00\rangle\to\lvert00\rangle$,
 $\lvert01\rangle\to\lvert01\rangle$, $\lvert10\rangle\to\lvert11\rangle$,
 $\lvert11\rangle\to\lvert10\rangle$ — czyli „flip $q_0$, gdy $q_1=1$”.
 
 Pozostałe bramki dwukubitowe:
+
 $$\mathrm{CZ}=\mathrm{diag}(1,1,1,-1),\qquad
 \mathrm{SWAP}=\begin{pmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix},\qquad
 \mathrm{iSWAP}=\begin{pmatrix}1&0&0&0\\0&0&i&0\\0&i&0&0\\0&0&0&1\end{pmatrix}.$$
+
 **CZ** zmienia znak tylko $\lvert11\rangle$ (jest symetryczna względem zamiany kubitów).
 **SWAP** wymienia stany obu kubitów. Relacja użyteczna w dowodach: $\mathrm{CNOT}=(I\otimes H)\,\mathrm{CZ}\,(I\otimes H)$.
 
@@ -113,7 +112,9 @@ $$\mathrm{CZ}=\mathrm{diag}(1,1,1,-1),\qquad
 Obwód czytamy od lewej do prawej (czas rośnie w prawo), ale **mnożenie macierzy jest
 odwrotne**: bramka wykonana *później* stoi *bardziej z lewej* w iloczynie. Dla sekwencji
 $G_1$, potem $G_2$, potem $G_3$ na stanie $\lvert\psi\rangle$:
+
 $$\lvert\psi'\rangle=G_3\,G_2\,G_1\,\lvert\psi\rangle.$$
+
 Bramka na kubicie $q_0$ (dolnym) to $I\otimes G$ — bo $\lvert q_1q_0\rangle=\lvert q_1\rangle\otimes\lvert q_0\rangle$,
 więc operator działający na prawym czynniku ma $I$ na lewym miejscu. Bramka na kubicie $q_1$
 (górnym) to $G\otimes I$. **Zawsze jawnie deklarujemy konwencję**, bo dla $\ge 3$ kubitów
@@ -129,10 +130,10 @@ obrotów są niewspółmierne z $\pi$; (iii) twierdzenie Solovay–Kitaeva mówi
 z dokładnością $\epsilon$ wymaga $O(\log^c(1/\epsilon))$ bramek. Zbiór $\{H,T,S,\mathrm{CNOT}\}$
 zawiera więc wszystko, czym się posługujemy; bramki $X,Y,Z$ są w nim pośrednio obecne.
 
-> **Ponad program:** zbiór **Clifforda** $\{H,S,\mathrm{CNOT}\}$ sam nie jest uniwersalny —
-> generuje tylko skończoną grupę operacji i daje się efektywnie symulować klasycznie
-> (tw. Gottesmana–Knilla). Dopiero dodanie bramki $T$ „wypycha” obliczenia poza klasyczny
-> zasięg. Dlatego koszt implementacji liczby bramek $T$ ($T$-count) jest kluczową metryką.
+zbiór **Clifforda** $\{H,S,\mathrm{CNOT}\}$ sam nie jest uniwersalny —
+generuje tylko skończoną grupę operacji i daje się efektywnie symulować klasycznie
+(tw. Gottesmana–Knilla). Dopiero dodanie bramki $T$ „wypycha” obliczenia poza klasyczny
+zasięg. Dlatego koszt implementacji liczby bramek $T$ ($T$-count) jest podstawową metryką.
 
 ### 3.6 Pomiar
 
@@ -153,8 +154,10 @@ $\lvert\psi_i\rangle=\frac{1}{\sqrt{P(i)}}\sum_j c_{ij}\lvert j\rangle$ (dla dru
 ### 3.7 Stany Bella i splątanie
 
 Cztery **stany Bella** (maksymalnie splątane, baza dwukubitowa):
+
 $$\lvert\Phi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert00\rangle\pm\lvert11\rangle),\qquad
 \lvert\Psi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert01\rangle\pm\lvert10\rangle).$$
+
 Powstają z $\lvert00\rangle$ przez $H$ na górnym kubicie i $\mathrm{CNOT}$ (kontrola górny,
 cel dolny). Sprawdzenie splątania: dla $\lvert\Phi^+\rangle$ nie istnieje rozkład
 $(\alpha\lvert0\rangle+\beta\lvert1\rangle)\otimes(\gamma\lvert0\rangle+\delta\lvert1\rangle)$,
@@ -172,22 +175,26 @@ czystych, a pomiary dopisać na końcu.
 
 **Kontrolowana-$U$.** Dla jednokubitowej $U$ definiujemy
 $\Lambda(U)=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes U$
-(kontrola to kubit górny). Kluczowy fakt: jeśli rozłożymy $U=e^{i\alpha}AXBXC$ przy $ABC=I$,
+(kontrola to kubit górny). Fakt: jeśli rozłożymy $U=e^{i\alpha}AXBXC$ przy $ABC=I$,
 to (z dokładnością do fazy na kubicie kontrolnym)
+
 $$\Lambda(U)=(I\otimes A)\,\mathrm{CNOT}\,(I\otimes B)\,\mathrm{CNOT}\,(I\otimes C),$$
+
 gdzie $A,B,C$ działają na kubicie docelowym, a faza $e^{i\alpha}$ realizowana jest bramką
-fazową na kubicie kontrolnym. **Przykład weryfikowalny rachunkiem:** dla $U=R_Y(\theta)$
+fazową na kubicie kontrolnym. **Przykład:** dla $U=R_Y(\theta)$
 bierzemy $A=R_Y(\theta/2)$, $B=R_Y(-\theta/2)$, $C=I$; wtedy $ABC=I$ oraz
 $A\,X\,B\,X\,C=R_Y(\theta)$, a powyższy obwód daje dokładnie $\Lambda(R_Y(\theta))$.
 
 Wielokrotne kontrole budujemy rekurencyjnie: jeśli $V^2=U$, to
+
 $$C^{n}U=\big(C^{n-1}V\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V^\dagger\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V\big)$$
+
 (gdzie $C^{n-1}$ działają na kontrolach $1,\dots,n-1$, a $X$ i $V$ na kubicie kontrolowanym).
 Bramka Toffolego ($C^2X$) powstaje tak z $U=X$ oraz $V=\sqrt{X}=R_X(\pi/2)$.
 
-> **Ponad program:** bramka **Toffolego** ($C^2X$) i **Fredkina** ($C^2\mathrm{SWAP}$) są
-> uniwersalne w połączeniu z $H$; bramka Toffolego jest klasycznie odwracalna i pojawia się
-> w korekcji błędów (rozdział 13).
+bramka **Toffolego** ($C^2X$) i **Fredkina** ($C^2\mathrm{SWAP}$) są
+uniwersalne w połączeniu z $H$; bramka Toffolego jest klasycznie odwracalna i pojawia się
+w korekcji błędów (rozdział 13).
 
 ## 4. Przykłady rozwiązane
 
@@ -200,12 +207,15 @@ $H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$, $Z=\mathrm{diag}(1,-1
 potem prawdopodobieństwa $P(k)=\lvert\langle k\vert\psi\rangle\rvert^2$; na koniec wyznaczymy macierz $HZH$.
 
 **Rachunek.** Krok po kroku:
+
 $$H\lvert0\rangle=\tfrac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)=\lvert+\rangle,\quad
 Z\lvert+\rangle=\tfrac{1}{\sqrt2}(\lvert0\rangle-\lvert1\rangle)=\lvert-\rangle,\quad
 H\lvert-\rangle=\lvert1\rangle.$$
+
 Zatem $\lvert\psi\rangle=\lvert1\rangle$ i $P(0)=0$, $P(1)=1$.
 
 Macierz złożenia (mnożymy od prawej, uwzględniając kolejność $H$, potem $Z$, potem $H$):
+
 $$HZH=\tfrac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
 =\tfrac12\begin{pmatrix}0&2\\2&0\end{pmatrix}=\begin{pmatrix}0&1\\1&0\end{pmatrix}=X.$$
 
@@ -221,27 +231,35 @@ konjugacyjnie $Z$ w $X$.
 **Dane.** Dwa kubity startują w $\lvert00\rangle$. Wykonujemy $H$ na górnym kubicie ($q_1$),
 $R_Y(\theta)$ na dolnym ($q_0$), a następnie CNOT (kontrola $q_1$, cel $q_0$). Konwencja
 małoendianowa: stan bazowy $\lvert q_1q_0\rangle$, bramka na $q_1$ to $G\otimes I$, na $q_0$ to $I\otimes G$.
+
 $$R_Y(\theta)=\begin{pmatrix}\cos\frac\theta2&-\sin\frac\theta2\\ \sin\frac\theta2&\cos\frac\theta2\end{pmatrix}.$$
 
 **Metoda.** Złożymy stan po obu „warstwowych” bramkach, zastosujemy CNOT (na wektorach bazowych),
 a potem odczytamy amplitudy $c_{00},c_{01},c_{10},c_{11}$ i prawdopodobieństwa $P_{ij}=\lvert c_{ij}\rvert^2$.
 
 **Rachunek.** Krok 1 (stan po $H\otimes R_Y(\theta)$):
+
 $$\big(H\lvert0\rangle\big)\otimes\big(R_Y(\theta)\lvert0\rangle\big)
 =\tfrac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)\otimes\Big(\cos\tfrac\theta2\lvert0\rangle+\sin\tfrac\theta2\lvert1\rangle\Big)
 =\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\cos\tfrac\theta2\lvert10\rangle+\sin\tfrac\theta2\lvert11\rangle\Big).$$
+
 Krok 2 (CNOT: $\lvert00\rangle\!\to\!\lvert00\rangle$, $\lvert01\rangle\!\to\!\lvert01\rangle$,
 $\lvert10\rangle\!\to\!\lvert11\rangle$, $\lvert11\rangle\!\to\!\lvert10\rangle$):
+
 $$\lvert\psi\rangle=\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\sin\tfrac\theta2\lvert10\rangle+\cos\tfrac\theta2\lvert11\rangle\Big).$$
 
 Prawdopodobieństwa:
+
 $$P_{00}=P_{11}=\tfrac12\cos^2\tfrac\theta2=\tfrac{1+\cos\theta}{4},\qquad
 P_{01}=P_{10}=\tfrac12\sin^2\tfrac\theta2=\tfrac{1-\cos\theta}{4}.$$
+
 Suma: $\tfrac{1+\cos\theta}{4}+\tfrac{1-\cos\theta}{4}+\tfrac{1-\cos\theta}{4}+\tfrac{1+\cos\theta}{4}=1$ ✓.
 
 Prawdopodobieństwo zgodnych wyników: $P_{00}+P_{11}=\tfrac{1+\cos\theta}{2}=\cos^2\tfrac\theta2$.
 Wartość oczekiwana $\langle Z\otimes Z\rangle$ (bo $Z\otimes Z=\mathrm{diag}(1,-1,-1,1)$):
+
 $$\langle Z\otimes Z\rangle=P_{00}-P_{01}-P_{10}+P_{11}=\cos\theta.$$
+
 Zgadza się to z $P(\text{zgodne})=\tfrac{1+\langle Z\otimes Z\rangle}{2}$.
 
 Splątanie: concurrence $C=2\lvert c_{00}c_{11}-c_{01}c_{10}\rvert=\lvert\cos\theta\rvert$.
@@ -315,7 +333,7 @@ kryterium $ad=bc$ i policz concurrence.
 
 ## 7. Wskazówki do zadań
 
-- **Z-06.1.** $r_i=\langle i\rvert$-owe wartości oczekiwane macierzy Pauliego. W (b) pamiętaj, że
+- **Z-06.1.** $r_i=\langle i\rvert$-owe wartości oczekiwane macierzy Pauliego. W (b) uwzględnij, że
   $R_n(\pi)=-i\,(n\cdot\vec\sigma)$; w (c) porównaj $H$ ze wzorem $R_n(\theta)=\cos\frac\theta2 I-i\sin\frac\theta2\,n\cdot\vec\sigma$.
 - **Z-06.2.** Mnoż macierze $2\times2$; w (b) komutator licz na macierzach, nie „ze wzoru”.
   W (c) sprawdź, czy $TXT^\dagger$ da się zapisać jako $e^{i\varphi}X$.
@@ -337,6 +355,3 @@ kryterium $ad=bc$ i policz concurrence.
 - Pełne rozwiązania zadań: [zadania/rozwiazania/rozwiazania-06.md](../zadania/rozwiazania/rozwiazania-06.md).
 - Praca domowa: [PD-2](../praca-domowa/praca-domowa-02.md).
 
-> **Weryfikacja numeryczna.** Wszystkie macierze w tym rozdziale (w tym $HZH=X$, macierz CNOT oraz
-> obwód P4) policzono w NumPy; np. `np.allclose(H@Z@H, X)` daje `True`, a stan P4 dla $\theta=0$
-> to wektor $(0{,}7071,\,0,\,0,\,0{,}7071)$ z $P(\text{zgodne})=1$ i $\langle Z\otimes Z\rangle=1$.

@@ -5,10 +5,10 @@ Praca domowa po module drugim obejmuje rozdziały [06](../teoria/06-kubity-bramk
 [08](../teoria/08-algorytmy-kwantowe.md) (algorytmy), [09](../teoria/09-splatanie-i-twierdzenie-bella.md)
 (splątanie i Bella) oraz [10](../teoria/10-kryptografia-kwantowa.md) (kryptografia).
 
-**Zasady:** rozwiązania pisemne, każde z pełnym uzasadnieniem i jawnym rachunkiem. Notacja jak w
-`docs/03-konwencje-i-notacja.md` (baza $\lvert q_1q_0\rangle$, bramka na $q_1$ $=G\otimes I$,
-na $q_0$ $=I\otimes G$, $\theta/2$ w bramkach obrotu). Wyniki przybliżone z 3 cyframi znaczącymi.
-**Razem 20 punktów** (10 zadań po 2 pkt).
+**Zasady:** rozwiązania pisemne, każde z pełnym uzasadnieniem i jawnym rachunkiem. Konwencja
+notacji: baza $\lvert q_1q_0\rangle$, bramka na $q_1$ $=G\otimes I$, na $q_0$ $=I\otimes G$,
+$\theta/2$ w bramkach obrotu. Wyniki przybliżone z 3 cyframi znaczącymi. **Razem 20 punktów**
+(10 zadań po 2 pkt).
 
 ## Zadania
 

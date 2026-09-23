@@ -61,7 +61,9 @@ I=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
 **Szybkie tożsamości bramek**
 
 $$HXH=Z,\quad HZH=X,\quad H YH=-Y,\quad H^2=I,\quad XZX=-Z,\quad H=\tfrac{1}{\sqrt2}(X+Z)$$
+
 $$H^{\otimes 2}\lvert00\rangle=\tfrac12\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle\big)$$
+
 $$S=T^2,\quad T^2S=Z\cdot e^{i\pi/4}\ \text{(do fazy)}\quad\text{— uwaga na fazy globalne}$$
 
 ## 3. Rachunek prawdopodobieństwa i statystyka (rozdział 03)

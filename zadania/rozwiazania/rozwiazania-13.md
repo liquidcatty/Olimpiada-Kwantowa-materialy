@@ -32,11 +32,14 @@ błędach to przypuszczenie jest błędne i kod pogarsza sytuację zamiast ją n
 zapisać jednym parametrem $p_d=\frac{4p}{3}$ jako $\mathcal{E}(\rho)=(1-p_d)\rho+p_d\frac{I}{2}$.
 
 (b) Dla stanu czystego $\langle X\rangle^2+\langle Y\rangle^2+\langle Z\rangle^2=1$, więc
+
 $$F=\langle\psi\rvert\mathcal{E}(\lvert\psi\rangle\langle\psi\rvert)\lvert\psi\rangle
 =(1-p)+\frac p3=\left(1-\frac{4p}{3}\right)+\frac{4p}{3}\cdot\frac12=1-\frac{2p}{3}=1-\frac{p_d}{2}.$$
+
 Dla $p=0{,}05$: $F=1-0{,}0333=\mathbf{0{,}9667}$ (i $p_d=0{,}0667$, $1-p_d/2=0{,}9667$ ✓).
 
 (c) Kolejne kanały mnożą wierność: $F^n=(0{,}9667)^n$. Warunek $0{,}9667^n<0{,}9$:
+
 $$n>\frac{\ln0{,}9}{\ln0{,}9667}=\frac{-0{,}1054}{-0{,}0339}=3{,}11\ \Rightarrow\ n=4 .$$
 
 **Odpowiedź:** (a) jak wyżej; (b) $F=\mathbf{0{,}9667}$ (zgodne z $1-p_d/2$);
@@ -56,8 +59,10 @@ w analizie korekcji.
 $0{,}1/0{,}028=3{,}57\times$.
 
 (c) Kod przestaje pomagać, gdy $P_{\rm fail}=p$:
+
 $$3p^2-2p^3=p\ \Rightarrow\ 2p^2-3p+1=0\ \Rightarrow\ (2p-1)(p-1)=0
 \ \Rightarrow\ p=\tfrac12\ \text{lub}\ p=1 .$$
+
 Poniżej $p=\frac12$ kod zawsze zmniejsza prawdopodobieństwo błędu.
 
 **Odpowiedź:** (a) $\mathbf{2{,}98\cdot10^{-4}}$ i $\mathbf{0{,}028}$; (b) $\mathbf{33{,}6\times}$
@@ -69,8 +74,10 @@ dlatego wszystkie praktyczne kody wymagają błędu fizycznego znacznie poniżej
 ## Z-13.4
 
 (a) Generatory kodu Steane'a (kubity $q_1$–$q_7$), każdy o wadze $4$:
+
 $$X_4X_5X_6X_7,\quad X_2X_3X_6X_7,\quad X_1X_3X_5X_7,\quad
 Z_4Z_5Z_6Z_7,\quad Z_2Z_3Z_6Z_7,\quad Z_1Z_3Z_5Z_7 .$$
+
 Komutują, bo każde dwa mają **parzystą** liczbę wspólnych kubitów ($0,2$ lub $4$).
 
 (b) Syndrom błędu $X$ liczymy z generatorów $Z$-owych, a błędu $Z$ — z $X$-owych:
@@ -100,7 +107,9 @@ binarny parzystości w kodach klasycznych) — widzimy działanie klasycznego ko
 pomiarowe są już wliczone w $2d^2-1$).
 
 (c) Każdy krok $d\to d+2$ zmniejsza $p_L$ o czynnik $\Lambda=2{,}14$. Potrzebujemy
+
 $$\Lambda^{k}=\frac{0{,}00143}{10^{-6}}=1430\ \Rightarrow\ k=\frac{\ln1430}{\ln2{,}14}=9{,}55,$$
+
 czyli $d\approx7+2\cdot9{,}55=26{,}1$ — bierzemy najbliższy nieparzysty dystans $\mathbf{d=27}$
 ($1457$ kubitów fizycznych na kubit logiczny).
 
@@ -114,8 +123,10 @@ między rozmiarem a dokładnością i ogromne liczby kubitów potrzebne do prakt
 ## Z-13.6
 
 (a) Dopasowanie prostej $E(\lambda)=E(0)+a\lambda$ do $(1;0{,}90)$, $(2;0{,}79)$, $(3;0{,}68)$:
+
 $$a=\frac{E(3)-E(1)}{3-1}=\frac{0{,}68-0{,}90}{2}=-0{,}11,\qquad
 E(0)=E(1)-a=0{,}90+0{,}11=1{,}01 .$$
+
 Wynik $E(0)=1{,}01>1$ jest **niemożliwy** dla wartości oczekiwanej operatora o widmie $[-1,1]$,
 co sygnalizuje, że model liniowy jest zbyt prosty (albo dane mają fluktuacje) — w praktyce
 należałoby użyć modelu wykładniczego lub $E(\lambda)=E(0)+a\lambda+b\lambda^2$.
@@ -143,9 +154,4 @@ korekcji błędów.
 *Fizycznie:* mitygacja to statystyka i algebra liniowa nałożone na zaszumiony eksperyment —
 skuteczna przy płytkich obwodach i dobrym sprzęcie, ale nie zastępuje kubitów logicznych.
 
-> **Weryfikacja numeryczna.** Syndromy i tabele policzono macierzami Pauliego w NumPy:
-> brak błędu $(0,0)$; $X$ na $q_2,q_1,q_0$: $(1,0),(1,1),(0,1)$; syndromy kodu Steane'a równe
-> binarnym numerom kubitów; $F=0{,}9667$, $(0{,}9667)^4=0{,}873$ i $n=3{,}11$;
-> $3p^2-2p^3$ dla $p=0{,}01,0{,}1,0{,}02$; $2d^2-1$; $k=9{,}55$ kroków $\Lambda=2{,}14$;
-> ZNE $E(0)=1{,}01$. Skrypt: `python kod/korekcja_3bit.py`.
 

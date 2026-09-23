@@ -2,7 +2,6 @@
 
 Pełne rozwiązania Z-04.1–Z-04.8 z rozdziału
 [04. Elementy analizy matematycznej](../../teoria/04-elementy-analizy-matematycznej.md).
-Wyniki sprawdzono numerycznie.
 
 ## Z-04.1
 
@@ -26,10 +25,12 @@ Gaussa — tam „gęstość” przestaje rosnąć i maleć.
 ## Z-04.2
 
 **(a)** Przez części z $u=x$, $dv=e^{-x}dx$ (więc $du=dx$, $v=-e^{-x}$):
+
 $$\int_0^\infty xe^{-x}dx=\bigl[-xe^{-x}\bigr]_0^\infty+\int_0^\infty e^{-x}dx
 =0+1=1.$$
 
 **(b)** Podstawiając $u=-x^2$, $du=-2x\,dx$:
+
 $$\int xe^{-x^2}dx=-\tfrac12\int e^{u}du=-\tfrac12e^{-x^2}+C.$$
 
 **(c)** $\int_0^\infty e^{-2x}dx=\bigl[-\tfrac12e^{-2x}\bigr]_0^\infty=\tfrac12$.
@@ -42,7 +43,9 @@ opisują np. średni czas życia stanu wzbudzonego.
 ## Z-04.3
 
 **(a)** $(1+x)^{1/2}=1+\tfrac12x-\tfrac18x^2+\dots$ Dla $x=0{,}04$:
+
 $$\sqrt{1{,}04}\approx1+0{,}02-\tfrac18(0{,}0016)=1+0{,}02-0{,}0002=1{,}0198.$$
+
 Wartość dokładna $1{,}019804$ — zgadza się do $\approx4\cdot10^{-6}$.
 
 **(b)** $e^{i\theta}=\cos\theta+i\sin\theta$, więc $\operatorname{Re}= \cos\theta$,
@@ -79,8 +82,7 @@ dwóch stanów.
 **(a)** $m\ddot x=-kx\Rightarrow\ddot x=-\omega^2x$ z $\omega=\sqrt{k/m}$; rozwiązanie
 $x(t)=A\cos(\omega t+\varphi)$.
 
-**(b)** $E=\tfrac12m\dot x^2+\tfrac12kx^2=\tfrac12m\omega^2A^2\sin^2(\omega t+\varphi)
-+\tfrac12kA^2\cos^2(\omega t+\varphi)=\tfrac12kA^2=\tfrac12m\omega^2A^2$
+**(b)** $E=\tfrac12m\dot x^2+\tfrac12kx^2=\tfrac12m\omega^2A^2\sin^2(\omega t+\varphi) +\tfrac12kA^2\cos^2(\omega t+\varphi)=\tfrac12kA^2=\tfrac12m\omega^2A^2$
 (korzystamy z $k=m\omega^2$); stała ruchu.
 
 **(c)** Okres $T=2\pi/\omega=2\pi\sqrt{m/k}$ zależy tylko od $m,k$, nie od $A$.
@@ -95,12 +97,16 @@ harmonicznego); to cecha odróżniająca go od wahadła matematycznego przy duż
 
 **(a)** Dla fali prostokątnej nieparzystej (wartość $+1$ na połowie okresu, $-1$
 na drugiej) współczynniki cosinusowe znikają, a
+
 $$b_n=\frac{4}{n\pi}\quad(n=1,3,5,\dots).$$
-Numerycznie $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
+
+Wartości $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
 
 **(b)** Średni kwadrat fali wynosi $\frac1T\int f^2dt=1$. Z Parsevala
+
 $$\frac1T\int f^2dt=\sum_{n\ \text{nieparzyste}}\frac{b_n^2}{2}
 =\sum_{n\ \text{nieparzyste}}\frac{8}{n^2\pi^2}=\frac{8}{\pi^2}\cdot\frac{\pi^2}{8}=1.$$
+
 Zgadza się (korzystamy z $\sum_{n\ \text{nieparzyste}}1/n^2=\pi^2/8$).
 
 **(c)** Dla $g(t)=e^{-t^2/(2a^2)}$: $G(\omega)=a\,e^{-a^2\omega^2/2}$ — Gauss
@@ -134,12 +140,15 @@ klasyczna” paczka kwantowa, jaką można przygotować.
 ## Z-04.8 [★]
 
 **(a)** Dla swobodnej paczki gaussowskiej o początkowym odchyleniu $\sigma_0$:
+
 $$\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.$$
 
 **(b)** Dla elektronu $m=m_e=9{,}109\cdot10^{-31}$ kg, $\sigma_0=10^{-9}$ m,
 $t=10^{-12}$ s:
+
 $$\frac{\hbar t}{2m\sigma_0^2}=\frac{1{,}0546\cdot10^{-34}\cdot10^{-12}}
 {2\cdot9{,}109\cdot10^{-31}\cdot10^{-18}}\approx57{,}892,$$
+
 skąd $\sigma\approx10^{-9}\cdot57{,}892\approx5{,}79\cdot10^{-8}$ m $=57{,}9$ nm.
 
 **(c)** Składowe o większym pędzie biegną szybciej niż o mniejszym; początkowo

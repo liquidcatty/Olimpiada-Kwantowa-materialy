@@ -3,7 +3,9 @@
 ## Z-17.1
 
 (a) Składanie diagonalnych rzutników daje macierz diagonalną:
+
 $$\rho=\tfrac14\begin{pmatrix}1&0\\0&0\end{pmatrix}+\tfrac34\begin{pmatrix}0&0\\0&1\end{pmatrix}=\begin{pmatrix}0{,}25&0\\0&0{,}75\end{pmatrix}.$$
+
 (b) $\mathrm{Tr}\,\rho^2=0{,}25^2+0{,}75^2=0{,}625$; skoro $r_x=r_y=0$, to
 $\lvert\vec r\rvert=\lvert r_z\rvert=\lvert0{,}25-0{,}75\rvert=0{,}5$.
 (c) $\mathrm{Tr}\,\rho^2=0{,}625<1$ oraz $\lvert\vec r\rvert=0{,}5<1$, więc to stan **mieszany**.
@@ -16,7 +18,9 @@ $\mathbf{\lvert\vec r\rvert=0{,}5}$; (c) stan mieszany.
 
 (a) Z $\rho=\tfrac12(I+\vec r\cdot\vec\sigma)$ i $\mathrm{Tr}(\sigma_j\sigma_k)=2\delta_{jk}$,
 $\mathrm{Tr}\,\sigma_j=0$ mamy $r_j=\mathrm{Tr}(\rho\sigma_j)$; rozpisując na elementy:
+
 $$r_x=2\,\mathrm{Re}\,\rho_{01},\qquad r_y=\mathrm{Tr}(\rho Y)=i\rho_{10}-i\rho_{01},\qquad r_z=\rho_{00}-\rho_{11}.$$
+
 (b) Dla $\lvert+i\rangle$: $\rho_{01}=i/2$, więc $r_x=0$ oraz
 $r_y=i(-\tfrac i2)-i(\tfrac i2)=\tfrac12+\tfrac12=1$, czyli $\vec r=(0,1,0)$.
 (c) $\lvert+\rangle$: $\rho_{01}=1/2$ → $\vec r=(1,0,0)$; $\lvert-\rangle$: $\vec r=(-1,0,0)$.

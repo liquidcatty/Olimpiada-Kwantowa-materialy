@@ -1,29 +1,14 @@
 # 02. Algebra liniowa
 
-> **Warsztat źródłowy:** „Algebra liniowa” (Grzegorz Czelusta).
-> **Czas nauki:** ~5 h teorii + ~4 h zadań.
-> **Wymagana wiedza wstępna:** liczby zespolone i faza amplitudy
-> ([rozdział 01](01-liczby-zespolone.md)).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Algebra liniowa to **język mechaniki kwantowej**. Stan układu to wektor w przestrzeni
-zespolonej $\mathbb{C}^n$, obserwabla to operator hermitowski, a ewolucja i pomiar
-to operacje na tych obiektach. Każde zadanie z arkusza przykładowego — P1 (studnia
-potencjału), P2 (polaryzatory), P3 (bramki $H,Z,H$) i P4 (obwód z $R_Y(\theta)$ i
-CNOT) — da się zapisać jako działanie macierzy na wektor.
-
-W tym rozdziale uczymy się trzech rzeczy, które wystarczą do całego Etapu I:
-
-1. **liczyć** — iloczyn skalarny, sprzężenie hermitowskie, ślad, wyznacznik, iloczyn
-   tensorowy (kron);
-2. **rozumieć strukturę** — operatory hermitowskie i unitarne, wartości/wektory
-   własne, twierdzenie spektralne, diagonalizacja;
-3. **łączyć z fizyką** — macierze Pauliego, sfera Blocha, funkcje macierzy
-   $e^{-iHt/\hbar}$ oraz rozkład Schmidta jako zapowiedź splątania.
-
-Wszystkie rachunki wykonujemy w numpy: wektor stanu jako kolumna, macierze kwadratowe,
-iloczyn tensorowy `np.kron`, sprzężenie `M.conj().T`.
+Rozdział obejmuje rachunek na wektorach i macierzach: iloczyn skalarny, sprzężenie
+hermitowskie, ślad, wyznacznik oraz iloczyn tensorowy (kron). Omawia operatory
+hermitowskie i unitarne, wartości i wektory własne, twierdzenie spektralne,
+diagonalizację, a także macierze Pauliego, sferę Blocha, funkcje macierzy
+$e^{-iHt/\hbar}$ i rozkład Schmidta. Materiał dotyczy zadań P1 (studnia potencjału),
+P2 (polaryzatory), P3 (bramki $H,Z,H$) i P4 (obwód z $R_Y(\theta)$ i CNOT).
 
 ## 2. Najważniejsze definicje
 
@@ -83,7 +68,7 @@ $(\alpha A)^\dagger=\alpha^*A^\dagger$, $\langle\phi|A|\psi\rangle=\langle\psi|A
 
 ### 3.5 Operatory hermitowskie i unitarne
 
-To dwa najważniejsze typy operatorów w mechanice kwantowej.
+Dwa typy operatorów w mechanice kwantowej:
 
 - **Hermitowski** $A^\dagger=A$: ma rzeczywiste wartości własne, odpowiadają
   mierzalnym wielkościom (energia, spin, położenie). Przykłady: macierze Pauliego
@@ -107,6 +92,7 @@ wartości własne rzeczywiste, wektory własne różnych wartości ortogonalne.
 wektorów własnych i rozkład $A=\sum_a a\,|a\rangle\langle a|$. W tej bazie $A$ jest
 macierzą diagonalną $D=\operatorname{diag}(a_1,\dots,a_n)$, a przejście realizuje
 macierz unitarna $U$ (kolumny = wektory własne):
+
 $$A=U D U^\dagger,\qquad D=U^\dagger A U.$$
 
 Posługując się rozkładem spektralnym, każdą „sensowną” funkcję $f$ liczymy na
@@ -115,15 +101,19 @@ wartościach własnych: $f(A)=\sum_a f(a)|a\rangle\langle a|$.
 ### 3.8 Funkcje macierzy: $e^{-iHt/\hbar}$
 
 Dla hermitowskiego $H$ definiujemy
+
 $$e^{-iHt/\hbar}=\sum_a e^{-ia t/\hbar}|a\rangle\langle a|,$$
+
 gdzie $a$ to wartości własne $H$. To rozwiązanie równania Schrödingera:
 $|\psi(t)\rangle=e^{-iHt/\hbar}|\psi(0)\rangle$. Praktycznie: diagonalizujemy $H$,
 podnosimy $e^{-iat/\hbar}$ i wracamy do oryginalnej bazy.
 
 **Przykład 2×2.** Dla $H=\tfrac{\hbar\omega}{2}Z$ wartości własne to $\pm\tfrac{\hbar\omega}{2}$,
 więc
+
 $$e^{-iHt/\hbar}=e^{-i\omega t Z/2}=\cos\!\Bigl(\tfrac{\omega t}{2}\Bigr)I-i\sin\!\Bigl(\tfrac{\omega t}{2}\Bigr)Z
 =\operatorname{diag}\!\bigl(e^{-i\omega t/2},e^{i\omega t/2}\bigr).$$
+
 Ostatnia macierz to dokładnie $R_Z(\omega t)$ w notacji konwencji (kąt $\theta/2$).
 
 ### 3.9 Ślad, wyznacznik, rząd
@@ -131,8 +121,7 @@ Ostatnia macierz to dokładnie $R_Z(\omega t)$ w notacji konwencji (kąt $\theta
 - **Ślad** $\operatorname{Tr}A=\sum_iA_{ii}$: liniowy, cykliczny
   $\operatorname{Tr}(AB)=\operatorname{Tr}(BA)$, niezmienniczy na zmianę bazy.
   $\operatorname{Tr}A=\sum_a a$ (suma wartości własnych).
-- **Wyznacznik** $\det A=\prod_a a$; $\det(AB)=\det A\det B$. $\det A\ne0
-  \Leftrightarrow A$ odwracalny.
+- **Wyznacznik** $\det A=\prod_a a$; $\det(AB)=\det A\det B$. $\det A\ne0 \Leftrightarrow A$ odwracalny.
 - **Rząd** $\operatorname{rank}A$ = liczba niezerowych wartości osobliwych = wymiar
   obrazu. Dla macierzy $A$ zachodzi $\operatorname{rank}A+\dim\ker A=n$.
 
@@ -142,14 +131,16 @@ $\det M=m_{11}m_{22}-m_{12}m_{21}$.
 ### 3.10 Iloczyn tensorowy (kron)
 
 Dla macierzy $A$ ($m\times n$) i $B$ ($p\times q$) blokowe złożenie:
+
 $$A\otimes B=\begin{pmatrix}A_{11}B&\cdots&A_{1n}B\\ \vdots&&\vdots\\ A_{m1}B&\cdots&A_{mn}B\end{pmatrix},$$
+
 wymiar $mp\times nq$. Dla wektorów: $(a\otimes b)_{ip}=a_ib_p$. Dla $n$ kubitów
 $\dim=2^n$.
 
 **Konwencja kolejności (małoendianowa).** Stan $|q_{n-1}\dots q_0\rangle$ ma indeks
 $j=q_0 2^0+\dots+q_{n-1}2^{n-1}$ — **kubit 0 to najmłodszy bit**. Dlatego bramka na
 kubicie 0 (dolnym) to $U=I\otimes G$, a na kubicie 1 (górnym) to $U=G\otimes I$.
-Zawsze jawnie deklarujemy konwencję.
+Zawsze jawnie podaje się konwencję.
 
 ### 3.11 Macierze Pauliego, komutatory i antykomutatory
 
@@ -157,7 +148,7 @@ $$\sigma_x=X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
 \sigma_y=Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\quad
 \sigma_z=Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.$$
 
-Relacje (wszystkie sprawdzone rachunkiem macierzowym):
+Relacje:
 
 $$[\sigma_a,\sigma_b]=2i\sum_c\varepsilon_{abc}\sigma_c,\qquad
 \{\sigma_a,\sigma_b\}=2\delta_{ab}I,\qquad
@@ -172,8 +163,10 @@ a antykomutacja znika, bo każda $\sigma$ podniesiona do kwadratu daje $I$.
 
 Dowolny stan czysty kubitu (z dokładnością do fazy globalnej) to punkt na sferze
 jednostkowej:
+
 $$|\psi\rangle=\cos\tfrac\theta2|0\rangle+e^{i\varphi}\sin\tfrac\theta2|1\rangle,\qquad
 \vec r=(\langle X\rangle,\langle Y\rangle,\langle Z\rangle).$$
+
 Kąt $\theta$ to odchylenie od osi $Z$ („biegun $|0\rangle$”), $\varphi$ to azymut.
 Przykłady: $|0\rangle\to\vec r=(0,0,1)$; $|+\rangle\to(1,0,0)$; $|i\rangle\to(0,1,0)$.
 Dla stanu mieszanego $|\vec r|<1$, a macierz gęstości
@@ -183,24 +176,30 @@ $\rho=\tfrac12(I+\vec r\cdot\vec\sigma)$.
 
 Dla dwukubitowego stanu $|\psi\rangle\in\mathbb{C}^2\otimes\mathbb{C}^2$ istnieje
 rozkład
+
 $$|\psi\rangle=s_1|u_1\rangle|v_1\rangle+s_2|u_2\rangle|v_2\rangle,$$
+
 gdzie $s_1\ge s_2\ge0$ to **wartości osobliwe** (Schmidta) macierzy współczynników,
 a $\{|u_k\rangle\},\{|v_k\rangle\}$ to bazy ortonormalne. Stan jest **iloczynowy**
 (*product state*) wtedy i tylko wtedy, gdy tylko jedna $s_k$ jest niezerowa. Wtedy
 „nic nie jest splątane”. Jeśli obie $s_k>0$ — stan jest splątany (*entangled*);
 miarą splątania jest entropia $S=-\sum_k s_k^2\log_2 s_k^2$. Szczegóły w
-[rozdziale 09](09-splatanie-i-twierdzenie-bella.md), a tu traktujemy Schmidta jako
-ćwiczenie z algebry.
+[rozdziale 09](09-splatanie-i-twierdzenie-bella.md); rozkład Schmidta jest tu
+ćwiczeniem z algebry.
 
 ### 3.14 Bramka CNOT
 
 Kontrolowany NOT działa tak: jeśli kubit kontrolny jest w $|1\rangle$, odwraca kubit
 docelowy (X); jeśli w $|0\rangle$ — nic nie robi. Jako operator:
+
 $$\mathrm{CNOT}=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X,$$
+
 gdzie pierwszy czynnik to kubit kontrolny (**górny, kubit 1** w naszej konwencji), a
 drugi to docelowy (**kubit 0**). Zapisując w porządku $|00\rangle,|01\rangle,|10\rangle,|11\rangle$:
+
 $$\mathrm{CNOT}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.$$
-Budowę potwierdzamy numerycznie: $\text{kron}(|0\rangle\langle0|,I)+\text{kron}(|1\rangle\langle1|,X)$
+
+Iloczyn tensorowy $|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X$
 daje powyższą macierz. CNOT jest unitarny i hermitowski ($\mathrm{CNOT}^2=I$).
 
 ## 4. Przykłady rozwiązane
@@ -214,11 +213,15 @@ z $\det(M-aI)=0$, wektory własne z $(M-aI)v=0$, złożyć $D=U^\dagger MU$.
 
 **Rachunek.** Sprzężenie: $M^\dagger=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}=M$ ✓
 (przekątna rzeczywista, wyrazy poza przekątną sprzężone). Równanie charakterystyczne:
+
 $$\det(M-aI)=(2-a)(3-a)-(1-i)(1+i)=(2-a)(3-a)-2=a^2-5a+4=0,$$
+
 stąd $a_1=1$, $a_2=4$. Wektory własne:
+
 $$a_1=1:\ (M-I)v=0\Rightarrow v_1=(-1+i,\,1)/\sqrt3,\qquad
 a_2=4:\ (M-4I)v=0\Rightarrow v_2=(1-i,\,2)/\sqrt6.$$
-Sprawdzamy $M v_1=1\cdot v_1$, $M v_2=4\cdot v_2$ (numpy: `eigh` daje $\{1,4\}$) ✓.
+
+Sprawdzamy $M v_1=1\cdot v_1$, $M v_2=4\cdot v_2$ (wartości $\{1,4\}$) ✓.
 
 **Wynik:** wartości własne $\{1,4\}$; $U=[v_1\ v_2]$ diagonalizuje:
 $\operatorname{diag}(1,4)=U^\dagger MU$.
@@ -237,9 +240,11 @@ działanie przez mnożenie macierzy.
 
 **Rachunek.** $|0\rangle\langle0|=\begin{pmatrix}1&0\\0&0\end{pmatrix}$,
 $|1\rangle\langle1|=\begin{pmatrix}0&0\\0&1\end{pmatrix}$, $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$.
+
 $$\mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes\begin{pmatrix}1&0\\0&1\end{pmatrix}
 +\begin{pmatrix}0&0\\0&1\end{pmatrix}\otimes\begin{pmatrix}0&1\\1&0\end{pmatrix}
 =\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.$$
+
 Działanie: $\mathrm{CNOT}|10\rangle=|11\rangle$, $\mathrm{CNOT}|11\rangle=|10\rangle$
 (kubit 0 się odwraca, bo kontrolny $=1$); $\mathrm{CNOT}|00\rangle=|00\rangle$,
 $\mathrm{CNOT}|01\rangle=|01\rangle$ (kontrolny $=0$, nic się nie zmienia). Kwadrat:
@@ -258,9 +263,11 @@ traktowana jako hamiltonian), $\hbar=1$, $t=\pi/4$.
 **Metoda:** $H^2=I\Rightarrow e^{-iHt}=\cos(t)I-i\sin(t)H$.
 
 **Rachunek:** $\cos(\pi/4)=\sin(\pi/4)=1/\sqrt2$,
+
 $$e^{-iH\pi/4}=\tfrac{1}{\sqrt2}I-\tfrac{i}{\sqrt2}H
 =\begin{pmatrix}\frac{1}{\sqrt2}-\frac{i}{2}&-\frac{i}{2}\\-\frac{i}{2}&\frac{1}{\sqrt2}+\frac{i}{2}\end{pmatrix}.$$
-Numerycznie: przekątna $0{,}7071\mp0{,}5i$, pozadiagonalne $-0{,}5i$ ✓.
+
+Wartości: przekątna $0{,}7071\mp0{,}5i$, pozadiagonalne $-0{,}5i$ ✓.
 
 **Wynik:** $e^{-iH\pi/4}=\begin{pmatrix}0{,}7071-0{,}5i&-0{,}5i\\-0{,}5i&0{,}7071+0{,}5i\end{pmatrix}$.
 
@@ -326,11 +333,11 @@ $S=-\sum_k s_k^2\log_2 s_k^2$. (c) Rozstrzygnij, dla jakich $\alpha$ stan jest i
   znormalizowane wektory.
 - **Z-02.2.** $U=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$; licz $U^\dagger XU$.
 - **Z-02.3.** $\det(M-aI)=a^2-5a+4$; wektory własne z $(M-aI)v=0$.
-- **Z-02.4.** Użyj $Z^2=I$ i rozwinięcia $e^{-i\theta Z/2}$; w (c) pamiętaj o fazie
+- **Z-02.4.** Użyj $Z^2=I$ i rozwinięcia $e^{-i\theta Z/2}$; w (c) uwzględnij fazę
   $e^{\mp i\pi/4}$.
 - **Z-02.5.** Ślad = suma na przekątnej; wyznacznik rozwinięciem; rząd z eliminacji
   Gaussa lub `np.linalg.matrix_rank`.
-- **Z-02.6.** Kron blokowy; pamiętaj o małoendianowej kolejności baz.
+- **Z-02.6.** Kron blokowy; zachowaj małoendianową kolejności baz.
 - **Z-02.7.** Mnożenie macierzy $2\times2$; $\varepsilon_{XYZ}=+1$ cyklicznie.
 - **Z-02.8.** [★] Macierz współczynników
   $\begin{pmatrix}\cos\alpha&0\\0&\sin\alpha\end{pmatrix}$;
@@ -338,14 +345,12 @@ $S=-\sum_k s_k^2\log_2 s_k^2$. (c) Rozstrzygnij, dla jakich $\alpha$ stan jest i
 
 ## 8. Co dalej
 
-Algebra liniowa jest podstawą wszystkiego dalej: statystyka pomiarów w rozdziale
-[03](03-rachunek-prawdopodobienstwa-i-statystyka.md), równanie Schrödingera w
-[04](04-elementy-analizy-matematycznej.md) i pełna mechanika kwantowa w
-[05](05-podstawy-mechaniki-kwantowej.md). Rozkład Schmidta rozwinie
-[rozdział 09](09-splatanie-i-twierdzenie-bella.md). Rozwiąż zadania i porównaj z
-[rozwiązaniami](../zadania/rozwiazania/rozwiazania-02.md); zadania łączące rozdziały
-01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
+Algebra liniowa jest podstawą dalszych rozdziałów: statystyki pomiarów w rozdziale
+[03](03-rachunek-prawdopodobienstwa-i-statystyka.md), równania Schrödingera w
+[04](04-elementy-analizy-matematycznej.md) i mechaniki kwantowej w
+[05](05-podstawy-mechaniki-kwantowej.md). Rozkład Schmidta rozwija
+[rozdział 09](09-splatanie-i-twierdzenie-bella.md). Rozwiązania zadań są w
+[rozwiazania-02.md](../zadania/rozwiazania/rozwiazania-02.md); zadania łączące
+rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
 
-**Kod.** Wszystkie rachunki tego rozdziału odtwarzają się w numpy: `np.kron`,
-`M.conj().T`, `np.linalg.eigh`, `np.linalg.det`, `np.linalg.matrix_rank`. Konwencja
-kubitów wg [konwencji](../docs/03-konwencje-i-notacja.md).
+Konwencja kubitów wg [konwencji](../docs/03-konwencje-i-notacja.md).

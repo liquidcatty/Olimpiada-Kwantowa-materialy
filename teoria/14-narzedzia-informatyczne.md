@@ -1,20 +1,18 @@
 # 14. Narzędzia informatyczne
 
-> **Warsztat źródłowy:** „Narzędzia informatyczne” (warsztat organizatora).
-> **Czas nauki:** ~4 h teorii + ~5 h zadań.
-> **Wymagana wiedza wstępna:** obsługa komputera; notacja i odsyłacze w [konwencjach](../docs/03-konwencje-i-notacja.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Etap I jest zdalny i pisemny: rozwiązania wysyła się przez system (PDF, `.ipynb`, `.py`,
-rękopisy jako JPEG). Co roku część uczestników traci punkty nie na fizyce, lecz na rzemiośle:
-nieczytelny skan, brakujący plik `.py`, zniknięte wyniki notebooka, dane osobowe w pracy
-(prace są anonimowe!), brak potwierdzenia wysyłki przed terminem. Ten rozdział to
-„narzędziownia”: terminal, git, Markdown/LaTeX, PDF, Jupyter, środowiska wirtualne, praca
-zdalna (SSH, SLURM), bezpieczeństwo i zasady używania narzędzi symbolicznych.
+Rozdział obejmuje narzędzia informatyczne dla Etapu I (praca zdalna i pisemna: PDF, `.ipynb`,
+`.py`, skan JPEG): terminal (PowerShell i bash), git i kontrolę wersji, Markdown i LaTeX oraz PDF
+(pandoc), Jupyter i eksport notebooków, środowiska wirtualne (`venv`) i pliki `requirements.txt`.
+Opisuje pracę zdalną na klastrze HPC (SSH, SCP, rsync, system kolejek SLURM), bezpieczeństwo
+haseł i kluczy, anonimowość prac (RODO) oraz zasady używania AI i kalkulatorów symbolicznych
+(sympy, Wolfram Alpha).
 
-> **Ponad program:** to jedyne miejsce w programie, gdzie pojawia się praca na klastrze
-> (HPC) i system kolejek SLURM — przydatne w finałowych zadaniach symulacyjnych i w nauce.
+Materiał dotyczy zadań Z-14 (polecenia terminala, git, LaTeX/PDF, notebook i środowisko, SLURM,
+skan i oddanie pracy) i wiąże się z oprogramowaniem kwantowym (rozdział 15) oraz analizą danych
+(rozdział 16).
 
 ## 2. Najważniejsze definicje
 
@@ -75,7 +73,7 @@ git config --global user.email "ja@example.com"
 git config --global core.autocrlf true   # Windows: końce linii
 ```
 
-`.gitignore` (wzorzec z tego repozytorium): `__pycache__/`, `*.py[cod]`, `.venv/`,
+`.gitignore`: `__pycache__/`, `*.py[cod]`, `.venv/`,
 `*.ipynb_checkpoints/`, `.vscode/`, `*.tmp`. Jeśli przez pomyłkę zacommitowałeś hasło:
 `git rm --cached plik` i **natychmiast zmień hasło** (historia bywa publiczna). Praca
 zespołowa z opiekunem: gałąź na każde zadanie + pull request, konflikty rozwiązuje się ręcznie.
@@ -151,7 +149,7 @@ python -m pip install -r kod/requirements.txt # odtworzenie u kogoś innego
 deactivate
 ```
 
-Na Linuksie/macOS: `source .venv/bin/activate`. Warto znać `conda`, `uv` (szybki instalator)
+Na Linuksie/macOS: `source .venv/bin/activate`. Przydatne narzędzia: `conda`, `uv` (szybki instalator)
 i `pipx`. Zawsze używaj `python -m pip` — instaluje w to samo środowisko, z którego uruchamiasz
 kod. Kontrola: `python -c "import numpy; print(numpy.__version__)"`.
 
@@ -313,7 +311,7 @@ nie może przyznać punktów za metodę obliczeniową.
 - **Oprogramowanie kwantowe** — [rozdział 15](15-oprogramowanie-kwantowe.md): Qiskit, Cirq, PennyLane i wysyłanie obwodów do chmury.
 - **Korekcja i mitygacja błędów** — [rozdział 13](13-korekcja-i-mitygacja-bledow.md): macierz kalibracji i ZNE, które liczy się w tych samych narzędziach.
 - **Analiza danych** — [rozdział 16](16-analiza-danych-i-obliczenia-naukowe.md): pandas, dopasowania, bootstrap.
-- Ćwiczenia wykonuj wprost w terminalu repozytorium: `python kod/verify_all.py` uruchamia wszystkie skrypty i pokazuje tabelę `OK`/`FAIL`.
+- `python kod/verify_all.py` uruchamia wszystkie skrypty i pokazuje tabelę `OK`/`FAIL`.
 - Środowisko warsztatowe: Python 3.11, numpy 2.4.6, sympy 1.14.0; `matplotlib` i Jupyter może wymagać doinstalowania.
 
 

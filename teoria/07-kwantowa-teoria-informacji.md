@@ -1,21 +1,16 @@
 # 07. Kwantowa teoria informacji
 
-> **Warsztat źródłowy:** „Kwantowa teoria informacji” (Krzysztof Pawłowski).
-> **Czas nauki:** ~6 h teorii + ~7 h zadań.
-> **Wymagana wiedza wstępna:** [02 — algebra liniowa](02-algebra-liniowa.md), [03 — rachunek prawdopodobieństwa](03-rachunek-prawdopodobienstwa-i-statystyka.md), [05 — podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md), [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Informacja kwantowa zachowuje się inaczej niż klasyczna: nie da się jej skopiować, nie da się
-usunąć, a dwa nieortogonalne stany są nierozróżnialne pojedynczym pomiarem. To nie są ciekawostki
-— to **fundament bezpieczeństwa kryptografii kwantowej** (rozdział 10), źródło przewagi algorytmów
-(rozdział 08) i przyczyna, dlaczego komputery kwantowe trzeba chronić przed dekoherencją
-(rozdziały 13 i 17).
+Rozdział opisuje różnice między informacją klasyczną a kwantową: zakaz klonowania, zakaz usuwania
+oraz nierozróżnialność nieortogonalnych stanów pojedynczym pomiarem. Wprowadza miary ilościowe —
+entropię von Neumanna, entropię Shannona, dystans śladowy, wierność (fidelity), granicę Helstroma
+i ograniczenie Holevo — oraz kanały kwantowe w postaci Krausa.
 
-Rozdział porządkuje pojęcia ilościowe: **entropię von Neumanna**, **dystans śladowy**, **wierność**
-(fidelity) i **ograniczenie Holevo**. Pokazuje, ile informacji klasycznej można wycisnąć z kubitów
-i dlaczego nie „za darmo” (supergęste kodowanie wymaga wcześniej współdzielonego splątania).
-Wszystkie te narzędzia wracają przy metrologii (rozdział 11) i przy granicach obliczeń (rozdział 19).
+Omawia supergęste kodowanie (wymagające wcześniej współdzielonego splątania), teleportację,
+kryterium PPT i dekoherencję. Narzędzia te są wykorzystywane w kryptografii (rozdział 10),
+algorytmach (rozdział 08), metrologii (rozdział 11) i przy granicach obliczeń (rozdział 19).
 
 ## 2. Najważniejsze definicje
 
@@ -27,8 +22,7 @@ Wszystkie te narzędzia wracają przy metrologii (rozdział 11) i przy granicach
 - **Kanał kwantowy (quantum channel):** odwzorowanie CPTP (completely positive, trace-preserving),
   $\rho\mapsto\mathcal{E}(\rho)$; zapis Krausa $\mathcal{E}(\rho)=\sum_k K_k\rho K_k^\dagger$,
   $\sum_k K_k^\dagger K_k=I$.
-- **Dystans śladowy (trace distance):** $D(\rho,\sigma)=\frac12\mathrm{Tr}\lvert\rho-\sigma\rvert
-  =\frac12\sum_i\lvert\lambda_i\rvert$, gdzie $\lambda_i$ to wartości własne $\rho-\sigma$.
+- **Dystans śladowy (trace distance):** $D(\rho,\sigma)=\frac12\mathrm{Tr}\lvert\rho-\sigma\rvert =\frac12\sum_i\lvert\lambda_i\rvert$, gdzie $\lambda_i$ to wartości własne $\rho-\sigma$.
 - **Wierność (fidelity):** $F(\rho,\sigma)=\big(\mathrm{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\big)^2$.
 - **POMV (POVM):** zbiór $\{E_i\}$, $E_i\succeq0$, $\sum_i E_i=I$; $P(i)=\mathrm{Tr}(E_i\rho)$.
 - **Dekorherencja (decoherence):** utrata koherencji (wyzerowanie elementów pozadiagonalnych $\rho$)
@@ -42,8 +36,7 @@ Bit ma dwa *stany pewne*; kubit dopuszcza **superpozycję** $\alpha\lvert0\rangl
 Pozornie kubit „mieści nieskończenie wiele informacji” (para kątów $(\theta,\varphi)$ na sferze
 Blocha), ale **odczyt** niszczy superpozycję: pomiar w bazie $\{\lvert0\rangle,\lvert1\rangle\}$
 zwraca tylko jeden bit. Faza $\varphi$ staje się dostępna dopiero przez **interferencję** (zestawienie
-z inną operacją), a nie przez pomiar w ustalonej bazie. To rozróżnienie jest źródłem większości
-nieporozumień i sprawdzianem na Etapie II.
+z inną operacją), a nie przez pomiar w ustalonej bazie.
 
 ### 3.2 Twierdzenie o zakazie klonowania (no-cloning)
 
@@ -55,10 +48,11 @@ dla wszystkich $\lvert\psi\rangle$.
 Wtedy dla stanów bazowych $U\lvert0\rangle\lvert0\rangle=\lvert00\rangle$ oraz
 $U\lvert1\rangle\lvert0\rangle=\lvert11\rangle$. Z liniowości $U$ dla superpozycji
 $\lvert+\rangle=\frac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)$ dostajemy
+
 $$U\lvert+\rangle\lvert0\rangle=\frac{1}{\sqrt2}\big(U\lvert00\rangle+U\lvert10\rangle\big)
 =\frac{1}{\sqrt2}\big(\lvert00\rangle+\lvert11\rangle\big)=\lvert\Phi^+\rangle.$$
-Ale klonowanie wymagałoby $U\lvert+\rangle\lvert0\rangle=\lvert+\rangle\lvert+\rangle
-=\frac{1}{2}(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle)$, co nie jest równe
+
+Ale klonowanie wymagałoby $U\lvert+\rangle\lvert0\rangle=\lvert+\rangle\lvert+\rangle =\frac{1}{2}(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle)$, co nie jest równe
 $\lvert\Phi^+\rangle$ (inne amplitudy). Sprzeczność kończy dowód. $\blacksquare$
 
 **Wniosek.** Klonować można tylko stany **wzajemnie ortogonalne** (np. $\lvert0\rangle,\lvert1\rangle$) —
@@ -74,7 +68,9 @@ dla $\lvert\phi\rangle$ mielibyśmy $E_0\lvert\psi\rangle=\lvert\psi\rangle$ i
 $E_0\lvert\phi\rangle=\lvert\phi\rangle$, więc oba leżałyby w jednej podprzestrzeni własnej —
 musiałyby być ortogonalne. **Optymalny** błąd dla dwóch stanów o równych prawdopodobieństwach
 (granica Helstroma) to
+
 $$p_{\text{błąd}}=\tfrac12\Big(1-\sqrt{1-\lvert\langle\psi\vert\phi\rangle\rvert^2}\Big).$$
+
 Dla $\lvert0\rangle$ i $\lvert+\rangle$: $\lvert\langle0\vert+\rangle\rvert^2=\frac12$, stąd
 $p_{\text{błąd}}=\frac12(1-\frac{1}{\sqrt2})\approx0{,}146$, czyli rozpoznajemy poprawnie w $\approx85{,}4\%$.
 
@@ -106,7 +102,9 @@ $S(\frac12 I)=1$, $H(0{,}5)=1$, $H(0{,}1)\approx0{,}469$ bit.
 
 Ewolucja otwartego układu nie jest unitarna — opisuje ją kanał CPTP. Kanoniczny przykład:
 **kanał depolaryzujący** (*depolarizing channel*)
+
 $$\mathcal{E}(\rho)=(1-p)\,\rho+p\,\frac{I}{2},$$
+
 który z prawdopodobieństwem $p$ zamienia stan na maksymalnie mieszany. Inne: bit-flip ($X\rho X$),
 phase-flip ($Z\rho Z$), kanał amplitudowy (relaksacja). Pełny formalizm (tw. Krausa, reprezentacja
 Stinespringa, ślad częściowy) rozwija [rozdział 17](17-ponad-program-macierze-gestosci-i-kanaly.md).
@@ -125,7 +123,9 @@ $F(\rho,\sigma)=\big(\mathrm{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\big)^2$; dla s
 $F=\lvert\langle\psi\vert\phi\rangle\rvert^2$. Własności: $0\le F\le1$, $F(\rho,\sigma)=1\iff\rho=\sigma$,
 symetria $F(\rho,\sigma)=F(\sigma,\rho)$, wklęsłość w każdym argumencie. Nierówność
 Fuchsa–van de Graafa wiąże oba pojęcia:
+
 $$1-\sqrt{F(\rho,\sigma)}\le D(\rho,\sigma)\le\sqrt{1-F(\rho,\sigma)}.$$
+
 Dla $\lvert0\rangle,\lvert+\rangle$: $F=\frac12$, więc $D\in[0{,}293,\,0{,}707]$ — i faktycznie
 $D=0{,}707$, czyli górne ograniczenie jest tu osiągnięte (co zachodzi dla pary stanów czystych).
 
@@ -142,7 +142,9 @@ dostajemy $F_Q=1$ (granica śrutowa), a dla $N$ splątanych kubitów w stanie GH
 ### 3.10 Ograniczenie Holevo
 
 Dla zespołu stanów $\{p_i,\rho_i\}$ dostępna informacja klasyczna nie przekracza **wielkości Holevo**
+
 $$\chi=S\Big(\sum_i p_i\rho_i\Big)-\sum_i p_i\,S(\rho_i)\ \le\ S(\rho)\ \le\ \log_2 d.$$
+
 Dla jednego kubita ($d=2$) zawsze $\chi\le1$ bit. Interpretacja: $n$ kubitów przenosi **co najwyżej
 $n$ bitów** informacji klasycznej, niezależnie od kodowania. Dla zespołu BB84
 ($\tfrac14$ na każdy z $\lvert0\rangle,\lvert1\rangle,\lvert+\rangle,\lvert-\rangle$) średni stan
@@ -152,7 +154,9 @@ to $\tfrac12 I$, więc $\chi=1-0=1$ bit — nasycenie.
 
 Z **wcześniej współdzielonym** splątaniem $\lvert\Phi^+\rangle$ nadajemy i wysyłamy tylko **jeden**
 kubit, a przekazujemy **dwa** bity. Alicja wykonuje jedną z czterech operacji na swoim kubicie:
+
 $$I\to\lvert\Phi^+\rangle,\quad X\to\lvert\Psi^+\rangle,\quad Z\to\lvert\Phi^-\rangle,\quad iY\to\lvert\Psi^-\rangle.$$
+
 Następnie wysyła swój kubit do Boba, który dekoduje obwodem $\mathrm{CNOT}$ (kontrola = kubit Boba)
 i $H$ na kubicie Boba, po czym mierzy oba. **Nie łamie** to ograniczenia Holevo — 2 bity wymagają
 2 „nośników”: wysłanego kubita i kubita już posiadanego.
@@ -194,13 +198,16 @@ narzędziami, które to ilościowo opisują.
 ### Przykład 1: wielkość Holevo dla zespołu BB84
 
 **Dane.** Zespół czterech stanów z jednakowymi prawdopodobieństwami $p_i=\tfrac14$:
+
 $$\rho_1=\lvert0\rangle\langle0\rvert,\ \rho_2=\lvert1\rangle\langle1\rvert,\
 \rho_3=\lvert+\rangle\langle+\rvert,\ \rho_4=\lvert-\rangle\langle-\rvert.$$
 
 **Metoda.** $\chi=S(\bar\rho)-\sum_i p_i S(\rho_i)$, gdzie $\bar\rho=\sum_i p_i\rho_i$.
 
 **Rachunek.** Każdy $\rho_i$ jest stanem czystym, więc $S(\rho_i)=0$. Średni stan:
+
 $$\bar\rho=\tfrac14\Big(\lvert0\rangle\langle0\rvert+\lvert1\rangle\langle1\rvert+\lvert+\rangle\langle+\rvert+\lvert-\rangle\langle-\rvert\Big).$$
+
 Ponieważ $\lvert+\rangle\langle+\rvert+\lvert-\rangle\langle-\rvert=I$, dostajemy
 $\bar\rho=\tfrac14\big((\lvert0\rangle\langle0\rvert+\lvert1\rangle\langle1\rvert)+I\big)=\tfrac12 I$.
 Entropia: $S(\tfrac12 I)=-\big(\tfrac12\log_2\tfrac12+\tfrac12\log_2\tfrac12\big)=1$ bit. Zatem
@@ -221,10 +228,14 @@ nadaje 1 bit na kubit (a dodatkowo połowę odrzucamy przy siftingu).
 Bob dekoduje: $\mathrm{CNOT}$ (kontrola $q_1$, cel $q_0$), potem $H$ na $q_1$, potem pomiar obu.
 
 **Rachunek.** Stany po operacji Alicji (działanie $U\otimes I$ na $\lvert\Phi^+\rangle$):
+
 $$I:\ \lvert\Phi^+\rangle,\quad X:\ \lvert\Psi^+\rangle,\quad Z:\ \lvert\Phi^-\rangle,\quad iY:\ \lvert\Psi^-\rangle.$$
-Dekodowanie (sprawdzone rachunkiem na macierzach $4\times4$): każdy stan Bella przechodzi w stan bazowy:
+
+Dekodowanie: każdy stan Bella przechodzi w stan bazowy:
+
 $$\lvert\Phi^+\rangle\to\lvert00\rangle,\ \lvert\Psi^+\rangle\to\lvert01\rangle,\
 \lvert\Phi^-\rangle\to\lvert10\rangle,\ \lvert\Psi^-\rangle\to\lvert11\rangle.$$
+
 Np. dla $I$: $\mathrm{CNOT}\lvert\Phi^+\rangle=\frac{1}{\sqrt2}(\lvert00\rangle+\lvert10\rangle)$;
 następnie $H$ na $q_1$ daje $(H\otimes I)\,\frac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)\lvert0\rangle=\lvert00\rangle$.
 
@@ -304,6 +315,3 @@ mierzonego w bazie $X$.
 - Pełne rozwiązania: [zadania/rozwiazania/rozwiazania-07.md](../zadania/rozwiazania/rozwiazania-07.md).
 - Praca domowa: [PD-2](../praca-domowa/praca-domowa-02.md).
 
-> **Weryfikacja numeryczna.** Rachunki rozdziału (średni stan BB84, $S$, $\chi$, granica Helstroma, $D$, $F$
-> oraz 4 stany supergęstego kodowania) policzono w NumPy: $\chi$ dla BB84 daje `0.9999999999999999`,
-> a $p_{\text{poprawne}}$ dla $\lvert0\rangle,\lvert+\rangle$ — `0.853553`.

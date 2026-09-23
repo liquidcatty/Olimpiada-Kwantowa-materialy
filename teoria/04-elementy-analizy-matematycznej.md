@@ -1,28 +1,16 @@
 # 04. Elementy analizy matematycznej
 
-> **Warsztat źródłowy:** „Elementy analizy matematycznej” (Tomasz Sowiński).
-> **Czas nauki:** ~4 h teorii + ~4 h zadań.
-> **Wymagana wiedza wstępna:** liczby zespolone ([01](01-liczby-zespolone.md)) i
-> podstawy rachunku prawdopodobieństwa ([03](03-rachunek-prawdopodobienstwa-i-statystyka.md)).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Równanie Schrödingera to **równanie różniczkowe**, a jego rozwiązania to funkcje
-falowe. Bez granic, pochodnych, całek i szeregów nie da się nawet sformułować
-podstaw mechaniki kwantowej, które są tematem rozdziału [05](05-podstawy-mechaniki-kwantowej.md).
-Zadanie P1 (cząstka w nieskończonej studni potencjału) rozwiązuje się właśnie
-rozdzielaniem zmiennych i warunkami brzegowymi — dokładnie tym, co tu ćwiczymy.
-
-Rozdział prowadzi od narzędzi klasycznych do pojęć wprost kwantowych:
-
-1. **pochodna i całka** — znaczenie fizyczne (prędkość, praca), techniki rachunku
-   (przez części, podstawienie);
-2. **szeregi i równania różniczkowe** — Taylora, liniowe I i II rzędu, oscylator,
-   obwód RLC, liczby zespolone w drganiach;
-3. **analiza Fouriera** — szereg, transformata, delta Diraca, twierdzenie Parsevala;
-4. **narzędzia kwantowe** — całka Gaussa, reprezentacja pędowa, operator
-   $\hat p=-i\hbar\,d/dx$, paczka falowa i jej rozmywanie, separacja zmiennych w
-   równaniu Schrödingera.
+Rozdział obejmuje granice, pochodne i całki (przez części, przez podstawienie) oraz
+szeregi Taylora. Omawia równania różniczkowe liniowe I i II rzędu, oscylator
+klasyczny, obwód RLC i liczby zespolone w drganiach. Obejmuje też analizę Fouriera
+(szereg, transformata, delta Diraca, twierdzenie Parsevala) oraz narzędzia kwantowe:
+całkę Gaussa, reprezentację pędową, operator $\hat p=-i\hbar\,d/dx$, paczkę falową
+i separację zmiennych w równaniu Schrödingera (rozdział
+[05](05-podstawy-mechaniki-kwantowej.md)). Materiał dotyczy zadania P1 (cząstka
+w studni potencjału).
 
 ## 2. Najważniejsze definicje
 
@@ -33,8 +21,7 @@ Rozdział prowadzi od narzędzi klasycznych do pojęć wprost kwantowych:
 - **Równanie różniczkowe liniowe** rzędu $n$: kombinacja $y,y',\dots,y^{(n)}$ równa
   funkcji znanej; rząd = najwyższa pochodna.
 - **Szereg Fouriera**: rozkład funkcji okresowej na $\cos$ i $\sin$.
-- **Transformata Fouriera** (*Fourier transform*): $\mathcal{F}[f](\omega)
-  =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$.
+- **Transformata Fouriera** (*Fourier transform*): $\mathcal{F}[f](\omega) =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$.
 - **Delta Diraca** $\delta(x)$: $\int_{-\infty}^{\infty}\delta(x)f(x)dx=f(0)$.
 - **Wartość oczekiwana operatora** $\langle A\rangle=\int\psi^*(x)\,A\,\psi(x)\,dx$.
 
@@ -44,7 +31,9 @@ Rozdział prowadzi od narzędzi klasycznych do pojęć wprost kwantowych:
 
 Granica jest podstawą pochodnych i całek. Kluczowa granica (z niej wynika pochodna
 sinusa):
+
 $$\lim_{x\to0}\frac{\sin x}{x}=1.$$
+
 Pochodna mierzy **tempo zmiany**: jeśli $x(t)$ to położenie, to $x'(t)=v(t)$
 (prędkość), a $x''(t)=a(t)$ (przyspieszenie). Reguły: iloczynu
 $(fg)'=f'g+fg'$, ilorazu $\left(\frac fg\right)'=\frac{f'g-fg'}{g^2}$,
@@ -66,13 +55,18 @@ $\int f\,dx$ bywa pracą ($\int F\,dx$), ładunkiem ($\int\rho\,dV$) itd.
 ### 3.3 Szereg Taylora
 
 Rozwijamy funkcje wokół $x_0$:
+
 $$f(x)=\sum_{n\ge0}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.$$
-Wzory, które trzeba znać na pamięć:
+
+Wzory:
+
 $$e^{x}=\sum_{n\ge0}\frac{x^n}{n!},\quad
 \sin x=\sum_{n\ge0}\frac{(-1)^nx^{2n+1}}{(2n+1)!},\quad
 \cos x=\sum_{n\ge0}\frac{(-1)^nx^{2n}}{(2n)!},$$
+
 $$(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}{2}x^2+\dots,\qquad
 \ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$$
+
 Rozwój $e^{i\theta}$ daje wzór Eulera: $e^{i\theta}=\cos\theta+i\sin\theta$.
 
 ### 3.4 Równania różniczkowe liniowe I i II rzędu
@@ -92,7 +86,9 @@ $y=A\cos\omega t+B\sin\omega t$.
 
 Równanie $m\ddot x=-kx$, czyli $\ddot x=-\omega^2x$ z $\omega=\sqrt{k/m}$; rozwiązanie
 $x(t)=A\cos(\omega t+\varphi)$. Energia jest zachowana:
+
 $$E=\tfrac12m\dot x^2+\tfrac12kx^2=\tfrac12m\omega^2A^2=\text{const}.$$
+
 Okres $T=2\pi/\omega=2\pi\sqrt{m/k}$ nie zależy od amplitudy. To obraz klasyczny, do
 którego w granicy dużych liczb kwantowych wraca oscylator harmoniczny (rozdz. 05).
 
@@ -100,7 +96,9 @@ którego w granicy dużych liczb kwantowych wraca oscylator harmoniczny (rozdz. 
 
 Obwód szeregowy RLC opisuje równanie $L\ddot q+R\dot q+\frac1Cq=0$. Podstawienie
 $q=e^{rt}$ daje $Lr^2+Rr+\frac1C=0$, skąd
+
 $$\omega_0=\frac{1}{\sqrt{LC}},\qquad \gamma=\frac{R}{2L}.$$
+
 Przy $R<2\sqrt{L/C}$ (niedotłumiony) dostajemy drgania z $\omega=\sqrt{\omega_0^2-\gamma^2}$,
 zanikające jak $e^{-\gamma t}$. Zespolony zapis $e^{i\omega t}$ zamienia różniczkowanie
 na mnożenie przez $i\omega$ — to „sztuczka” używana też w kwantowej ewolucji
@@ -109,10 +107,13 @@ $e^{-iHt/\hbar}$.
 ### 3.7 Szereg Fouriera
 
 Funkcję okresową o okresie $T$ rozkładamy na składowe harmoniczne:
+
 $$f(t)=\frac{a_0}{2}+\sum_{n\ge1}\bigl(a_n\cos(n\omega t)+b_n\sin(n\omega t)\bigr),\quad
 \omega=\frac{2\pi}{T},$$
+
 $$a_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(n\omega t)\,dt,\qquad
 b_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\sin(n\omega t)\,dt.$$
+
 Dla fali prostokątnej (nieparzystej) zostają tylko nieparzyste sinusy o
 amplitudach $b_n=\frac{4}{n\pi}$, $n=1,3,5,\dots$; numerycznie
 $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
@@ -120,6 +121,7 @@ $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
 ### 3.8 Transformata Fouriera, delta Diraca, Parseval
 
 Dla funkcji nieokresowej:
+
 $$F(\omega)=\mathcal{F}[f](\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt,\qquad
 f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega.$$
 
@@ -134,8 +136,10 @@ f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega.$
 ### 3.9 Całka Gaussa
 
 Podstawowa całka i jej uogólnienie:
+
 $$\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt\pi\approx1{,}7725,\qquad
 \int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\frac\pi a}.$$
+
 Pochodna po $a$ daje momenty, np. $\int x^2e^{-ax^2}dx=\frac{1}{2a}\sqrt{\frac\pi a}$.
 Gaussowskie funkcje falowe (stan podstawowy oscylatora, paczka minimalna) są
 całkowalne właśnie dzięki tym wzorom.
@@ -143,9 +147,13 @@ całkowalne właśnie dzięki tym wzorom.
 ### 3.10 Reprezentacja pędowa i operator $\hat p$
 
 W reprezentacji położenia operator pędu to **pochodna**:
+
 $$\hat p=-i\hbar\frac{d}{dx}.$$
+
 Funkcja falowa w reprezentacji pędowej to transformata Fouriera funkcji położeniowej:
+
 $$\tilde\psi(p)=\frac{1}{\sqrt{2\pi\hbar}}\int e^{-ipx/\hbar}\psi(x)\,dx.$$
+
 Operator pędu jest hermitowski (całkowanie przez części + znikanie na brzegach), a
 jego wartości oczekiwane liczymy ze wzoru
 $\langle\hat p\rangle=\int\psi^*(-i\hbar\partial_x)\psi\,dx$.
@@ -153,19 +161,25 @@ $\langle\hat p\rangle=\int\psi^*(-i\hbar\partial_x)\psi\,dx$.
 ### 3.11 Paczka falowa i jej rozmywanie
 
 **Paczka gaussowska** minimalnej nieoznaczoności:
+
 $$\psi(x)=\frac{1}{(\pi a^2)^{1/4}}e^{-x^2/(2a^2)},\qquad
 \Delta x=\frac{a}{\sqrt2},\qquad \Delta p=\frac{\hbar}{a\sqrt2},\qquad
 \Delta x\,\Delta p=\frac{\hbar}{2}.$$
+
 To stan nasycający zasadę nieoznaczoności. W czasie paczka **rozmywa się** (dyspersja),
 bo składowe o różnych pędach biegną z różnymi prędkościami:
+
 $$\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.$$
+
 Dla elektronu i $\sigma_0=1$ nm: po $t=1$ ps szerokość rośnie do $\approx57{,}9$ nm —
 paczka „rozpływa się” w skali pikosekund.
 
 ### 3.12 Równanie Schrödingera z rozdzieleniem zmiennych
 
 Stacjonarne równanie Schrödingera w 1D:
+
 $$-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).$$
+
 Gdy $V(x)$ rozdziela się na sumę części zależnych od osobnych współrzędnych,
 szukamy $\psi(x,y,z)=X(x)Y(y)Z(z)$; podstawienie dzieli równanie na niezależne
 problemy jednowymiarowe, a całkowita energia jest sumą.
@@ -183,10 +197,13 @@ $\psi_n(x)=\sqrt{\tfrac2L}\sin\frac{n\pi x}{L}$ i $E_n=\frac{n^2\pi^2\hbar^2}{2m
 $(1+x)^{1/2}=1+\frac12x-\frac18x^2+\dots$
 
 **Rachunek:**
+
 $$\sin(0{,}1)=0{,}1-\frac{0{,}1^3}{6}+\frac{0{,}1^5}{120}-\dots
 =0{,}1-0{,}0001667+0{,}0000000833\approx0{,}0998333,$$
+
 $$\sqrt{1{,}02}=(1+0{,}02)^{1/2}=1+\tfrac12(0{,}02)-\tfrac18(0{,}02)^2
 =1+0{,}01-0{,}00005=1{,}00995.$$
+
 Wartości dokładne: $\sin0{,}1=0{,}09983342$, $\sqrt{1{,}02}=1{,}00995049$ — zgodność
 do $\approx10^{-7}$.
 
@@ -235,7 +252,7 @@ nieoznaczoności Heisenberga.
 
 1. **Opuszczanie stałej całkowania.** $\int f'=f+C$; bez stałej rozwiązanie równania
    różniczkowego jest niepełne.
-2. **Mylenie mnożenia przez pochodną.** $(fg)'\ne f'g'$; pamiętaj o regule iloczynu.
+2. **Mylenie mnożenia przez pochodną.** $(fg)'\ne f'g'$; zastosuj regułę iloczynu.
 3. **Złe rozwijanie wokół punktu.** Taylor rozwija wokół konkretnego $x_0$; dla
    $x\approx0$ licz na $0$, nie na $1$.
 4. **Zapominanie o warunkach brzegowych.** To one „kwantyzują” energie (P1); bez nich
@@ -291,21 +308,17 @@ dlaczego paczka się rozmywa.
   (c) popatrz na $T=2\pi\sqrt{m/k}$.
 - **Z-04.6.** (a) $b_n=\frac{4}{n\pi}$ dla nieparzystych; (b) $\sum_{odd}1/n^2=\pi^2/8$;
   (c) skorzystaj z wzoru Gauss $\to$ Gauss.
-- **Z-04.7.** (a) całka Gaussa; (b) $\int e^{-x^2/a^2}dx=a\sqrt\pi$; (c) pamiętaj
+- **Z-04.7.** (a) całka Gaussa; (b) $\int e^{-x^2/a^2}dx=a\sqrt\pi$; (c) uwzględnij
   $\Delta x=a/\sqrt2$, $\Delta p=\hbar/(a\sqrt2)$.
 - **Z-04.8.** [★] Wzór $\sigma(t)=\sigma_0\sqrt{1+(\hbar t/2m\sigma_0^2)^2}$;
   podstaw $\sigma_0=1$ nm, $m=m_e$.
 
 ## 8. Co dalej
 
-Te narzędzia są wprost potrzebne w rozdziale
+Te narzędzia są potrzebne w rozdziale
 [05. Podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md): rozwiązanie
 studni potencjału (P1), oscylatora i paczek falowych. Statystykę pomiarów rozwija
 rozdział [03](03-rachunek-prawdopodobienstwa-i-statystyka.md), a obwody i sygnały —
-rozdział 14 (narzędzia informatyczne). Rozwiąż zadania i porównaj z
-[rozwiązaniami](../zadania/rozwiazania/rozwiazania-04.md); zadania łączące rozdziały
-01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
-
-**Kod.** Całki i transformaty sprawdzamy numerycznie (`np.trapz`, dyskretna
-transformata Fouriera `np.fft.fft`), a stałe fizyczne trzymamy wprost w SI;
-`matplotlib` nie jest wymagany.
+rozdział 14 (narzędzia informatyczne). Rozwiązania zadań są w
+[rozwiazania-04.md](../zadania/rozwiazania/rozwiazania-04.md); zadania łączące
+rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).

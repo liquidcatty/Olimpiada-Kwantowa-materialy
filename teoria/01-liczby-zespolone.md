@@ -1,31 +1,14 @@
 # 01. Liczby zespolone
 
-> **Warsztat źródłowy:** „Liczby zespolone” (Tomasz Sowiński).
-> **Czas nauki:** ~4 h teorii + ~3 h zadań.
-> **Wymagana wiedza wstępna:** algebra i trygonometria ze szkoły ponadpodstawowej;
-> podstawy Pythona z numpy ([konwencje](../docs/03-konwencje-i-notacja.md)).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-W mechanice kwantowej stan układu opisuje wektor, którego współrzędne są **liczbami
-zespolonymi** — tzw. amplitudami. Reguła Borna mówi, że prawdopodobieństwo wyniku to
-kwadrat modułu amplitudy, więc moduł, sprzężenie i faza liczby zespolonej to nie
-ozdobniki, a podstawowe narzędzia obliczeniowe. Bez nich nie policzysz nawet
-prawdopodobieństwa w zadaniu P2 (polaryzatory i pojedynczy foton) ani amplitudy
-przejścia w zadaniu P1 (cząstka w studni potencjału).
-
-Ten warsztat odpowiada na trzy pytania, wracające w każdym kolejnym rozdziale:
-
-1. **jak dodawać, mnożyć i dzielić** liczby zespolone (algebra);
-2. **jak je zapisać** w postaci biegunowej $z=\lvert z\rvert e^{i\varphi}$
-   (trygonometria, wzór Eulera);
-3. **co to jest faza** i dlaczego mnożenie przez $e^{i\varphi}$ nie zmienia
-   prawdopodobieństw, a mimo to ma sens fizyczny (interferencja).
-
-Ostatnia część wprowadza zespolone wektory i macierze oraz **unitarność** — pomost
-do rozdziału [02](02-algebra-liniowa.md), gdzie te pojęcia stają się językiem bramek
-kwantowych. Cały materiał staramy się od razu sprawdzać w numpy, bo na Olimpiadzie
-Etapu I wolno używać narzędzi obliczeniowych (patrz [zakres](../docs/02-zakres-materialu.md)).
+Rozdział obejmuje algebrę liczb zespolonych (dodawanie, mnożenie, dzielenie), ich
+postać biegunową $z=\lvert z\rvert e^{i\varphi}$ (trygonometria, wzór Eulera) oraz
+pojęcie fazy, w tym fazy globalnej i względnej. Wprowadza też zespolone wektory
+i macierze oraz **unitarność**, stanowiące podstawę rozdziału
+[02](02-algebra-liniowa.md). Materiał dotyczy prawdopodobieństw i amplitud w zadaniach
+P1 (cząstka w studni potencjału) i P2 (polaryzatory i pojedynczy foton).
 
 ## 2. Najważniejsze definicje
 
@@ -47,10 +30,11 @@ Etapu I wolno używać narzędzi obliczeniowych (patrz [zakres](../docs/02-zakre
 
 ### 3.1 Algebra: dodawanie i mnożenie
 
-Liczby zespolone dodajemy i mnożemy tak jak wielomiany zmiennej $i$, pamiętając
-tylko o regule $i^2=-1$:
+Liczby zespolone dodajemy i mnożemy tak jak wielomiany zmiennej $i$, stosując
+tylko regułę $i^2=-1$:
 
 $$(a+bi)+(c+di)=(a+c)+(b+d)i,$$
+
 $$(a+bi)(c+di)=(ac-bd)+(ad+bc)i.$$
 
 Ostatni wzór bierze się z rozdzielności: $ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i$.
@@ -65,9 +49,10 @@ sztuczka, co „usuwanie niewymierności” z mianownika.
 
 ### 3.2 Sprzężenie i moduł
 
-Zachodzą użyteczne tożsamości (wszystkie wynikają bezpośrednio z definicji):
+Zachodzą następujące tożsamości (wynikają bezpośrednio z definicji):
 
 $$z+z^*=2a,\qquad z-z^*=2bi,\qquad zz^*=\lvert z\rvert^2,$$
+
 $$(z_1z_2)^*=z_1^*z_2^*,\qquad (z_1+z_2)^*=z_1^*+z_2^*,\qquad
 \left\lvert z_1z_2\right\rvert=\lvert z_1\rvert\lvert z_2\rvert.$$
 
@@ -80,12 +65,12 @@ utożsamienia płaszczyzny zespolonej z płaszczyzną $(a,b)$ i zapisu punktu we
 współrzędnych biegunowych: $a=r\cos\varphi$, $b=r\sin\varphi$, $r=\lvert z\rvert$.
 Wzór Eulera $e^{i\varphi}=\cos\varphi+i\sin\varphi$ łączy oba opisy.
 
-Szczególne przypadki, które trzeba znać na pamięć:
+Szczególne przypadki:
 
 $$e^{i0}=1,\qquad e^{i\pi/2}=i,\qquad e^{i\pi}=-1,\qquad e^{i3\pi/2}=-i.$$
 
 Równość $e^{i\pi}+1=0$ (tożsamość Eulera) wiąże pięć podstawowych stałych. Mnożenie
-w postaci biegunowej jest proste: **moduły się mnożą, a fazy dodają**,
+w postaci biegunowej: **moduły się mnożą, a fazy dodają**,
 
 $$z_1z_2=\lvert z_1\rvert\lvert z_2\rvert\,e^{i(\varphi_1+\varphi_2)}.$$
 
@@ -110,9 +95,9 @@ liczb
 
 $$w_k=\lvert z\rvert^{1/n}\exp\!\left(i\,\frac{\varphi+2\pi k}{n}\right),\qquad k=0,1,\dots,n-1.$$
 
-„$+2\pi k$” jest istotne: kąt $\varphi$ jest określony tylko modulo $2\pi$, więc ten sam
-$z$ ma $n$ różnych pierwiastków, leżących na okręgu o promieniu $\lvert z\rvert^{1/n}$,
-w wierzchołkach foremnego $n$-kąta. Pierwiastki $n$-tego stopnia z jedynki to
+Kąt $\varphi$ jest określony tylko modulo $2\pi$, więc ten sam $z$ ma $n$ różnych
+pierwiastków, leżących na okręgu o promieniu $\lvert z\rvert^{1/n}$, w wierzchołkach
+foremnego $n$-kąta. Pierwiastki $n$-tego stopnia z jedynki to
 $1,\omega,\omega^2,\dots,\omega^{n-1}$ z $\omega=e^{2\pi i/n}$.
 
 ### 3.6 Równania zespolone
@@ -197,8 +182,8 @@ np.linalg.norm?            # tolerancja: porownuj z 1 zamiast == 1
 ```
 
 W numpy jednostka urojona to `1j` (litera `j`). Sprzężenie to metoda `.conjugate()`
-lub skrót `.conj()`; dla macierzy sprzężenie hermitowskie to `M.conj().T`. **Uwaga
-praktyczna:** wyniki zmiennoprzecinkowe porównuj z tolerancją (`np.allclose`), bo
+lub skrót `.conj()`; dla macierzy sprzężenie hermitowskie to `M.conj().T`. Wyniki
+zmiennoprzecinkowe porównuj z tolerancją (`np.allclose`), bo
 $e^{i\pi}$ wyjdzie jako $-1+1{,}2\cdot10^{-16}i$, a nie jako dokładne $-1$.
 
 ## 4. Przykłady rozwiązane
@@ -235,9 +220,9 @@ $z=\exp\!\bigl(i\frac{\pi+2\pi k}{4}\bigr)$ dla $k=0,1,2,3$:
 $$z_k=\exp\!\left(i\left(\tfrac{\pi}{4}+\tfrac{k\pi}{2}\right)\right)
 =\tfrac{1}{\sqrt2}(\pm1\pm i).$$
 
-Numerycznie: $z_0=\tfrac{1+i}{\sqrt2}$, $z_1=\tfrac{-1+i}{\sqrt2}$,
-$z_2=\tfrac{-1-i}{\sqrt2}$, $z_3=\tfrac{1-i}{\sqrt2}$ (numpy: `np.roots([1,0,0,0,1])`
-daje $0{,}7071\pm0{,}7071i$ i $-0{,}7071\pm0{,}7071i$) ✓.
+Wartości: $z_0=\tfrac{1+i}{\sqrt2}$, $z_1=\tfrac{-1+i}{\sqrt2}$,
+$z_2=\tfrac{-1-i}{\sqrt2}$, $z_3=\tfrac{1-i}{\sqrt2}$
+($0{,}7071\pm0{,}7071i$, $-0{,}7071\pm0{,}7071i$).
 
 **(b) Normalizacja i fazy.** Liczymy $\lvert 1+i\rvert^2=2$, $\lvert 1-i\rvert^2=2$, razem $4$.
 Stan znormalizowany:
@@ -264,13 +249,14 @@ $\lvert z_1+z_2\rvert$.
 przy oszacowaniu — nierówność trójkąta.
 
 **Rachunek:** $(a+bi)^2=(a^2-b^2)+2ab\,i=3-4i$, więc
+
 $$a^2-b^2=3,\qquad 2ab=-4\ \Rightarrow\ ab=-2.$$
+
 Z drugiego $b=-2/a$; po podstawieniu $a^2-4/a^2=3$, czyli $(a^2-4)(a^2+1)=0$.
 Rzeczywiste $a^2=4\Rightarrow a=\pm2$, $b=\mp1$. Zatem $z=\pm(2-i)$
 (sprawdzamy: $(2-i)^2=4-4i+i^2=3-4i$ ✓).
 
-Dla szacowania: $\lvert\lvert z_1\rvert-\lvert z_2\rvert\rvert\le\lvert z_1+z_2\rvert
-\le\lvert z_1\rvert+\lvert z_2\rvert$, czyli $1\le\lvert z_1+z_2\rvert\le7$.
+Dla szacowania: $\lvert\lvert z_1\rvert-\lvert z_2\rvert\rvert\le\lvert z_1+z_2\rvert \le\lvert z_1\rvert+\lvert z_2\rvert$, czyli $1\le\lvert z_1+z_2\rvert\le7$.
 
 **Wynik:** $z=\pm(2-i)$; oraz $1\le\lvert z_1+z_2\rvert\le7$.
 
@@ -347,15 +333,14 @@ zerem. (b) Ile wynosi ich iloczyn? (c) Potwierdź wynik dla $n=5$ numerycznie w 
 
 ## 8. Co dalej
 
-Liczby zespolone stają się językiem wektorów i operatorów w rozdziale
-[02. Algebra liniowa](02-algebra-liniowa.md) — tam zobaczysz macierze Pauliego,
-unitarność i sferę Blocha. Fazę amplitudy wykorzystasz w rozdziale
+Liczby zespolone są językiem wektorów i operatorów w rozdziale
+[02. Algebra liniowa](02-algebra-liniowa.md) — macierze Pauliego, unitarność
+i sfera Blocha. Faza amplitudy wraca w rozdziale
 [05. Podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md) przy prawie
 Malusa (zadanie P2) i przy superpozycjach stanów stacjonarnych (zadanie P1).
-Gdy będziesz gotowy, rozwiąż zadania i porównaj z
-[rozwiązaniami](../zadania/rozwiazania/rozwiazania-01.md); praca domowa łącząca
-rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
+Rozwiązania zadań są w [rozwiazania-01.md](../zadania/rozwiazania/rozwiazania-01.md),
+a zadania łączące rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
 
 **Bibliografia.** Zasady i notacja: [konwencje](../docs/03-konwencje-i-notacja.md);
 zakres i terminy: [zakres materiału](../docs/02-zakres-materialu.md). Pozycje
-książkowe — patrz wykaz literatury w `docs/bibliografia.md`.
+książkowe — wykaz literatury w `docs/bibliografia.md`.

@@ -1,24 +1,19 @@
 # 11. Metrologia kwantowa
 
-> **Warsztat źródłowy:** „Podstawy metrologii kwantowej” (Rafał Demkowicz-Dobrzański).
-> **Czas nauki:** ~6 h teorii + ~8 h zadań.
-> **Wymagana wiedza wstępna:** [03 — rachunek prawdopodobieństwa i statystyka](03-rachunek-prawdopodobienstwa-i-statystyka.md), [05 — podstawy mechaniki kwantowej](05-podstawy-mechaniki-kwantowej.md), [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [09 — splątanie i twierdzenie Bella](09-splatanie-i-twierdzenie-bella.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Metrologia kwantowa (*quantum metrology*) odpowiada na pytanie: **jak precyzyjnie można
-zmierzyć nieznany parametr** — fazę, częstość, pole magnetyczne, odstęp czasu — mając
-$N$ cząstek (fotonów, atomów, spinów). To dział informacji kwantowej o największym
-wpływie na życie codzienne: interferometry LIGO/Virgo mierzą względną zmianę odległości
-$10^{-21}$, zegary optyczne wyznaczają częstotliwość z dokładnością $10^{-18}$, a
-magnometry kwantowe wykrywają pola rzędu femtotesli (medycyna, geologia, nawigacja bez GPS).
+Rozdział obejmuje metrologię kwantową: estymację nieznanego parametru (fazy, częstości, pola
+magnetycznego, odstępu czasu) przy użyciu $N$ cząstek, informację Fishera klasyczną (CFI)
+i kwantową (QFI) oraz nierówność Craméra–Rao. Podaje granicę śrutową $\Delta\varphi=1/\sqrt N$
+i granicę Heisenberga $\Delta\varphi=1/N$, opisuje stany N00N i GHZ, interferometr Macha–Zehndera,
+ściśnięcie (squeezing), dekoherencję i strategie adaptacyjne, a także zastosowania: zegary atomowe
+i magnometry kwantowe.
 
-Na Olimpiadzie rozdział łączy wszystko, co dotychczas: statystykę i estymację (rozdział 03,
-pkt 2.4 dokumentu [04](../docs/04-strategia-rozwiazywania-zadan.md)), pomiar rzutowy
-(rozdział 06), splątanie jako **zasób** (rozdział 09) i dekoherencję jako mechanizm
-niszczący przewagę kwantową (rozdział 18). Typowe pytanie brzmi: „masz $N$ fotonów, jaka
-jest najmniejsza niepewność fazy?”. Odpowiedź $1/\sqrt N$ (granica śrutowa), $1/N$
-(granica Heisenberga) i **konkretne liczby** to materiał tego rozdziału.
+Materiał dotyczy zadań Z-11 (rozkład $p(\pm\mid\varphi)$, informacja Fishera, porównanie SNL i HL,
+$F_Q$ dla N00N i GHZ, drabinka adaptacyjna, zegar optyczny) i łączy statystykę i estymację
+(rozdział 03), pomiar rzutowy (rozdział 06), splątanie (rozdział 09) oraz dekoherencję
+(rozdział 18).
 
 ## 2. Najważniejsze definicje
 
@@ -46,8 +41,10 @@ $\varphi$ w stanie, oraz pomiar i estymacja. Dane to $\nu$ niezależnych wynikó
 $k_1,\dots,k_\nu$ o rozkładzie $p(k\mid\varphi)$. Przykład kanoniczny: foton w superpozycji
 $\lvert\psi(\varphi)\rangle=\frac{1}{\sqrt2}(\lvert0\rangle+e^{i\varphi}\lvert1\rangle)$ i pomiar w bazie
 $X=\{\lvert+\rangle,\lvert-\rangle\}$; z reguły Borna
+
 $$p(+\mid\varphi)=\lvert\langle+\vert\psi(\varphi)\rangle\rvert^2=\frac{1+\cos\varphi}{2}=\cos^2\frac{\varphi}{2},
 \qquad p(-\mid\varphi)=\sin^2\frac{\varphi}{2}. \tag{11.1}$$
+
 Zapis $\cos^2(\varphi/2)$ (a nie $\cos^2\varphi$) to ta sama konwencja $\theta/2$, co
 w bramkach $R_X,R_Y,R_Z$ — patrz [konwencje](../docs/03-konwencje-i-notacja.md).
 
@@ -55,24 +52,29 @@ w bramkach $R_X,R_Y,R_Z$ — patrz [konwencje](../docs/03-konwencje-i-notacja.md
 
 **Skąd się bierze CFI.** Różniczkujemy tożsamość $\sum_k p(k\mid\varphi)=1$ i stosujemy
 nierówność Cauchy'ego–Schwarza (rozdział 03):
+
 $$\mathrm{Var}(\hat\varphi)\ \ge\ \frac{1}{\nu F(\varphi)},\qquad
 F(\varphi)=\sum_k\frac{\bigl(\partial_\varphi p(k\mid\varphi)\bigr)^2}{p(k\mid\varphi)}. \tag{11.2}$$
+
 $F$ to informacja o $\varphi$ z jednego pomiaru, a $\nu F$ rośnie liniowo z liczbą powtórzeń.
 
 **Rachunek dla (11.1).** $\partial_\varphi p_\pm=\mp\frac12\sin\varphi$, więc
-$F=\frac{\sin^2\varphi}{4}\bigl(\frac{1}{\cos^2\frac\varphi2}+\frac{1}{\sin^2\frac\varphi2}\bigr)
-=\frac{\sin^2\varphi}{4}\cdot\frac{4}{\sin^2\varphi}=1$, bo $\cos^2\frac\varphi2\sin^2\frac\varphi2=\frac14\sin^2\varphi$.
+$F=\frac{\sin^2\varphi}{4}\bigl(\frac{1}{\cos^2\frac\varphi2}+\frac{1}{\sin^2\frac\varphi2}\bigr) =\frac{\sin^2\varphi}{4}\cdot\frac{4}{\sin^2\varphi}=1$, bo $\cos^2\frac\varphi2\sin^2\frac\varphi2=\frac14\sin^2\varphi$.
 Zatem dla jednego fotonu **$F=1$ dla każdego $\varphi$** i $\Delta\varphi\ge1/\sqrt\nu$.
 
 ### 3.3 Interferometr Macha–Zehndera
 
 Dla jednego fotonu stan po pierwszym BS to $\frac{1}{\sqrt2}(\lvert\text{góra}\rangle+\lvert\text{dół}\rangle)$,
 a prawdopodobieństwa detekcji są jak (11.1). Cały układ realizuje
+
 $$U=U_{\rm BS}\,\mathrm{diag}(1,e^{i\varphi})\,U_{\rm BS},\qquad
 U_{\rm BS}=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}=H,$$
+
 czyli „$H$–faza–$H$”: **interferometr to dosłownie Hadamard, faza, Hadamard** (por. zadanie P3).
 Dla wielu fotonów piszemy $\lvert n_a,n_b\rangle$ i używamy generatora
+
 $$H_{\rm gen}=\tfrac12(n_a-n_b),\qquad \lvert\psi(\varphi)\rangle=e^{-i\varphi H_{\rm gen}}\lvert\psi_0\rangle . \tag{11.3}$$
+
 To definicja modelu: $\varphi$ jest fazą względną nagromadzoną między odnogami.
 
 ### 3.4 Granica śrutowa (shot noise)
@@ -80,7 +82,9 @@ To definicja modelu: $\varphi$ jest fazą względną nagromadzoną między odnog
 $N$ niezależnych fotonów w tym samym stanie: liczba zliczeń jest zmienną dwumianową, więc
 $\mathrm{Var}(k)=Np(1-p)$ (rozdział 03). Największa czułość jest w punkcie pracy
 $\varphi=\pi/2$ ($p=\frac12$), gdzie informacja Fishera dodaje się liniowo:
+
 $$F_N=N F_1=N,\qquad \boxed{\Delta\varphi=\frac{1}{\sqrt N}}\quad\text{(SNL)}. \tag{11.4}$$
+
 „Śrut” to ziarnistość światła: każdy foton jest niezależnym losowaniem.
 
 | $N$ | $\Delta\varphi_{\rm SNL}=1/\sqrt N$ | $\Delta\varphi_{\rm HL}=1/N$ | zysk $\sqrt N$ |
@@ -93,7 +97,9 @@ $$F_N=N F_1=N,\qquad \boxed{\Delta\varphi=\frac{1}{\sqrt N}}\quad\text{(SNL)}. \
 ### 3.5 Kwantowa informacja Fishera i granica Heisenberga
 
 Dla stanu **czystego** ewoluującego unitarnie $e^{-i\varphi H}$:
+
 $$F_Q=4\,\mathrm{Var}(H)=4\bigl(\langle H^2\rangle-\langle H\rangle^2\bigr). \tag{11.5}$$
+
 Intuicja: parametr „obraca wskazówkę” o kąt proporcjonalny do $H$, więc im większa
 nieoznaczoność $H$, tym szybciej rozkład wyników zmienia się z $\varphi$.
 
@@ -101,13 +107,15 @@ nieoznaczoność $H$, tym szybciej rozkład wyników zmienia się z $\varphi$.
 $H_{\rm gen}=n_a-N/2$, czyli $\mathrm{Var}(H_{\rm gen})=\mathrm{Var}(n_a)$. Zmienna $n_a$
 przyjmuje wartości tylko w $[0,N]$, a wariancja zmiennej ograniczonej do przedziału długości
 $N$ nie przekracza $(N/2)^2$. Stąd
+
 $$\boxed{F_Q\le N^2,\qquad \Delta\varphi\ge\frac{1}{N}}\quad\text{(HL)}. \tag{11.6}$$
+
 QFI rośnie **kwadratowo** z liczbą cząstek — dlatego splątanie daje zysk $\sqrt N$, a nie
 stały czynnik.
 
-> **Ponad program:** argument przez zasadę nieoznaczoności: $\Delta\varphi\,\Delta n\ge\frac12$
-> i $\Delta n\le N$ dają $\Delta\varphi\gtrsim1/(2N)$. Jest prostszy, ale słabszy od (11.6):
-> nie mówi, jakim pomiarem granicę osiągnąć.
+argument przez zasadę nieoznaczoności: $\Delta\varphi\,\Delta n\ge\frac12$
+i $\Delta n\le N$ dają $\Delta\varphi\gtrsim1/(2N)$. Jest prostszy, ale słabszy od (11.6):
+nie mówi, jakim pomiarem granicę osiągnąć.
 
 ### 3.6 Stany N00N i GHZ jako zasoby
 
@@ -154,7 +162,9 @@ $F_Q$ to maksimum po **wszystkich** pomiarach — wybór pomiaru można więc �
 Nieoznaczoność $\varphi$ modulo $2\pi/N$ rozwiązuje się **drabinką** pomiarów. Niech $k$-ty
 etap używa $N_k$ cząstek i daje $1/N_k$. Kolejny etap wymaga, by jego okres był dłuższy niż
 niepewność poprzedniego:
+
 $$\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\qquad\Longleftrightarrow\qquad N_{k+1}<\pi N_k . \tag{11.8}$$
+
 Wystarczy mnożyć $N$ przez $c<3{,}14$ (np. przez $3$); suma ciągu geometrycznego o ilorazie
 $1/3$ to tylko $1{,}5$ ostatniego wyrazu, więc **budżet całkowity jest $\sim2\times$ większy
 od budżetu ostatniego etapu** i skalowanie $1/N$ zostaje zachowane.
@@ -169,6 +179,7 @@ $1/300=3{,}33\cdot10^{-3}<\pi/900=3{,}49\cdot10^{-3}$.
 Światło spójne ma fluktuacje obu kwadratur na poziomie próżni. **Ściśnięcie** zmniejsza
 fluktuacje jednej kwadratury kosztem drugiej (zasada nieoznaczoności pozostaje spełniona).
 Parametr $r$: wariancja maleje o $e^{-2r}$, amplituda (czyli niepewność fazy) o $e^{-r}$:
+
 $$\Delta\varphi_{\rm squ}=\frac{e^{-r}}{\sqrt{\bar n}},\qquad \text{ściśnięcie [dB]}=10\log_{10}(e^{2r}). \tag{11.9}$$
 
 | ściśnięcie | $e^{2r}$ (wariancja) | $e^{r}$ (poprawa amplitudy) |
@@ -183,15 +194,17 @@ W praktyce bywa bezcenny — LIGO/Virgo wprowadzają $\approx6$ dB ściśnięteg
 (zależnego od częstotliwości, przez „wnękę filtrującą”), co daje $\approx2\times$ lepszą
 czułość amplitudową, czyli szybsze wykrywanie zlewających się czarnych dziur.
 
-> **Ponad program:** **ściśnięcie spinowe**: $\xi^2=\dfrac{N(\Delta J_z)^2}{\lvert\langle J_x\rangle\rvert^2}<1$
-> oznacza stan metrologicznie użyteczny. Ściśnięcie spinowe *implikuje* splątanie
-> (kryterium Winelanda) — to „splątanie widoczne w jednej liczbie”.
+**ściśnięcie spinowe**: $\xi^2=\dfrac{N(\Delta J_z)^2}{\lvert\langle J_x\rangle\rvert^2}<1$
+oznacza stan metrologicznie użyteczny. Ściśnięcie spinowe *implikuje* splątanie
+(kryterium Winelanda) — to „splątanie widoczne w jednej liczbie”.
 
 ### 3.10 Dekoherencja i utrata przewagi
 
 Jeśli koherencja stanu N00N/GHZ przetrwa z prawdopodobieństwem $p$, a z $1-p$ układ traci
 informację fazową (wraca do SNL), to
+
 $$F_Q(p)=pN^2+(1-p)N . \tag{11.10}$$
+
 Dla $N=100$ (idealnie $\Delta\varphi=0{,}01$):
 
 | $p$ | $F_Q$ | $\Delta\varphi$ | zysk nad SNL |
@@ -208,18 +221,20 @@ to $p\approx10^{-4}$: **koherencja musi przetrwać niemal idealnie**. Ponieważ 
 dekoherencja każdej cząstki działa $N$ razy silniej (widzialność $\sim e^{-N\Gamma t}$),
 powyżej pewnego $N$ zwiększanie zasobu przestaje pomagać.
 
-> **Ponad program:** **twierdzenie „no-go”.** Dla nieskorelowanej dekoherencji markowowskiej
-> skalowanie $1/N$ **załamuje się** i asymptotycznie wraca $1/\sqrt N$; splątanie daje wtedy
-> co najwyżej stały czynnik poprawy. Dowód używa QFI dla stanów mieszanych (operator SLD)
-> i zapisu szumu jako kanału kwantowego: Demkowicz-Dobrzański, Kołodyński, Guţă,
-> *Nat. Commun.* **3**, 1063 (2012); przegląd: arXiv:1506.02362. Skalowanie Heisenberga
-> jest **kruche**: istnieje dla szumu skorelowanego (kolektywnego), nie dla lokalnego.
+**twierdzenie „no-go”.** Dla nieskorelowanej dekoherencji markowowskiej
+skalowanie $1/N$ **załamuje się** i asymptotycznie wraca $1/\sqrt N$; splątanie daje wtedy
+co najwyżej stały czynnik poprawy. Dowód używa QFI dla stanów mieszanych (operator SLD)
+i zapisu szumu jako kanału kwantowego: Demkowicz-Dobrzański, Kołodyński, Guţă,
+*Nat. Commun.* **3**, 1063 (2012); przegląd: arXiv:1506.02362. Skalowanie Heisenberga
+jest **kruche**: istnieje dla szumu skorelowanego (kolektywnego), nie dla lokalnego.
 
 ### 3.11 Zegary atomowe i magnometry
 
 **Zegar atomowy.** Schemat Ramseya: atomy w stanie $\lvert+\rangle$ (lub GHZ), czas swobodnej
 ewolucji $T$, pomiar. Szum projekcyjny ogranicza częstość:
+
 $$\Delta\nu=\frac{1}{2\pi T\sqrt N}\ (\text{SNL}),\qquad \Delta\nu=\frac{1}{2\pi T N}\ (\text{HL}).$$
+
 Dla optycznego zegara strontowego ($\nu=429\,228\,004\,229\,873$ Hz, przejście $^1S_0\to{}^3P_0$):
 
 | $N$ atomów | $T$ | $\Delta\nu_{\rm SNL}$ | $\Delta\nu/\nu$ |
@@ -283,7 +298,7 @@ $\Delta\nu=\frac{1}{2\pi\cdot1\cdot\sqrt{10^5}}=\frac{1}{2\pi\cdot316{,}2}=0{,}5
 czyli $\Delta\nu/\nu=1{,}2\cdot10^{-18}$. Ściśnięcie 10 dB ($e^{r}=3{,}16$) daje $0{,}159$ mHz
 i $3{,}7\cdot10^{-19}$. Na $10^{-19}$ bez ściśnięcia trzeba
 $N=(\frac{1}{2\pi\Delta\nu})^2=(3708)^2=\mathbf{1{,}4\cdot10^7}$ atomów albo $T=11{,}7$ s
-przy $N=10^5$. *Wniosek:* ściśnięcie daje stały czynnik $3{,}2$, a liczba atomów wchodzi
+przy $N=10^5$. Ściśnięcie daje stały czynnik $3{,}2$, a liczba atomów wchodzi
 jak $\sqrt N$ — dlatego walka o $10^{-19}$ to walka o $\sqrt N$ i dłuższy czas integracji.
 
 ## 5. Typowe pułapki
@@ -336,10 +351,6 @@ jak $\sqrt N$ — dlatego walka o $10^{-19}$ to walka o $\sqrt N$ i dłuższy cz
 - Skrypt: `python kod/metrologia_faza.py` (Monte Carlo: $1/\sqrt N$ vs $1/N$, dekoherencja).
 - Bibliografia: Giovannetti–Lloyd–Maccone, *Advances in quantum metrology* (2011); Demkowicz-Dobrzański–Jarzyna–Kołodyński, arXiv:1506.02362.
 
-> **Weryfikacja numeryczna.** Liczby w rozdziale policzono w NumPy: $F=1$ dla jednego fotonu,
-> $F=N^2$ dla N00N ($N=2,10,100$), drabinka $300+900+2700+8100=12\,000$ (zysk $73{,}9$),
-> tabela dB, $p=1/(N-1)$, $\Delta\nu=1{,}59$ mHz i $\Delta\nu/\nu=3{,}71\cdot10^{-18}$.
-> Powtarzalne przez `python kod/metrologia_faza.py`.
 
 
 

@@ -1,31 +1,24 @@
 # 17. Macierze gęstości i kanały kwantowe
 
-> **Ponad program:** rozdział wykracza poza listę warsztatów I edycji, bo bez macierzy gęstości
-> i kanałów splątanie, dekoherencja oraz mitygacja błędów pozostają „magią” bez formalizmu.
-> **Czas nauki:** ~7 h teorii + ~10 h zadań.
-> **Wymagana wiedza wstępna:** [02 — algebra liniowa](02-algebra-liniowa.md), [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [07 — kwantowa teoria informacji](07-kwantowa-teoria-informacji.md), [09 — splątanie i twierdzenie Bella](09-splatanie-i-twierdzenie-bella.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Dotychczasowy opis stanu kwantowego — **wektor** $\lvert\psi\rangle$ — działa tylko dla układu
-**idealnie odizolowanego**, o którym wiemy *wszystko*. W praktyce (i na Olimpiadzie) pojawiają
-się trzy sytuacje, w których to za mało:
+Rozdział obejmuje opis stanu kwantowego w języku **macierzy gęstości** (*density matrix*) $\rho$ i
+**kanałów kwantowych** (*quantum channel*): ślad częściowy, rozkład Schmidta, purity i wektor
+Blocha, pomiar uogólniony (POVM), reprezentację Krausa i macierz $\chi$. Do formalizmu prowadzą
+trzy sytuacje, w których wektor stanu nie wystarcza: **ignorancja** (klasyczna niepewność, który
+stan przygotowano), **splątanie** (stan podukładu jest mieszany) oraz **szum i dekoherencja**
+(oddziaływanie z otoczeniem).
 
-1. **Ignorancja** — nie wiemy, który z kilku stanów przygotowano (klasyczna niepewność),
-2. **Splątanie** — stan całości jest czysty, ale sam podukład opisuje już **stan mieszany**;
-3. **Szum i dekoherencja** — układ oddziałuje z otoczeniem i traci koherencję.
+Druga grupa zagadnień to kanały unitarny, depolaryzujący, tłumienia amplitudowego i przesunięcia
+fazy oraz miary odległości stanów: wierność, odległość śladowa i nierówność Fuchsa–van de Graafa.
 
-Wspólnym językiem tych trzech zjawisk jest **macierz gęstości** (*density matrix*) $\rho$ oraz
-**kanał kwantowy** (*quantum channel*) — matematyczny opis dowolnego, także nieodwracalnego
-procesu. Bez nich nie da się zrozumieć [rozdziału 13](13-korekcja-i-mitygacja-bledow.md)
-(mitygacja błędów), [rozdziału 18](18-ponad-program-splatanie-dekoherencja-termodynamika.md)
-($T_1/T_2$, entropia splątania) ani twierdzenia Holevo z
-[rozdziału 19](19-ponad-program-algorytmy-zaawansowane-i-granice.md).
-
-Rozdział jest **formalny, ale całkowicie rachunkowy**: każdą definicję natychmiast sprawdzamy
-na liczbach w NumPy (ślad częściowy $\lvert\Phi^+\rangle$, kanał depolaryzujący, tłumienie
-amplitudowe, wierność i odległość śladowa). To najbardziej „inżynierski” rozdział przewodnika:
-mówi, **jak opisać to, co psuje komputer kwantowy**.
+Materiał stanowi podstawę [rozdziału 13](13-korekcja-i-mitygacja-bledow.md) (mitygacja błędów),
+[rozdziału 18](18-ponad-program-splatanie-dekoherencja-termodynamika.md) ($T_1/T_2$, entropia
+splątania) i twierdzenia Holevo z
+[rozdziału 19](19-ponad-program-algorytmy-zaawansowane-i-granice.md); definicje są ilustrowane
+rachunkami na liczbach (ślad częściowy $\lvert\Phi^+\rangle$, kanał depolaryzujący, tłumienie
+amplitudowe, wierność i odległość śladowa).
 
 ## 2. Najważniejsze definicje
 
@@ -60,49 +53,66 @@ $\lvert0\rangle$, z $\tfrac12$ — $\lvert1\rangle$, ale **nie mówi nam, co wyp
 wektor $\lvert\psi\rangle$ opisujący naszą wiedzę: każdy pomiar w bazie $X$ dałby dla stanu
 czystego jednoznaczny wynik, a my dostajemy losowo $0$ lub $1$. Zbiór możliwych statystyk opisuje
 **macierz**:
+
 $$\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert1\rangle\langle1\rvert=\tfrac12 I .$$
+
 Ta sama macierz pojawia się, gdy bierzemy **ślad częściowy** stanu splątanego — ignorancja i
 splątanie prowadzą do identycznego formalizmu.
 
 ### 3.2 Macierz gęstości: definicja i własności
 
 $$\rho=\sum_k p_k\lvert\psi_k\rangle\langle\psi_k\rvert .$$
+
 Trzy warunki ($\rho^\dagger=\rho$, $\mathrm{Tr}\rho=1$, $\rho\succeq0$) są **konieczne i wystarczające**,
 by $\rho$ opisywał jakiś stan. Wartość oczekiwana obserwabli i prawdopodobieństwo wyniku to
+
 $$\langle A\rangle=\mathrm{Tr}(\rho A),\qquad P(m)=\mathrm{Tr}(P_m\rho),\qquad P_m=\lvert m\rangle\langle m\rvert .$$
+
 Czystość stanu mierzymy przez $\mathrm{Tr}\,\rho^2$: równa $1$ tylko dla stanu czystego.
 
 ### 3.3 Rozkład spektralny i oczyszczenie
 
 Ponieważ $\rho$ jest hermitowska i dodatnia, ma rozkład własny
+
 $$\rho=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,\qquad \lambda_i\ge0,\quad\sum_i\lambda_i=1 .$$
+
 Ten sam $\rho$ ma **nieskończenie wiele** rozkładów na stany czyste (np. $\tfrac12I$ z dowolnej
 bazy), ale **jedno** widmo — dlatego wszystkie miary oparte na wartościach własnych (entropia,
 purity) są dobrze określone. **Oczyszczenie**: każdy stan mieszany
 $\rho_A=\sum_i\lambda_i\lvert i\rangle\langle i\rvert$ można przedstawić jako ślad częściowy stanu
 czystego
+
 $$\lvert\psi\rangle_{AR}=\sum_i\sqrt{\lambda_i}\,\lvert i\rangle_A\lvert i\rangle_R .$$
+
 Kluczowy wniosek: **każdy szum można potraktować jako splątanie z otoczeniem**.
 
 ### 3.4 Sfera Blocha dla jednego kubita
 
 Każdą macierz $2\times2$ rozkładamy w bazie $\{I,\sigma_x,\sigma_y,\sigma_z\}$:
+
 $$\rho=\tfrac12\big(I+r_x\sigma_x+r_y\sigma_y+r_z\sigma_z\big),\qquad \vec r\cdot\vec\sigma=\sum_j r_j\sigma_j .$$
+
 **Skąd to się bierze:** identyczność $\mathrm{Tr}\,\sigma_j=0$ i $\mathrm{Tr}(\sigma_j\sigma_k)=2\delta_{jk}$
 dają $r_j=\mathrm{Tr}(\rho\sigma_j)$; z tego natychmiast
+
 $$r_x=2\,\mathrm{Re}\,\rho_{01},\qquad r_y=-2\,\mathrm{Im}\,\rho_{01},\qquad r_z=\rho_{00}-\rho_{11}.$$
+
 Sprawdzenie dodatniości: $\det\rho=\tfrac14(1-\lvert\vec r\rvert^2)\ge0$, więc $\lvert\vec r\rvert\le1$.
 Stan czysty $\Leftrightarrow\lvert\vec r\rvert=1$ (punkt na sferze Blocha).
 
 ### 3.5 Ślad częściowy
 
 Dla $\rho_{AB}$ w bazie $\{\lvert i\rangle_A\lvert j\rangle_B\}$ definiujemy
+
 $$(\rho_A)_{ii'}=\sum_j(\rho_{AB})_{ij,i'j}=\mathrm{Tr}_B\,\rho_{AB}.$$
+
 **Przykład fundamentalny.** Dla $\lvert\Phi^+\rangle=\tfrac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)$
 macierz $\rho=\lvert\Phi^+\rangle\langle\Phi^+\rvert$ ma niezerowe elementy $(0,0),(0,3),(3,0),(3,3)=1/2$.
 Sumując po indeksie $B$:
+
 $$\rho_A=\begin{pmatrix}\rho_{00,00}+\rho_{01,01}&\rho_{00,10}+\rho_{01,11}\\ \rho_{10,00}+\rho_{11,01}&\rho_{10,10}+\rho_{11,11}\end{pmatrix}
 =\begin{pmatrix}\tfrac12&0\\0&\tfrac12\end{pmatrix}=\tfrac I2 .$$
+
 Stan czysty dwóch kubitów, po „zapomnieniu” jednego, daje **maksymalnie mieszany** kubit
 ($\mathrm{Tr}\,\rho_A^2=\tfrac12$, $\lvert\vec r\rvert=0$). To ilościowa twarz splątania.
 
@@ -130,10 +140,12 @@ po rozszerzeniu o dowolny układ pomocniczy) i **zachowująca ślad** (TP — *t
 
 **Twierdzenie Krausa (operator-sum).** $\mathcal E$ jest CPTP **wtedy i tylko wtedy**, gdy istnieją
 operatory $K_i$ (operatory Krausa) takie, że
+
 $$\mathcal E(\rho)=\sum_i K_i\,\rho\,K_i^\dagger,\qquad \sum_i K_i^\dagger K_i=I .$$
+
 Warunek unitalności ($\sum_iK_iK_i^\dagger=I$) zachodzi np. dla kanału unitarnego i
 depolaryzującego; dla tłumienia amplitudowego **nie** zachodzi. Liczba operatorów Krausa zależy od
-reprezentacji, ale **kanał** jest ten sam. Uwaga praktyczna: każdy kanał można „rozluźnić” do
+reprezentacji, ale **kanał** jest ten sam. Każdy kanał można „rozluźnić” do
 unitarności na większej przestrzeni ($\mathcal E(\rho)=\mathrm{Tr}_E\,U(\rho\otimes\lvert0\rangle\langle0\rvert)U^\dagger$).
 
 ### 3.9 Cztery kanały, które trzeba znać
@@ -152,11 +164,15 @@ amplitudowego $K_0^\dagger K_0+K_1^\dagger K_1=\mathrm{diag}(1,1-\gamma)+\mathrm
 
 Złożenie dwóch kanałów $\mathcal E=\mathcal E_2\circ\mathcal E_1$ to złożenie ich operatorów Krausa
 indeksowane parami; dla kanałów „o jednym parametrze” często dostajemy kanał tego samego typu:
+
 $$D_{p_1}\circ D_{p_2}=D_{p},\qquad (1-p)=(1-p_1)(1-p_2).$$
+
 Dla tłumienia amplitudowego $(1-\gamma)=(1-\gamma_1)(1-\gamma_2)$ — to sedno wykładniczego zaniku
 $T_1$. Alternatywny opis to **macierz $\chi$**: rozwijamy $\rho$ i $\mathcal E(\rho)$ w bazie
 Pauliowskiej $\{P_0,\dots,P_3\}=\{I,X,Y,Z\}$ i piszemy
+
 $$\mathcal E(\rho)=\sum_{m,n=0}^{3}\chi_{mn}\,P_m\,\rho\,P_n .$$
+
 np. bit-flip o prawdopodobieństwie $p$ ma $\chi=\mathrm{diag}(1-p,\ p,\ 0,\ 0)$.
 
 ### 3.11 Kanały a splątanie: dekoherencja
@@ -167,8 +183,10 @@ z parametrem $p$ **skaluje wektor Blocha** danego kubita: $\vec r\to(1-p)\vec r$
 widzialność korelacji — w rozdziale 18 policzymy z tego spadek $S$ w nierówności CHSH.
 
 Dwie metryki odległości między stanami:
+
 $$D(\rho,\sigma)=\tfrac12\mathrm{Tr}\lvert\rho-\sigma\rvert,\qquad
 F(\rho,\sigma)=\Big(\mathrm{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\Big)^2 .$$
+
 $D=0\Leftrightarrow\rho=\sigma$, $D=1$ dla stanów ortogonalnych (nośniki rozłączne). **Nierówność
 Fuchsa–van de Graafa** $1-\sqrt F\le D\le\sqrt{1-F}$ wiąże obie miary: znajomość jednej daje
 oszacowanie drugiej. Wierność jest prawdopodobieństwem „przejścia testu” (tw. Uhlmanna).
@@ -205,9 +223,11 @@ $\lambda=0{,}4$ na $\lvert+\rangle$; (d) złożenie depolaryzujących $p_1=0{,}2
 $(1-p)=(1-p_1)(1-p_2)$.
 
 **Rachunek.** (a) $K_0=\mathrm{diag}(1,\sqrt{0{,}7})$, $K_1=\lvert0\rangle\langle1\rvert\sqrt{0{,}3}$:
+
 $$K_0\lvert1\rangle\langle1\rvert K_0^\dagger+K_1\lvert1\rangle\langle1\rvert K_1^\dagger
 =\mathrm{diag}(0{,}3;\ 0{,}7),\qquad
 \mathcal E(\lvert+\rangle\langle+\rvert)=\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}.$$
+
 Populacja $\lvert1\rangle$ spadła $1\to0{,}7$ (ubyło $0{,}3$), koherencja $\tfrac12\to0{,}4183$.
 (b) $(0{,}7)\lvert0\rangle\langle0\rvert+0{,}3\cdot\tfrac I2=\mathrm{diag}(0{,}85;0{,}15)$;
 $\mathrm{Tr}\rho^2=0{,}85^2+0{,}15^2=0{,}745$.
@@ -284,12 +304,6 @@ stronę $\tfrac I2$; obie miary dają spójny obraz „jak daleko” od stanu wy
 - Bibliografia: [Nielsen–Chuang, rozdz. 2 i 8](../docs/bibliografia.md); [Preskill, wykłady 3 i 5](../docs/bibliografia.md).
 - Kod: [`kod/teleportacja.py`](../kod/teleportacja.py) (ślad częściowy i wierność), [`kod/korekcja_3bit.py`](../kod/korekcja_3bit.py) (kanał bit-flip, syndromy).
 
-> **Weryfikacja numeryczna.** Policzone w NumPy: $\mathrm{Tr}_B\lvert\Phi^+\rangle\langle\Phi^+\rvert=\tfrac12I$;
-> $\vec r(\lvert+i\rangle)=(0,1,0)$; $\rho_{\rm mix}=\mathrm{diag}(0{,}7;0{,}3)$ ma $\mathrm{Tr}\rho^2=0{,}58$;
-> Schmidt dla $\tfrac{1}{\sqrt3}(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle)$: $(0{,}9342;0{,}3568)$,
-> $S=0{,}5500$; tłumienie amplitudowe $\gamma=0{,}3$: $\mathrm{diag}(0{,}3;0{,}7)$ i
-> $\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}$; depolaryzujący $p=0{,}3$:
-> $\mathrm{diag}(0{,}85;0{,}15)$, purity $0{,}745$; $F=0{,}85$, $D=0{,}15$, Fuchs–van de Graaf ✓.
 7. **Utożsamienie kanału unitarnego z depolaryzującym.** Unitarny jest **odwracalny**, depolaryzujący
    nie; dodatkowo depolaryzujący jest unitalny, a tłumienie amplitudowe nie.
 8. **Zgubiony kwadrat we wierności.** $F$ w tym rozdziale to **kwadrat** $(\mathrm{Tr}\sqrt{\cdots})^2$;

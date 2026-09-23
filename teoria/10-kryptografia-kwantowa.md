@@ -1,20 +1,17 @@
 # 10. Kryptografia kwantowa
 
-> **Warsztat źródłowy:** „Kryptografia kwantowa” (Piotr Rydlichowski).
-> **Czas nauki:** ~5 h teorii + ~7 h zadań.
-> **Wymagana wiedza wstępna:** [03 — rachunek prawdopodobieństwa](03-rachunek-prawdopodobienstwa-i-statystyka.md), [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [07 — kwantowa teoria informacji](07-kwantowa-teoria-informacji.md), [09 — splątanie i twierdzenie Bella](09-splatanie-i-twierdzenie-bella.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Kryptografia kwantowa (*quantum key distribution*, QKD) to pierwsze **wdrożone** zastosowanie informacji
-kwantowej: pozwala dwóm stronom uzgodnić tajny klucz, którego podsłuchu **nie da się** przeprowadzić
-niezauważenie. Bezpieczeństwo nie opiera się na trudności obliczeniowej (jak RSA), lecz na prawach
-fizyki: **zakazie klonowania** (rozdział 07) i nierozróżnialności stanów nieortogonalnych.
+Rozdział obejmuje kryptografię kwantową (QKD): szyfr Vernama i doskonałą tajność, kryptografię
+symetryczną i asymetryczną oraz protokoły BB84, B92 i E91. Omawia sifting, uzgadnianie klucza
+i wzmocnienie prywatności, a także QBER jako miarę podsłuchu, ataki intercept-resend i PNS,
+stany dekoy oraz różnicę między QKD a kryptografią postkwantową (PQC).
 
-Protokół BB84 pojawia się na Olimpiadzie jako naturalne zastosowanie pomiaru w różnych bazach
-(rozdział 06) i jako odpowiedź na przewagę algorytmu Shora (rozdział 08): skoro komputery kwantowe
-złamią RSA, potrzebujemy kanału, którego *nie da się* podsłuchać. Rozdział tłumaczy BB84, B92 i E91,
-pokazuje, jak QBER ujawnia podsłuch, i odróżnia QKD od kryptografii postkwantowej (PQC).
+Bezpieczeństwo QKD opiera się na prawach fizyki — zakazie klonowania (rozdział 07)
+i nierozróżnialności stanów nieortogonalnych — a nie na trudności obliczeniowej. Materiał
+wykorzystuje pomiar w różnych bazach (rozdział 06) i stanowi odpowiedź na przewagę
+algorytmu Shora (rozdział 08).
 
 ## 2. Najważniejsze definicje
 
@@ -110,7 +107,9 @@ zmierzyła (**intercept-resend**). Policzmy błąd. Eve wybiera właściwą baz�
 $\tfrac12$. Jeśli trafi (prawd. $\tfrac12$), odtworzy stan bezbłędnie. Jeśli nie trafi ($\tfrac12$),
 wysyła stan w złej bazie; Bob mierzy go w swojej (właściwej) bazie i z prawdopodobieństwem $\tfrac12$
 odczyta zły bit. Zatem
+
 $$\text{QBER}=\underbrace{\tfrac12}_{\text{Eve pudłuje}}\cdot\underbrace{\tfrac12}_{\text{Bob myli się}}=\tfrac14=25\%.$$
+
 Bez podsłuchu QBER $\approx0$ (tylko szum kanału). Przekroczenie progu $\sim11\%$ oznacza, że Eve
 ma za dużo informacji; protokół zostaje przerwany. To są **statystyczne dowody podsłuchu**.
 
@@ -140,12 +139,12 @@ oznacza, że Eve nie odczyta bitu bez ryzyka błędu.
   po stronie odbiorcy (MDI-QKD).
 - **Trojan-horse.** Eve wysyła do nadajnika Alicji sondę i odbiera jej odbicie. Obrona: filtry
   widmowe, izolatory, optyczne opóźnienia.
-- **Ataki na kanał klasyczny** (mitm na autoryzacji) — obrona: uwierzytelnianie kanału z jawnym kluczem.
+- **Ataki na kanał klasyczny** (mitm na autoryzacji) — obrona: autoryzacja kanału z jawnym kluczem.
 
 ### 3.10 Praktyczne QKD
 
 Realne realizacje: światłowody (zasięg do $\sim100$–$500$ km) lub łącza satelitarne (Micius, 2017).
-Tempo klucza: kbps–Mbps. Kluczowe inżynierskie aspekty: **stany dekoy**, **QKD niezależne od
+Tempo klucza: kbps–Mbps. Inżynierskie aspekty: **stany dekoy**, **QKD niezależne od
 detektora (MDI-QKD)**, **TF-QKD** (twisted/dizzy — przekroczenie granicy liniowej), synchronizacja.
 W Polsce infrastrukturę i eksperymenty prowadzi **PCSS (Poznańskie Centrum Superkomputerowo-Sieciowe)**,
 a komputery kwantowe buduje m.in. **IQM** (Finlandia) — pojawiają się one jako partnerzy warsztatów
@@ -210,7 +209,7 @@ jej informacja **odbiera** możliwość uzgodnienia sekretu — sam atak staje s
    porównujemy *bazy*, a bity tylko w małej próbce testowej.
 2. **Mylenie QBER z „szumem”.** QBER $>11\%$ oznacza realny podsłuch (lub poważny szum) i przerwanie protokołu.
 3. **Sądzenie, że QKD „szyfruje dane”.** QKD generuje *klucz*; szyfrowanie robi się potem (np. Vernam).
-4. **Zapominanie o uwierzytelnianiu kanału.** Bez autoryzacji kanału klasycznego możliwy jest atak mitm.
+4. **Zapominanie o autoryzacji kanału.** Bez autoryzacji kanału klasycznego możliwy jest atak mitm.
 5. **Ignorowanie ataków sprzętowych.** Idealny model BB84 nie opisuje PNS, blindingu czy trojan-horse.
 6. **Utożsamianie QKD z PQC.** To dwie różne odpowiedzi na komputery kwantowe.
 7. **Zły plon.** Oczekiwany plon siftingu to $\tfrac12$, nie całość; do tego dochodzą straty kanału.
@@ -265,7 +264,3 @@ jej informacja **odbiera** możliwość uzgodnienia sekretu — sam atak staje s
   teleportacja, tw. Holevo.
 - Pełne rozwiązania: [zadania/rozwiazania/rozwiazania-10.md](../zadania/rozwiazania/rozwiazania-10.md).
 - Praca domowa: [PD-2](../praca-domowa/praca-domowa-02.md).
-
-> **Weryfikacja numeryczna.** Rachunki policzono w NumPy: $H_2(0{,}25)=0{,}8113$ (stąd $r=-0{,}62<0$),
-> próg $H_2(e)=\tfrac12$ daje $e\approx0{,}110$; przykładowy przebieg 8-bitowy daje 5 bitów siftowanych
-> (plon $62{,}5\%$ przy małej próbce, oczekiwany $\to50\%$).

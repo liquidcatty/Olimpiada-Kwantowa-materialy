@@ -1,29 +1,24 @@
 # 16. Analiza danych i obliczenia naukowe
 
-> **Warsztat źródłowy:** „Analiza danych i obliczenia naukowe” (Paweł Gora).
-> **Czas nauki:** ~6 h teorii + ~10 h zadań.
-> **Wymagana wiedza wstępna:** [03 — rachunek prawdopodobieństwa i statystyka](03-rachunek-prawdopodobienstwa-i-statystyka.md), [04 — elementy analizy matematycznej](04-elementy-analizy-matematycznej.md), [11 — metrologia kwantowa](11-metrologia-kwantowa.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Zadania Olimpiady coraz częściej kończą się **danymi**: zliczeniami fotonów z detektora,
-krzywą zaniku koherencji $T_2$, widmem szumu, tabelą pomiarów z niepewnościami. Umiejętność
-napisania w kilkanaście minut skryptu, który wczytuje dane, dopasowuje model i **uczciwie
-raportuje niepewność**, jest na finale warta tyle samo co znajomość wzorów.
+Rozdział obejmuje narzędzia warsztatu „Analiza danych i obliczenia naukowe”: **NumPy** (tablice,
+wektoryzacja, wydajność), **pandas** (arkusz danych w kodzie), **matplotlib** (wykres jako element
+odpowiedzi), podstawy **dopasowania modelu** (LSM, macierz Vandermonde’a, $\chi^2$, $R^2$),
+**propagację niepewności**, **bootstrap**, wykrywanie punktów odstających oraz **transformatę
+Fouriera** (FFT, widmo, alias, okna, filtry).
 
-Rozdział zbiera narzędzia warsztatu „Analiza danych i obliczenia naukowe”: **NumPy** (tablice,
-wektoryzacja, wydajność), **pandas** (arkusz danych w kodzie), **matplotlib** (wykres jako
-element odpowiedzi) oraz podstawy **dopasowania modelu** i **propagacji niepewności**. To
-naturalne przedłużenie [rozdziału 03](03-rachunek-prawdopodobienstwa-i-statystyka.md)
-(estymacja, rozkłady, $\chi^2$) oraz [rozdziału 11](11-metrologia-kwantowa.md) — tam uczymy
-się, że niepewność maleje jak $1/\sqrt N$; tutaj wyznaczamy ją z **konkretnych danych**.
+Druga grupa zagadnień dotyczy **reprodukowalności** (*reproducibility*): raport odtwarzalny z
+trzech elementów — **kod + dane + opis** — z ustalonym **ziarnem** (*seed*) i przykładami
+uruchamianymi bez SciPy (SciPy pokazywane jako opcja).
 
-Szczególny nacisk kładziemy na **reprodukowalność** (*reproducibility*): raport daje się
-odtworzyć z trzech elementów — **kod + dane + opis**. Dlatego każdy przykład uruchamia się bez
-SciPy (SciPy pokazujemy jako opcję), a liczby losowe mają ustalone **ziarno** (*seed*).
-Analiza danych to także codzienne narzędzie eksperymentatora w rozdziale
-[12](12-realizacje-komputerow-kwantowych.md) (benchmarki, czasy $T_1/T_2$) i
-[13](13-korekcja-i-mitygacja-bledow.md) (krzywe wierności bramek).
+Materiał rozwija estymację, rozkłady i $\chi^2$ z
+[rozdziału 03](03-rachunek-prawdopodobienstwa-i-statystyka.md) oraz niepewność malejącą jak
+$1/\sqrt N$ z [rozdziału 11](11-metrologia-kwantowa.md); niepewności są tu wyznaczane z
+konkretnych danych. Analiza danych wraca jako narzędzie w
+[rozdziale 12](12-realizacje-komputerow-kwantowych.md) (benchmarki, czasy $T_1/T_2$) i
+[rozdziale 13](13-korekcja-i-mitygacja-bledow.md) (krzywe wierności bramek).
 
 ## 2. Najważniejsze definicje
 
@@ -121,8 +116,10 @@ działał także bez niego.
 Dla modelu liniowego w parametrach — np. $y=a x+b$ albo $y=a_0+a_1x+a_2x^2$ — używamy
 `np.polyfit(x, y, stopien)` (metoda najmniejszych kwadratów). Dla wag (różne niepewności)
 budujemy **macierz Vandermonde’a** i rozwiązujemy układ normalny:
+
 $$W=\mathrm{diag}(1/\sigma_i^2),\qquad \hat\beta=(V^{\mathsf T}W V)^{-1}V^{\mathsf T}W\,y,\qquad
 \mathrm{Cov}(\hat\beta)=(V^{\mathsf T}W V)^{-1}.$$
+
 Pierwiastek z przekątnej $\mathrm{Cov}$ to niepewność parametru. Dla modeli **nieliniowych**
 (np. $y=Ae^{-t/T_2}$) trzy drogi: (i) linearyzacja przez logarytm i `polyfit`, (ii) własna
 minimalizacja $\chi^2$, (iii) `scipy.optimize.curve_fit` (opcjonalnie — patrz [bibliografia](../docs/bibliografia.md)).
@@ -130,9 +127,11 @@ minimalizacja $\chi^2$, (iii) `scipy.optimize.curve_fit` (opcjonalnie — patrz 
 ### 3.6 Ocena dopasowania: $\chi^2$, reszty, $R^2$
 
 Trzy liczby odpowiadają na trzy różne pytania:
+
 $$\chi^2=\sum_i\frac{(y_i-f(x_i))^2}{\sigma_i^2},\qquad
 \chi^2_{\rm red}=\frac{\chi^2}{\mathrm{ndof}},\qquad
 R^2=1-\frac{\sum_i r_i^2}{\sum_i (y_i-\bar y)^2}.$$
+
 $\mathrm{ndof}=N-p$ ($p$ = liczba parametrów). **$\chi^2_{\rm red}\approx1$** → model zgodny z
 danymi *i* niepewności są realistyczne; $\gg1$ → zły model lub zaniżone $\sigma_i$;
 $\ll1$ → zawyżone $\sigma_i$. $R^2$ bliskie 1 mówi tylko, że model „idzie za” trendem — nie
@@ -142,8 +141,10 @@ weryfikuje niepewności. Dlatego zawsze raportujemy razem $\chi^2_{\rm red}$ i $
 
 Gdy wynik $z$ liczymy z kilku zmierzonych wielkości, niepewności się **propagują**. Dla
 niezależnych zmiennych:
+
 $$u_z^2=\sum_j\Big(\frac{\partial f}{\partial x_j}\Big)^2 u_{x_j}^2 .$$
-**Uwaga na korelacje**: jeśli parametry dopasowania są skorelowane (niezerowe pozadiagonalne
+
+Jeśli parametry dopasowania są skorelowane (niezerowe pozadiagonalne
 elementy $\mathrm{Cov}$), trzeba użyć pełnej formy $u_z^2=\vec g^{\mathsf T}\mathrm{Cov}\,\vec g$,
 gdzie $g_j=\partial f/\partial x_j$. Gdy wzór jest skomplikowany, wygodna jest **propagacja
 Monte Carlo**: losujemy $\vec x$ z rozkładu $\mathcal N(\hat{\vec x},\mathrm{Cov})$, liczymy $z$
@@ -202,16 +203,17 @@ choć jednego elementu brakuje, wyniku nie da się odtworzyć.
 
 ### Przykład 16.1 (łatwy): ważone dopasowanie liniowe z $\chi^2$ i $R^2$
 
-**Dane.** Sześć pomiarów $x_i=1,\dots,6$ z wynikami $y=(2{,}1;\ 4{,}0;\ 6{,}2;\ 7{,}9;\ 10{,}2;\
-11{,}8)$ i jednakową niepewnością $\sigma=0{,}2$.
+**Dane.** Sześć pomiarów $x_i=1,\dots,6$ z wynikami $y=(2{,}1;\ 4{,}0;\ 6{,}2;\ 7{,}9;\ 10{,}2;\ 11{,}8)$ i jednakową niepewnością $\sigma=0{,}2$.
 
 **Metoda.** Model $y=ax+b$; macierz Vandermonde’a $V$ ($6\times2$) i rozwiązanie ważone
 $\hat\beta=(V^{\mathsf T}WV)^{-1}V^{\mathsf T}Wy$.
 
 **Rachunek.** $W=(1/0{,}04)I$, więc
+
 $$V^{\mathsf T}WV=\frac{1}{0{,}04}\begin{pmatrix}\sum x_i^2&\sum x_i\\ \sum x_i&6\end{pmatrix}
 =\begin{pmatrix}2275&525\\ 525&150\end{pmatrix},\qquad
 (V^{\mathsf T}WV)^{-1}=\begin{pmatrix}0{,}002286&-0{,}008\\ -0{,}008&0{,}034667\end{pmatrix}.$$
+
 Z $\sum x_iy_i=182{,}1$, $\sum y_i=42{,}2$ dostajemy $\hat\beta=(1{,}9657,\ 0{,}1533)$.
 Niepewności to pierwiastki z przekątnej: $u_a=\sqrt{0{,}002286}=0{,}0478$,
 $u_b=\sqrt{0{,}034667}=0{,}186$.
@@ -229,8 +231,7 @@ w granicach niepewności, a niepewności $\sigma=0{,}2$ są realistyczne.
 ### Przykład 16.2 (trudniejszy): zanik $T_2$, propagacja i bootstrap
 
 **Dane.** $N=60$ punktów $t\in[0,8]$ s, model $y=Ae^{-t/T_2}$ z $A=0{,}98$, $T_2=2{,}5$ s,
-szum gaussowski $\sigma=0{,}02$ (symulacja skryptem [`kod/analiza_danych.py`](../kod/analiza_danych.py),
-`seed=11`).
+szum gaussowski $\sigma=0{,}02$ (`seed=11`).
 
 **Metoda.** Start z linearyzacji $\ln y=\ln A-t/T_2$ (`np.polyfit`), potem lokalna minimalizacja
 $\chi^2$ (krok adaptacyjny), niepewności z numerycznego hesjanu; kontrolnie **bootstrap**
@@ -239,8 +240,10 @@ $\chi^2$ (krok adaptacyjny), niepewności z numerycznego hesjanu; kontrolnie **b
 **Rachunek.** Dopasowanie daje $T_2=2{,}4528$ s, $A=0{,}9901$, $\chi^2=44{,}76$,
 $\mathrm{ndof}=58$, czyli $\chi^2_{\rm red}=0{,}772$. Numeryczny hesjan daje
 $u_{T_2}=0{,}0238$ s, $u_A=0{,}0065$. Propagacja na $y(3)=Ae^{-3/T_2}=0{,}2914$:
+
 $$u_y^2=\Big(e^{-3/T_2}\Big)^2u_A^2+\Big(Ae^{-3/T_2}\tfrac{3}{T_2^2}\Big)^2u_{T_2}^2
 \;\Rightarrow\; u_y=0{,}0040 .$$
+
 Bootstrap (16.–84. percentyl) daje $T_2\in[2{,}427;\ 2{,}485]$ s, szerokość $0{,}058$ s —
 zgodnie z $2u_{T_2}=0{,}048$ s.
 
@@ -338,11 +341,6 @@ metodą bootstrap ($B=2000$).
 - Praca domowa: [PD-4](../praca-domowa/praca-domowa-04.md).
 - Kod: [`kod/analiza_danych.py`](../kod/analiza_danych.py) — dopasowanie, $\chi^2$, bootstrap, FFT.
 
-> **Weryfikacja numeryczna.** Wszystkie liczby policzono w NumPy. Dopasowanie z przykładu 16.1
-> daje $\hat\beta=(1{,}9657,\ 0{,}1533)$, $\chi^2=2{,}819$, $R^2=0{,}9983$; predykcja
-> $13{,}913\pm0{,}186$. Przykład 16.2 (skrypt `kod/analiza_danych.py`): $T_2=2{,}4528\pm0{,}0238$ s,
-> $\chi^2_{\rm red}=0{,}772$, bootstrap $[2{,}4268;\ 2{,}4848]$ s, FFT wykrywa $7{,}031$ Hz
-> (prawda $7{,}0$ Hz, rozdzielczość $0{,}098$ Hz), alias $10$ Hz $\to2$ Hz.
 
 
 

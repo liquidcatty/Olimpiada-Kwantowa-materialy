@@ -8,8 +8,10 @@ dla wszystkich $\lvert\psi\rangle$.
 
 (b) Gdyby $U$ klonował (pomijamy otoczenie), to $U\lvert0\rangle\lvert0\rangle=\lvert00\rangle$,
 $U\lvert1\rangle\lvert0\rangle=\lvert11\rangle$, a z liniowości
+
 $$U\lvert+\rangle\lvert0\rangle=\tfrac{1}{\sqrt2}(U\lvert00\rangle+U\lvert10\rangle)
 =\tfrac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)=\lvert\Phi^+\rangle.$$
+
 Klonowanie wymagałoby jednak $\lvert+\rangle\lvert+\rangle=\frac12(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle)$
 — to inny stan. Sprzeczność.
 
@@ -32,6 +34,7 @@ $E_0\lvert\psi\rangle=\lvert\psi\rangle$, $E_0\lvert\phi\rangle=\lvert\phi\rangl
 leżą w tej samej podprzestrzeni własnej i muszą być ortogonalne. Dla nieortogonalnych to sprzeczność.
 
 (b) Granica Helstroma dla jednakowych prawdopodobieństw:
+
 $$p_{\text{poprawne}}=\tfrac12\Big(1+\sqrt{1-\lvert\langle0\vert+\rangle\rvert^2}\Big)
 =\tfrac12\Big(1+\sqrt{1-\tfrac12}\Big)=\tfrac12\Big(1+\tfrac{1}{\sqrt2}\Big)\approx0{,}8536.$$
 
@@ -80,10 +83,14 @@ są jednoznacznie powiązane.
 ## Z-07.5
 
 (a) Zespół: $\frac12$ na $\lvert0\rangle$, $\frac12$ na $\lvert+\rangle$. Średni stan
+
 $$\bar\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert+\rangle\langle+\rvert
 =\begin{pmatrix}3/4&1/4\\1/4&1/4\end{pmatrix}.$$
+
 Wartości własne: $\frac12(1\pm\frac{1}{\sqrt2})\approx0{,}8536,\,0{,}1464$. Entropia
+
 $$S(\bar\rho)\approx-0{,}8536\log_2 0{,}8536-0{,}1464\log_2 0{,}1464\approx0{,}601\ \text{bitu}.$$
+
 Oba stany czyste $\Rightarrow S(\rho_i)=0$, więc $\chi=S(\bar\rho)\approx0{,}601$ bita.
 
 (b) Supergęste kodowanie zużywa **dwa** nośniki (shared ebit + wysłany kubit), więc 2 bity nie łamią
@@ -99,8 +106,7 @@ współdzielonego splątania.
 
 ## Z-07.6
 
-(a) $\mathcal{E}(\lvert0\rangle\langle0\rvert)=(1-p)\lvert0\rangle\langle0\rvert+p\,\frac{I}{2}
-=\begin{pmatrix}1-p/2&0\\0&p/2\end{pmatrix}$.
+(a) $\mathcal{E}(\lvert0\rangle\langle0\rvert)=(1-p)\lvert0\rangle\langle0\rvert+p\,\frac{I}{2} =\begin{pmatrix}1-p/2&0\\0&p/2\end{pmatrix}$.
 
 (b) $\lvert0\rangle$ jest stanem własnym kanału, więc
 $F\big(\mathcal{E}(\lvert0\rangle\langle0\rvert),\lvert0\rangle\langle0\rvert\big)=\langle0\vert\mathcal{E}(\lvert0\rangle\langle0\rvert)\vert0\rangle=1-\frac p2$.

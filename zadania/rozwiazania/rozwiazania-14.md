@@ -77,7 +77,7 @@ reakcją jest rotacja poświadczeń.
 $\Delta\varphi \ge \frac{1}{\sqrt{N}}$
 $\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$
 ```
-(Preferowany zapis w tym repozytorium: `\lvert\psi\rangle`, `\frac{1}{\sqrt N}` bez nawiasów
+(Preferowany zapis: `\lvert\psi\rangle`, `\frac{1}{\sqrt N}` bez nawiasów
 w mianowniku, przecinek dziesiętny jako `{,}`.)
 
 (b) Komenda pandoc (pandoc + `xelatex` obsługują polskie znaki):
@@ -170,8 +170,8 @@ ma własny plik i nie nadpisuje poprzedniego.
 4. **jednolita orientacja** i **ponumerowane strony** w kolejności zadań,
 5. **sensowny rozmiar pliku** (JPEG, kompresja $70$–$85\%$, zgodny z limitem systemu).
 
-(b) Weryfikacja przed wysłaniem: otwórz plik **na telefonie**, wykadruj do $100\%$ i spróbuj
-odczytać najmniejszy wzór oraz indeks dolny; sprawdź, czy widać wszystkie cztery narożniki
+(b) Weryfikacja przed wysłaniem: otwórz plik **na telefonie**, wykadruj do $100\%$ i odczytaj
+najmniejszy wzór oraz indeks dolny; sprawdź, czy widać wszystkie cztery narożniki
 i czy strony są w kolejności; porównaj rozmiar pliku z limitem systemu; na końcu pobierz plik
 z systemu (jak zrobi to recenzent) i powtórz sprawdzenie.
 

@@ -30,9 +30,11 @@ systemu” (1, 4) — większość współczesnych trudności leży właśnie w 
 ## Z-12.2
 
 (a) Liczba bramek w czasie koherencji:
+
 $$\frac{T_2}{t_g}=\frac{200\ \mu\text{s}}{50\ \text{ns}}=\frac{2\cdot10^{-4}}{5\cdot10^{-8}}=4000 .$$
 
 (b) Po $n$ bramkach sukces $\approx F^n$ z $F=0{,}998$:
+
 $$0{,}998^{500}=0{,}368\ (36{,}8\%),\qquad 0{,}998^{5000}=4{,}49\cdot10^{-5}\ (\approx0{,}004\%).$$
 
 (c) $0{,}998^n=0{,}5\Rightarrow n=\frac{\ln0{,}5}{\ln0{,}998}=\frac{-0{,}6931}{-0{,}002002}=346{,}2$,
@@ -51,6 +53,7 @@ i stosuje mitygację (rozdział 13).
 Jon wygrywa „budżetem bramek” dwukrotnie, choć każda jego bramka jest $\approx3000\times$ dłuższa.
 
 (b) Dla $n=200$ bramek dwukubitowych:
+
 $$0{,}997^{200}=0{,}548\ (54{,}8\%)\ \text{(transmon)},\qquad
 0{,}999^{200}=0{,}819\ (81{,}9\%)\ \text{(jon)} .$$
 
@@ -71,6 +74,7 @@ a nie od samej liczby kubitów.
 ## Z-12.4
 
 (a) Odległość $d=6$ (w bramkach) wymaga $d=6$ SWAP-ów, a każdy SWAP to $3$ CNOT:
+
 $$6\cdot3=18\ \text{CNOT}.$$
 
 (b) Łączna wierność „transportu”: $0{,}997^{18}=0{,}947$ (czyli $94{,}7\%$), podczas gdy
@@ -99,6 +103,7 @@ z błędem $1\%$ na bramkę da wynik gorszy niż $50$ kubitów z błędem $10^{-
 porównanie wymaga miar „całościowych”: QV, EPLG, CLOPS oraz wierności bramek natywnych.
 
 (c) CLOPS to liczba **warstw** obwodu na sekundę. Obwód o $20$ warstwach przy $5000$ CLOPS:
+
 $$t=\frac{20}{5000}\ \text{s}=0{,}004\ \text{s}=\mathbf{4}\ \text{ms}.$$
 
 **Odpowiedź:** (a) QV: zintegrowana jakość $2^n$; XEB: zgodność rozkładu z idealnym;
@@ -136,9 +141,4 @@ na transpilację, więc raportujemy metadane uruchomienia.
 *Fizycznie:* komputer kwantowy jest **urządzeniem pomiarowym, które dryfuje** — jego parametry
 zmieniają się z czasem, a wynik trzeba podawać razem z warunkami, w jakich go uzyskano.
 
-> **Weryfikacja numeryczna.** Wszystkie liczby policzono w NumPy: $200\,\mu\text{s}/50\,\text{ns}=4000$,
-> $0{,}998^{500}=0{,}3675$, $0{,}998^{5000}=4{,}49\cdot10^{-5}$, $n(50\%)=346{,}2$;
-> $150\,\mu\text{s}/60\,\text{ns}=2500$, $1\,\text{s}/200\,\mu\text{s}=5000$;
-> $0{,}997^{200}=0{,}548$, $0{,}999^{200}=0{,}819$, $0{,}999^{1000}=0{,}368$;
-> $0{,}997^{18}=0{,}947$, $0{,}997^{100}=0{,}740$, $0{,}997^{1200}=0{,}027$; $20/5000=4$ ms.
 

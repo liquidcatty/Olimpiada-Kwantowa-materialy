@@ -1,11 +1,11 @@
 # Praca domowa PD-1 (rozdziały 01–05)
 
-> **Zakres:** rozdziały [01](../teoria/01-liczby-zespolone.md)–[05](../teoria/05-podstawy-mechaniki-kwantowej.md).
-> **Punktacja:** 10 zadań po **2 pkt**, razem **20 pkt** (próg zaliczenia: 12 pkt).
-> **Forma:** rachunek + krótkie uzasadnienie; wyniki przybliżone podawaj z trzema
-> cyframi znaczącymi. Można (i warto) wspomagać się numpy — ale rachunek musi być
-> widoczny. Stałe: $\hbar=1{,}0546\cdot10^{-34}$ J·s, $m_e=9{,}109\cdot10^{-31}$ kg,
-> $c=3{,}00\cdot10^{8}$ m/s, $1$ eV $=1{,}602\cdot10^{-19}$ J.
+**Zakres:** rozdziały [01](../teoria/01-liczby-zespolone.md)–[05](../teoria/05-podstawy-mechaniki-kwantowej.md).
+**Punktacja:** 10 zadań po **2 pkt**, razem **20 pkt** (próg zaliczenia: 12 pkt).
+**Forma:** rachunek + krótkie uzasadnienie; wyniki przybliżone podawaj z trzema
+cyframi znaczącymi. Rachunek musi być widoczny (można wspomagać się NumPy).
+Stałe: $\hbar=1{,}0546\cdot10^{-34}$ J·s, $m_e=9{,}109\cdot10^{-31}$ kg,
+$c=3{,}00\cdot10^{8}$ m/s, $1$ eV $=1{,}602\cdot10^{-19}$ J.
 
 ## Zadania
 
@@ -97,18 +97,24 @@ $\mathcal T=2\pi/\Omega$).
 **PD-1.10.** Deklaracja: baza $|00\rangle,|01\rangle,|10\rangle,|11\rangle$
 (małoendianowo); kubit 1 = górny (starszy bit), kubit 0 = dolny (młodszy).
 (a) Krok po kroku:
+
 $$|00\rangle\xrightarrow{H\otimes I}\tfrac{1}{\sqrt2}(|00\rangle+|10\rangle)
 \xrightarrow{I\otimes R_Y(\pi/3)}
 \tfrac{1}{\sqrt2}\Bigl[\tfrac{\sqrt3}{2}|00\rangle+\tfrac12|01\rangle
 +\tfrac{\sqrt3}{2}|10\rangle+\tfrac12|11\rangle\Bigr].$$
+
 CNOT (kontrola = kubit 1) zamienia $|10\rangle\leftrightarrow|11\rangle$:
+
 $$|\psi_{\rm out}\rangle=\frac{\sqrt3}{2\sqrt2}|00\rangle+\frac{1}{2\sqrt2}|01\rangle
 +\frac{1}{2\sqrt2}|10\rangle+\frac{\sqrt3}{2\sqrt2}|11\rangle.$$
+
 (b) $P(00)=P(11)=\frac38=0{,}375$, $P(01)=P(10)=\frac18=0{,}125$ (suma $=1$ ✓).
 (c) Macierz współczynników
 $\begin{pmatrix}\sqrt3&1\\1&\sqrt3\end{pmatrix}/(2\sqrt2)$ ma wartości osobliwe
+
 $$s_1=\frac{\sqrt3+1}{2\sqrt2}\approx0{,}966,\qquad s_2=\frac{\sqrt3-1}{2\sqrt2}
 \approx0{,}259.$$
+
 Obie są niezerowe ($s_1^2\approx0{,}933$, $s_2^2\approx0{,}067$), więc stan **jest splątany**;
 jego entropia splątania $S=-s_1^2\log_2 s_1^2-s_2^2\log_2 s_2^2\approx0{,}35$ bita.
 
@@ -127,10 +133,6 @@ jego entropia splątania $S=-s_1^2\log_2 s_1^2-s_2^2\log_2 s_2^2\approx0{,}35$ b
 | PD-1.9 | 05, 02 | oscylacje Rabiego | 2 |
 | PD-1.10 | 02, 05, 01 | obwód dwukubitowy, splątanie | 2 |
 | **Razem** | | | **20** |
-
-**Kolejny krok.** Po zaliczeniu PD-1 przejdź do rozdziałów 06–10 i pracy domowej
-PD-2; rozwiązania zadań z rozdziałów znajdziesz w katalogu
-[`zadania/rozwiazania/`](../zadania/rozwiazania/rozwiazania-01.md).
 
 **PD-1.6.** (a) Oczekiwane $1000\cos^2 60^\circ=1000\cdot\frac14=250$.
 (b) $\chi^2=\frac{(270-250)^2}{250}+\frac{(730-750)^2}{750}=1{,}6+0{,}533\approx2{,}133$.

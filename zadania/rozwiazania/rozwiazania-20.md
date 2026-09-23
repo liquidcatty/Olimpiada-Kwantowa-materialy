@@ -27,8 +27,7 @@ $p=|\psi|^2$, potem `rng.choice(2**n, size=shots, p=p)`.
 **(a) Wskazówki realizacji.** Ustaw stan $\lvert q_2q_1q_0\rangle$: $q_2$ = teleportowany,
 $q_1$ = kubit Alicji z pary, $q_0$ = kubit Boba. Pomiar Bella to cztery rzuty na
 $\lvert\Phi^\pm\rangle,\lvert\Psi^\pm\rangle$ kubitów $q_2,q_1$; zamiast porównywać wektory, licz
-**wierność** $\lvert\langle\psi_{\rm out}\vert\psi\rangle\rvert^2$ (odporna na fazę globalną). Wzorzec:
-[`kod/teleportacja.py`](../../kod/teleportacja.py).
+**wierność** $\lvert\langle\psi_{\rm out}\vert\psi\rangle\rvert^2$ (odporna na fazę globalną).
 
 **(b) Punkty kontrolne.**
 - Cztery wyniki: każdy z $P=0{,}25$; suma $=1$.
@@ -44,7 +43,7 @@ raport z tabelą prawdopodobieństw — 3 pkt.
 
 **(a) Wskazówki realizacji.** Wyrocznię realizuj przez `psi[marked] *= -1`, dyfuzję przez
 `psi = 2*s*np.vdot(s, psi) - psi`. Trzymaj $P$ analityczne ($\sin^2((2k+1)\theta)$) **obok**
-symulacji w jednej tabeli — rozbieżność natychmiast wskaże błąd. Wzorzec: [`kod/grover.py`](../../kod/grover.py).
+symulacji w jednej tabeli — rozbieżność natychmiast wskaże błąd.
 
 **(b) Punkty kontrolne.**
 
@@ -62,7 +61,7 @@ Zgodność analityczno-numeryczna do $10^{-12}$; $k_{\rm opt}(4)=1$, $k_{\rm opt
 
 **(a) Wskazówki realizacji.** Losuj bity i bazy Alicji (`rng.integers(0,2,N)`), potem bazy Boba.
 Podsłuch: z prawdopodobieństwem $f$ Eve mierzy w losowej bazie i odsyła stan. Sifting: zostaw bity
-o zgodnych bazach. QBER licz **tylko** na bitach po siftingu. Wzorzec: [`kod/bb84.py`](../../kod/bb84.py).
+o zgodnych bazach. QBER licz **tylko** na bitach po siftingu.
 
 **(b) Punkty kontrolne.**
 
@@ -95,7 +94,7 @@ $\Delta\varphi\approx\tfrac{1}{V\nu N}$.
 
 **(a) Wskazówki realizacji.** Wczytaj `np.loadtxt(..., unpack=True)`. Dla zaniku $T_2$: start z
 log-linearyzacji, potem minimalizacja $\chi^2$; niepewności z hesjanu lub bootstrap. Zawsze raportuj
-$\chi^2_{\rm red}$ **razem** z wynikiem i wykresem reszt. Wzorzec: [`kod/analiza_danych.py`](../../kod/analiza_danych.py).
+$\chi^2_{\rm red}$ **razem** z wynikiem i wykresem reszt.
 
 **(b) Punkty kontrolne** (dane symulowane, $A=0{,}98$, $T_2=2{,}5$ s, szum $0{,}02$, seed 11):
 - $T_2=2{,}4528\pm0{,}0238$ s, $A=0{,}9901\pm0{,}0065$.
@@ -108,7 +107,7 @@ raport zgodny z szablonem z 3.2 — 3 pkt.
 
 ## Uwaga o ocenianiu projektów
 
-Suma punktów za 6 projektów to 60 pkt. Powyżej 80% zaleca się przejść do powtórki przed finałem
-([plan nauki](../../docs/01-plan-nauki.md)); poniżej 60% — powtórzyć rozdziały wskazane przez prowadzącego
-projekt (najczęściej 16 i 19). Pełne rozwiązania zadań rachunkowych z rozdziałów 16–19 są w plikach
+Suma punktów za 6 projektów to 60 pkt. Wynik powyżej 80% odpowiada opanowaniu materiału
+([plan nauki](../../docs/01-plan-nauki.md)); poniżej 60% oznacza powtórkę rozdziałów wskazanych przez
+prowadzącego projekt (najczęściej 16 i 19). Pełne rozwiązania zadań rachunkowych z rozdziałów 16–19 są w plikach
 `rozwiazania-16.md` … `rozwiazania-19.md`.

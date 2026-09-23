@@ -142,8 +142,7 @@ plików nieśledzonych (np. `__pycache__/`, `.venv/`, `.env`). (c) `git rm --cac
 commitów — trzeba natychmiast zmienić hasło/token (i w razie potrzeby przepisać historię).
 
 **PD-3.8.** (a) `qc.x(0); qc.h(1); qc.cx(1, 0); qc.z(1)` — krok po kroku:
-$\lvert00\rangle\xrightarrow{X_0}\lvert01\rangle\xrightarrow{H_1}\frac{1}{\sqrt2}(\lvert01\rangle+\lvert11\rangle)
-\xrightarrow{\mathrm{CNOT}(1,0)}\frac{1}{\sqrt2}(\lvert01\rangle+\lvert10\rangle)\xrightarrow{Z_1}\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$.
+$\lvert00\rangle\xrightarrow{X_0}\lvert01\rangle\xrightarrow{H_1}\frac{1}{\sqrt2}(\lvert01\rangle+\lvert11\rangle) \xrightarrow{\mathrm{CNOT}(1,0)}\frac{1}{\sqrt2}(\lvert01\rangle+\lvert10\rangle)\xrightarrow{Z_1}\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$.
 (b) $P_{01}=P_{10}=\frac12$, $P_{00}=P_{11}=0$. (c) $\langle XX\rangle=-1$: pod działaniem $X_0X_1$
 składniki zamieniają się miejscami i pojawia się minus, więc $X_0X_1\lvert\psi\rangle=-\lvert\psi\rangle$;
 pomiar $\langle XX\rangle$ wykonuje się dodając $H$ na oba kubity przed pomiarem w bazie $Z$.
@@ -180,9 +179,5 @@ niż kod je usuwa, więc błąd logiczny rośnie z $d$.
 (analiza danych, macierze gęstości, dekoherencja, algorytmy zaawansowane, mini-projekty);
 rozwiązania zadań z rozdziałów znajdziesz w [`zadania/rozwiazania/`](../zadania/rozwiazania/rozwiazania-11.md).
 
-> **Weryfikacja numeryczna.** Wszystkie liczby policzono w NumPy: $1/\sqrt{10^4}=10^{-2}$,
-> $1/10^4=10^{-4}$, $F_Q(0{,}9)=9{,}0001\cdot10^7$, $\Delta\varphi=1{,}054\cdot10^{-4}$;
-> $0{,}997^{500}=0{,}2226$, $0{,}999^{500}=0{,}6064$; $A^{-1}\vec p=(0{,}7045;0{,}2955)$,
-> $\mathrm{cond}(A)=1{,}144$, ZNE $E(0)=0{,}970$; $0{,}997^{9}=0{,}9733$; $2d^2-1$ dla $d=5,7$.
 
 

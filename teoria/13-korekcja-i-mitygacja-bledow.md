@@ -1,24 +1,19 @@
 # 13. Korekcja i mitygacja błędów
 
-> **Warsztat źródłowy:** „Korekcja i mitygacja błędów” (Grzegorz Czelusta i PCSS).
-> **Czas nauki:** ~7 h teorii + ~8 h zadań.
-> **Wymagana wiedza wstępna:** [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [07 — kwantowa teoria informacji](07-kwantowa-teoria-informacji.md), [09 — splątanie](09-splatanie-i-twierdzenie-bella.md), [12 — realizacje komputerów kwantowych](12-realizacje-komputerow-kwantowych.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Rozdział 12 kończył się twardą liczbą: wierność bramki $99{,}7\%$ po tysiącu bramek daje $5\%$
-szansy sukcesu, a algorytm Shora potrzebuje rzędów $10^9$ bramek. **Bez korekcji błędów komputer
-kwantowy nie ma sensu.** Na pierwszy rzut oka wydaje się to niemożliwe: rozdział 07 mówi, że
-**nie da się sklonować** nieznanego stanu, a rozdział 06 — że **pomiar zaburza stan**. Ratunek
-jest subtelny: **mierzymy nie stan, a jego syndrom** — informację, *który* błąd zaszedł, ale nie
-*jaki* jest stan logiczny (pomiar pośredni, przez kubit pomocniczy). Drugi temat rozdziału to
-**mitygacja**: techniki dla ery NISQ, które poprawiają wyniki bez budowania kubitów logicznych
-(skalowanie szumu, kalibracja odczytu, postselekcja, randomizowanie obwodów) — działają „tu i
-teraz”, ale nie dają skalowania, w odróżnieniu od korekcji.
+Rozdział obejmuje korekcję i mitygację błędów: modele błędów (bit-flip, phase-flip, $Y$,
+depolaryzacja, tłumienie amplitudowe, dekoherencja), redundancję, kod
+$\lbrack\!\lbrack n,k,d\rbrack\!\rbrack$, dystans, syndrom, stabilizatory i pomiar pośredni —
+pomiar syndromu wskazuje, *który* błąd zaszedł, nie ujawniając stanu logicznego. Opisuje kod
+3-kubitowy, kod phase-flip, kod Shora i kod Steane'a, kody stabilizatorowe oraz kod powierzchniowy
+wraz z twierdzeniem o progu i kosztem zasobów.
 
-Na Olimpiadzie ten materiał pojawia się w zadaniach *rachunkowych*: policz syndrom dla danego
-błędu, wskaż poprawkę, oszacuj próg błędu, policz koszt zasobów; w zadaniach programistycznych
-wraca jako **macierz kalibracji** i **ZNE** (rozdziały 14–16).
+Druga część rozdziału dotyczy mitygacji dla ery NISQ (skalowanie szumu, macierz kalibracji odczytu,
+postselekcja, randomized compiling, twirling, PEC, dynamical decoupling), która poprawia wyniki bez
+budowania kubitów logicznych. Materiał dotyczy zadań Z-13 i łączy się z realizacjami sprzętu
+(rozdział 12) oraz macierzami gęstości i kanałami kwantowymi (rozdział 17).
 
 ## 2. Najważniejsze definicje
 
@@ -110,7 +105,9 @@ $\lvert+\rangle_L$, przechodząc niezauważenie.
 
 **Zysk.** Jeśli każdy z $3$ kubitów ma niezależnie błąd $X$ z prawdopodobieństwem $p$,
 korekcja zawodzi przy $\ge2$ błędach:
+
 $$P_{\rm fail}=3p^2(1-p)+p^3=3p^2-2p^3 .$$
+
 Dla $p=0{,}01$: $P_{\rm fail}=2{,}98\cdot10^{-4}$ — **$34\times$ lepiej** niż $p$. Dla
 $p=0{,}05$: $7{,}25\cdot10^{-3}$ ($6{,}9\times$ lepiej). Kod przestaje pomagać, gdy
 $3p^2-2p^3=p$, czyli dla $p=\frac12$: **poniżej $50\%$ błędu kod zawsze coś poprawia**.
@@ -126,9 +123,11 @@ $Z$ na wskazanym kubicie.
 **Kod Shora** $\lbrack\!\lbrack9,1,3\rbrack\!\rbrack$ to **konkatenacja**: kod phase-flip na
 3 „blokach” po 3 kubity, gdzie każde $\lvert0\rangle/\lvert1\rangle$ bloku samo jest kodem
 bit-flip:
+
 $$\lvert0\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle+\lvert111\rangle\bigr)^{ \otimes 3},
 \qquad
 \lvert1\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle-\lvert111\rangle\bigr)^{ \otimes 3}.$$
+
 - Błąd bit-flip $X$ na jednym kubicie jest wychwytywany **wewnątrz bloku** (syndromy $Z_iZ_j$),
   a błąd fazowy $Z$ zmienia znak całego bloku ($\lvert000\rangle+\lvert111\rangle\to\lvert000\rangle-\lvert111\rangle$),
   co wychwytuje **kod zewnętrzny** (syndromy $X_iX_j$).
@@ -145,6 +144,7 @@ $[7,4,3]$: bity parzystości dają stabilizatory, a komutowanie wynika z parzyst
 wspólnych kubitów. Sześć generatorów ($q_1$–$q_7$):
 
 $$g_1=X_4X_5X_6X_7,\quad g_2=X_2X_3X_6X_7,\quad g_3=X_1X_3X_5X_7,$$
+
 $$g_4=Z_4Z_5Z_6Z_7,\quad g_5=Z_2Z_3Z_6Z_7,\quad g_6=Z_1Z_3Z_5Z_7 .$$
 
 Stan logiczny $\lvert0\rangle_L$ jest równą superpozycją ośmiu słów **o parzystej wadze**:
@@ -176,8 +176,10 @@ odporności na błędy (*fault tolerance*).
 **Definicja.** Niech $\mathcal{P}_n$ będzie grupą macierzy Pauliego na $n$ kubitach.
 Kod stabilizatorowy zadaje **przemienna podgrupa** $S\subset\mathcal{P}_n$:
 podprzestrzeń kodu to wspólna przestrzeń własna $+1$ wszystkich elementów $S$:
+
 $$\lvert\psi_L\rangle\ \text{jest w kodzie}\iff \hat S\lvert\psi_L\rangle=+\lvert\psi_L\rangle
 \ \text{ dla każdego } \hat S\in S .$$
+
 Dla $\lbrack\!\lbrack n,k,d\rbrack\!\rbrack$ grupa $S$ ma $n-k$ niezależnych generatorów,
 więc syndrom ma $n-k$ bitów i istnieje $2^{\,n-k}$ klas błędów. **Dystans** $d$ to minimalna
 waga operatora, który komutuje ze wszystkimi generatorami, ale **nie** należy do $S$ (czyli
@@ -194,10 +196,10 @@ nietrywialna operacja logiczna).
 Wzór Shannona dla kodów kwantowych mówi, że $k/n\to1$ tylko kosztem dystansu — nie da się
 mieć jednocześnie dużej pojemności i dużej odporności.
 
-> **Ponad program:** **warunki Knilla–Laflamme.** Kod naprawia zbiór błędów $\{E_a\}$, gdy
-> $\langle\psi_i\rvert E_a^\dagger E_b\lvert\psi_j\rangle=C_{ab}\,\delta_{ij}$ dla wszystkich
-> stanów bazowych kodu — czyli błędy nie „przeciekają” między podprzestrzenie logiczne.
-> W języku stabilizatorów odpowiada to warunkowi, że syndromy różnych błędów są różne.
+**warunki Knilla–Laflamme.** Kod naprawia zbiór błędów $\{E_a\}$, gdy
+$\langle\psi_i\rvert E_a^\dagger E_b\lvert\psi_j\rangle=C_{ab}\,\delta_{ij}$ dla wszystkich
+stanów bazowych kodu — czyli błędy nie „przeciekają” między podprzestrzenie logiczne.
+W języku stabilizatorów odpowiada to warunkowi, że syndromy różnych błędów są różne.
 
 ### 3.7 Kod powierzchniowy i twierdzenie o progu
 
@@ -218,7 +220,9 @@ ułożonych w łańcuch, żeby oszukać dekoder.
 **Twierdzenie o progu.** Dla szumu poniżej progu $p<p_{\rm thr}$ (dla kodu powierzchniowego
 przy szumie obejmującym bramki i pomiary: $p_{\rm thr}\approx0{,}5$–$1\%$) błąd logiczny maleje
 wykładniczo z dystansem:
+
 $$p_L\propto\Lambda^{-(d+1)/2},\qquad \Lambda>1 .$$
+
 Google (2024, kod powierzchniowy na 105 kubitach „Willow”) zaraportował $\Lambda\approx2{,}14$
 i $p_L\approx0{,}14\%$ na cykl dla $d=7$ (przy $d=5$: $\approx0{,}65\%$, przy $d=3$: $\approx3\%$)
 — pierwsza demonstracja **poniżej progu**, gdy większy kod naprawdę działa lepiej.
@@ -283,7 +287,7 @@ wykładniczo z głębokością obwodu.
 
 ## 7. Wskazówki do zadań
 
-- **Z-13.1.** Użyj tabeli z 3.3; pamiętaj $\sigma_z=+1$ dla $\lvert0\rangle$ i $-1$ dla $\lvert1\rangle$.
+- **Z-13.1.** Użyj tabeli z 3.3; $\sigma_z=+1$ dla $\lvert0\rangle$ i $-1$ dla $\lvert1\rangle$.
 - **Z-13.2.** (c) rozwiąż $(1-\frac{2p}{3})^n<0{,}9$, czyli $0{,}9667^n<0{,}9$.
 - **Z-13.3–13.5.** (13.3c) rozwiąż $3p^2-2p^3=p$; (13.4b) użyj binarnego numeru kubitu; (13.5c) liczbę kroków policz jako $\log_\Lambda(p_L/p_L^{\rm cel})$, każdy krok to $+2$ w dystansie.
 - **Z-13.6.** (a) dopasuj prostą do trzech punktów i sprawdź, czy wynik leży powyżej $1$ (wtedy model jest źle dobrany); (b) patrz liczba warunkowa; (c) postselekcja odbiera statystykę, ZNE mnoży koszt pomiarów.
@@ -296,12 +300,6 @@ wykładniczo z głębokością obwodu.
 - Pełne rozwiązania: [rozwiazania-13.md](../zadania/rozwiazania/rozwiazania-13.md); praca domowa: [PD-3](../praca-domowa/praca-domowa-03.md).
 - Skrypt: `python kod/korekcja_3bit.py`; bibliografia: Terhal, *Quantum error correction for quantum memories* (2015).
 
-> **Weryfikacja numeryczna.** Syndromy policzono macierzami Pauliego w NumPy (brak błędu
-> $(0,0)$; $X$ na $q_2,q_1,q_0$: $(1,0),(1,1),(0,1)$); dla kodu Steane'a syndromy $001\ldots111$
-> równe binarnym numerom kubitów; $A^{-1}(0{,}60;0{,}40)=(0{,}588;0{,}412)$,
-> $A_2^{-1}\vec p_{\rm zm}=(0{,}8803;0{,}0256;0{,}0256;0{,}0685)$, $\mathrm{cond}(A_2)=1{,}41$;
-> $3p^2-2p^3$ dla $p=0{,}01$ i $0{,}02$; ZNE $E(0)=1{,}00$; $2d^2-1$ dla $d=5,7,27$
-> i dystans $d\approx27$ dla $p_L\approx10^{-6}$. Skrypt: `python kod/korekcja_3bit.py`.
 
 
 ## 4. Przykłady rozwiązane

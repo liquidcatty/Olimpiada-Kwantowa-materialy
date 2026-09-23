@@ -2,20 +2,13 @@
 
 Kompletny, samowystarczalny materiał do przygotowania się do **Olimpiady Kwantowej**
 (<https://olimpiadakwantowa.pl/>) — od liczb zespolonych, przez mechanikę kwantową,
-bramki i algorytmy, aż po sprzęt, korekcję błędów i analizę danych. Wychodzi
-**lekko poza** zakres olimpiady, żeby na finale nie zaskoczyła Cię żadna luka.
+bramki i algorytmy, aż po sprzęt, korekcję błędów i analizę danych. Zakres jest nieco szerszy niż program olimpiady.
 
 Każdy temat ma: **teorię** (z wyprowadzeniami), **przykłady rozwiązane krok po kroku**,
 **zadania** z pełnymi rozwiązaniami, **pracę domową** do oddania i **kod** w Pythonie,
-który pozwala sprawdzić rachunek numerycznie.
+który pozwala sprawdzić rachunek numerycznie. Przewodnik jest nieoficjalny;
+prawa do tekstów zadań organizatora należą do Fundacji Quantum AI.
 
-> **Status materiału.** To przewodnik **nieoficjalny**, tworzony przez uczestników i
-> sympatyków Olimpiady. Treści zadań oficjalnych (arkusz „Zadania przykładowe”) i
-> dokumenty organizatora są własnością Fundacji Quantum AI — tu służą wyłącznie jako
-> materiał do nauki, z podaniem źródła. Zawsze sprawdzaj aktualny
-> [Regulamin](https://olimpiadakwantowa.pl/regulamin/),
-> [Harmonogram](https://olimpiadakwantowa.pl/harmonogram/) i
-> [Zadania](https://olimpiadakwantowa.pl/zadania/) na stronie organizatora.
 
 ## 1. Najważniejsze informacje o Olimpiadzie (I edycja, 2026/2027)
 
@@ -44,7 +37,7 @@ Trzy ścieżki — wybierz swoją:
 | 4 tygodnie | **skrócona** | [plan nauki](docs/01-plan-nauki.md) → rdzeń: 02, 05, 06, 08, 09, 13 |
 | 3 dni | **ratunkowa** | [ściąga wzorów](docs/06-sciaga-wzorow.md) → [zadania przykładowe P1–P4](zadania/treningowe/README.md) z rozwiązaniami → [strategia rozwiązywania zadań](docs/04-strategia-rozwiazywania-zadan.md) |
 
-Zawsze zacznij od przeczytania:
+Kolejność czytania:
 
 1. [Jak korzystać z przewodnika](docs/00-jak-korzystac.md) — konwencje pracy, jak
    odrabiać pracę domową, jak sprawdzać swoje wyniki.
@@ -175,6 +168,8 @@ python kod/verify_all.py               # uruchamia wszystkie skrypty i wypisuje 
 | [docs/08-slownik-pojec-pl-en.md](docs/08-slownik-pojec-pl-en.md) | słownik pojęć polsko-angielski |
 | [docs/bibliografia.md](docs/bibliografia.md) | książki, kursy, dokumentacje, filmy |
 | [tools/check_links.py](tools/check_links.py) | kontrola linków relatywnych (używana w CI) |
+| [tools/audit_github_math.py](tools/audit_github_math.py) | kontrola renderowania matematyki na GitHub (używana w CI) |
+| [tools/audit_content.py](tools/audit_content.py) | kontrola składni LaTeX i pozostałości meta-komentarzy |
 
 ## 8. Publikacja tego repo na GitHub
 
@@ -199,7 +194,4 @@ oraz `python tools/check_links.py` przy każdym pushu i pull requeście.
 - Kod: licencja MIT (plik [LICENSE](LICENSE)).
 - Teksty zadań organizatora i dokumenty Fundacji Quantum AI pozostają własnością
   ich twórców — używamy ich wyłącznie w celach edukacyjnych, z podaniem źródła.
-
-**Powodzenia!** Pamiętaj: na Olimpiadzie nie liczy się to, ile wzorów znasz, tylko
-to, czy umiesz ich użyć w nowej sytuacji.
 

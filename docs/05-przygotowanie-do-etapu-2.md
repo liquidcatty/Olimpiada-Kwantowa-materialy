@@ -5,7 +5,7 @@ członków Jury. **Zakres rozmowy obejmuje wyłącznie zagadnienia z zadań Etap
 Punktuje się: poprawność merytoryczną, tok rozumowania, samodzielność i umiejętność
 obrony wniosków. Kwalifikacja do finału zależy od wyników Etapu I **i** Etapu II.
 
-## 1. Co to naprawdę znaczy „zakres = zadania Etapu I”
+## 1. Zakres rozmowy
 
 Nie pytają Cię o losowe fakty z fizyki kwantowej. Pytają o **Twoje** rozwiązania:
 „skąd wziąłeś ten wzór?”, „co się stanie, gdy θ = π?”, „a gdyby bramka była inna?”.
@@ -18,7 +18,7 @@ Dlatego przygotowanie wygląda tak:
    - gdzie mogłeś się pomylić.
 3. Przygotuj dla każdego zadania **dwa warianty**: „gdyby parametr był inny” i
    „gdyby dodać jedną bramkę/pomiar”.
-4. Przećwicz to na głos z kolegą lub nagrywając się.
+4. Przećwicz odpowiedzi na głos.
 
 ## 2. Najczęstsze pytania komisji (i jak odpowiadać)
 
@@ -31,7 +31,7 @@ Dlatego przygotowanie wygląda tak:
 | „Czy sprawdzałeś to numerycznie?” | higieny pracy | powiedz, jak i z jaką dokładnością |
 | „Gdzie użyłeś AI/narzędzi?” | uczciwości | powiedz wprost i opisz zakres pomocy |
 
-## 3. Ćwiczenie „obrona pracy” (rób je na 3 dni przed rozmową)
+## 3. Ćwiczenie „obrona pracy”
 
 Dla każdego zadania z Etapu I odpowiedz pisemnie na 5 pytań:
 
@@ -43,23 +43,22 @@ Dla każdego zadania z Etapu I odpowiedz pisemnie na 5 pytań:
 
 ## 4. Technika rozmowy
 
-- Mów **strukturalnie**: „Najpierw…, potem…, dlatego…”. To buduje ocenę za tok
-  rozumowania nawet przy drobnym błędzie rachunkowym.
-- Jeśli nie wiesz — powiedz, jak byś to sprawdził. To lepsze niż zgadywanie.
+- Mów **strukturalnie**: „Najpierw…, potem…, dlatego…”.
+- Jeśli nie wiesz — opisz, jak byś to sprawdził.
 - Pisz w trakcie na kartce i pokazuj ją do kamery; komisja widzi wtedy tok pracy.
-- Nie przepraszaj nadmiernie, ale przyznaj błąd i popraw się: to się liczy na plus.
-- Miej otwarty notatnik z własnymi notatkami — to Twoje notatki, masz do nich prawo.
+- Przyznaj błąd i popraw się.
+- Możesz korzystać z własnych notatek.
 - Sprawdź technikę 15 minut wcześniej: kamera, mikrofon, światło, stabilny internet,
   wyciszone powiadomienia.
 
 ## 5. Kodeks uczciwości
 
-- Nie oddawaj pracy, której nie rozumiesz — na rozmowie to wyjdzie.
+- Nie oddawaj pracy, której nie rozumiesz.
 - Nie korzystaj z pomocy osób trzecich w trakcie rozmowy.
 - Nie udostępniaj swoich rozwiązań innym przed zakończeniem etapu — to może
   naruszać Regulamin (Rozdział VII: uczciwość i bezpieczeństwo).
 
-## 6. Mini-ściąga: 12 pytań, które warto umieć odpowiedzieć w 60 sekund
+## 6. Dwanaście pytań kontrolnych
 
 1. Czym różni się superpozycja od splątania?
 2. Dlaczego nie można skopiować nieznanego stanu kwantowego?

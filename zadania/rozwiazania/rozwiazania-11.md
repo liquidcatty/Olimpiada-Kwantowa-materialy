@@ -3,11 +3,15 @@
 ## Z-11.1
 
 (a) Dla $\varphi=\pi/2$ mamy $\varphi/2=\pi/4$, więc z (11.1):
+
 $$p(+)=\cos^2\frac{\pi}{4}=\left(\frac{\sqrt2}{2}\right)^2=\frac12,\qquad p(-)=\sin^2\frac{\pi}{4}=\frac12 .$$
+
 Suma $=\frac12+\frac12=1$ ✓ (rozkład jednostajny — maksymalna informacja o fazie).
 
 (b) $\partial_\varphi p_\pm=\mp\frac12\sin\varphi=\mp\frac12$ dla $\varphi=\pi/2$, więc
+
 $$F=\frac{(1/2)^2}{1/2}+\frac{(1/2)^2}{1/2}=\frac12+\frac12=1 .$$
+
 Nierówność Craméra–Rao: $\Delta\varphi\ge\frac{1}{\sqrt{\nu F}}=\frac{1}{\sqrt{100}}=\mathbf{0{,}1}$ **rad**.
 
 (c) $\Delta\varphi=\frac{1}{\sqrt\nu}=10^{-3}\Rightarrow\nu=10^6$ pomiarów (fotonów).
@@ -75,6 +79,7 @@ $\Delta\varphi=1/\sqrt{38\,010}=\mathbf{5{,}13\cdot10^{-3}}$ rad. Zysk nad SNL:
 $0{,}0707/0{,}00513=13{,}8$ (zamiast $14{,}1$).
 
 (c) Zysk $\sqrt2$ oznacza $F_Q=2N$:
+
 $$pN^2+(1-p)N=2N\ \Rightarrow\ pN^2-pN=N\ \Rightarrow\ p=\frac{1}{N-1}=\frac{1}{199}=\mathbf{5{,}03\cdot10^{-3}}.$$
 
 **Odpowiedź:** (a) $40\,000$ i $200$; (b) $F_Q=38\,010$, $\Delta\varphi=\mathbf{5{,}13\cdot10^{-3}}$ rad,
@@ -112,7 +117,9 @@ czynnik (np. $2\times$ przy $6$ dB), a stany N00N dają zmianę wykładnika skal
 (a) Po etapie $k$ znamy $\varphi$ z niepewnością $\delta_k=1/N_k$. Etap $k+1$ mierzy
 $\cos(N_{k+1}\varphi)$ o okresie $\dfrac{2\pi}{N_{k+1}}$, więc jednoznaczny odczyt wymaga, by
 $\delta_k$ było mniejsze od połowy okresu:
+
 $$\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\quad\Longleftrightarrow\quad N_{k+1}<\pi N_k .$$
+
 Iloraz $c=3$ jest bezpieczny, bo $3<\pi=3{,}1416$ (margines $4{,}7\%$). Dla $c\ge\pi$ kolejny
 etap „przeskoczyłby” o pełny okres i wynik byłby niejednoznaczny.
 
@@ -146,7 +153,9 @@ czyli $\Delta\nu/\nu=\mathbf{3{,}71\cdot10^{-19}}$.
 
 (c) Cel $\Delta\nu/\nu=10^{-19}$ daje $\Delta\nu=4{,}292\cdot10^{14}\cdot10^{-19}=4{,}292\cdot10^{-5}$ Hz.
 Z $\Delta\nu=\frac{1}{2\pi T\sqrt N}$ przy $T=1$ s:
+
 $$\sqrt N=\frac{1}{2\pi\cdot4{,}292\cdot10^{-5}}=3708\ \Rightarrow\ N=1{,}38\cdot10^7\ \text{atomów}.$$
+
 Przy $N=10^5$ ($\sqrt N=316{,}23$) potrzeba
 $T=\dfrac{1}{2\pi\cdot316{,}23\cdot4{,}292\cdot10^{-5}}=\mathbf{11{,}7}$ **s** — czyli samo
 wydłużenie czasu integracji wystarcza, ale wymaga dwunastokrotnego zwiększenia $T$.
@@ -159,8 +168,4 @@ odbywa się przez $\sqrt N$ i dłuższy czas Ramseya, natomiast ściśnięcie sp
 jedynie stały czynnik — dlatego najlepsze zegary optyczne walczą o jak najwięcej atomów
 i jak najdłuższy czas koherencji, a nie o „coraz większe splątanie”.
 
-> **Weryfikacja numeryczna.** Wszystkie liczby policzono w NumPy: $p(+)=1/2$ i $F=1$
-> dla $\varphi=\pi/2$; $F=N^2$ dla N00N; $F_Q(0{,}95)=38\,010$ i $\Delta\varphi=5{,}129\cdot10^{-3}$;
-> $e^{2r}=3{,}981$ (6 dB) i $10$ (10 dB); $250\cdot40=10\,000$; $\Delta\nu=1{,}5915$ mHz
-> oraz $N=1{,}375\cdot10^7$ dla $10^{-19}$. Skrypt: `python kod/metrologia_faza.py`.
 

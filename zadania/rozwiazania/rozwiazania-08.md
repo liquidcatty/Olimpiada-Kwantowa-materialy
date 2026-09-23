@@ -2,13 +2,11 @@
 
 ## Z-08.1
 
-(a) Obwód: $\lvert0\rangle\lvert1\rangle\xrightarrow{H\otimes H}\lvert+\rangle\lvert-\rangle
-\xrightarrow{U_f}\xrightarrow{H\otimes I}\text{pomiar }q_1$. Kubit docelowy przygotowany w $\lvert-\rangle$
+(a) Obwód: $\lvert0\rangle\lvert1\rangle\xrightarrow{H\otimes H}\lvert+\rangle\lvert-\rangle \xrightarrow{U_f}\xrightarrow{H\otimes I}\text{pomiar }q_1$. Kubit docelowy przygotowany w $\lvert-\rangle$
 pozwala „odbić” fazę: $U_f\lvert x\rangle\lvert-\rangle=(-1)^{f(x)}\lvert x\rangle\lvert-\rangle$
 (kick-back), więc informacja o $f$ wraca na rejestr danych.
 
-(b) Dla $f(0)=f(1)=1$: $\frac{1}{\sqrt2}\big((-1)^1\lvert0\rangle+(-1)^1\lvert1\rangle\big)\lvert-\rangle
-=-\lvert+\rangle\lvert-\rangle$. Po $H$: $-\lvert0\rangle\lvert-\rangle$, więc pomiar daje **$0$** —
+(b) Dla $f(0)=f(1)=1$: $\frac{1}{\sqrt2}\big((-1)^1\lvert0\rangle+(-1)^1\lvert1\rangle\big)\lvert-\rangle =-\lvert+\rangle\lvert-\rangle$. Po $H$: $-\lvert0\rangle\lvert-\rangle$, więc pomiar daje **$0$** —
 funkcja **stała**.
 
 (c) Klasycznie: trzeba poznać $f(0)$ **i** $f(1)$ (dwa zapytania), bo jedno zapytanie nie odróżnia
@@ -37,15 +35,17 @@ wykładniczego przyspieszenia.
 ## Z-08.3
 
 (a)
+
 $$\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}.$$
-Unitarność: kolumny są ortogonalne i mają normę $1$ (numerycznie $\lVert M^\dagger M-I\rVert<10^{-16}$).
+
+Unitarność: kolumny są ortogonalne i mają normę $1$ ($\lVert M^\dagger M-I\rVert<10^{-16}$).
 
 (b) Dla $j=1$: $\mathrm{QFT}_2\lvert1\rangle=\frac12(1,i,-1,-i)^{\mathsf T}$. Prawdopodobieństwa to
 moduły kwadratów współczynników: $P=\frac14$ dla każdego z czterech stanów bazowych.
 
 (c) $CS=\mathrm{diag}(1,1,1,i)$; rachunek macierzowy
 $\mathrm{SWAP}\cdot(I\otimes H)\cdot CS\cdot(H\otimes I)$ daje dokładnie $\mathrm{QFT}_2$
-(potwierdzone numerycznie: zgodność do $10^{-16}$).
+(zgodność do $10^{-16}$).
 
 **Odpowiedź:** (a) jak wyżej, macierz unitarna; (b) $\frac12(1,i,-1,-i)^{\mathsf T}$, każdy wynik $P=\frac14$;
 (c) rozkład zachodzi.
@@ -56,6 +56,7 @@ i SWAP.
 ## Z-08.4
 
 (a) $\sin\theta=1/\sqrt8\Rightarrow\theta=\arcsin(1/\sqrt8)\approx0{,}3614$ rad.
+
 $$k_{\text{opt}}\approx\frac{\pi}{4\theta}-\frac12=\frac{\pi}{1{,}4455}-0{,}5\approx2{,}174-0{,}5=1{,}67\ \Rightarrow\ k=2.$$
 
 (b) $P=\sin^2\big((2k+1)\theta\big)$:

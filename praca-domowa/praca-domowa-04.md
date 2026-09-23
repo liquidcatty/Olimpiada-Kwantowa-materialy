@@ -10,7 +10,7 @@ zaawansowane i granice) i [20](../teoria/20-ponad-program-mini-projekty.md) (min
 **Zasady:** rozwiązania pisemne, każde z pełnym uzasadnieniem i jawnym rachunkiem. Notacja jak w
 `docs/03-konwencje-i-notacja.md` (kolejność kubitów $q_1q_0$, $\theta/2$ w bramkach obrotu, entropie
 w bitach). Wyniki przybliżone z 3 cyframi znaczącymi; niepewności do 2 cyfr znaczących.
-**Razem 20 punktów** (10 zadań po 2 pkt). Dopuszczalne (i zalecane) sprawdzenie rachunków w NumPy.
+**Razem 20 punktów** (10 zadań po 2 pkt). Dopuszczalne jest sprawdzenie rachunków w NumPy.
 
 ## Zadania
 
@@ -100,7 +100,7 @@ $a=1{,}99$, $b=1{,}06$ (z `polyfit` otrzymujemy to samo).
 (b) $\chi^2=1{,}275$, $\chi^2_{\rm red}=0{,}425$, $R^2=0{,}9987$ (reszty:
 $-0{,}06;0{,}05;-0{,}04;0{,}17;-0{,}12$).
 (c) $y(5)=11{,}01$; $\vec g=(5,1)$ daje $u=0{,}210$, czyli $11{,}01\pm0{,}21$.
-*Uwaga:* $\chi^2_{\rm red}<1$ sugeruje **zawyżone** $\sigma_i$ — to też wniosek.
+$\chi^2_{\rm red}<1$ sugeruje **zawyżone** $\sigma_i$ — to też wniosek.
 
 **PD-4.3.** (a) $\rho=50/20=2{,}5$ g/cm$^3$.
 (b) $u_\rho=\rho\sqrt{(u_m/m)^2+(u_V/V)^2}=2{,}5\sqrt{0{,}02^2+0{,}025^2}=2{,}5\cdot0{,}03202=0{,}080$ g/cm$^3$.
@@ -117,10 +117,7 @@ $C=2\cdot\tfrac12\cdot\tfrac{\sqrt3}2=\tfrac{\sqrt3}2=0{,}866<1$ — splątanie 
 (c) $F=0{,}9$, $D=0{,}1$; Fuchs–van de Graaf: $1-\sqrt{0{,}9}=0{,}0513\le0{,}1\le\sqrt{0{,}1}=0{,}3162$ ✓.
 
 **PD-4.6.** (a)
-$\lvert\Psi\rangle=\tfrac12\big[\lvert\Phi^+\rangle(\alpha\lvert0\rangle+\beta\lvert1\rangle)
-+\lvert\Phi^-\rangle(\alpha\lvert0\rangle-\beta\lvert1\rangle)
-+\lvert\Psi^+\rangle(\beta\lvert0\rangle+\alpha\lvert1\rangle)
-+\lvert\Psi^-\rangle(-\beta\lvert0\rangle+\alpha\lvert1\rangle)\big]$.
+$\lvert\Psi\rangle=\tfrac12\big[\lvert\Phi^+\rangle(\alpha\lvert0\rangle+\beta\lvert1\rangle) +\lvert\Phi^-\rangle(\alpha\lvert0\rangle-\beta\lvert1\rangle) +\lvert\Psi^+\rangle(\beta\lvert0\rangle+\alpha\lvert1\rangle) +\lvert\Psi^-\rangle(-\beta\lvert0\rangle+\alpha\lvert1\rangle)\big]$.
 (b) Korekty: $\lvert\Phi^+\rangle\to I$, $\lvert\Phi^-\rangle\to Z$, $\lvert\Psi^+\rangle\to X$,
 $\lvert\Psi^-\rangle\to ZX$.
 (c) Stany Bella są ortonormalne, każdy współczynnik ma moduł $\tfrac12$; bez 2 bitów Bob nie zna

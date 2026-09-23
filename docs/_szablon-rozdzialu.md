@@ -5,9 +5,6 @@ Każdy plik w `teoria/` ma **dokładnie** poniższą strukturę sekcji i nagłó
 ```markdown
 # NN. Tytuł rozdziału
 
-> **Warsztat źródłowy:** nazwa warsztatu z harmonogramu Olimpiady (prowadzący).
-> **Czas nauki:** ~X h teorii + ~Y h zadań.
-> **Wymagana wiedza wstępna:** [rozdziały repo](...).
 
 ## 1. Po co to jest
 
@@ -53,11 +50,11 @@ Odsyłacze do kolejnych rozdziałów, bibliografia (pozycje z `docs/bibliografia
 2. **Definicja przed twierdzeniem**, twierdzenie przed przykładem.
 3. Oznaczenia **zgodne z `docs/03-konwencje-i-notacja.md`** (Dirac, małoendianowa
    kolejność kubitów, $\theta/2$ w bramkach obrotu).
-4. Zakres: pokryć temat warsztatu **i lekko wyjść ponad** niego (zaznaczone jako
-   `> **Ponad program:**`), żeby nie było luk na finale.
+4. Zakres: pokryć temat warsztatu i wyjść ponad niego tam, gdzie jest to potrzebne
+   do zrozumienia tematu.
 5. Każdy rozdział kończy się działającym odsyłaczem do skryptu z `kod/`, jeśli
    temat da się zasymulować.
-6. Długość: 150–350 linii. Nie skracamy kosztem kompletności, ale nie rozwlekamy.
+6. Długość: 150–350 linii.
 
 ## Zasady pliku z rozwiązaniami (`zadania/rozwiazania/rozwiazania-NN.md`)
 

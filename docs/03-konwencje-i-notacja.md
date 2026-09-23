@@ -1,8 +1,5 @@
 # Konwencje i notacja
 
-> Ten dokument jest **obowiązujący dla całego repozytorium**. Jeśli w rozdziale
-> teorii, zadaniu lub kodzie pojawi się inny zapis — traktuj to jako błąd i zgłoś
-> poprawkę.
 
 ## 1. Skąd bierze się zakres przewodnika
 
@@ -125,4 +122,41 @@ geometryczny obrotu na sferze Blocha to $\theta$.
 - Praca domowa: `PD-<nr modułu>` (np. `PD-2`).
 - Zestaw zadań z teorii: `Z-<nr rozdziału>` (np. `Z-06`).
 - Zadania oficjalne przykładowe: `P1`–`P4` (numeracji organizatora nie zmieniamy).
+
+## 6. Zasady zapisu matematyki pod GitHub (zweryfikowane empirycznie)
+
+Reguły sprawdzone przez `POST https://api.github.com/markdown` (`tools/probe_github_math.py`).
+GitHub renderuje matematykę MathJaxem i **nie** opakowuje w `math-renderer` przypadków
+wymienionych niżej jako błędne.
+
+| Zapis | Czy GitHub renderuje |
+| --- | --- |
+| inline `$\psi$` w akapicie, w liście, w tabeli, w nagłówku | tak |
+| `$`\`...\`$` (gdy wzór zawiera znaki kolidujące z Markdownem) | tak |
+| blok `$$...$$` rozpoczynający akapit (pusta linia przed nim) | tak |
+| blok `$$...$$` bezpośrednio po nagłówku | tak |
+| dwa bloki `$$` pod rząd | tak |
+| blok `$$` w tej samej linii co tekst („…dlatego $$x=y$$ jest…”) | **nie** |
+| blok `$$` w akapicie, w linii zaraz po tekście (bez pustej linii) | **nie** |
+| blok `$$` w elemencie listy bez pustej linii przed nim | **nie** |
+| blok `$$` wewnątrz cytatu (`> $$`) | **nie** |
+| `$$` w wierszu tabeli | **nie** |
+| inline `$...$` złamane na dwa wiersze | **nie** |
+| znak `\|` (nie `\lvert`) wewnątrz wzoru w tabeli | **nie** (rozbija tabelę) |
+
+Praktyczne konsekwencje dla autora:
+
+1. **Inline `$...$` musi zmieścić się w jednej linii.** Długi wzór albo skracaj, albo
+   przenieś do bloku `$$`.
+2. **Przed każdym blokiem `$$` zostaw pustą linię.** Wyjątkiem jest blok rozpoczęty
+   bezpośrednio po nagłówku albo po innym bloku `$$`.
+3. **Po zamykającym `$$` też zostaw pustą linię**, jeśli dalej idzie tekst.
+4. W tabelach używaj `\lvert`/`\rvert`, nigdy gołego `|`.
+5. Blok wewnątrz elementu listy zapisuj z pustą linią przed nim i wcięciem
+   (np. trzy spacje), inaczej trafi do akapitu i przestanie się renderować.
+
+Automatyczna kontrola: `python tools/audit_github_math.py` (ma zwracać 0 problemów).
+Narzędzia pomocnicze: `tools/fix_math_wrap.py` (scala inline złamane na dwa wiersze),
+`tools/fix_block_math.py` (wstawia puste linie wokół bloków `$$`).
+
 

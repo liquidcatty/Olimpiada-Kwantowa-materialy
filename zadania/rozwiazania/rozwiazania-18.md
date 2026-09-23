@@ -81,8 +81,7 @@ wcześniej niż samo splątanie.
 (a) Nierówność CKW: $C^2_{AB}+C^2_{AC}\le C^2_{A(BC)}$ (tzw. monogamia splątania).
 (b) Dla $\lvert W\rangle=\tfrac{1}{\sqrt3}(\lvert001\rangle+\lvert010\rangle+\lvert100\rangle)$:
 $\tau_{AB}=C_{AB}^2=\tfrac49$, $\tau_{AC}=\tfrac49$, a
-$\tau_{A(BC)}=C^2_{A(BC)}=2\big(1-\mathrm{Tr}\rho_A^2\big)=4\lambda_1\lambda_2
-=4\cdot\tfrac23\cdot\tfrac13=\tfrac89$.
+$\tau_{A(BC)}=C^2_{A(BC)}=2\big(1-\mathrm{Tr}\rho_A^2\big)=4\lambda_1\lambda_2 =4\cdot\tfrac23\cdot\tfrac13=\tfrac89$.
 (c) $\tfrac49+\tfrac49=\tfrac89=\tau_{A(BC)}$ — nierówność jest **nasycona** (równość). Oznacza to,
 że splątanie $A$ z $BC$ jest w całości „rozdzielone” między pary $AB$ i $AC$; w $\lvert\mathrm{GHZ}\rangle$
 byłoby inaczej ($\tau_{AB}=\tau_{AC}=0$, $\tau_{A(BC)}=1$).

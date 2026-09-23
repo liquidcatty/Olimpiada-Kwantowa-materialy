@@ -1,24 +1,21 @@
 # 15. Oprogramowanie kwantowe
 
-> **Warsztat źródłowy:** „Oprogramowanie kwantowe” (warsztat organizatora).
-> **Czas nauki:** ~5 h teorii + ~8 h zadań.
-> **Wymagana wiedza wstępna:** [06 — kubity, bramki, obwody, pomiary](06-kubity-bramki-obwody-pomiary.md), [08 — algorytmy kwantowe](08-algorytmy-kwantowe.md), [12 — realizacje komputerów kwantowych](12-realizacje-komputerow-kwantowych.md), [14 — narzędzia informatyczne](14-narzedzia-informatyczne.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Dotąd obwody rysowaliśmy i liczyliśmy ręcznie. Ten rozdział pokazuje, jak **napisać obwód
-w kodzie** (Qiskit, Cirq, PennyLane), jak go **przetranspilować** na bramki prawdziwego
-urządzenia, jak uruchomić go na symulatorze z szumem i jak wysłać do chmury (IBM, IQM/PCSS).
-Dodatkowo zbudujesz i zrozumiesz **własny symulator stanu** — to najlepszy sposób, by pojąć,
-co właściwie robi biblioteka (w repozytorium: `kod/simulator.py`, rozdział 06).
+Rozdział obejmuje oprogramowanie kwantowe: pisanie obwodów w SDK (Qiskit, Cirq, PennyLane, Braket,
+Q#, QuTiP, ProjectQ), zapis obwodu w QASM 2 i QASM 3, transpilację na bramki natywne i łączność
+urządzenia oraz typy symulatorów (statevector, macierz gęstości, sieci tensorowe, z modelem szumu).
+Omawia shoty i liczniki, layout, pomiar pośredni i sterowanie klasyczne, mitygację w SDK (ZNE,
+twirling, M3, `resilience_level`), algorytmy wariacyjne (VQE, QAOA) oraz budowę własnego
+symulatora stanu.
 
-Na Olimpiadzie oprogramowanie kwantowe pojawia się w trzech rolach: jako **narzędzie
-weryfikacji** rachunków z rozdziałów 06–13, jako treść zadań programistycznych oraz jako punkt
-wyjścia dla algorytmów wariacyjnych (VQE, QAOA) — najbliżej praktycznych zastosowań (chemia
-kwantowa, optymalizacja); ich teorię rozwijamy w [rozdziale 19](19-ponad-program-algorytmy-zaawansowane-i-granice.md).
+Materiał dotyczy zadań Z-15 (obwód Bella, QASM, transpilacja, symulatory, prawdziwy sprzęt, VQE)
+i stanowi narzędzie weryfikacji rachunków z rozdziałów 06–13; teorię algorytmów wariacyjnych
+rozwija rozdział 19.
 
-**Uwaga praktyczna:** Qiskit i Cirq zmieniają API co kilka wersji (`execute` zniknęło, primitives
-zastąpiły `backend.run`) — sprawdź `pip show qiskit` i dokumentację swojej wersji.
+Qiskit i Cirq zmieniają API co kilka wersji (`execute` zniknęło, primitives zastąpiły
+`backend.run`); zgodność kodu zależy od wersji biblioteki (`pip show qiskit`) i jej dokumentacji.
 
 ## 2. Najważniejsze definicje
 
@@ -193,7 +190,9 @@ data, poziom optymalizacji i użyta mitygacja (warunek powtarzalności, rozdzia�
 
 Liczniki zamieniamy na prawdopodobieństwa, dzieląc przez liczbę shotów, a niepewność szacujemy
 jak dla rozkładu dwumianowego (rozdział 03):
+
 $$p_i=\frac{n_i}{n}, \qquad \Delta p_i=\sqrt{\frac{p_i(1-p_i)}{n}} .$$
+
 Dla `{'00': 505, '11': 519}` (n = 1024) mamy $p_{00}=0{,}493\pm0{,}016$ i $p_{11}=0{,}507\pm0{,}016$ —
 oba zgodne z idealnym $\tfrac12$ w granicach błędu statystycznego.
 
@@ -209,7 +208,9 @@ oba zgodne z idealnym $\tfrac12$ w granicach błędu statystycznego.
 ### 3.8 VQE i QAOA — pierwsze algorytmy wariacyjne
 
 **Zasada wariacyjna:** dla dowolnego stanu $\lvert\psi(\vec\theta)\rangle$
+
 $$\langle\psi(\vec\theta)\rvert H\lvert\psi(\vec\theta)\rangle\ \ge\ E_0 ,$$
+
 więc minimalizując energię po parametrach obwodu, zbliżamy się do **energii stanu podstawowego**.
 Schemat VQE (*variational quantum eigensolver*): obwód z parametrami (ansatz) $\to$ pomiar
 wartości oczekiwanych $\to$ klasyczny optymalizator (COBYLA, SPSA, gradienty) $\to$ nowe parametry.
@@ -278,7 +279,9 @@ i o statystyczne pomiary to już pełnoprawne narzędzie badawcze.
 **Rachunek (ręczny):** $H\lvert0\rangle=\lvert+\rangle$, po CNOT otrzymujemy
 $\lvert\Phi^+\rangle=\frac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)$. Zatem
 $p_{00}=p_{11}=\tfrac12$, $p_{01}=p_{10}=0$ oraz
+
 $$\langle ZZ\rangle=\tfrac12(+1)+\tfrac12(+1)=1,\qquad \langle XX\rangle=1,\qquad \langle Z\otimes I\rangle=0 .$$
+
 **Symulacja (kod z 3.3):** `sv.probabilities_dict()` daje `{'00': 0.5, '11': 0.5}`,
 `sv.expectation_value("ZZ")` daje `1.0`, a liczniki: `{'00': 505, '11': 519}`.
 Niepewność statystyczna: $\Delta p=\sqrt{0{,}5\cdot0{,}5/1024}=0{,}0156$, a zmierzona częstość
@@ -296,7 +299,9 @@ eksperymentu na prawdziwym sprzęcie.
 $q_0-q_1-q_2$; wierność bramki dwukubitowej $99{,}7\%$.
 **Rachunek:** w linii odległość między $q_0$ i $q_2$ wynosi $2$, więc transpilator wstawia
 $2$ SWAP-y, a każdy SWAP to $3$ CNOT:
+
 $$2\cdot3=6\ \text{CNOT}\ \text{zamiast }1 .$$
+
 Wierność „transportu”: $0{,}997^{6}=0{,}982$ — samo **przeniesienie** kubita kosztuje prawie
 $2$ punkty procentowe wierności. Gdyby obwód miał $50$ takich bramek ($300$ CNOT), wierność
 spadłaby do $0{,}997^{300}=0{,}406$ zamiast $0{,}997^{50}=0{,}861$ przy idealnej łączności.

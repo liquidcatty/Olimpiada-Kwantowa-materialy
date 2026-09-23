@@ -29,8 +29,8 @@ teoria + zadania + praca domowa**. Bez odrabiania prac domowych plan nie działa
 | 20 | 20 Mini-projekty + **powtórka całego materiału** | **PD-4** | robisz 1 mini-projekt i raport |
 | 21–22 | bufor: powtórka, rozwiązywanie arkusza przykładowego, próba własnych zadań | — | gotowość na Etap I |
 
-**Uwaga na daty:** Etap I otwiera się 15.11.2026, a zamyka 28.02.2027. Zacznij
-najpóźniej w połowie października 2026, żeby zdążyć z buforem.
+Etap I: 15.11.2026–28.02.2027. Rozpoczęcie nauki w połowie października 2026
+pozwala ukończyć plan z dwutygodniowym buforem.
 
 ## 2. Rozkład tygodnia (7–9 h pracy)
 
@@ -43,18 +43,7 @@ najpóźniej w połowie października 2026, żeby zdążyć z buforem.
 | Praca domowa (w tygodniu PD) | 1,5–2,0 h | pełny zestaw, na czas, bez podglądania |
 | Powtórka | 0,5 h | 2 zadania z poprzedniego tygodnia |
 
-## 3. Zasady, które robią różnicę
-
-1. **Krótkie sesje codziennie** (45 min) biją jedną długą sesję w weekend.
-2. **Prawo „kartki i długopisu”**: żadne rozwiązanie nie liczy się, jeśli nie
-   przepisałeś go bez podglądania.
-3. **Zapisuj błędy.** Prowadź `moje-bledy.md`: zadanie → co poszło nie tak → zasada
-   na przyszłość. Powtórka z błędów daje więcej niż powtórka z teorii.
-4. **Sprawdzaj liczby kodem** — to buduje intuicję i uczy interpretacji.
-5. **Umiej tłumaczyć.** Po każdym rozdziale spróbuj wyjaśnić temat na głos w 3
-   minuty. To bezpośrednie przygotowanie do rozmowy Etapu II.
-
-## 4. Wariant szybki (4 tygodnie)
+## 3. Wariant szybki (4 tygodnie)
 
 | Tydzień | Treść | Efekt |
 | --- | --- | --- |
@@ -63,9 +52,9 @@ najpóźniej w połowie października 2026, żeby zdążyć z buforem.
 | 3 | 04, 10, 11, 13 | kryptografia, metrologia, korekcja błędów |
 | 4 | 12, 16, 17 + PD-1…PD-4 w skrócie | domykasz zakres i ćwiczysz rachunki |
 
-Pomiń na pierwszy raz: 14, 15, 18, 19, 20 — ale wróć do nich, jeśli chcesz finału.
+W tym wariancie pomija się rozdziały 14, 15, 18, 19, 20.
 
-## 5. Wariant ratunkowy (3 dni przed deadlinem)
+## 4. Wariant ratunkowy (3 dni)
 
 1. Przeczytaj [ściągę wzorów](06-sciaga-wzorow.md) (2 h).
 2. Przerób [P1–P4 z rozwiązaniami](../zadania/treningowe/README.md) i spróbuj
@@ -74,7 +63,7 @@ Pomiń na pierwszy raz: 14, 15, 18, 19, 20 — ale wróć do nich, jeśli chcesz
 4. Przygotuj sposób zapisu pracy: kartka → zdjęcie/PDF, albo Jupyter z rachunkami
    (1 h). Sprawdź check-listę wysyłki w `docs/00-jak-korzystac.md`.
 
-## 6. Plan na Etap II i finał
+## 5. Etap II i finał
 
 - **Etap II** (1–30.04.2027): powtórz **własne** rozwiązania Etapu I i przygotuj
   się na pytania „skąd to wiesz?”. Instrukcja: [przygotowanie do Etapu II](05-przygotowanie-do-etapu-2.md).

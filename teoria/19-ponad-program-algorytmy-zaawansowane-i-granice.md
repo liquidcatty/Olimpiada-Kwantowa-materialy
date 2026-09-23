@@ -1,25 +1,20 @@
 # 19. Algorytmy zaawansowane i granice obliczeń kwantowych
 
-> **Ponad program:** rozdział wykracza poza listę warsztatów, bo domyka algorytmy (teleportacja,
-> Shor, HHL), teoretyczne granice (Holevo, BQP) i kompilację obwodów (Solovay–Kitaev) — to tematy
-> pytań finałowych „jak daleko to działa i dlaczego”.
-> **Czas nauki:** ~8 h teorii + ~10 h zadań.
-> **Wymagana wiedza wstępna:** [07 — kwantowa teoria informacji](07-kwantowa-teoria-informacji.md), [08 — algorytmy kwantowe](08-algorytmy-kwantowe.md), [09 — splątanie i Bella](09-splatanie-i-twierdzenie-bella.md), [17 — macierze gęstości i kanały](17-ponad-program-macierze-gestosci-i-kanaly.md), [18 — dekoherencja](18-ponad-program-splatanie-dekoherencja-termodynamika.md).
 
-## 1. Po co to jest
+## 1. Zakres rozdziału
 
-Rozdział 08 podał algorytmy w wersji „działającej”: Deutscha–Jozsy, Simona, QFT, Grover, Shor.
-Tutaj robimy trzy rzeczy, które na finale dają punkty:
+Rozdział obejmuje zaawansowane algorytmy kwantowe i granice obliczeń kwantowych: pełny rachunek
+**teleportacji** i **supergęstego kodowania** przez bazę Bella, **algorytm Shora** z jawną
+faktoryzacją $N=15$, **algorytm Grovera** dla $N=16$ i jego optymalność $\Theta(\sqrt N)$,
+**estymację fazy**, **HHL** i **kwantowe Monte Carlo** oraz **twierdzenie Holevo** ($\chi\le S$).
 
-1. **Domykamy rachunki** — teleportacja i supergęste kodowanie z jawnym przejściem przez bazę
-   Bella, Shor z konkretną faktoryzacją $N=15$,
-2. **Pokazujemy granice** — twierdzenie Holevo ($\chi\le S$), permutacyjne granice, dlaczego
-   Grover nie da się przyspieszyć ponad $\Theta(\sqrt N)$,
-3. **Tłumaczymy „przemysł”** — przewaga kwantowa, modele złożoności (P, NP, BQP, QMA) oraz
-   kompilacja obwodów do zbioru Clifford$+T$ z twierdzeniem Solovaya–Kitaewa.
+Druga grupa zagadnień to granice i modele złożoności: klasy P, BPP, BQP, NP i QMA, przewaga
+kwantowa oraz kompilacja obwodów do zbioru Clifford$+T$ z twierdzeniem Solovaya–Kitaewa (magic
+states, T-count).
 
-To rozdział o **odpowiedzialnych twierdzeniach**: komputer kwantowy nie rozwiązuje „wszystkiego”,
-a każde przyspieszenie ma cenę w liczbie bramek i w głębokości obwodu.
+Materiał rozwija algorytmy z rozdziału 08 (Deutsch–Jozsa, Simon, QFT, Grover, Shor) w wersji
+rachunkowej i zestawia je z granicami: każde przyspieszenie ma cenę w liczbie bramek i w głębokości
+obwodu.
 
 ## 2. Najważniejsze definicje
 
@@ -43,17 +38,21 @@ a każde przyspieszenie ma cenę w liczbie bramek i w głębokości obwodu.
 
 **Ustawienie.** Alicja ma kubit 1 w nieznanym stanie $\lvert\psi\rangle=\alpha\lvert0\rangle+\beta\lvert1\rangle$;
 Alicja i Bob dzielą parę $\lvert\Phi^+\rangle_{23}$ (kubit 2 u Alicji, 3 u Boba). Stan całości:
+
 $$\lvert\Psi\rangle=\tfrac{1}{\sqrt2}\big(\alpha\lvert000\rangle+\alpha\lvert011\rangle
 +\beta\lvert100\rangle+\beta\lvert111\rangle\big).$$
+
 **Kluczowe podstawienie.** Wyrażamy $\lvert00\rangle_{12},\lvert11\rangle_{12},\lvert01\rangle_{12},\lvert10\rangle_{12}$
 przez bazy Bella, np. $\lvert00\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Phi^+\rangle+\lvert\Phi^-\rangle)$,
 $\lvert11\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Phi^+\rangle-\lvert\Phi^-\rangle)$,
 $\lvert01\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle+\lvert\Psi^-\rangle)$,
 $\lvert10\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle-\lvert\Psi^-\rangle)$. Po uporządkowaniu:
+
 $$\lvert\Psi\rangle=\tfrac12\Big[\lvert\Phi^+\rangle_{12}\underbrace{(\alpha\lvert0\rangle+\beta\lvert1\rangle)}_3
 +\lvert\Phi^-\rangle_{12}(\alpha\lvert0\rangle-\beta\lvert1\rangle)_3
 +\lvert\Psi^+\rangle_{12}(\beta\lvert0\rangle+\alpha\lvert1\rangle)_3
 +\lvert\Psi^-\rangle_{12}(-\beta\lvert0\rangle+\alpha\lvert1\rangle)_3\Big].$$
+
 **Wniosek.** Każdy z czterech wyników pomiaru Bella zdarza się z $P=\tfrac14$, a stan Boba różni
 się od $\lvert\psi\rangle$ co najwyżej bramką Pauliego: dla $\lvert\Phi^+\rangle\to I$,
 $\lvert\Phi^-\rangle\to Z$, $\lvert\Psi^+\rangle\to X$, $\lvert\Psi^-\rangle\to ZX$.
@@ -65,10 +64,12 @@ $\lvert\psi\rangle$. Oryginał zostaje zniszczony przez pomiar — dlatego telep
 
 Alicja i Bob dzielą $\lvert\Phi^+\rangle_{AB}$. Alicja stosuje do **swojego** kubita jedną z bramek
 $\{I,X,Z,ZX\}$ zależnie od 2 bitów, które chce wysłać, i **przesyła swój kubit** Bobowi:
+
 $$(I\otimes I)\lvert\Phi^+\rangle=\lvert\Phi^+\rangle,\quad
 (X\otimes I)\lvert\Phi^+\rangle=\lvert\Psi^+\rangle,\quad
 (Z\otimes I)\lvert\Phi^+\rangle=\lvert\Phi^-\rangle,\quad
 (ZX\otimes I)\lvert\Phi^+\rangle=-\lvert\Psi^-\rangle .$$
+
 Bob zna bazę Bella, więc odczytuje dokładnie 2 bity z **jednego** kubita. To wymiana: w
 teleportacji 1 e-bit + 2 bity klasyczne przenosi 1 kubit; tutaj 1 e-bit + 1 przesłany kubit
 przenosi 2 bity.
@@ -87,14 +88,18 @@ to jest różnica między informacją klasyczną a kwantową.
 **Krok 1 — redukcja.** Faktoryzacja $N$ sprowadza się do znalezienia **rzędu** $r$ liczby $a$
 ($1<a<N$, $\gcd(a,N)=1$): najmniejszego $r$ z $a^r\equiv1\pmod N$. Jeśli $r$ jest parzyste i
 $a^{r/2}\not\equiv-1\pmod N$, to
+
 $$\gcd\big(a^{r/2}-1,\ N\big)\ \text{ oraz }\ \gcd\big(a^{r/2}+1,\ N\big)$$
+
 są nietrywialnymi dzielnikami $N$ (tożsamość $a^r-1=(a^{r/2}-1)(a^{r/2}+1)$).
 
 **Krok 2 — obwód kwantowy.** Przygotowujemy $\tfrac{1}{\sqrt q}\sum_{x=0}^{q-1}\lvert x\rangle\lvert0\rangle$
 dla $q=2^n$ (typowo $N^2\le q<2N^2$), liczymy $\lvert x\rangle\to\lvert x\rangle\lvert a^x\bmod N\rangle$
 (odwracalnie, przez kontrolowane mnożenia), a następnie stosujemy **odwrotną QFT** mod $q$ na
 pierwszym rejestrze. Pomiar drugiego rejestru rzutuje pierwszy na superpozycję $x\equiv x_0\pmod r$:
+
 $$\frac{1}{\sqrt{q/r}}\sum_{j=0}^{q/r-1}\lvert x_0+jr\rangle .$$
+
 Po QFT amplitudy koncentrują się na wielokrotnościach $q/r$, więc pomiar daje $m\approx s\,q/r$.
 
 **Krok 3 — odczyt $r$.** Z $m/q\approx s/r$ znajdujemy $r$ przez **rozwinięcie w ułamek łańcuchowy**.
@@ -113,8 +118,10 @@ wobec subeksponialnego najlepszego klasycznego **sita GNFS** ($\exp O(n^{1/3}\lo
 
 Dla $N$ stanów bazowych i jednego wyróżnionego, zaczynając od równomiernej superpozycji
 $\lvert s\rangle$, kąt spełnia $\sin\theta=1/\sqrt N$, a po $k$ iteracjach
+
 $$P_{\rm sukces}(k)=\sin^2\big((2k+1)\theta\big),\qquad
 k_{\rm opt}=\mathrm{round}\Big(\tfrac{\pi}{4}\sqrt N-\tfrac12\Big).$$
+
 Geometrycznie każda iteracja to **dwa odbicia**: od wyróżnionego stanu (wyrocznia) i od $\lvert s\rangle$
 (dyfuzja $2\lvert s\rangle\langle s\rvert-I$) — suma dwóch odbić to obrót o $2\theta$.
 
@@ -139,12 +146,14 @@ $\varphi\approx m/2^t$ z dokładnością $\sim2^{-t}$. Estymacja fazy jest serce
 
 Problem: rozwiązać $A\lvert x\rangle=\lvert b\rangle$ dla rzadkiej, hermitowskiej, dobrze
 uwarunkowanej $A$ (współczynnik uwarunkowania $\kappa$). Algorytm HHL:
+
 $$\lvert b\rangle\ \xrightarrow{\text{estymacja fazy }e^{iAt}}\ \sum_j\beta_j\lvert\lambda_j\rangle\lvert\lambda_j\rangle
 \ \xrightarrow{\text{odwrócenie własności}}\ \sum_j\beta_j\lambda_j^{-1}\lvert\lambda_j\rangle\lvert0\rangle
 =\lvert x\rangle .$$
+
 Złożoność $O(\log N\cdot\kappa^2/\varepsilon)$ na **kwantowy** stan $\lvert x\rangle$.
 
-**Zastrzeżenia (o to pyta się na finale):** (1) wynikiem jest **stan kwantowy** — odczyt $N$ amplitud
+**Zastrzeżenia:** (1) wynikiem jest **stan kwantowy** — odczyt $N$ amplitud
 kosztuje $O(N)$ pomiarów; (2) potrzebna jest wydajna symulacja $e^{iAt}$ i małe $\kappa$; (3) algorytm
 nadaje się do pytań o cechy $\langle x\rvert M\lvert x\rangle$, nie do pełnego rozwiązania.
 
@@ -159,7 +168,9 @@ granicy $\Omega(\sqrt N)$ na liczbę zapytań o wyrocznię.
 ### 3.9 Granice informacyjne: Holevo, Bella, Mayers
 
 **Twierdzenie Holevo.** Dla zbioru $\{p_i,\rho_i\}$ informacja dostępna w dowolnym pomiarze spełnia
+
 $$\chi=S\Big(\sum_ip_i\rho_i\Big)-\sum_ip_iS(\rho_i)\ \le\ S\Big(\sum_ip_i\rho_i\Big)\ \le\ \log_2d .$$
+
 **Przykład.** $\{\tfrac12,\lvert0\rangle;\ \tfrac12,\lvert+\rangle\}$: $\rho_{\rm avg}=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}$
 ma wartości własne $0{,}8536,0{,}1464$, więc $\chi\le S=0{,}6009$ bita — **mniej** niż 1 bit, mimo
 dwóch „pół-bitowych” komunikatów. To dlatego $n$ kubitów nie daje $2n$ bitów klasycznych.
@@ -205,7 +216,9 @@ trudność” siedzi w bramkach nie-Cliffordowskich, najlepiej w jednej — $T$.
 **Twierdzenie Solovaya–Kitaewa.** Dla dowolnego zbioru uniwersalnego każdą operację unitarną $U$
 można aproksymować do dokładności $\varepsilon$ (w normie operatorowej) obwodem o długości
 $O(\log^{c}(1/\varepsilon))$; w praktyce liczba bramek $T$ (T-count) rośnie jak $\approx3\log_2(1/\varepsilon)$:
+
 $$\varepsilon=10^{-3}\to\approx30,\quad10^{-6}\to\approx60,\quad10^{-10}\to\approx100 .$$
+
 Dlatego w erze NISQ raportuje się **T-count** i **głębokość** obwodu — to one decydują o koszcie.
 
 **Odporność na błędy (fault tolerance).** Obwód fault-tolerant używa kodu korekcyjnego
@@ -338,11 +351,6 @@ optymalizacja obwodów to walka o T-count i głębokość, nie tylko o liczbę k
 - Pełne rozwiązania: [zadania/rozwiazania/rozwiazania-19.md](../zadania/rozwiazania/rozwiazania-19.md).
 - Praca domowa: [PD-4](../praca-domowa/praca-domowa-04.md); kod: [`teleportacja.py`](../kod/teleportacja.py), [`grover.py`](../kod/grover.py).
 
-> **Weryfikacja numeryczna.** Policzone w NumPy: teleportacja dla $(\alpha,\beta)=(2/\sqrt5,\ i/\sqrt5)$
-> daje cztery wyniki po $P=0{,}25$ i korekty $I,Z,X,ZX$; supergęste kodowanie: $I\to\lvert\Phi^+\rangle$,
-> $X\to\lvert\Psi^+\rangle$, $Z\to\lvert\Phi^-\rangle$, $ZX\to\lvert\Psi^-\rangle$; Shor: $r(7)=4$,
-> $\gcd(4-1,15)=3$, piki QFT $\{0,4,8,12\}$ po $0{,}25$; Grover $N=10^6$: $k_{\rm opt}=785$;
-> Holevo $\chi=0{,}6009$ bita; T-count $\approx30/40/60/100$ dla $\varepsilon=10^{-3},10^{-4},10^{-6},10^{-10}$.
 
 
 

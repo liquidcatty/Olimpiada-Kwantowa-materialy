@@ -1,9 +1,7 @@
 # Rozwiązania modelowe zadań przykładowych P1–P4
 
-> Rozwiązania przygotowane na potrzeby tego przewodnika. Każda liczba została
-> sprawdzona numerycznie (`python kod/verify_all.py`).
-> Treść zadań pochodzi z oficjalnego arkusza „Zadania przykładowe” Olimpiady
-> Kwantowej (<https://olimpiadakwantowa.pl/zadania/>).
+Treść zadań pochodzi z oficjalnego arkusza „Zadania przykładowe”
+Olimpiady Kwantowej (<https://olimpiadakwantowa.pl/zadania/>).
 
 ---
 
@@ -54,8 +52,7 @@ daje to samo, bo $E_1<E_2$ i każdy pomiar daje wartość własną.
 
 ### Rozszerzenie (d) — dodatkowa kontrola spójności
 
-Wartość oczekiwana położenia z definicji $\langle x\rangle=(1/5)(4\langle x\rangle_{11}
-+\langle x\rangle_{22}+4\langle x\rangle_{12})$, gdzie
+Wartość oczekiwana położenia z definicji $\langle x\rangle=(1/5)(4\langle x\rangle_{11} +\langle x\rangle_{22}+4\langle x\rangle_{12})$, gdzie
 $\langle x\rangle_{nn}=L/2$ oraz
 
 $$\langle x\rangle_{12}=\int_0^L x\psi_1\psi_2\,dx=-\frac{16L}{9\pi^2}\approx-0{,}1801\,L .$$
@@ -281,6 +278,7 @@ Z definicji wartości oczekiwanej dla $\langle Z\otimes Z\rangle$:
 
 $$\langle Z\otimes Z\rangle
 =P_{00}\,(+1)(+1)+P_{01}\,(+1)(-1)+P_{10}\,(-1)(+1)+P_{11}\,(-1)(-1)$$
+
 $$=P_{00}+P_{11}-P_{01}-P_{10}
 =\cos^2\frac\theta2-\sin^2\frac\theta2=\cos\theta .$$
 
