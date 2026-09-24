@@ -267,7 +267,13 @@ wykładniczo z głębokością obwodu.
 
 ### 3.9 Mitygacja bez korekcji
 
-- **Macierz kalibracji odczytu.** Błędy odczytu są systematyczne ($A_{ij}=P(\text{odczyt }i\mid\text{stan }j)$); odwracamy pomiar: $\vec p_{\rm popr}=A^{-1}\vec p_{\rm zmierz}$. Przykład: $A=\begin{pmatrix}0{,}95&0{,}10\\0{,}05&0{,}90\end{pmatrix}$, $\vec p_{\rm zmierz}=(0{,}60;0{,}40)$ dają $\vec p_{\rm popr}=(0{,}588;0{,}412)$; $\mathrm{cond}(A)=1{,}19$. Przy dużym szumie poprawki wychodzą **ujemne** i trzeba je rzutować na sympleks.
+- **Macierz kalibracji odczytu.** Błędy odczytu są systematyczne ($A_{ij}=P(\text{odczyt }i\mid\text{stan }j)$); odwracamy pomiar: $\vec p_{\rm popr}=A^{-1}\vec p_{\rm zmierz}$. Przykład — macierz $A$:
+
+$$
+A=\begin{pmatrix}0{,}95&0{,}10\\0{,}05&0{,}90\end{pmatrix}
+$$
+
+  $\vec p_{\rm zmierz}=(0{,}60;0{,}40)$ dają $\vec p_{\rm popr}=(0{,}588;0{,}412)$; $\mathrm{cond}(A)=1{,}19$. Przy dużym szumie poprawki wychodzą **ujemne** i trzeba je rzutować na sympleks.
 - **ZNE (zero-noise extrapolation).** Ten sam obwód przy sztucznie zwiększonym szumie ($\lambda=1,2,3$ przez „składanie” bramek, *gate folding*), potem ekstrapolacja do $\lambda=0$. Dla $E(1)=0{,}80$, $E(2)=0{,}65$, $E(3)=0{,}55$ liniowe $E(\lambda)=E(0)+a\lambda$ daje $a=-0{,}15$ i $E(0)=\mathbf{1{,}00}$; model wykładniczy dałby to samo dla danych $0{,}80,0{,}64,0{,}512$.
 - **Postselekcja i symetrie.** Odrzucamy *shots*, w których złamana została znana symetria obwodu (liczba cząstek, parzystość, ładunek). Odrzucenie połowy wyników zwiększa niepewność $\sqrt2$, więc metoda opłaca się tylko przy dużej statystyce.
 - **Randomized compiling.** Losowe bramki Pauliego otaczające każdą bramkę dwukubitową zamieniają błędy **koherentne** (stałe przekręcenie kąta) w **stochastyczne**, łatwiejsze do usunięcia.
@@ -334,7 +340,12 @@ $\lvert0\rangle_L,\lvert1\rangle_L$ — dlatego pomiar nie psuje informacji logi
 
 ### Przykład 13.2 (trudniejszy): kalibracja odczytu i granica opłacalności korekcji
 
-**Dane:** macierz kalibracji jednokubitowa $A=\begin{pmatrix}0{,}95&0{,}10\\0{,}05&0{,}90\end{pmatrix}$,
+**Dane:** macierz kalibracji jednokubitowa $A$:
+
+$$
+A=\begin{pmatrix}0{,}95&0{,}10\\0{,}05&0{,}90\end{pmatrix}
+$$
+
 pomiar dwukubitowy $\vec p_{\rm zmierz}=(0{,}80;\,0{,}07;\,0{,}07;\,0{,}06)$, kod 3-kubitowy z $p=0{,}02$.
 
 **Część 1 (mitygacja).** Przy niezależnych błędach odczytu $A_2=A\otimes A$ i

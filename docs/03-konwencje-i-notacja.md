@@ -21,8 +21,8 @@ ponadpodstawowych (za zgodą opiekuna w przypadku osób niepełnoletnich).
 | Obiekt | Zapis | Znaczenie |
 | --- | --- | --- |
 | Liczba zespolona | $z = a + bi$, $a,b\in\mathbb{R}$ | $i^2 = -1$ |
-| Sprzężenie | $z^* = a - bi$ | (w kodzie: `numpy.conjugate`) |
-| Moduł | $\lvert z\rvert = \sqrt{z^*z}$ | długość na płaszczyźnie zespolonej |
+| Sprzężenie | $z^\ast = a - bi$ | (w kodzie: `numpy.conjugate`) |
+| Moduł | $\lvert z\rvert = \sqrt{z^\astz}$ | długość na płaszczyźnie zespolonej |
 | Faza | $\arg z$, $z = \lvert z\rvert e^{i\varphi}$ | postać biegunowa |
 | Wektor kolumnowy | $\lvert\psi\rangle$ | ket (element $\mathbb{C}^n$) |
 | Wektor wierszowy sprzężony | $\langle\psi\rvert = (\lvert\psi\rangle)^\dagger$ | bra, $\dagger$ = sprzężenie + transpozycja |
@@ -53,20 +53,38 @@ ponadpodstawowych (za zgodą opiekuna w przypadku osób niepełnoletnich).
 
 ### 2.4 Bramki i operatory
 
-| Symbol | Nazwa | Macierz (baza $\{\lvert0\rangle,\lvert1\rangle\}$) |
+| Symbol | Nazwa | Macierz |
 | --- | --- | --- |
-| $I$ | identyczność | $\begin{pmatrix}1&0\\0&1\end{pmatrix}$ |
-| $X$ | Pauliego-X / NOT | $\begin{pmatrix}0&1\\1&0\end{pmatrix}$ |
-| $Y$ | Pauliego-Y | $\begin{pmatrix}0&-i\\i&0\end{pmatrix}$ |
-| $Z$ | Pauliego-Z | $\begin{pmatrix}1&0\\0&-1\end{pmatrix}$ |
-| $H$ | Hadamarda | $\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$ |
+| $I$ | identyczność | macierz $I$ |
+| $X$ | Pauliego-X / NOT | macierz $X$ |
+| $Y$ | Pauliego-Y | macierz $Y$ |
+| $Z$ | Pauliego-Z | macierz $Z$ |
+| $H$ | Hadamarda | macierz $H$ |
 | $S$ | faza | $\mathrm{diag}(1, i)$ |
 | $T$ | faza $\pi/8$ | $\mathrm{diag}(1, e^{i\pi/4})$ |
 | $R_Z(\theta)$ | obrót wokół $Z$ | $\mathrm{diag}(e^{-i\theta/2}, e^{i\theta/2})$ |
-| $R_Y(\theta)$ | obrót wokół $Y$ | $\begin{pmatrix}\cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\ \sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}$ |
-| $R_X(\theta)$ | obrót wokół $X$ | $\begin{pmatrix}\cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\ -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}$ |
+| $R_Y(\theta)$ | obrót wokół $Y$ | macierz $R_Y(\theta)$ |
+| $R_X(\theta)$ | obrót wokół $X$ | macierz $R_X(\theta)$ |
 | CNOT | kontrolowany $X$ | $\lvert0\rangle\langle0\rvert\otimes I + \lvert1\rangle\langle1\rvert\otimes X$ |
 | CZ | kontrolowany $Z$ | $\mathrm{diag}(1,1,1,-1)$ |
+
+Macierze z tabeli (baza $\{\lvert0\rangle,\lvert1\rangle\}$):
+
+$$
+I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\qquad
+Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+$$
+
+$$
+H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+
+$$
+R_Y(\theta)=\begin{pmatrix}\cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\ \sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix},\qquad
+R_X(\theta)=\begin{pmatrix}\cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\ -i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}
+$$
 
 **Konwencja kąta**: w $R_X,R_Y,R_Z$ występuje $\theta/2$ (jak w zadaniu P4). Kąt
 geometryczny obrotu na sferze Blocha to $\theta$.
@@ -146,6 +164,9 @@ wymienionych niżej jako błędne.
 | `\operatorname{...}` | **nie** — błąd „the following macros are not allowed: operatorname”; używaj `\mathrm{...}` |
 | `\tag{N}` we wzorze | ryzykowne — numer wpisuj jako `\qquad (N)` wewnątrz wzoru |
 | goła kreska pionowa wewnątrz wzoru w tabeli (zamiast `\lvert`) | **nie** (rozbija tabelę) |
+| znak `*` wewnątrz wzoru (`z^*`) | **nie**, gdy w akapicie są dwa takie znaki — Markdown robi z nich kursywę, a w bloku `$$` zamienia `*` na `_` (błąd „Missing open brace for superscript”); pisz `z^{\ast}` |
+| `\\` (podwójny backslash) lub środowisko macierzowe w matematyce **inline** | **nie** — taki wzór nie jest rozpoznawany; macierze tylko w bloku `$$` |
+| macierz w komórce tabeli | **nie** — wynieś macierz do bloku `$$` pod tabelą |
 
 Praktyczne konsekwencje dla autora:
 
@@ -156,7 +177,11 @@ Praktyczne konsekwencje dla autora:
 3. **Inline `$...$` musi zmieścić się w jednej linii.** Długi wzór przenieś do bloku `$$`.
 4. **Zamiast `\operatorname{Tr}` pisz `\mathrm{Tr}`**, a zamiast `\tag{3}` — `\qquad (3)`
    wewnątrz wzoru.
-5. W tabelach używaj `\lvert`/`\rvert`, nigdy gołego `|`.
+5. **Zamiast `*` pisz `\ast`** (np. `z^{\ast}`), bo `*` w matematyce walczy z kursywą Markdowna.
+6. **Macierze (`\begin{pmatrix}`, `cases`, `aligned`, …) tylko w blokach `$$`.**
+   W zdaniu zostaw odnośnik, np. „macierz $A$ ma postać:”, a wzór umieść w bloku pod akapitem.
+   To samo dotyczy tabel: w komórce opis, macierz w bloku pod tabelą.
+7. W tabelach używaj `\lvert`/`\rvert`, nigdy gołego `|`.
 6. Blok wewnątrz elementu listy zapisuj z pustą linią przed nim i wcięciem.
 
 Automatyczna kontrola:

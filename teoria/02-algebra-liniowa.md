@@ -14,12 +14,12 @@ P2 (polaryzatory), P3 (bramki $H,Z,H$) i P4 (obwód z $R_Y(\theta)$ i CNOT).
 
 - **Przestrzeń wektorowa nad $\mathbb{C}$**: zbiór z dodawaniem i mnożeniem przez
   skalary zespolone. Dla $n$ kubitów wymiar wynosi $2^n$.
-- **Iloczyn skalarny** $\langle\phi|\psi\rangle=\sum_k\phi_k^*\psi_k$; **norma**
+- **Iloczyn skalarny** $\langle\phi|\psi\rangle=\sum_k\phi_k^\ast\psi_k$; **norma**
   $\lVert\psi\rVert=\sqrt{\langle\psi|\psi\rangle}$.
 - **Baza ortonormalna** $\{|e_k\rangle\}$: $\langle e_j|e_k\rangle=\delta_{jk}$.
 - **Operator liniowy** $A$: $A(\alpha|\psi\rangle+\beta|\phi\rangle)=\alpha A|\psi\rangle+\beta A|\phi\rangle$;
   w bazie reprezentowany macierzą $A_{ij}=\langle e_i|A|e_j\rangle$.
-- **Sprzężenie hermitowskie** $A^\dagger=(A^*)^T$.
+- **Sprzężenie hermitowskie** $A^\dagger=(A^\ast)^T$.
 - **Operator hermitowski** (*Hermitian*): $A^\dagger=A$ — obserwabla.
 - **Operator unitarny** (*unitary*): $U^\dagger U=I$ — ewolucja/bramka.
 - **Wektory własne i wartości własne**: $A|a\rangle=a|a\rangle$; dla hermitowskiego
@@ -43,8 +43,8 @@ $\sum_k c_k|e_k\rangle$; współczynniki liczymy rzutem $c_k=\langle e_k|\psi\ra
 
 Iloczyn skalarny jest **antyliniowy** w pierwszym argumencie:
 $\langle\phi|\alpha\psi+\beta\chi\rangle=\alpha\langle\phi|\psi\rangle+\beta\langle\phi|\chi\rangle$,
-ale $\langle\alpha\phi|\psi\rangle=\alpha^*\langle\phi|\psi\rangle$. Konsekwencją jest
-$\langle\phi|\psi\rangle=\langle\psi|\phi\rangle^*$ i $\langle\psi|\psi\rangle\ge0$.
+ale $\langle\alpha\phi|\psi\rangle=\alpha^\ast\langle\phi|\psi\rangle$. Konsekwencją jest
+$\langle\phi|\psi\rangle=\langle\psi|\phi\rangle^\ast$ i $\langle\psi|\psi\rangle\ge0$.
 
 Z każdej bazy robimy ortonormalną metodą Grama–Schmidta. Baza obliczeniowa kubitu
 $\{|0\rangle,|1\rangle\}$ jest ortonormalna: $\langle0|0\rangle=\langle1|1\rangle=1$,
@@ -62,9 +62,9 @@ w nowej bazie to $A'=U^\dagger A U$.
 
 ### 3.4 Sprzężenie hermitowskie
 
-$A^\dagger=(A^*)^T$: transpozycja połączona ze sprzężeniem zespolonym elementów.
+$A^\dagger=(A^\ast)^T$: transpozycja połączona ze sprzężeniem zespolonym elementów.
 Właściwości: $(AB)^\dagger=B^\dagger A^\dagger$, $(A^\dagger)^\dagger=A$,
-$(\alpha A)^\dagger=\alpha^*A^\dagger$, $\langle\phi|A|\psi\rangle=\langle\psi|A^\dagger|\phi\rangle^*$.
+$(\alpha A)^\dagger=\alpha^\astA^\dagger$, $\langle\phi|A|\psi\rangle=\langle\psi|A^\dagger|\phi\rangle^\ast$.
 
 ### 3.5 Operatory hermitowskie i unitarne
 
@@ -226,13 +226,22 @@ daje powyższą macierz. CNOT jest unitarny i hermitowski ($\mathrm{CNOT}^2=I$).
 
 ### Przykład 1 (łatwy): diagonalizacja obserwabli $2\times2$
 
-**Dane:** $M=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}$.
+**Dane:** $M$ ma postać:
+
+$$
+M=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}
+$$
 
 **Metoda:** sprawdzić hermitowskość ($M^\dagger=M$), znaleźć wartości własne
 z $\det(M-aI)=0$, wektory własne z $(M-aI)v=0$, złożyć $D=U^\dagger MU$.
 
-**Rachunek.** Sprzężenie: $M^\dagger=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}=M$ ✓
-(przekątna rzeczywista, wyrazy poza przekątną sprzężone). Równanie charakterystyczne:
+**Rachunek.** Sprzężenie $M^\dagger$ jest równe $M$:
+
+$$
+M^\dagger=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}=M
+$$
+
+✓ (przekątna rzeczywista, wyrazy poza przekątną sprzężone). Równanie charakterystyczne:
 
 $$
 \det(M-aI)=(2-a)(3-a)-(1-i)(1+i)=(2-a)(3-a)-2=a^2-5a+4=0,
@@ -262,8 +271,13 @@ $|00\rangle,|01\rangle,|10\rangle,|11\rangle$ (małoendianowo).
 **Metoda:** $\mathrm{CNOT}=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X$;
 działanie przez mnożenie macierzy.
 
-**Rachunek.** $|0\rangle\langle0|=\begin{pmatrix}1&0\\0&0\end{pmatrix}$,
-$|1\rangle\langle1|=\begin{pmatrix}0&0\\0&1\end{pmatrix}$, $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$.
+**Rachunek.** Macierze $|0\rangle\langle0|$, $|1\rangle\langle1|$ i $X$ mają postać:
+
+$$
+|0\rangle\langle0|=\begin{pmatrix}1&0\\0&0\end{pmatrix},\qquad
+|1\rangle\langle1|=\begin{pmatrix}0&0\\0&1\end{pmatrix},\qquad
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+$$
 
 $$
 \mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes\begin{pmatrix}1&0\\0&1\end{pmatrix}
@@ -283,8 +297,13 @@ tworzy podstawowy zestaw bramek uniwersalnych (rozdział 06).
 
 ### Przykład 3 (trudniejszy): ewolucja $e^{-iHt/\hbar}$ dla $H$ Hadamarda
 
-**Dane:** $H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$ (bramka Hadamarda,
-traktowana jako hamiltonian), $\hbar=1$, $t=\pi/4$.
+**Dane:** $H$ to bramka Hadamarda (traktowana jako hamiltonian):
+
+$$
+H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+
+$\hbar=1$, $t=\pi/4$.
 
 **Metoda:** $H^2=I\Rightarrow e^{-iHt}=\cos(t)I-i\sin(t)H$.
 
@@ -297,7 +316,11 @@ $$
 
 Wartości: przekątna $0{,}7071\mp0{,}5i$, pozadiagonalne $-0{,}5i$ ✓.
 
-**Wynik:** $e^{-iH\pi/4}=\begin{pmatrix}0{,}7071-0{,}5i&-0{,}5i\\-0{,}5i&0{,}7071+0{,}5i\end{pmatrix}$.
+**Wynik:** $e^{-iH\pi/4}$ ma postać:
+
+$$
+e^{-iH\pi/4}=\begin{pmatrix}0{,}7071-0{,}5i&-0{,}5i\\-0{,}5i&0{,}7071+0{,}5i\end{pmatrix}
+$$
 
 **Interpretacja:** to unitarna bramka $2\times2$ — bezpośredni związek między
 hermitowskim hamiltonianem a unitarną ewolucją; wykorzystamy to przy bramkach $R_X,R_Y,R_Z$.
@@ -328,7 +351,11 @@ hermitowskim hamiltonianem a unitarną ewolucją; wykorzystamy to przy bramkach 
 $\{|\pm\rangle=(|0\rangle\pm|1\rangle)/\sqrt2\}$: $X'=U^\dagger XU$ z $U=[|+\rangle\ |-\rangle]$.
 (c) Zinterpretuj wynik.
 
-**Z-02.3.** Dana $M=\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}$.
+**Z-02.3.** Dana jest macierz $M$:
+
+$$
+M=\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}
+$$
 (a) Wykaż hermitowskość. (b) Wyznacz wartości własne. (c) Wyznacz wektory własne i
 zapisz rozkład spektralny; policz $\langle+|M|+\rangle$.
 
@@ -336,7 +363,11 @@ zapisz rozkład spektralny; policz $\langle+|M|+\rangle$.
 (a) Dowiedź $R_Z(\theta)=\cos\frac\theta2 I-i\sin\frac\theta2 Z$.
 (b) Wykaż unitarność. (c) Policz $R_Z(\pi/2)$ i jego działanie na $|0\rangle,|1\rangle$.
 
-**Z-02.5.** Dana $M=\begin{pmatrix}2&0&1\\1&3&0\\0&1&1\end{pmatrix}$.
+**Z-02.5.** Dana jest macierz $M$:
+
+$$
+M=\begin{pmatrix}2&0&1\\1&3&0\\0&1&1\end{pmatrix}
+$$
 (a) Policz $\mathrm{Tr}M$. (b) Policz $\det M$. (c) Wyznacz
 $\mathrm{rank}M$ i rozstrzygnij o odwracalności.
 
@@ -357,9 +388,15 @@ $S=-\sum_k s_k^2\log_2 s_k^2$. (c) Rozstrzygnij, dla jakich $\alpha$ stan jest i
 
 ## 7. Wskazówki do zadań
 
-- **Z-02.1.** $\langle u|v\rangle=u_1^*v_1+u_2^*v_2$; do (c) działaj $Y$ na
+- **Z-02.1.** $\langle u|v\rangle=u_1^\astv_1+u_2^\astv_2$; do (c) działaj $Y$ na
   znormalizowane wektory.
-- **Z-02.2.** $U=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$; licz $U^\dagger XU$.
+- **Z-02.2.** $U$ ma postać:
+
+$$
+U=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+
+  licz $U^\dagger XU$.
 - **Z-02.3.** $\det(M-aI)=a^2-5a+4$; wektory własne z $(M-aI)v=0$.
 - **Z-02.4.** Użyj $Z^2=I$ i rozwinięcia $e^{-i\theta Z/2}$; w (c) uwzględnij fazę
   $e^{\mp i\pi/4}$.
@@ -367,8 +404,12 @@ $S=-\sum_k s_k^2\log_2 s_k^2$. (c) Rozstrzygnij, dla jakich $\alpha$ stan jest i
   Gaussa lub `np.linalg.matrix_rank`.
 - **Z-02.6.** Kron blokowy; zachowaj małoendianową kolejności baz.
 - **Z-02.7.** Mnożenie macierzy $2\times2$; $\varepsilon_{XYZ}=+1$ cyklicznie.
-- **Z-02.8.** [★] Macierz współczynników
-  $\begin{pmatrix}\cos\alpha&0\\0&\sin\alpha\end{pmatrix}$;
+- **Z-02.8.** [★] Macierz współczynników ma postać:
+
+$$
+\begin{pmatrix}\cos\alpha&0\\0&\sin\alpha\end{pmatrix}
+$$
+
   $s_1=|\cos\alpha|$, $s_2=|\sin\alpha|$; iloczynowość, gdy jedna z nich znika.
 
 ## 8. Co dalej

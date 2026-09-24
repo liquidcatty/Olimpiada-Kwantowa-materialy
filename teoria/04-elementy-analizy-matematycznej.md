@@ -23,7 +23,7 @@ w studni potencjału).
 - **Szereg Fouriera**: rozkład funkcji okresowej na $\cos$ i $\sin$.
 - **Transformata Fouriera** (*Fourier transform*): $\mathcal{F}[f](\omega) =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt$.
 - **Delta Diraca** $\delta(x)$: $\int_{-\infty}^{\infty}\delta(x)f(x)dx=f(0)$.
-- **Wartość oczekiwana operatora** $\langle A\rangle=\int\psi^*(x)\,A\,\psi(x)\,dx$.
+- **Wartość oczekiwana operatora** $\langle A\rangle=\int\psi^\ast(x)\,A\,\psi(x)\,dx$.
 
 ## 3. Teoria krok po kroku
 
@@ -180,7 +180,7 @@ $$
 
 Operator pędu jest hermitowski (całkowanie przez części + znikanie na brzegach), a
 jego wartości oczekiwane liczymy ze wzoru
-$\langle\hat p\rangle=\int\psi^*(-i\hbar\partial_x)\psi\,dx$.
+$\langle\hat p\rangle=\int\psi^\ast(-i\hbar\partial_x)\psi\,dx$.
 
 ### 3.11 Paczka falowa i jej rozmywanie
 

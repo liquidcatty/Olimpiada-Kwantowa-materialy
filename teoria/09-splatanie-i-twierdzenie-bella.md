@@ -204,10 +204,20 @@ $$
 \lvert\psi\rangle=\frac{1}{\sqrt3}\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle\big).
 $$
 
-**Metoda.** Macierz współczynników $M=\frac{1}{\sqrt3}\begin{pmatrix}1&1\\1&0\end{pmatrix}$
+**Metoda.** Macierz współczynników $M$:
+
+$$
+M=\frac{1}{\sqrt3}\begin{pmatrix}1&1\\1&0\end{pmatrix}
+$$
+
 (wiersz = kubit $A$, kolumna = kubit $B$); wykonujemy SVD, wartości szczególne to $\sqrt{\lambda_i}$.
 
-**Rachunek.** $MM^\dagger=\frac13\begin{pmatrix}2&1\\1&1\end{pmatrix}$, $\mathrm{Tr}=1$,
+**Rachunek.**
+
+$$
+MM^\dagger=\frac13\begin{pmatrix}2&1\\1&1\end{pmatrix},\qquad \mathrm{Tr}=1,
+$$
+
 $\det=\frac19$, więc wartości własne
 
 $$

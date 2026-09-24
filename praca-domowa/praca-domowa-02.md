@@ -93,7 +93,11 @@ Zasady szczegółowe:
 ## Wskazówki i odpowiedzi
 
 **PD-2.1.** (a) $U_1=X\otimes X$: liczymy $\mathrm{CNOT}(X\otimes I)\mathrm{CNOT}$ i otrzymujemy macierz
-$\begin{pmatrix}0&0&0&1\\0&0&1&0\\0&1&0&0\\1&0&0&0\end{pmatrix}$.
+
+$$
+\begin{pmatrix}0&0&0&1\\0&0&1&0\\0&1&0&0\\1&0&0&0\end{pmatrix}.
+$$
+
 (b) $U_2=Z\otimes Z=\mathrm{diag}(1,-1,-1,1)$.
 (c) $X$ na kontroli „rozprzestrzenia się” na oba kubity (bo $\mathrm{CNOT}$ kopiuje $X$ kontroli na cel),
 a $Z$ na celu „propaguje wstecz” na kontrolę (bo kontrolowany-$Z$ jest symetryczny). Te tożsamości to
@@ -130,7 +134,12 @@ $=1,0,0,0,1,0,1,1,0,0$ (10 bitów; odrzucone $i=2,5$).
 (c) **Przerwać** — próg bezpieczeństwa to $\approx11\%$; przy $25\%$ zachodzi $1-2H_2(0{,}25)<0$,
 więc żaden klucz nie powstanie.
 
-**PD-2.8.** (a) $\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}$;
+**PD-2.8.** (a) Macierz $\mathrm{QFT}_2$ dana jest wzorem:
+
+$$
+\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix};
+$$
+
 kolumny ortonormalne $\Rightarrow M^\dagger M=I$.
 (b) $\mathrm{QFT}_2\lvert2\rangle=\frac12(1,-1,1,-1)^{\mathsf T}$; każdy wynik $P=\frac14$.
 (c) Dla funkcji okresowej amplitudy po QFT grupują się na wielokrotnościach $N/r$ — stąd odczyt okresu.

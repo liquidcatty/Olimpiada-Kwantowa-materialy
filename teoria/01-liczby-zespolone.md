@@ -15,15 +15,15 @@ P1 (cząstka w studni potencjału) i P2 (polaryzatory i pojedynczy foton).
 - **Jednostka urojona** $i$: liczba spełniająca $i^2=-1$.
 - **Liczba zespolona**: $z=a+bi$, gdzie $a,b\in\mathbb{R}$. $a=\mathrm{Re}z$
   (część rzeczywista), $b=\mathrm{Im}z$ (część urojona).
-- **Sprzężenie** (*complex conjugate*): $z^*=a-bi$. W kodzie `z.conjugate()`.
-- **Moduł** (*modulus*): $\lvert z\rvert=\sqrt{a^2+b^2}=\sqrt{z^*z}$.
+- **Sprzężenie** (*complex conjugate*): $z^\ast=a-bi$. W kodzie `z.conjugate()`.
+- **Moduł** (*modulus*): $\lvert z\rvert=\sqrt{a^2+b^2}=\sqrt{z^\astz}$.
 - **Postać biegunowa**: $z=\lvert z\rvert(\cos\varphi+i\sin\varphi)=\lvert z\rvert e^{i\varphi}$,
   gdzie $\varphi=\arg z$ to **argument** (faza), wyznaczony z dokładnością do $2\pi$.
 - **Wzór Eulera**: $e^{i\varphi}=\cos\varphi+i\sin\varphi$.
-- **Wartość sprzężona modułu**: $z^*z=\lvert z\rvert^2$.
+- **Wartość sprzężona modułu**: $z^\astz=\lvert z\rvert^2$.
 - **Norma wektora zespolonego** $\lvert\psi\rangle=(c_1,\dots,c_n)$:
   $\lVert\psi\rVert=\sqrt{\sum_k\lvert c_k\rvert^2}$; stan fizyczny ma $\lVert\psi\rVert=1$.
-- **Macierz unitarna** (*unitary*): $U^\dagger U=I$, gdzie $U^\dagger=(U^*)^T$
+- **Macierz unitarna** (*unitary*): $U^\dagger U=I$, gdzie $U^\dagger=(U^\ast)^T$
   (sprzężenie po elementach + transpozycja).
 
 ## 3. Teoria krok po kroku
@@ -58,11 +58,11 @@ sztuczka, co „usuwanie niewymierności” z mianownika.
 Zachodzą następujące tożsamości (wynikają bezpośrednio z definicji):
 
 $$
-z+z^*=2a,\qquad z-z^*=2bi,\qquad zz^*=\lvert z\rvert^2,
+z+z^\ast=2a,\qquad z-z^\ast=2bi,\qquad zz^\ast=\lvert z\rvert^2,
 $$
 
 $$
-(z_1z_2)^*=z_1^*z_2^*,\qquad (z_1+z_2)^*=z_1^*+z_2^*,\qquad
+(z_1z_2)^\ast=z_1^\astz_2^\ast,\qquad (z_1+z_2)^\ast=z_1^\ast+z_2^\ast,\qquad
 \left\lvert z_1z_2\right\rvert=\lvert z_1\rvert\lvert z_2\rvert.
 $$
 
@@ -155,8 +155,8 @@ c_0,c_1\in\mathbb{C},\qquad \lvert c_0\rvert^2+\lvert c_1\rvert^2=1.
 $$
 
 **Warunek normalizacji** gwarantuje, że prawdopodobieństwa sumują się do jedynki.
-Sprzężenie $c^*$ pojawia się tam, gdzie „wracamy” od amplitudy do prawdopodobieństwa
-(reguła Borna $P=\lvert c\rvert^2=c^*c$).
+Sprzężenie $c^\ast$ pojawia się tam, gdzie „wracamy” od amplitudy do prawdopodobieństwa
+(reguła Borna $P=\lvert c\rvert^2=c^\astc$).
 
 Faza ma dwie role:
 
@@ -181,12 +181,12 @@ $$
 \lvert 0\rangle=\begin{pmatrix}1\\0\end{pmatrix},\quad
 \lvert 1\rangle=\begin{pmatrix}0\\1\end{pmatrix},\quad
 \lvert\psi\rangle=\begin{pmatrix}c_0\\c_1\end{pmatrix},\quad
-\langle\psi\rvert=(c_0^*\;\;c_1^*).
+\langle\psi\rvert=(c_0^\ast\;\;c_1^\ast).
 $$
 
-**Iloczyn skalarny** dwóch stanów to $\langle\phi\rvert\psi\rangle=\sum_k\phi_k^*\psi_k$ —
+**Iloczyn skalarny** dwóch stanów to $\langle\phi\rvert\psi\rangle=\sum_k\phi_k^\ast\psi_k$ —
 liczba zespolona. **Norma** $\lVert\psi\rVert=\sqrt{\langle\psi\rvert\psi\rangle}$.
-Sprzężenie hermitowskie macierzy $M^\dagger=(M^*)^T$ uogólnia sprzężenie liczby.
+Sprzężenie hermitowskie macierzy $M^\dagger=(M^\ast)^T$ uogólnia sprzężenie liczby.
 
 **Macierz unitarna** spełnia $U^\dagger U=UU^\dagger=I$. Mnożenie przez nią zachowuje
 normę (a więc i prawdopodobieństwa): $\lVert U\psi\rVert^2=\psi^\dagger U^\dagger U\psi=\lVert\psi\rVert^2$.
@@ -341,8 +341,12 @@ przyjmuje wartość najmniejszą.
 (a) Znormalizuj go. (b) Podaj prawdopodobieństwa pomiaru $0$ i $1$.
 (c) Wyznacz fazę względną $c_1/c_0$ i przedstaw ją jako $e^{i\varphi}$.
 
-**Z-01.7.** Dana jest macierz
-$U=\dfrac{1}{\sqrt2}\begin{pmatrix}1&i\\ i&1\end{pmatrix}$.
+**Z-01.7.** Dana jest macierz $U$:
+
+$$
+U=\dfrac{1}{\sqrt2}\begin{pmatrix}1&i\\ i&1\end{pmatrix}
+$$
+
 (a) Wykaż rachunkiem, że $U$ jest unitarna. (b) Wyznacz jej wartości własne.
 (c) Wskaż wektory własne i sprawdź, że są to $\lvert\pm\rangle$.
 

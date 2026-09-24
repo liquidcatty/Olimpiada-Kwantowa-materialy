@@ -8,7 +8,12 @@ czyli numeryczne zero).
 
 (b) `np.array([[1],[2]])` ma kształt $(2,1)$, a `np.array([[0,10,20]])` — kształt $(1,3)$.
 Broadcasting rozciąga oba do $(2,3)$: wynik to
-$\begin{pmatrix}1&11&21\\2&12&22\end{pmatrix}$, czyli **6 elementów**.
+
+$$
+\begin{pmatrix}1&11&21\\2&12&22\end{pmatrix}
+$$
+
+czyli **6 elementów**.
 
 (c) Pętla `for` wykonuje Python-owy kod per element (narzut na każdą iterację), a operacja NumPy
 przetwarza całą tablicę w kodzie skompilowanym (C), bez narzutu interpretera na element. Dla
@@ -38,9 +43,19 @@ sprzętu”, lecz natura światła.
 
 ## Z-16.3
 
-(a) $V=\begin{pmatrix}1&1\\2&1\\ \vdots&\vdots\\6&1\end{pmatrix}$, $W=\tfrac1{0{,}04}I$, więc
-$V^{\mathsf T}WV=\begin{pmatrix}2275&525\\525&150\end{pmatrix}$ i
-$\hat\beta=(V^{\mathsf T}WV)^{-1}V^{\mathsf T}Wy=(1{,}9657;\ 0{,}1533)$.
+(a) Macierz $V$ ma postać
+
+$$
+V=\begin{pmatrix}1&1\\2&1\\ \vdots&\vdots\\6&1\end{pmatrix},
+$$
+
+$W=\tfrac1{0{,}04}I$, więc
+
+$$
+V^{\mathsf T}WV=\begin{pmatrix}2275&525\\525&150\end{pmatrix}
+$$
+
+i $\hat\beta=(V^{\mathsf T}WV)^{-1}V^{\mathsf T}Wy=(1{,}9657;\ 0{,}1533)$.
 (b) Reszty dają $\chi^2=2{,}819$, $\mathrm{ndof}=6-2=4$, $\chi^2_{\rm red}=0{,}705$;
 $R^2=1-\sum r_i^2/\sum(y_i-\bar y)^2=0{,}9983$.
 (c) $y(7)=1{,}9657\cdot7+0{,}1533=13{,}913$; z $\vec g=(7,1)$ i

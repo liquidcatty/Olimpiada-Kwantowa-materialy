@@ -17,7 +17,7 @@ fotonu i **prawo Malusa**, twierdzenie Ehrenfesta oraz ewolucję superpozycji
 - **Funkcja falowa**: $\psi(x)=\langle x|\psi\rangle$; $\lvert\psi(x)\rvert^2$ to gęstość
   prawdopodobieństwa położenia (reguła Borna).
 - **Obserwabla**: operator hermitowski $A$; możliwe wyniki to jego wartości własne $a$.
-- **Wartość oczekiwana**: $\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle =\int\psi^*A\psi\,dx$; **wariancja** $\mathrm{Var}A=\langle A^2\rangle-\langle A\rangle^2$.
+- **Wartość oczekiwana**: $\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle =\int\psi^\astA\psi\,dx$; **wariancja** $\mathrm{Var}A=\langle A^2\rangle-\langle A\rangle^2$.
 - **Komutator**: $[A,B]=AB-BA$; **zasada nieoznaczoności**
   $\Delta A\,\Delta B\ge\frac12\lvert\langle[A,B]\rangle\rvert$.
 - **Hamiltonian** $H=\frac{\hat p^2}{2m}+V(\hat x)$; **stany stacjonarne** $H\lvert n\rangle=E_n\lvert n\rangle$.
@@ -368,7 +368,7 @@ w czasie?
 
 ## 7. Wskazówki do zadań
 
-- **Z-05.1.** $P(k)=\lvert c_k\rvert^2$; $\langle X\rangle=2\mathrm{Re}(c_0^*c_1)$;
+- **Z-05.1.** $P(k)=\lvert c_k\rvert^2$; $\langle X\rangle=2\mathrm{Re}(c_0^\astc_1)$;
   $\Delta Z=\sqrt{1-\langle Z\rangle^2}$.
 - **Z-05.2.** $E_n=n^2E_1$; funkcja $\psi_n$ ma $n-1$ węzłów wewnątrz.
 - **Z-05.3.** $P(\uparrow)=\cos^2(\theta/2)$; użyj $\langle\sigma_x\rangle=\sin\theta$,

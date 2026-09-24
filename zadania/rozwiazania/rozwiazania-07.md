@@ -114,7 +114,11 @@ współdzielonego splątania.
 
 ## Z-07.6
 
-(a) $\mathcal{E}(\lvert0\rangle\langle0\rvert)=(1-p)\lvert0\rangle\langle0\rvert+p\,\frac{I}{2} =\begin{pmatrix}1-p/2&0\\0&p/2\end{pmatrix}$.
+(a) Otrzymujemy
+
+$$
+\mathcal{E}(\lvert0\rangle\langle0\rvert)=(1-p)\lvert0\rangle\langle0\rvert+p\,\frac{I}{2} =\begin{pmatrix}1-p/2&0\\0&p/2\end{pmatrix}.
+$$
 
 (b) $\lvert0\rangle$ jest stanem własnym kanału, więc
 $F\big(\mathcal{E}(\lvert0\rangle\langle0\rvert),\lvert0\rangle\langle0\rvert\big)=\langle0\vert\mathcal{E}(\lvert0\rangle\langle0\rvert)\vert0\rangle=1-\frac p2$.

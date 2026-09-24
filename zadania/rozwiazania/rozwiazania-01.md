@@ -19,7 +19,7 @@ $$
 z_1z_2=(2-3i)(1+5i)=2+10i-3i-15i^2=2+7i+15=17+7i.
 $$
 
-**(c)** Mnożymy licznik i mianownik przez sprzężenie $z_2^*=1-5i$:
+**(c)** Mnożymy licznik i mianownik przez sprzężenie $z_2^\ast=1-5i$:
 
 $$
 \frac{2-3i}{1+5i}=\frac{(2-3i)(1-5i)}{1^2+5^2}
@@ -152,9 +152,19 @@ faza względna $-i$ zmieni wynik dopiero w innej bazie pomiarowej.
 
 ## Z-01.7
 
-Dana $U=\dfrac{1}{\sqrt2}\begin{pmatrix}1&i\\ i&1\end{pmatrix}$.
+Dana macierz $U$ ma postać:
 
-**(a)** $U^\dagger=\dfrac{1}{\sqrt2}\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}$. Liczymy
+$$
+U=\dfrac{1}{\sqrt2}\begin{pmatrix}1&i\\ i&1\end{pmatrix}.
+$$
+
+**(a)** Macierz sprzężona $U^\dagger$ ma postać
+
+$$
+U^\dagger=\dfrac{1}{\sqrt2}\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}.
+$$
+
+Liczymy
 
 $$
 U^\dagger U=\frac12\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}

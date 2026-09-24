@@ -42,7 +42,12 @@ kubicie $q_5$ i dla błędu $Z$ na $q_3$. (c) Ile jest klas syndromów i dlaczeg
 pozwala jednoznacznie rozpoznać każdy pojedynczy błąd?
 
 **PD-3.6 (2 pkt).** Mitygacja błędów.
-(a) Dla macierzy kalibracji odczytu $A=\begin{pmatrix}0{,}96&0{,}08\\0{,}04&0{,}92\end{pmatrix}$
+(a) Dla macierzy kalibracji odczytu $A$ danej wzorem
+
+$$
+A=\begin{pmatrix}0{,}96&0{,}08\\0{,}04&0{,}92\end{pmatrix}
+$$
+
 i pomiaru $\vec p_{\rm zmierz}=(0{,}70;0{,}30)$ wyznacz $\vec p_{\rm popr}=A^{-1}\vec p_{\rm zmierz}$
 i sprawdź, że składowe sumują się do $1$. (b) Podaj liczbę warunkową $\mathrm{cond}(A)$ i wyjaśnij,
 co się dzieje przy jej wzroście. (c) Punkty ZNE: $E(1)=0{,}85$, $E(2)=0{,}73$, $E(3)=0{,}61$ —
@@ -126,7 +131,12 @@ syndrom $101$ (binarnie $5$); $Z$ na $q_3$: generatory $X$-owe $g_2,g_3$ dają $
 (binarnie $3$). (c) $2^{\,n-k}=2^6=64$ klasy; błędów jednostkowych jest $1+7\cdot3=22$, a ich syndromy
 są parami różne, więc każdy pojedynczy błąd rozpoznajemy jednoznacznie.
 
-**PD-3.6.** (a) $\det A=0{,}88$ i $A^{-1}=\frac{1}{0{,}88}\begin{pmatrix}0{,}92&-0{,}08\\-0{,}04&0{,}96\end{pmatrix}$,
+**PD-3.6.** (a) $\det A=0{,}88$ i macierz odwrotna
+
+$$
+A^{-1}=\frac{1}{0{,}88}\begin{pmatrix}0{,}92&-0{,}08\\-0{,}04&0{,}96\end{pmatrix},
+$$
+
 stąd $\vec p_{\rm popr}=(0{,}7045;\,0{,}2955)$, suma $=1{,}0000$ ✓. (b) $\mathrm{cond}(A)=1{,}144$;
 gdy rośnie (kolumny $A$ stają się podobne), mały błąd pomiaru daje duży błąd wyniku, a poprawione
 prawdopodobieństwa wychodzą poza $[0,1]$ i trzeba je rzutować na sympleks. (c) Prosta

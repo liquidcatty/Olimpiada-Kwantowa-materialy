@@ -9,7 +9,12 @@ które powinny wyjść) i **kryteria oceny**. To odpowiednik „rozwiązań” d
 **(a) Wskazówki realizacji.** Bramkę 1-kubitową na kubicie $k$ buduj jako
 `np.kron` złożony tak, by $G$ stał na pozycji $k$-tej **od prawej** (kubit 0 = najmłodszy bit).
 CNOT dla kontroli $q_1$ i celu $q_0$ ma postać $4\times4$
-$\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}$; ogólnie użyj
+
+$$
+\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.
+$$
+
+Ogólnie użyj
 $\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes X$. Pomiar: policz
 $p=|\psi|^2$, potem `rng.choice(2**n, size=shots, p=p)`.
 

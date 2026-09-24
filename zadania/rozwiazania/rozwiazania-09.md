@@ -20,8 +20,13 @@ $ad=\frac14=bc$ — **iloczynowy** ($=\lvert+\rangle\otimes\lvert+\rangle$), wi�
 
 ## Z-09.2
 
-(a) Macierz współczynników stanu $\lvert\Psi^-\rangle=\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$:
-$M=\frac{1}{\sqrt2}\begin{pmatrix}0&1\\-1&0\end{pmatrix}$. $MM^\dagger=\frac12 I$, wartości szczególne
+(a) Macierz współczynników stanu $\lvert\Psi^-\rangle=\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$ ma postać:
+
+$$
+M=\frac{1}{\sqrt2}\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+$$
+
+$MM^\dagger=\frac12 I$, wartości szczególne
 $\frac{1}{\sqrt2},\frac{1}{\sqrt2}$, więc $\lambda_1=\lambda_2=\frac12$:
 
 $$

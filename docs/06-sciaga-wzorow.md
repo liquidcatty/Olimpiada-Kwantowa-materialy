@@ -9,13 +9,13 @@ Odsyłacze prowadzą do rozdziałów z wyprowadzeniami.
 | Wzór | Zapis | Uwaga |
 | --- | --- | --- |
 | Postać algebraiczna | $z=a+bi$, $i^2=-1$ | |
-| Sprzężenie | $z^*=a-bi$ | $zz^*=\lvert z\rvert^2$ |
+| Sprzężenie | $z^\ast=a-bi$ | $zz^\ast=\lvert z\rvert^2$ |
 | Moduł | $\lvert z\rvert=\sqrt{a^2+b^2}$ | nieujemny |
 | Postać biegunowa | $z=r e^{i\varphi}$, $r=\lvert z\rvert$, $\varphi=\arg z$ | $\varphi\in(-\pi,\pi]$ |
 | Wzór Eulera | $e^{i\varphi}=\cos\varphi+i\sin\varphi$ | podstawa wszystkiego |
 | Wzór de Moivre'a | $(\cos\varphi+i\sin\varphi)^n=\cos n\varphi+i\sin n\varphi$ | czyli $(e^{i\varphi})^n=e^{in\varphi}$ |
 | Pierwiastki | $z^{1/n}=\sqrt[n]{r}\,e^{i(\varphi+2\pi k)/n}$, $k=0,\dots,n-1$ | $n$ różnych pierwiastków |
-| Odwrotność | $1/z=z^*/\lvert z\rvert^2$ | |
+| Odwrotność | $1/z=z^\ast/\lvert z\rvert^2$ | |
 | Nierówność trójkąta | $\lvert z+w\rvert\le\lvert z\rvert+\lvert w\rvert$ | |
 | Tożsamości trygonometryczne | $\cos\varphi=\frac{e^{i\varphi}+e^{-i\varphi}}{2}$, $\sin\varphi=\frac{e^{i\varphi}-e^{-i\varphi}}{2i}$ | świetne do całek |
 | Amplituda kwantowa | $\lvert\psi\rangle=\sum_k c_k\lvert k\rangle$, $\sum_k\lvert c_k\rvert^2=1$ | $c_k$ zespolone, faza ma znaczenie |
@@ -27,9 +27,9 @@ prawdopodobieństwo $\lvert c\rvert^2$.
 
 | Wzór | Zapis |
 | --- | --- |
-| Iloczyn skalarny | $\langle\phi\vert\psi\rangle=\sum_k \phi_k^*\psi_k$ |
+| Iloczyn skalarny | $\langle\phi\vert\psi\rangle=\sum_k \phi_k^\ast\psi_k$ |
 | Norma | $\lVert\psi\rVert=\sqrt{\langle\psi\vert\psi\rangle}$ |
-| Sprzężenie hermitowskie | $(A^\dagger)_{ij}=A_{ji}^*$ |
+| Sprzężenie hermitowskie | $(A^\dagger)_{ij}=A_{ji}^\ast$ |
 | Hermitowskość | $A^\dagger=A$ (obserwable, rzeczywiste wartości własne) |
 | Unitarność | $U^\dagger U=UU^\dagger=I$ (zachowuje normę) |
 | Równanie własne | $A\lvert a\rangle=a\lvert a\rangle$ |
@@ -38,12 +38,16 @@ prawdopodobieństwo $\lvert c\rvert^2$.
 | Diagonalizacja | $A=U D U^\dagger$, $D=\mathrm{diag}(\lambda_i)$ |
 | Ślad | $\mathrm{Tr}\,A=\sum_i A_{ii}=\sum_i\lambda_i$; $\mathrm{Tr}(AB)=\mathrm{Tr}(BA)$ |
 | Wyznacznik | $\det(AB)=\det A\det B$; $\det U=e^{i\alpha}$ dla unitarnej |
-| Macierz odwrotna 2×2 | $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$ |
+| Macierz odwrotna 2×2 | wzór (poniżej) |
 | Iloczyn tensorowy | $(A\otimes B)_{(ik),(jl)}=A_{ij}B_{kl}$ |
 | Własność kron | $(A\otimes B)(C\otimes D)=(AC)\otimes(BD)$ |
 | Eksponenta | $e^{A}=\sum_k A^k/k!$; dla hermitowskiego $H$: $U(t)=e^{-iHt/\hbar}$ |
 | Diagonalna eksponenta | jeśli $A=UDU^\dagger$, to $e^{A}=Ue^{D}U^\dagger$ |
 | Rozkład Schmidta | $\lvert\psi\rangle=\sum_i s_i\lvert u_i\rangle\otimes\lvert v_i\rangle$, $s_i\ge0$ |
+
+$$
+\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}
+$$
 
 **Macierze Pauliego**
 
@@ -132,7 +136,7 @@ $\hat p=-i\hbar\frac{d}{dx}$; relacja $E=\hbar\omega$, $p=\hbar k$.
 | Stany stacjonarne | $\hat H\psi=E\psi$, $\Psi(x,t)=\psi(x)e^{-iEt/\hbar}$ |
 | Normalizacja | $\int\lvert\psi\rvert^2dx=1$ |
 | Prawdopodobieństwo położenia | $dP=\lvert\psi(x)\rvert^2dx$ |
-| Wartość oczekiwana | $\langle A\rangle=\int\psi^*\hat A\psi\,dx$ |
+| Wartość oczekiwana | $\langle A\rangle=\int\psi^\ast\hat A\psi\,dx$ |
 | Rozkład na bazy | $\psi=\sum_n c_n\psi_n$, $c_n=\langle\psi_n\vert\psi\rangle$, $P_n=\lvert c_n\rvert^2$ |
 | Komutator | $[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$ |
 | Zasada nieoznaczoności | $\Delta A\,\Delta B\ge\frac12\lvert\langle[\hat A,\hat B]\rangle\rvert$ |
@@ -165,10 +169,19 @@ $\hat p=-i\hbar\frac{d}{dx}$; relacja $E=\hbar\omega$, $p=\hbar k$.
 | Splątanie z rozkładu Schmidta | $\log_2$ liczby niezerowych $s_i$ > 1 ⇒ stan splątany |
 | Kanał kwantowy (Kraus) | $\mathcal{E}(\rho)=\sum_iK_i\rho K_i^\dagger$, $\sum_iK_i^\dagger K_i=I$ |
 | Kanał depolaryzujący | $\mathcal{E}(\rho)=(1-p)\rho+\frac p3(X\rho X+Y\rho Y+Z\rho Z)$ |
-| Tłumienie amplitudy | $K_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix}$, $K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix}$ |
-| Tłumienie fazy | $\rho\to\begin{pmatrix}\rho_{00}&(1-\gamma)\rho_{01}\\(1-\gamma)\rho_{10}&\rho_{11}\end{pmatrix}$ |
+| Tłumienie amplitudy | macierze $K_0$, $K_1$ |
+| Tłumienie fazy | macierz $\rho$ |
 | Dekoherencja w czasie | $\rho_{01}(t)=\rho_{01}(0)e^{-t/T_2}$ |
 | Zasada Landauera | $W\ge k_BT\ln2$ (koszt usunięcia 1 bitu) |
+
+$$
+K_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix},\qquad
+K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix}
+$$
+
+$$
+\rho\to\begin{pmatrix}\rho_{00}&(1-\gamma)\rho_{01}\\(1-\gamma)\rho_{10}&\rho_{11}\end{pmatrix}
+$$
 
 **Przykład dla $|\Phi^+\rangle=\frac{1}{\sqrt2}(|00\rangle+|11\rangle)$:**
 
@@ -201,7 +214,12 @@ $$
   bramka na kubicie 1 (górnym) → $G\otimes I$; CNOT (kontrola górny, cel dolny) →
   $\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes X$.
 - CNOT w bazie $\{\lvert00\rangle,\lvert01\rangle,\lvert10\rangle,\lvert11\rangle\}$
-  ma postać $\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}$
+  ma postać:
+
+$$
+\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}
+$$
+
   (zamienia $\lvert10\rangle\leftrightarrow\lvert11\rangle$).
 - Zbiór uniwersalny: $\{H,T,\text{CNOT}\}$.
 - Bramka kontrolowana-$U$: $C_U=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes U$.

@@ -20,7 +20,13 @@ R_Y(\pi)=\begin{pmatrix}0&-1\\1&0\end{pmatrix}=-iY,\quad
 R_Z(\pi)=\mathrm{diag}(-i,i)=-iZ.
 $$
 
-(c) Ponieważ $X+Z=\begin{pmatrix}1&1\\1&-1\end{pmatrix}$, mamy $\frac{1}{\sqrt2}(X+Z)=H$. Oś obrotu
+(c) Ponieważ
+
+$$
+X+Z=\begin{pmatrix}1&1\\1&-1\end{pmatrix},
+$$
+
+mamy $\frac{1}{\sqrt2}(X+Z)=H$. Oś obrotu
 $\hat n=\frac{1}{\sqrt2}(1,0,1)$ daje $\hat n\cdot\vec\sigma=\frac{1}{\sqrt2}(X+Z)=H$, więc
 
 $$
@@ -44,8 +50,12 @@ SXS^\dagger=\begin{pmatrix}1&0\\0&i\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmat
 =\begin{pmatrix}0&-i\\i&0\end{pmatrix}=Y.
 $$
 
-(b) $HS=\frac{1}{\sqrt2}\begin{pmatrix}1&i\\1&-i\end{pmatrix}$,
-$SH=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\i&-i\end{pmatrix}$,
+(b) Macierze $HS$ oraz $SH$ mają postać
+
+$$
+HS=\frac{1}{\sqrt2}\begin{pmatrix}1&i\\1&-i\end{pmatrix},\qquad
+SH=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\i&-i\end{pmatrix},
+$$
 
 $$
 [H,S]=HS-SH=\frac{1}{\sqrt2}\begin{pmatrix}0&i-1\\1-i&0\end{pmatrix}\ne0,
@@ -53,7 +63,13 @@ $$
 
 więc **nie komutują**.
 
-(c) $T=\mathrm{diag}(1,e^{i\pi/4})$; $TXT^\dagger=\begin{pmatrix}0&e^{-i\pi/4}\\e^{i\pi/4}&0\end{pmatrix} =\frac{1}{\sqrt2}(X+Y)$, co **nie jest** macierzą Pauliego (nie da się zapisać jako $e^{i\varphi}X$).
+(c) $T=\mathrm{diag}(1,e^{i\pi/4})$ oraz
+
+$$
+TXT^\dagger=\begin{pmatrix}0&e^{-i\pi/4}\\e^{i\pi/4}&0\end{pmatrix} =\frac{1}{\sqrt2}(X+Y),
+$$
+
+co **nie jest** macierzą Pauliego (nie da się zapisać jako $e^{i\varphi}X$).
 
 **Odpowiedź:** (a) $SXS^\dagger=Y$; (b) $[H,S]\ne0$ — nie komutują; (c) $TXT^\dagger=\frac{1}{\sqrt2}(X+Y)$.
 

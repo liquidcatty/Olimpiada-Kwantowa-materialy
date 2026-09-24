@@ -38,19 +38,39 @@ def git_show(rel: str, base: str) -> str | None:
 
 
 def segments(text: str) -> collections.Counter[str]:
-    """Multizbior segmentow matematycznych (znormalizowane biale znaki).
+    """Multizbior tresci wzorow (bez rozrozniania inline/blok i bez \\ast).
 
-    Najpierw usuwamy bloki kodu i code-spany, zeby literalne przyklady skladni
-    (np. w dokumentacji) nie byly liczone jako wzory.
+    Normalizacje:
+      * biale znaki -> pojedyncza spacja,
+      * \\ast -> * (zamiana wykonana przez tools/fix_star_in_math.py jest kosmetyczna),
+      * inline i blok traktowane tak samo (przenoszenie macierzy z inline do bloku
+        nie zmienia tresci wzoru).
     """
     text = re.sub(r"```.*?```", "", text, flags=re.S)
     text = re.sub(r"`[^`\n]*`", " ", text)
     counter: collections.Counter[str] = collections.Counter()
+
+    def norm(expr: str) -> list[str]:
+        """Normalizuje wzor do porownania: \\ast->*, bez interpunkcji koncowej,
+        wieloczesciowe wzory rozbite na czesci (\\qquad / \\quad)."""
+        expr = expr.replace(r"\ast", "*")
+        expr = re.sub(r"\s+", " ", expr).strip()
+        parts = re.split(r"\\qquad|\\quad", expr)
+        out = []
+        for part in parts:
+            part = part.strip().rstrip(".,;:")
+            part = part.strip()
+            if part:
+                out.append(part)
+        return out
+
     for block in re.finditer(r"\$\$(.+?)\$\$", text, flags=re.S):
-        counter["B:" + re.sub(r"\s+", " ", block.group(1)).strip()] += 1
+        for part in norm(block.group(1)):
+            counter["M:" + part] += 1
     stripped = re.sub(r"\$\$.+?\$\$", "", text, flags=re.S)
     for inline in re.finditer(r"\$([^$\n]+)\$", stripped):
-        counter["I:" + re.sub(r"\s+", " ", inline.group(1)).strip()] += 1
+        for part in norm(inline.group(1)):
+            counter["M:" + part] += 1
     return counter
 
 

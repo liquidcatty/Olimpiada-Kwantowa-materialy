@@ -17,12 +17,16 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 CASES: list[tuple[str, str]] = [
-    ("K: $$ osobno, zamkniecie na koncu tresci", "Tekst.\n\n$$\nx = y$$\n\nTekst.\n"),
-    ("L: $$tresc, zamkniecie osobno", "Tekst.\n\n$$x = y\n$$\n\nTekst.\n"),
-    ("M: $$ osobno, bez pustych linii po naglowku", "## Naglowek\n$$\nx = y\n$$\n\ntekst\n"),
-    ("N: $$tresc$$ jedna linia bez pustych linii", "## Naglowek\n$$x = y$$\ntekst\n"),
-    ("O: operatorname z podkresleniem", "$\\operatorname{rank}A + \\operatorname{Tr}\\rho$\n"),
-    ("P: mathrm z podkresleniem", "$\\mathrm{rank}\\,A + \\mathrm{Tr}\\,\\rho$\n"),
+    ("1 inline gwiazdka pojedyncza", "Niech $z^*$ oznacza sprzezenie.\n"),
+    ("11 inline dwie gwiazdki zamienione na ast", "Mamy $z^{\\ast}$ oraz $zz^{\\ast}$.\n"),
+    ("16 inline x*y jeden span", "Iloczyn $a*b$ i koniec.\n"),
+    ("17 inline ast", "Iloczyn $a\\ast b$ i koniec.\n"),
+    ("13 inline tylko podwojny backslash", "Wzor $\\begin{cases}1\\\\2\\end{cases}$ w linii.\n"),
+    ("14 inline tylko ampersand", "Wzor $a&b$ w linii.\n"),
+    ("15 inline cases", "Wzor $\\begin{cases}x&x>0\\\\-x&x\\le0\\end{cases}$ w linii.\n"),
+    ("18 tabela z ast", "| Obiekt | Zapis |\n| --- | --- |\n| sprzezenie | $z^{\\ast} = a-bi$ |\n"),
+    ("19 blok z cases", "Tekst.\n\n$$\nf(x)=\\begin{cases}x&x>0\\\\-x&x\\le0\\end{cases}\n$$\n\nTekst.\n"),
+    ("20 tabela z pmatrix (pelny HTML)", "| Symbol | Macierz |\n| --- | --- |\n| $X$ | $\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$ |\n"),
 ]
 
 

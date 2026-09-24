@@ -94,9 +94,14 @@ Każde zadanie jest warte **2 pkt**; punkty dzielą się tak:
 (b) $s^2=21{,}61$ wobec $\bar n=20{,}5$ — iloraz $1{,}05\approx1$, więc dane są zgodne z Poissonem.
 (c) $\bar n=20{,}5\pm1{,}5$.
 
-**PD-4.2.** (a) $V^{\mathsf T}WV=\tfrac1{0{,}04}\begin{pmatrix}30&10\\10&5\end{pmatrix}$,
-$(V^{\mathsf T}WV)^{-1}=\begin{pmatrix}0{,}004&-0{,}008\\-0{,}008&0{,}024\end{pmatrix}$, więc
-$a=1{,}99$, $b=1{,}06$ (z `polyfit` otrzymujemy to samo).
+**PD-4.2.** (a) Macierze $V^{\mathsf T}WV$ oraz $(V^{\mathsf T}WV)^{-1}$ dane są wzorami
+
+$$
+V^{\mathsf T}WV=\tfrac1{0{,}04}\begin{pmatrix}30&10\\10&5\end{pmatrix},\qquad
+(V^{\mathsf T}WV)^{-1}=\begin{pmatrix}0{,}004&-0{,}008\\-0{,}008&0{,}024\end{pmatrix},
+$$
+
+więc $a=1{,}99$, $b=1{,}06$ (z `polyfit` otrzymujemy to samo).
 (b) $\chi^2=1{,}275$, $\chi^2_{\rm red}=0{,}425$, $R^2=0{,}9987$ (reszty:
 $-0{,}06;0{,}05;-0{,}04;0{,}17;-0{,}12$).
 (c) $y(5)=11{,}01$; $\vec g=(5,1)$ daje $u=0{,}210$, czyli $11{,}01\pm0{,}21$.

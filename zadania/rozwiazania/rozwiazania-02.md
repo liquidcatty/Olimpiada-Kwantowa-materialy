@@ -6,14 +6,18 @@ małoendianowa.
 
 ## Z-02.1
 
-**(a)** $\langle u|v\rangle=u_1^*v_1+u_2^*v_2=1^*\cdot i+(-i)\cdot1=i-i=0$.
+**(a)** $\langle u|v\rangle=u_1^\astv_1+u_2^\astv_2=1^\ast\cdot i+(-i)\cdot1=i-i=0$.
 Wektory są **ortogonalne**.
 
 **(b)** $\lVert u\rVert=\sqrt{|1|^2+|i|^2}=\sqrt2$,
 $\lVert v\rVert=\sqrt{|i|^2+|1|^2}=\sqrt2$.
 
 **(c)** Po normalizacji $|u'\rangle=\tfrac{1}{\sqrt2}(1,i)^T$,
-$|v'\rangle=\tfrac{1}{\sqrt2}(i,1)^T$. Działamy $Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}$:
+$|v'\rangle=\tfrac{1}{\sqrt2}(i,1)^T$. Działamy operatorem $Y$:
+
+$$
+Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}.
+$$
 
 $$
 Y|u'\rangle=\tfrac{1}{\sqrt2}\begin{pmatrix}-i\cdot i\\ i\cdot1\end{pmatrix}
@@ -35,9 +39,18 @@ konwencji stany $|{+}i\rangle$ i $|{-}i\rangle$ na sferze Blocha (bieguny osi $Y
 
 ## Z-02.2
 
-**(a)** $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$.
+**(a)** Macierz $X$ ma postać:
 
-**(b)** $U=[|+\rangle\ |-\rangle]=\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$,
+$$
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+$$
+
+**(b)** Macierz $U=[|+\rangle\ |-\rangle]$ ma postać:
+
+$$
+U=[|+\rangle\ |-\rangle]=\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},
+$$
+
 $U^\dagger=U$ (rzeczywista symetryczna). Liczymy
 
 $$
@@ -51,7 +64,12 @@ $$
 własnymi $+1$ (stan $|+\rangle$) i $-1$ (stan $|-\rangle$). Zgadza się z faktem, że
 $|\pm\rangle$ to stany własne $X$.
 
-**Odpowiedź:** **(a)** $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$;
+**Odpowiedź:** **(a)** macierz $X$ ma postać
+
+$$
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix};
+$$
+
 **(b)** $X'=\mathrm{diag}(1,-1)=Z$; **(c)** $X$ w bazie $X$-owej jest diagonalny.
 
 *Interpretacja:* ta sama obserwabla w różnej bazie ma inną macierz; wybór bazy
@@ -59,8 +77,13 @@ $X$ zamienia role $X$ i $Z$ — dlatego mówimy o „bazie $X$” i „bazie $Z$
 
 ## Z-02.3
 
-**(a)** $M^\dagger=\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}^\dagger =\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}=M$ — hermitowska. (Przekątna rzeczywista,
-elementy poza przekątną sprzężone.)
+**(a)** Macierz $M$ jest hermitowska, bo
+
+$$
+M^\dagger=\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}^\dagger =\begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}=M.
+$$
+
+(Przekątna rzeczywista, elementy poza przekątną sprzężone.)
 
 **(b)** $\det(M-aI)=(2-a)(3-a)-(1-i)(1+i)=a^2-5a+(6-2)=a^2-5a+4=0$, skąd
 
@@ -153,8 +176,13 @@ osobliwych wektorów na sferze Blocha.
 Stan $|\psi\rangle=\cos\alpha|00\rangle+\sin\alpha|11\rangle$, współczynnik
 $\alpha=0{,}6$ rad.
 
-**(a)** Macierz współczynników w bazie iloczynowej:
-$\Psi=\begin{pmatrix}\cos\alpha&0\\0&\sin\alpha\end{pmatrix}$. Jej wartości osobliwe
+**(a)** Macierz współczynników w bazie iloczynowej ma postać:
+
+$$
+\Psi=\begin{pmatrix}\cos\alpha&0\\0&\sin\alpha\end{pmatrix}.
+$$
+
+Jej wartości osobliwe
 to wartości bezwzględne elementów przekątnej: $s_1=|\cos0{,}6|$, $s_2=|\sin0{,}6|$.
 
 **(b)** $s_1^2=\cos^2 0{,}6\approx0{,}6812$, $s_2^2=\sin^2 0{,}6\approx0{,}3188$.

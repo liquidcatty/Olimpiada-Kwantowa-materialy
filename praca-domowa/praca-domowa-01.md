@@ -13,7 +13,12 @@ $c=3{,}00\cdot10^{8}$ m/s, $1$ eV $=1{,}602\cdot10^{-19}$ J.
 (b) Policz $z^6$. (c) Dla stanu $|\psi\rangle=\frac{1}{\sqrt2}\bigl(|0\rangle+e^{i\pi/3}|1\rangle\bigr)$
 podaj $P(0)$, $P(1)$ oraz $\langle Y\rangle$.
 
-**PD-1.2 (2 pkt).** Dana $A=\begin{pmatrix}1&2i\\-2i&1\end{pmatrix}$.
+**PD-1.2 (2 pkt).** Dana jest macierz $A$:
+
+$$
+A=\begin{pmatrix}1&2i\\-2i&1\end{pmatrix}.
+$$
+
 (a) Wykaż, że $A$ jest hermitowska. (b) Wyznacz wartości własne. (c) Policz
 $\langle A\rangle$ w stanie $|+\rangle$ i sprawdź, że leży między wartościami własnymi.
 
@@ -113,8 +118,13 @@ $$
 $$
 
 (b) $P(00)=P(11)=\frac38=0{,}375$, $P(01)=P(10)=\frac18=0{,}125$ (suma $=1$ ✓).
-(c) Macierz współczynników
-$\begin{pmatrix}\sqrt3&1\\1&\sqrt3\end{pmatrix}/(2\sqrt2)$ ma wartości osobliwe
+(c) Macierz współczynników dana jest wzorem:
+
+$$
+\begin{pmatrix}\sqrt3&1\\1&\sqrt3\end{pmatrix}/(2\sqrt2).
+$$
+
+Jej wartości osobliwe to
 
 $$
 s_1=\frac{\sqrt3+1}{2\sqrt2}\approx0{,}966,\qquad s_2=\frac{\sqrt3-1}{2\sqrt2}

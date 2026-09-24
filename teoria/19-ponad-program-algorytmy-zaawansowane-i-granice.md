@@ -187,7 +187,12 @@ $$
 \chi=S\Big(\sum_ip_i\rho_i\Big)-\sum_ip_iS(\rho_i)\ \le\ S\Big(\sum_ip_i\rho_i\Big)\ \le\ \log_2d .
 $$
 
-**Przykład.** $\{\tfrac12,\lvert0\rangle;\ \tfrac12,\lvert+\rangle\}$: $\rho_{\rm avg}=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}$
+**Przykład.** $\{\tfrac12,\lvert0\rangle;\ \tfrac12,\lvert+\rangle\}$: macierz $\rho_{\rm avg}$:
+
+$$
+\rho_{\rm avg}=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}
+$$
+
 ma wartości własne $0{,}8536,0{,}1464$, więc $\chi\le S=0{,}6009$ bita — **mniej** niż 1 bit, mimo
 dwóch „pół-bitowych” komunikatów. To dlatego $n$ kubitów nie daje $2n$ bitów klasycznych.
 

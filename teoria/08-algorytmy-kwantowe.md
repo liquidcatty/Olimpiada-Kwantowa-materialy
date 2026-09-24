@@ -103,7 +103,11 @@ $$
 
 Macierz jest unitarna i symetryczna. **Jawne macierze:**
 
-$n=1$ ($N=2$, $\omega=e^{i\pi}=-1$): $\mathrm{QFT}_1=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}=H$.
+$n=1$ ($N=2$, $\omega=e^{i\pi}=-1$):
+
+$$
+\mathrm{QFT}_1=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}=H
+$$
 
 $n=2$ ($N=4$, $\omega=i$):
 

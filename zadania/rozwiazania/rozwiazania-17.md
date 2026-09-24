@@ -49,7 +49,13 @@ $\rho_A=\tfrac I2$.
 
 ## Z-17.4
 
-(a) Układamy amplitudy w macierz $M=\tfrac{1}{\sqrt3}\begin{pmatrix}1&1\\1&0\end{pmatrix}$ i liczymy
+(a) Układamy amplitudy w macierz
+
+$$
+M=\tfrac{1}{\sqrt3}\begin{pmatrix}1&1\\1&0\end{pmatrix}
+$$
+
+i liczymy
 wartości szczególne (SVD): $\sqrt{\lambda_{1,2}}=(0{,}9342;\ 0{,}3568)$; kontrola
 $0{,}8727+0{,}1273=1$ ✓.
 (b) $S=-0{,}8727\log_20{,}8727-0{,}1273\log_20{,}1273=0{,}5500$ bita.
@@ -61,16 +67,30 @@ $0{,}8727+0{,}1273=1$ ✓.
 
 ## Z-17.5
 
-(a) $K_0=\mathrm{diag}(1,\sqrt{1-\gamma})$, $K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix}$;
+(a) $K_0=\mathrm{diag}(1,\sqrt{1-\gamma})$, $K_1$ ma postać
+
+$$
+K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix};
+$$
+
 $K_0^\dagger K_0+K_1^\dagger K_1=\mathrm{diag}(1,1-\gamma)+\mathrm{diag}(0,\gamma)=I$ ✓.
 (b) Dla $\gamma=0{,}3$: $\mathcal E(\lvert1\rangle\langle1\rvert)=\mathrm{diag}(0{,}3;0{,}7)$;
-$\mathcal E(\lvert+\rangle\langle+\rvert)=\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}$
+
+$$
+\mathcal E(\lvert+\rangle\langle+\rvert)=\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}
+$$
+
 (populacja $\lvert1\rangle$ spada $1\to0{,}7$, koherencja $\tfrac12\to0{,}4183$).
 (c) $\sum_i K_iK_i^\dagger=\mathrm{diag}(1,1-\gamma)+\mathrm{diag}(\gamma,0)=\mathrm{diag}(1+\gamma,\ 1-\gamma)\ne I$,
 więc kanał **nie jest** unitalny.
 
 **Odpowiedź:** (a) suma $=I$ ✓; (b) $\mathbf{\mathrm{diag}(0{,}3;0{,}7)}$ i
-$\mathbf{\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}}$; (c) nie jest unitalny.
+
+$$
+\mathbf{\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}}
+$$
+
+(c) nie jest unitalny.
 *Fizycznie:* tłumienie amplitudowe „ściąga” stan w stronę $\lvert0\rangle$ — dlatego nie jest unitalne.
 
 ## Z-17.6

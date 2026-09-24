@@ -20,7 +20,7 @@ QKD) i [rozdziale 13](13-korekcja-i-mitygacja-bledow.md) (kontekst kodów korekc
 
 - **Entropia von Neumanna**: $S(\rho)=-\mathrm{Tr}\,\rho\log_2\rho=-\sum_i\lambda_i\log_2\lambda_i$ (w bitach).
 - **Entropia splątania**: $E(\lvert\psi\rangle_{AB})=S(\rho_A)=S(\rho_B)$ dla stanu czystego; $0$ dla iloczynowego, $\le\log_2 d$.
-- **Concurrence**: $C(\rho)=\max\big(0,\lambda_1-\lambda_2-\lambda_3-\lambda_4\big)$, gdzie $\lambda_k$ to pierwiastki z wartości własnych $\rho\tilde\rho$, a $\tilde\rho=(Y\otimes Y)\rho^*(Y\otimes Y)$.
+- **Concurrence**: $C(\rho)=\max\big(0,\lambda_1-\lambda_2-\lambda_3-\lambda_4\big)$, gdzie $\lambda_k$ to pierwiastki z wartości własnych $\rho\tilde\rho$, a $\tilde\rho=(Y\otimes Y)\rho^\ast(Y\otimes Y)$.
 - **Formuła Woottersa** (entropia formacji): $E_{\rm f}=h\!\Big(\tfrac{1+\sqrt{1-C^2}}{2}\Big)$, gdzie $h(x)=-x\log_2x-(1-x)\log_2(1-x)$; dla stanu czystego $E_{\rm f}=S(\rho_A)$.
 - **Negatywność (negativity)**: $N(\rho)=\frac{\lVert\rho^{T_B}\rVert_1-1}{2}$; **log-negatywność** $E_N=\log_2\lVert\rho^{T_B}\rVert_1$.
 - **Kryterium PPT** (Peresa–Horodeckich): dla 2 kubitów stan jest **separowalny** $\Leftrightarrow\rho^{T_B}\succeq0$.
@@ -69,7 +69,7 @@ Dla **dwóch** kubitów najlepszą „jednoznaczną” miarą jest **concurrence
 $$
 C(\rho)=\max\Big(0,\ \lambda_1-\lambda_2-\lambda_3-\lambda_4\Big),\qquad
 \lambda_k=\text{(malejąco)}\ \sqrt{\text{eigen}(\rho\,\tilde\rho)},\quad
-\tilde\rho=(Y\otimes Y)\rho^*(Y\otimes Y).
+\tilde\rho=(Y\otimes Y)\rho^\ast(Y\otimes Y).
 $$
 
 Dla stanu czystego $C=2\lvert\alpha\beta\rvert$ (dla $\alpha\lvert00\rangle+\beta\lvert11\rangle$).

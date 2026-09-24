@@ -173,9 +173,14 @@ unitarności na większej przestrzeni ($\mathcal E(\rho)=\mathrm{Tr}_E\,U(\rho\o
 | Kanał | Działanie | Operatory Krausa | Model fizyczny |
 | --- | --- | --- | --- |
 | depolaryzujący | $(1-p)\rho+p\tfrac I2$ | $\sqrt{1-\tfrac{3p}4}I,\ \sqrt{\tfrac p4}X,\ \sqrt{\tfrac p4}Y,\ \sqrt{\tfrac p4}Z$ | szum „bez kierunku” |
-| tłumienie amplitudowe | $\lvert1\rangle\to\lvert0\rangle$ z p-stwem $\gamma$ | $K_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix},\ K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix}$ | relaksacja $T_1$ |
+| tłumienie amplitudowe | $\lvert1\rangle\to\lvert0\rangle$ z p-stwem $\gamma$ | operatory Krausa $K_0$, $K_1$ | relaksacja $T_1$ |
 | przesunięcie fazy | zanik $\rho_{01}$ o czynnik $(1-\lambda)$ | $\sqrt{1-\tfrac\lambda2}I,\ \sqrt{\tfrac\lambda2}Z$ | dekoherencja $T_2$ |
 | bit-flip | $(1-p)\rho+p\,X\rho X$ | $\sqrt{1-p}I,\ \sqrt p\,X$ | błąd bitu |
+
+$$
+K_0=\begin{pmatrix}1&0\\0&\sqrt{1-\gamma}\end{pmatrix},\qquad
+K_1=\begin{pmatrix}0&\sqrt\gamma\\0&0\end{pmatrix}
+$$
 
 Dla depolaryzującego $\sum K_i^\dagger K_i=(1-\tfrac{3p}4)+3\cdot\tfrac p4=1$; dla tłumienia
 amplitudowego $K_0^\dagger K_0+K_1^\dagger K_1=\mathrm{diag}(1,1-\gamma)+\mathrm{diag}(0,\gamma)=I$.
@@ -259,14 +264,28 @@ $$
 Populacja $\lvert1\rangle$ spadła $1\to0{,}7$ (ubyło $0{,}3$), koherencja $\tfrac12\to0{,}4183$.
 (b) $(0{,}7)\lvert0\rangle\langle0\rvert+0{,}3\cdot\tfrac I2=\mathrm{diag}(0{,}85;0{,}15)$;
 $\mathrm{Tr}\rho^2=0{,}85^2+0{,}15^2=0{,}745$.
-(c) $(1-\tfrac\lambda2)\rho+\tfrac\lambda2 Z\rho Z=\begin{pmatrix}0{,}5&0{,}3\\0{,}3&0{,}5\end{pmatrix}$
+(c)
+
+$$
+(1-\tfrac\lambda2)\rho+\tfrac\lambda2 Z\rho Z=\begin{pmatrix}0{,}5&0{,}3\\0{,}3&0{,}5\end{pmatrix}
+$$
+
 — populacje bez zmian, koherencje $\times0{,}6$.
 (d) $1-(1-0{,}2)(1-0{,}3)=1-0{,}8\cdot0{,}7=0{,}44$.
 
-**Odpowiedź:** (a) $\mathbf{\mathrm{diag}(0{,}3;0{,}7)}$ oraz
-$\mathbf{\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}}$;
-(b) $\mathbf{\mathrm{diag}(0{,}85;0{,}15)}$, purity $\mathbf{0{,}745}$;
-(c) $\mathbf{\begin{pmatrix}0{,}5&0{,}3\\0{,}3&0{,}5\end{pmatrix}}$; (d) $\mathbf{p=0{,}44}$.
+**Odpowiedź:** (a) $\mathbf{\mathrm{diag}(0{,}3;0{,}7)}$ oraz macierz
+
+$$
+\mathbf{\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}}
+$$
+
+(b) $\mathbf{\mathrm{diag}(0{,}85;0{,}15)}$, purity $\mathbf{0{,}745}$; (c) macierz
+
+$$
+\mathbf{\begin{pmatrix}0{,}5&0{,}3\\0{,}3&0{,}5\end{pmatrix}}
+$$
+
+(d) $\mathbf{p=0{,}44}$.
 *Interpretacja:* tłumienie amplitudowe zmienia **populacje** i koherencje, przesunięcie fazy — tylko
 koherencje, a złożenie szumów dodaje się „w prawdopodobieństwie” ($p=p_1+p_2-p_1p_2$).
 

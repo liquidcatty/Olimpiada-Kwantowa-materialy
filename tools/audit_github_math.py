@@ -31,6 +31,9 @@ ROOT = Path(__file__).resolve().parent.parent
 SKIP = {"tools", "_tmp", ".git", "node_modules"}
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
 DOLLAR_SINGLE = re.compile(r"(?<!\$)\$(?!\$)")
+MATH_ENV_RE = re.compile(
+    r"\\begin\{(?:pmatrix|bmatrix|vmatrix|matrix|smallmatrix|cases|aligned|array|split)\}"
+)
 
 
 def strip_code_spans(line: str) -> str:
@@ -52,7 +55,8 @@ def check_text(rel: str, text: str) -> tuple[list[str], dict[str, int]]:
     """Zwraca (lista problemow, licznik kategorii) dla tresci jednego pliku."""
     issues: list[str] = []
     counts = {"inline_multi": 0, "block_after_text": 0, "block_and_text": 0,
-              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0}
+              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0,
+              "star_in_math": 0, "inline_matrix": 0}
     lines = text.splitlines()
     fence = False
     clean: list[str] = []          # tresc bez code-spanow i bez blokow kodu
@@ -120,6 +124,39 @@ def check_text(rel: str, text: str) -> tuple[list[str], dict[str, int]]:
             issues.append(f"  {rel}:{i} [inline] $...$ zlamane na dwa wiersze")
             counts["inline_multi"] += 1
             open_math = False
+
+    # gwiazdka (*) wewnatrz matematyki: GitHub robi z niej kursywe
+    in_block = False
+    for i, line in enumerate(clean, 1):
+        stripped = line.strip()
+        if stripped == "$$" or (stripped.startswith("$$") and stripped.endswith("$$") and len(stripped) > 2):
+            if line.count("*"):
+                issues.append(f"  {rel}:{i} [gwiazdka] znak * wewnatrz bloku $$ "
+                              f"(GitHub zamienia go na _ i zglasza blad wykladnika)")
+                counts["star_in_math"] += 1
+            if stripped == "$$":
+                in_block = not in_block
+            continue
+        if in_block:
+            if "*" in line:
+                issues.append(f"  {rel}:{i} [gwiazdka] znak * wewnatrz bloku $$")
+                counts["star_in_math"] += 1
+            continue
+        for seg in re.findall(r"\$([^$\n]+)\$", line):
+            if "*" in seg:
+                issues.append(f"  {rel}:{i} [gwiazdka] znak * wewnatrz $...$ -> {seg[:50]}")
+                counts["star_in_math"] += 1
+
+    # macierz/srodowisko w matematyce inline: GitHub tego nie rozpoznaje
+    without_blocks = re.sub(r"\$\$.+?\$\$", lambda m: "\n" * m.group(0).count("\n"),
+                            "\n".join(clean), flags=re.S)
+    for match in re.finditer(r"\$([^$\n]+)\$", without_blocks):
+        seg = match.group(1)
+        if "\\\\" in seg or MATH_ENV_RE.search(seg):
+            line_no = without_blocks[:match.start()].count("\n") + 1
+            issues.append(f"  {rel}:{line_no} [inline-macierz] wzor inline z \\\\ lub srodowiskiem "
+                          f"nie renderuje sie -> {seg[:60]}")
+            counts["inline_matrix"] += 1
     return issues, counts
 
 
@@ -140,6 +177,12 @@ SELF_TEST_CASES: list[tuple[str, str, bool]] = [
     ("blok z oba $$ doklejonymi", "Tekst.\n\n$$x = y\n+ z$$\n\nTekst.\n", True),
     ("blok z otwarciem w osobnej linii", "Tekst.\n\n$$\nx = y\n$$\n\nTekst.\n", False),
     ("blok z zamknieciem w osobnej linii", "Tekst.\n\n$$x = y\n$$\n\nTekst.\n", False),
+    ("gwiazdka w inline", "Mamy $z^*$ oraz $w^*$ w jednym akapicie.\n", True),
+    ("gwiazdka w bloku", "Tekst.\n\n$$\nz^*=a-bi\n$$\n", True),
+    ("ast zamiast gwiazdki", "Mamy $z^{\\ast}$ oraz $w^{\\ast}$ w jednym akapicie.\n", False),
+    ("inline macierz", "Macierz $A=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$ jest unitarna.\n", True),
+    ("blok z macierza", "Tekst.\n\n$$\nA=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}\n$$\n", False),
+    ("inline cases", "Funkcja $f=\\begin{cases}1&x>0\\\\0&x\\le0\\end{cases}$ jest schodkowa.\n", True),
 ]
 
 
@@ -170,7 +213,8 @@ def main() -> int:
 
     issues: list[str] = []
     totals = {"inline_multi": 0, "block_after_text": 0, "block_and_text": 0,
-              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0}
+              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0,
+              "star_in_math": 0, "inline_matrix": 0}
     for path in iter_md():
         file_issues, counts = check_text(path.relative_to(ROOT).as_posix(),
                                          path.read_text(encoding="utf-8"))

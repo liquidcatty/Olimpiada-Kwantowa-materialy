@@ -157,7 +157,13 @@ jest wykonalna („trywializowalność” i koszt).
 $\{2,0,0,-2\}$ — stan podstawowy to $\frac{1}{\sqrt2}(\lvert01\rangle-\lvert10\rangle)$ z $E_0=-2$.
 Ansatz `ry,ry,cx` daje tylko kombinacje bez amplitudy na $\lvert10\rangle$
 ($\lvert\psi\rangle=a\lvert00\rangle+b\lvert01\rangle+d\lvert11\rangle$), a w tej podprzestrzeni
-$H$ obcięte do macierzy $\begin{pmatrix}1&0&1\\0&-1&0\\1&0&1\end{pmatrix}$ ma wartości własne
+$H$ obcięte do macierzy
+
+$$
+\begin{pmatrix}1&0&1\\0&-1&0\\1&0&1\end{pmatrix}
+$$
+
+ma wartości własne
 $-1$ i $2$ — więc minimalna energia to $-1$. Dopiero dodanie kolejnych obrotów `ry` **po** CNOT
 (4 parametry) pozwala wytworzyć $\lvert10\rangle$ i osiągnąć $E=-2{,}0000$.
 

@@ -69,18 +69,41 @@ $\lvert-\rangle$, stany własne $X$ i $Y$).
 
 Wszystkie macierze w bazie $\{\lvert0\rangle,\lvert1\rangle\}$:
 
-| Bramka | Macierz | Uwaga |
-| --- | --- | --- |
-| $I$ | $\mathrm{diag}(1,1)$ | nic nie robi |
-| $X$ | $\begin{pmatrix}0&1\\1&0\end{pmatrix}$ | NOT kwantowy, $X=HZH$ |
-| $Y$ | $\begin{pmatrix}0&-i\\i&0\end{pmatrix}$ | $Y=iXZ$ |
-| $Z$ | $\mathrm{diag}(1,-1)$ | faza $\pi$ na $\lvert1\rangle$ |
-| $H$ | $\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$ | $H^2=I$ |
-| $S$ | $\mathrm{diag}(1,i)$ | $S^2=Z$, $S=T^2$ |
-| $T$ | $\mathrm{diag}(1,e^{i\pi/4})$ | faza $\pi/8$ |
-| $R_X(\theta)$ | $\begin{pmatrix}\cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\-i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}$ | obrót $\theta$ wokół $X$ |
-| $R_Y(\theta)$ | $\begin{pmatrix}\cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}$ | obrót $\theta$ wokół $Y$ |
-| $R_Z(\theta)$ | $\mathrm{diag}(e^{-i\theta/2},e^{i\theta/2})$ | obrót $\theta$ wokół $Z$ |
+- $I$: $\mathrm{diag}(1,1)$ — nic nie robi.
+- $X$ — NOT kwantowy, $X=HZH$:
+
+$$
+\begin{pmatrix}0&1\\1&0\end{pmatrix}
+$$
+
+- $Y$ — $Y=iXZ$:
+
+$$
+\begin{pmatrix}0&-i\\i&0\end{pmatrix}
+$$
+
+- $Z$: $\mathrm{diag}(1,-1)$ — faza $\pi$ na $\lvert1\rangle$.
+- $H$ — $H^2=I$:
+
+$$
+\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+
+- $S$: $\mathrm{diag}(1,i)$ — $S^2=Z$, $S=T^2$.
+- $T$: $\mathrm{diag}(1,e^{i\pi/4})$ — faza $\pi/8$.
+- $R_X(\theta)$ — obrót $\theta$ wokół $X$:
+
+$$
+\begin{pmatrix}\cos\frac{\theta}{2}&-i\sin\frac{\theta}{2}\\-i\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}
+$$
+
+- $R_Y(\theta)$ — obrót $\theta$ wokół $Y$:
+
+$$
+\begin{pmatrix}\cos\frac{\theta}{2}&-\sin\frac{\theta}{2}\\\sin\frac{\theta}{2}&\cos\frac{\theta}{2}\end{pmatrix}
+$$
+
+- $R_Z(\theta)$: $\mathrm{diag}(e^{-i\theta/2},e^{i\theta/2})$ — obrót $\theta$ wokół $Z$.
 
 **Dwie tożsamości**: $HZH=X$ oraz $HXH=Z$ — Hadamard
 „zamienia” osie $X$ i $Z$. Ponadto $T^2=S$, $S^2=Z$, a $H=X\,R_Y(\pi/2)$. Bramki $S$ i $T$
@@ -217,7 +240,13 @@ w korekcji błędów (rozdział 13).
 ### Przykład 1 (P3): sekwencja H–Z–H na jednym kubicie
 
 **Dane.** Kubit startuje w $\lvert0\rangle$; wykonujemy kolejno $H$, $Z$, $H$;
-$H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$, $Z=\mathrm{diag}(1,-1)$.
+$H$ ma postać:
+
+$$
+H=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+
+$Z=\mathrm{diag}(1,-1)$.
 
 **Metoda.** Stan to $\lvert\psi\rangle=H\,Z\,H\lvert0\rangle$; najpierw policzymy $\lvert\psi\rangle$,
 potem prawdopodobieństwa $P(k)=\lvert\langle k\vert\psi\rangle\rvert^2$; na koniec wyznaczymy macierz $HZH$.
