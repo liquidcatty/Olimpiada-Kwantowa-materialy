@@ -17,7 +17,7 @@ fotonu i **prawo Malusa**, twierdzenie Ehrenfesta oraz ewolucję superpozycji
 - **Funkcja falowa**: $\psi(x)=\langle x|\psi\rangle$; $\lvert\psi(x)\rvert^2$ to gęstość
   prawdopodobieństwa położenia (reguła Borna).
 - **Obserwabla**: operator hermitowski $A$; możliwe wyniki to jego wartości własne $a$.
-- **Wartość oczekiwana**: $\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle =\int\psi^*A\psi\,dx$; **wariancja** $\operatorname{Var}A=\langle A^2\rangle-\langle A\rangle^2$.
+- **Wartość oczekiwana**: $\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle =\int\psi^*A\psi\,dx$; **wariancja** $\mathrm{Var}A=\langle A^2\rangle-\langle A\rangle^2$.
 - **Komutator**: $[A,B]=AB-BA$; **zasada nieoznaczoności**
   $\Delta A\,\Delta B\ge\frac12\lvert\langle[A,B]\rangle\rvert$.
 - **Hamiltonian** $H=\frac{\hat p^2}{2m}+V(\hat x)$; **stany stacjonarne** $H\lvert n\rangle=E_n\lvert n\rangle$.
@@ -62,9 +62,11 @@ identycznych przygotowań).
 
 ### 3.5 Wartość oczekiwana i wariancja
 
-$$\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle,\qquad
-\operatorname{Var}(A)=\langle A^2\rangle-\langle A\rangle^2,\qquad
-\Delta A=\sqrt{\operatorname{Var}(A)}.$$
+$$
+\langle A\rangle=\langle\psi\lvert A\rvert\psi\rangle,\qquad
+\mathrm{Var}(A)=\langle A^2\rangle-\langle A\rangle^2,\qquad
+\Delta A=\sqrt{\mathrm{Var}(A)}.
+$$
 
 Na sferze Blocha dla spinu: $\langle\sigma_x\rangle=\langle X\rangle$ itd.
 
@@ -73,7 +75,9 @@ Na sferze Blocha dla spinu: $\langle\sigma_x\rangle=\langle X\rangle$ itd.
 $[A,B]=AB-BA$. Dla położenia i pędu $[\hat x,\hat p]=i\hbar$, skąd
 $\Delta x\,\Delta p\ge\hbar/2$. Ogólnie
 
-$$\Delta A\,\Delta B\ge\Bigl\lvert\tfrac{1}{2i}\langle[A,B]\rangle\Bigr\rvert.$$
+$$
+\Delta A\,\Delta B\ge\Bigl\lvert\tfrac{1}{2i}\langle[A,B]\rangle\Bigr\rvert.
+$$
 
 Obserwable, które komutują ($[A,B]=0$), mają wspólną bazę wektorów własnych i można
 je mierzyć jednocześnie bez ograniczeń.
@@ -86,7 +90,9 @@ $\lvert\psi(t)\rangle=e^{-iEt/\hbar}\lvert\psi\rangle$, co prowadzi do **równan
 niezależnego od czasu** $H\lvert\psi\rangle=E\lvert\psi\rangle$ (zagadnienie własne
 energii). W reprezentacji położenia:
 
-$$-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).$$
+$$
+-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).
+$$
 
 ### 3.8 Stany stacjonarne
 
@@ -102,8 +108,10 @@ czyli $\psi''=-k^2\psi$ z $k=\sqrt{2mE}/\hbar$. Rozwiązanie ogólne
 $\psi=A\sin kx+B\cos kx$. Warunki brzegowe $\psi(0)=\psi(L)=0$:
 $B=0$ oraz $\sin kL=0\Rightarrow k_n=\frac{n\pi}{L}$, $n=1,2,\dots$ Zatem
 
-$$\boxed{\psi_n(x)=\sqrt{\frac2L}\sin\!\Bigl(\frac{n\pi x}{L}\Bigr),\qquad
-E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}.}$$
+$$
+\boxed{\psi_n(x)=\sqrt{\frac2L}\sin\!\Bigl(\frac{n\pi x}{L}\Bigr),\qquad
+E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}.}
+$$
 
 Cechy: energia kwantowana ($E_n\propto n^2$); stan podstawowy $n=1$ ma $E_1>0$
 (energia zerowa — skutek nieoznaczoności); funkcja $\psi_n$ ma $n-1$ węzłów wewnątrz.
@@ -123,8 +131,10 @@ przenikać do obszaru klasycznie zabronionego.
 Cząstka o energii $E<V_0$ przechodzi przez barierę o szerokości $a$ z
 prawdopodobieństwem (przybliżenie bariery prostokątnej)
 
-$$T=\Bigl[1+\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)}\Bigr]^{-1},\qquad
-\kappa=\frac{\sqrt{2m(V_0-E)}}{\hbar}.$$
+$$
+T=\Bigl[1+\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)}\Bigr]^{-1},\qquad
+\kappa=\frac{\sqrt{2m(V_0-E)}}{\hbar}.
+$$
 
 Dla szerokiej bariery $\kappa a\gg1$: $T\approx16\frac{E(V_0-E)}{V_0^2}e^{-2\kappa a}$ —
 maleje wykładniczo. Przykład: elektron, $E=1$ eV, $V_0=5$ eV, $a=0{,}5$ nm →
@@ -135,7 +145,9 @@ i bramek Josephsona.
 
 Dla $V(x)=\tfrac12m\omega^2x^2$ równanie $H\psi=E\psi$ daje widmo równoodległe:
 
-$$E_n=\Bigl(n+\tfrac12\Bigr)\hbar\omega,\qquad n=0,1,2,\dots$$
+$$
+E_n=\Bigl(n+\tfrac12\Bigr)\hbar\omega,\qquad n=0,1,2,\dots
+$$
 
 Energia zerowa $\tfrac12\hbar\omega$ (drgania punktu zerowego) jest nieusuwalna.
 Funkcja stanu podstawowego to Gauss $\psi_0\propto e^{-x^2/(2x_0^2)}$ z
@@ -146,8 +158,10 @@ Oscylator modeluje drgania sieci, fotony pola i stany kwantowych rezonatorów.
 
 Dla $V(r)=-e^2/(4\pi\varepsilon_0 r)$ widmo zależy od głównej liczby kwantowej $n$:
 
-$$E_n=-\frac{\mu e^4}{2(4\pi\varepsilon_0)^2\hbar^2}\cdot\frac{1}{n^2}
-=-\frac{13{,}606\ \text{eV}}{n^2},$$
+$$
+E_n=-\frac{\mu e^4}{2(4\pi\varepsilon_0)^2\hbar^2}\cdot\frac{1}{n^2}
+=-\frac{13{,}606\ \text{eV}}{n^2},
+$$
 
 z degeneracją $n^2$ (liczby $l=0,\dots,n-1$, $m=-l,\dots,l$ oraz spin). Stan
 podstawowy: $E_1\approx-13{,}6$ eV, promień Bohra $a_0=0{,}0529$ nm. Kwantyzacja
@@ -159,7 +173,9 @@ Spin-1/2 ma dwie wartości $m_s=\pm\tfrac12$; bazę tworzą
 $\lvert\uparrow\rangle=\lvert0\rangle$, $\lvert\downarrow\rangle=\lvert1\rangle$.
 Obserwable to $\hat S_i=\tfrac{\hbar}{2}\sigma_i$. Ogólny stan to punkt na sferze Blocha:
 
-$$\lvert\psi\rangle=\cos\tfrac\theta2\lvert0\rangle+e^{i\varphi}\sin\tfrac\theta2\lvert1\rangle,$$
+$$
+\lvert\psi\rangle=\cos\tfrac\theta2\lvert0\rangle+e^{i\varphi}\sin\tfrac\theta2\lvert1\rangle,
+$$
 
 a wartości oczekiwane $\langle\sigma_x\rangle=\sin\theta\cos\varphi$,
 $\langle\sigma_y\rangle=\sin\theta\sin\varphi$, $\langle\sigma_z\rangle=\cos\theta$.
@@ -177,7 +193,9 @@ składową $\cos\theta\lvert H\rangle+\sin\theta\lvert V\rangle$ i **mierzy** rz
 prawdopodobieństwo przejścia fotonu wynosi $\cos^2\theta$. Dla wiązki o natężeniu $I$
 **prawo Malusa**:
 
-$$I(\theta)=I_0\cos^2\theta.$$
+$$
+I(\theta)=I_0\cos^2\theta.
+$$
 
 Dla światła **niespolaryzowanego** pierwszy polaryzator przepuszcza $I_0/2$, a każdy
 kolejny działa jak wyżej na już spolaryzowaną wiązkę. Klasyczny paradoks: dwa
@@ -186,8 +204,10 @@ $45^\circ$ daje $I_0/8>0$ — bo pomiar „przygotowuje” nowy stan polaryzacji
 
 ### 3.16 Twierdzenie Ehrenfesta
 
-$$\frac{d}{dt}\langle x\rangle=\frac{\langle p\rangle}{m},\qquad
-\frac{d}{dt}\langle p\rangle=-\Bigl\langle\frac{dV}{dx}\Bigr\rangle.$$
+$$
+\frac{d}{dt}\langle x\rangle=\frac{\langle p\rangle}{m},\qquad
+\frac{d}{dt}\langle p\rangle=-\Bigl\langle\frac{dV}{dx}\Bigr\rangle.
+$$
 
 Wartości oczekiwane spełniają prawa Newtona — kwantowe średnie poruszają się
 klasycznie. Dla oscylatora $\langle x\rangle(t)$ drga z częstością $\omega$.
@@ -197,8 +217,10 @@ klasycznie. Dla oscylatora $\langle x\rangle(t)$ drga z częstością $\omega$.
 Dla superpozycji $\lvert\psi\rangle=\frac{1}{\sqrt2}(\lvert1\rangle+\lvert2\rangle)$
 dwóch stanów stacjonarnych:
 
-$$\lvert\psi(t)\rangle=\tfrac{1}{\sqrt2}\bigl(e^{-iE_1t/\hbar}\lvert1\rangle
-+e^{-iE_2t/\hbar}\lvert2\rangle\bigr).$$
+$$
+\lvert\psi(t)\rangle=\tfrac{1}{\sqrt2}\bigl(e^{-iE_1t/\hbar}\lvert1\rangle
++e^{-iE_2t/\hbar}\lvert2\rangle\bigr).
+$$
 
 Gęstość prawdopodobieństwa oscyluje z częstością $\omega_{21}=(E_2-E_1)/\hbar$ —
 to **dudnienia** (beats). Dla studni $L=1$ nm elektron: $\omega_{21}\approx1{,}71\cdot10^{15}$
@@ -221,10 +243,14 @@ $1$ eV $=1{,}602\cdot10^{-19}$ J.
 
 **Rachunek:**
 
-$$E_1=\frac{\pi^2(1{,}0546\cdot10^{-34})^2}{2\cdot9{,}109\cdot10^{-31}\cdot(2\cdot10^{-9})^2}
-=\frac{1{,}0976\cdot10^{-67}}{7{,}287\cdot10^{-48}}\approx1{,}506\cdot10^{-20}\ \text{J},$$
+$$
+E_1=\frac{\pi^2(1{,}0546\cdot10^{-34})^2}{2\cdot9{,}109\cdot10^{-31}\cdot(2\cdot10^{-9})^2}
+=\frac{1{,}0976\cdot10^{-67}}{7{,}287\cdot10^{-48}}\approx1{,}506\cdot10^{-20}\ \text{J},
+$$
 
-$$E_1\approx\frac{1{,}506\cdot10^{-20}}{1{,}602\cdot10^{-19}}\approx0{,}0940\ \text{eV}.$$
+$$
+E_1\approx\frac{1{,}506\cdot10^{-20}}{1{,}602\cdot10^{-19}}\approx0{,}0940\ \text{eV}.
+$$
 
 Skalowanie $E_n=n^2E_1$: $E_2\approx0{,}376$ eV, $E_3\approx0{,}846$ eV.
 
@@ -243,15 +269,21 @@ $\langle p^2\rangle=(n\pi\hbar/L)^2$ dla $n=1$.
 
 **Rachunek:** przez symetrię i całkowanie
 
-$$\langle x\rangle=\frac L2,\qquad
-\langle x^2\rangle=L^2\Bigl(\frac13-\frac{1}{2\pi^2}\Bigr)\approx L^2\cdot0{,}2827,$$
+$$
+\langle x\rangle=\frac L2,\qquad
+\langle x^2\rangle=L^2\Bigl(\frac13-\frac{1}{2\pi^2}\Bigr)\approx L^2\cdot0{,}2827,
+$$
 
-$$\Delta x^2=\langle x^2\rangle-\langle x\rangle^2
+$$
+\Delta x^2=\langle x^2\rangle-\langle x\rangle^2
 =L^2\Bigl(\frac1{12}-\frac{1}{2\pi^2}\Bigr)\approx L^2\cdot0{,}03267
-\Rightarrow\Delta x\approx0{,}181L,$$
+\Rightarrow\Delta x\approx0{,}181L,
+$$
 
-$$\langle p^2\rangle=\Bigl(\frac{\pi\hbar}{L}\Bigr)^2\Rightarrow
-\Delta p=\frac{\pi\hbar}{L}.$$
+$$
+\langle p^2\rangle=\Bigl(\frac{\pi\hbar}{L}\Bigr)^2\Rightarrow
+\Delta p=\frac{\pi\hbar}{L}.
+$$
 
 Iloczyn $\Delta x\,\Delta p=\pi\hbar\sqrt{\tfrac1{12}-\tfrac1{2\pi^2}}\approx0{,}568\,\hbar \approx1{,}14\cdot\tfrac{\hbar}{2}\ \ge\ \tfrac{\hbar}{2}$.
 
@@ -270,9 +302,13 @@ $0^\circ$, $45^\circ$, $90^\circ$.
 
 **Rachunek:**
 
-$$I_1=\tfrac12I_0,\qquad I_2=I_1\cos^2 45^\circ=\tfrac12I_0\cdot\tfrac12=\tfrac14I_0,$$
+$$
+I_1=\tfrac12I_0,\qquad I_2=I_1\cos^2 45^\circ=\tfrac12I_0\cdot\tfrac12=\tfrac14I_0,
+$$
 
-$$I_3=I_2\cos^2 45^\circ=\tfrac14I_0\cdot\tfrac12=\tfrac18I_0.$$
+$$
+I_3=I_2\cos^2 45^\circ=\tfrac14I_0\cdot\tfrac12=\tfrac18I_0.
+$$
 
 Bez polaryzatora $45^\circ$: $I=I_0/2\cdot\cos^2 90^\circ=0$.
 
@@ -296,7 +332,7 @@ prostopadły. To kwantowy (a nie klasyczny) efekt fazy pomiaru.
 6. **Nazywanie kolapsu „siłą”.** Pomiar to akt informacyjny, nie oddziaływanie
    mechaniczne; nie „popycha” cząstki w klasycznym sensie.
 7. **Mylenie $\Delta A$ z $\sigma_A$.** To to samo, ale nie myl wariancji
-   $\operatorname{Var}=\Delta^2$ z odchyleniem $\Delta$.
+   $\mathrm{Var}=\Delta^2$ z odchyleniem $\Delta$.
 
 ## 6. Zadania (Z-05)
 
@@ -332,7 +368,7 @@ w czasie?
 
 ## 7. Wskazówki do zadań
 
-- **Z-05.1.** $P(k)=\lvert c_k\rvert^2$; $\langle X\rangle=2\operatorname{Re}(c_0^*c_1)$;
+- **Z-05.1.** $P(k)=\lvert c_k\rvert^2$; $\langle X\rangle=2\mathrm{Re}(c_0^*c_1)$;
   $\Delta Z=\sqrt{1-\langle Z\rangle^2}$.
 - **Z-05.2.** $E_n=n^2E_1$; funkcja $\psi_n$ ma $n-1$ węzłów wewnątrz.
 - **Z-05.3.** $P(\uparrow)=\cos^2(\theta/2)$; użyj $\langle\sigma_x\rangle=\sin\theta$,

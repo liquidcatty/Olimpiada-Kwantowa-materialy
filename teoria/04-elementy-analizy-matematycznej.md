@@ -32,7 +32,9 @@ w studni potencjału).
 Granica jest podstawą pochodnych i całek. Kluczowa granica (z niej wynika pochodna
 sinusa):
 
-$$\lim_{x\to0}\frac{\sin x}{x}=1.$$
+$$
+\lim_{x\to0}\frac{\sin x}{x}=1.
+$$
 
 Pochodna mierzy **tempo zmiany**: jeśli $x(t)$ to położenie, to $x'(t)=v(t)$
 (prędkość), a $x''(t)=a(t)$ (przyspieszenie). Reguły: iloczynu
@@ -56,16 +58,22 @@ $\int f\,dx$ bywa pracą ($\int F\,dx$), ładunkiem ($\int\rho\,dV$) itd.
 
 Rozwijamy funkcje wokół $x_0$:
 
-$$f(x)=\sum_{n\ge0}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.$$
+$$
+f(x)=\sum_{n\ge0}\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n.
+$$
 
 Wzory:
 
-$$e^{x}=\sum_{n\ge0}\frac{x^n}{n!},\quad
+$$
+e^{x}=\sum_{n\ge0}\frac{x^n}{n!},\quad
 \sin x=\sum_{n\ge0}\frac{(-1)^nx^{2n+1}}{(2n+1)!},\quad
-\cos x=\sum_{n\ge0}\frac{(-1)^nx^{2n}}{(2n)!},$$
+\cos x=\sum_{n\ge0}\frac{(-1)^nx^{2n}}{(2n)!},
+$$
 
-$$(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}{2}x^2+\dots,\qquad
-\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots$$
+$$
+(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}{2}x^2+\dots,\qquad
+\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\dots
+$$
 
 Rozwój $e^{i\theta}$ daje wzór Eulera: $e^{i\theta}=\cos\theta+i\sin\theta$.
 
@@ -87,7 +95,9 @@ $y=A\cos\omega t+B\sin\omega t$.
 Równanie $m\ddot x=-kx$, czyli $\ddot x=-\omega^2x$ z $\omega=\sqrt{k/m}$; rozwiązanie
 $x(t)=A\cos(\omega t+\varphi)$. Energia jest zachowana:
 
-$$E=\tfrac12m\dot x^2+\tfrac12kx^2=\tfrac12m\omega^2A^2=\text{const}.$$
+$$
+E=\tfrac12m\dot x^2+\tfrac12kx^2=\tfrac12m\omega^2A^2=\text{const}.
+$$
 
 Okres $T=2\pi/\omega=2\pi\sqrt{m/k}$ nie zależy od amplitudy. To obraz klasyczny, do
 którego w granicy dużych liczb kwantowych wraca oscylator harmoniczny (rozdz. 05).
@@ -97,7 +107,9 @@ którego w granicy dużych liczb kwantowych wraca oscylator harmoniczny (rozdz. 
 Obwód szeregowy RLC opisuje równanie $L\ddot q+R\dot q+\frac1Cq=0$. Podstawienie
 $q=e^{rt}$ daje $Lr^2+Rr+\frac1C=0$, skąd
 
-$$\omega_0=\frac{1}{\sqrt{LC}},\qquad \gamma=\frac{R}{2L}.$$
+$$
+\omega_0=\frac{1}{\sqrt{LC}},\qquad \gamma=\frac{R}{2L}.
+$$
 
 Przy $R<2\sqrt{L/C}$ (niedotłumiony) dostajemy drgania z $\omega=\sqrt{\omega_0^2-\gamma^2}$,
 zanikające jak $e^{-\gamma t}$. Zespolony zapis $e^{i\omega t}$ zamienia różniczkowanie
@@ -108,11 +120,15 @@ $e^{-iHt/\hbar}$.
 
 Funkcję okresową o okresie $T$ rozkładamy na składowe harmoniczne:
 
-$$f(t)=\frac{a_0}{2}+\sum_{n\ge1}\bigl(a_n\cos(n\omega t)+b_n\sin(n\omega t)\bigr),\quad
-\omega=\frac{2\pi}{T},$$
+$$
+f(t)=\frac{a_0}{2}+\sum_{n\ge1}\bigl(a_n\cos(n\omega t)+b_n\sin(n\omega t)\bigr),\quad
+\omega=\frac{2\pi}{T},
+$$
 
-$$a_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(n\omega t)\,dt,\qquad
-b_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\sin(n\omega t)\,dt.$$
+$$
+a_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\cos(n\omega t)\,dt,\qquad
+b_n=\frac{2}{T}\int_{-T/2}^{T/2}f(t)\sin(n\omega t)\,dt.
+$$
 
 Dla fali prostokątnej (nieparzystej) zostają tylko nieparzyste sinusy o
 amplitudach $b_n=\frac{4}{n\pi}$, $n=1,3,5,\dots$; numerycznie
@@ -122,8 +138,10 @@ $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
 
 Dla funkcji nieokresowej:
 
-$$F(\omega)=\mathcal{F}[f](\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt,\qquad
-f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega.$$
+$$
+F(\omega)=\mathcal{F}[f](\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt,\qquad
+f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega.
+$$
 
 - **Gauss → Gauss**: dla $g(t)=e^{-t^2/(2a^2)}$ mamy $G(\omega)=a\,e^{-a^2\omega^2/2}$.
 - **Przesunięcie**: $\mathcal{F}[f(t-t_0)](\omega)=e^{-i\omega t_0}F(\omega)$ — opóźnienie
@@ -137,8 +155,10 @@ f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega.$
 
 Podstawowa całka i jej uogólnienie:
 
-$$\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt\pi\approx1{,}7725,\qquad
-\int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\frac\pi a}.$$
+$$
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt\pi\approx1{,}7725,\qquad
+\int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\frac\pi a}.
+$$
 
 Pochodna po $a$ daje momenty, np. $\int x^2e^{-ax^2}dx=\frac{1}{2a}\sqrt{\frac\pi a}$.
 Gaussowskie funkcje falowe (stan podstawowy oscylatora, paczka minimalna) są
@@ -148,11 +168,15 @@ całkowalne właśnie dzięki tym wzorom.
 
 W reprezentacji położenia operator pędu to **pochodna**:
 
-$$\hat p=-i\hbar\frac{d}{dx}.$$
+$$
+\hat p=-i\hbar\frac{d}{dx}.
+$$
 
 Funkcja falowa w reprezentacji pędowej to transformata Fouriera funkcji położeniowej:
 
-$$\tilde\psi(p)=\frac{1}{\sqrt{2\pi\hbar}}\int e^{-ipx/\hbar}\psi(x)\,dx.$$
+$$
+\tilde\psi(p)=\frac{1}{\sqrt{2\pi\hbar}}\int e^{-ipx/\hbar}\psi(x)\,dx.
+$$
 
 Operator pędu jest hermitowski (całkowanie przez części + znikanie na brzegach), a
 jego wartości oczekiwane liczymy ze wzoru
@@ -162,14 +186,18 @@ $\langle\hat p\rangle=\int\psi^*(-i\hbar\partial_x)\psi\,dx$.
 
 **Paczka gaussowska** minimalnej nieoznaczoności:
 
-$$\psi(x)=\frac{1}{(\pi a^2)^{1/4}}e^{-x^2/(2a^2)},\qquad
+$$
+\psi(x)=\frac{1}{(\pi a^2)^{1/4}}e^{-x^2/(2a^2)},\qquad
 \Delta x=\frac{a}{\sqrt2},\qquad \Delta p=\frac{\hbar}{a\sqrt2},\qquad
-\Delta x\,\Delta p=\frac{\hbar}{2}.$$
+\Delta x\,\Delta p=\frac{\hbar}{2}.
+$$
 
 To stan nasycający zasadę nieoznaczoności. W czasie paczka **rozmywa się** (dyspersja),
 bo składowe o różnych pędach biegną z różnymi prędkościami:
 
-$$\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.$$
+$$
+\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.
+$$
 
 Dla elektronu i $\sigma_0=1$ nm: po $t=1$ ps szerokość rośnie do $\approx57{,}9$ nm —
 paczka „rozpływa się” w skali pikosekund.
@@ -178,7 +206,9 @@ paczka „rozpływa się” w skali pikosekund.
 
 Stacjonarne równanie Schrödingera w 1D:
 
-$$-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).$$
+$$
+-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).
+$$
 
 Gdy $V(x)$ rozdziela się na sumę części zależnych od osobnych współrzędnych,
 szukamy $\psi(x,y,z)=X(x)Y(y)Z(z)$; podstawienie dzieli równanie na niezależne
@@ -198,11 +228,15 @@ $(1+x)^{1/2}=1+\frac12x-\frac18x^2+\dots$
 
 **Rachunek:**
 
-$$\sin(0{,}1)=0{,}1-\frac{0{,}1^3}{6}+\frac{0{,}1^5}{120}-\dots
-=0{,}1-0{,}0001667+0{,}0000000833\approx0{,}0998333,$$
+$$
+\sin(0{,}1)=0{,}1-\frac{0{,}1^3}{6}+\frac{0{,}1^5}{120}-\dots
+=0{,}1-0{,}0001667+0{,}0000000833\approx0{,}0998333,
+$$
 
-$$\sqrt{1{,}02}=(1+0{,}02)^{1/2}=1+\tfrac12(0{,}02)-\tfrac18(0{,}02)^2
-=1+0{,}01-0{,}00005=1{,}00995.$$
+$$
+\sqrt{1{,}02}=(1+0{,}02)^{1/2}=1+\tfrac12(0{,}02)-\tfrac18(0{,}02)^2
+=1+0{,}01-0{,}00005=1{,}00995.
+$$
 
 Wartości dokładne: $\sin0{,}1=0{,}09983342$, $\sqrt{1{,}02}=1{,}00995049$ — zgodność
 do $\approx10^{-7}$.

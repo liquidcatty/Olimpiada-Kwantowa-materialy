@@ -88,7 +88,7 @@ pandoc zadanie.md -o zadanie.pdf --pdf-engine=xelatex -V lang=pl -V geometry:mar
 (c) **Musi być:** (1) numer zadania, (2) pełny rachunek z uzasadnieniem, (3) wyróżniona
 odpowiedź z interpretacją i jednostkami. **Nie może być:** (1) danych osobowych (imię, nazwisko,
 szkoła — prace są anonimowe), (2) treści wygenerowanej w całości przez AI bez opisu użycia
-(regulamin Etapu I wymaga czytelnego oznaczenia).
+(wymagane jest czytelne oznaczenie).
 
 **Odpowiedź:** (a) `$\Delta\varphi\ge\frac{1}{\sqrt N}$` i
 `$\begin{pmatrix}0&-i\\i&0\end{pmatrix}$`; (b) `pandoc ... --pdf-engine=xelatex -V lang=pl`;

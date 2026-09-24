@@ -14,12 +14,16 @@ print(sv.probabilities_dict())              # {'00': 0.5, '11': 0.5}
 
 (b) Ręcznie: $\lvert\Phi^+\rangle=\frac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)$, więc
 
-$$p_{00}=p_{11}=\tfrac12,\quad p_{01}=p_{10}=0 .$$
+$$
+p_{00}=p_{11}=\tfrac12,\quad p_{01}=p_{10}=0 .
+$$
 
 Wartości oczekiwane (każdy składnik superpozycji jest stanem własnym $ZZ$ i $XX$ z wartością $+1$):
 
-$$\langle ZZ\rangle=\tfrac12(+1)+\tfrac12(+1)=1,\qquad \langle XX\rangle=1,\qquad
-\langle Z\otimes I\rangle=\tfrac12(+1)+\tfrac12(-1)=0 .$$
+$$
+\langle ZZ\rangle=\tfrac12(+1)+\tfrac12(+1)=1,\qquad \langle XX\rangle=1,\qquad
+\langle Z\otimes I\rangle=\tfrac12(+1)+\tfrac12(-1)=0 .
+$$
 
 Symulator: `sv.expectation_value("ZZ")` $=1{,}0$, `("XX")` $=1{,}0$, `("ZI")` $=0{,}0$ — zgodność
 do $10^{-15}$.
@@ -27,7 +31,9 @@ do $10^{-15}$.
 (c) Dla $p=\frac12$ błąd statystyczny częstości wynosi $\Delta p=\sqrt{p(1-p)/n}=\frac{1}{2\sqrt n}$.
 Warunek $\Delta p\le0{,}01$:
 
-$$\frac{1}{2\sqrt n}\le10^{-2}\ \Rightarrow\ \sqrt n\ge50\ \Rightarrow\ n\ge2500 .$$
+$$
+\frac{1}{2\sqrt n}\le10^{-2}\ \Rightarrow\ \sqrt n\ge50\ \Rightarrow\ n\ge2500 .
+$$
 
 **Odpowiedź:** (a) `{'00': 0.5, '11': 0.5}`; (b) $\langle ZZ\rangle=\langle XX\rangle=\mathbf{1}$,
 $\langle Z\otimes I\rangle=\mathbf{0}$; (c) $n\ge\mathbf{2500}$ shotów.
@@ -70,7 +76,9 @@ wymiana obwodów między SDK to najczęstsze źródło „niezgodnych” wynikó
 (a) Na linii $q_0-q_1-q_2-q_3-q_4$ odległość między $q_0$ i $q_4$ wynosi $4$, więc transpilator
 wstawia $4$ SWAP-y, a każdy SWAP to $3$ CNOT:
 
-$$4\cdot3=12\ \text{CNOT}\ \text{zamiast}\ 1 .$$
+$$
+4\cdot3=12\ \text{CNOT}\ \text{zamiast}\ 1 .
+$$
 
 (b) Wierność takiej bramki: $0{,}997^{12}=0{,}965$ (spadek o $3{,}5$ punktu procentowego).
 

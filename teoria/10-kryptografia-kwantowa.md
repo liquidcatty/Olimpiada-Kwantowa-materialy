@@ -108,7 +108,9 @@ $\tfrac12$. Jeśli trafi (prawd. $\tfrac12$), odtworzy stan bezbłędnie. Jeśli
 wysyła stan w złej bazie; Bob mierzy go w swojej (właściwej) bazie i z prawdopodobieństwem $\tfrac12$
 odczyta zły bit. Zatem
 
-$$\text{QBER}=\underbrace{\tfrac12}_{\text{Eve pudłuje}}\cdot\underbrace{\tfrac12}_{\text{Bob myli się}}=\tfrac14=25\%.$$
+$$
+\text{QBER}=\underbrace{\tfrac12}_{\text{Eve pudłuje}}\cdot\underbrace{\tfrac12}_{\text{Bob myli się}}=\tfrac14=25\%.
+$$
 
 Bez podsłuchu QBER $\approx0$ (tylko szum kanału). Przekroczenie progu $\sim11\%$ oznacza, że Eve
 ma za dużo informacji; protokół zostaje przerwany. To są **statystyczne dowody podsłuchu**.

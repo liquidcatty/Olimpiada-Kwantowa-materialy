@@ -39,8 +39,10 @@ obwodu.
 **Ustawienie.** Alicja ma kubit 1 w nieznanym stanie $\lvert\psi\rangle=\alpha\lvert0\rangle+\beta\lvert1\rangle$;
 Alicja i Bob dzielą parę $\lvert\Phi^+\rangle_{23}$ (kubit 2 u Alicji, 3 u Boba). Stan całości:
 
-$$\lvert\Psi\rangle=\tfrac{1}{\sqrt2}\big(\alpha\lvert000\rangle+\alpha\lvert011\rangle
-+\beta\lvert100\rangle+\beta\lvert111\rangle\big).$$
+$$
+\lvert\Psi\rangle=\tfrac{1}{\sqrt2}\big(\alpha\lvert000\rangle+\alpha\lvert011\rangle
++\beta\lvert100\rangle+\beta\lvert111\rangle\big).
+$$
 
 **Kluczowe podstawienie.** Wyrażamy $\lvert00\rangle_{12},\lvert11\rangle_{12},\lvert01\rangle_{12},\lvert10\rangle_{12}$
 przez bazy Bella, np. $\lvert00\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Phi^+\rangle+\lvert\Phi^-\rangle)$,
@@ -48,10 +50,12 @@ $\lvert11\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Phi^+\rangle-\lvert\Phi^-\rangle)
 $\lvert01\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle+\lvert\Psi^-\rangle)$,
 $\lvert10\rangle_{12}=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle-\lvert\Psi^-\rangle)$. Po uporządkowaniu:
 
-$$\lvert\Psi\rangle=\tfrac12\Big[\lvert\Phi^+\rangle_{12}\underbrace{(\alpha\lvert0\rangle+\beta\lvert1\rangle)}_3
+$$
+\lvert\Psi\rangle=\tfrac12\Big[\lvert\Phi^+\rangle_{12}\underbrace{(\alpha\lvert0\rangle+\beta\lvert1\rangle)}_3
 +\lvert\Phi^-\rangle_{12}(\alpha\lvert0\rangle-\beta\lvert1\rangle)_3
 +\lvert\Psi^+\rangle_{12}(\beta\lvert0\rangle+\alpha\lvert1\rangle)_3
-+\lvert\Psi^-\rangle_{12}(-\beta\lvert0\rangle+\alpha\lvert1\rangle)_3\Big].$$
++\lvert\Psi^-\rangle_{12}(-\beta\lvert0\rangle+\alpha\lvert1\rangle)_3\Big].
+$$
 
 **Wniosek.** Każdy z czterech wyników pomiaru Bella zdarza się z $P=\tfrac14$, a stan Boba różni
 się od $\lvert\psi\rangle$ co najwyżej bramką Pauliego: dla $\lvert\Phi^+\rangle\to I$,
@@ -65,10 +69,12 @@ $\lvert\psi\rangle$. Oryginał zostaje zniszczony przez pomiar — dlatego telep
 Alicja i Bob dzielą $\lvert\Phi^+\rangle_{AB}$. Alicja stosuje do **swojego** kubita jedną z bramek
 $\{I,X,Z,ZX\}$ zależnie od 2 bitów, które chce wysłać, i **przesyła swój kubit** Bobowi:
 
-$$(I\otimes I)\lvert\Phi^+\rangle=\lvert\Phi^+\rangle,\quad
+$$
+(I\otimes I)\lvert\Phi^+\rangle=\lvert\Phi^+\rangle,\quad
 (X\otimes I)\lvert\Phi^+\rangle=\lvert\Psi^+\rangle,\quad
 (Z\otimes I)\lvert\Phi^+\rangle=\lvert\Phi^-\rangle,\quad
-(ZX\otimes I)\lvert\Phi^+\rangle=-\lvert\Psi^-\rangle .$$
+(ZX\otimes I)\lvert\Phi^+\rangle=-\lvert\Psi^-\rangle .
+$$
 
 Bob zna bazę Bella, więc odczytuje dokładnie 2 bity z **jednego** kubita. To wymiana: w
 teleportacji 1 e-bit + 2 bity klasyczne przenosi 1 kubit; tutaj 1 e-bit + 1 przesłany kubit
@@ -89,7 +95,9 @@ to jest różnica między informacją klasyczną a kwantową.
 ($1<a<N$, $\gcd(a,N)=1$): najmniejszego $r$ z $a^r\equiv1\pmod N$. Jeśli $r$ jest parzyste i
 $a^{r/2}\not\equiv-1\pmod N$, to
 
-$$\gcd\big(a^{r/2}-1,\ N\big)\ \text{ oraz }\ \gcd\big(a^{r/2}+1,\ N\big)$$
+$$
+\gcd\big(a^{r/2}-1,\ N\big)\ \text{ oraz }\ \gcd\big(a^{r/2}+1,\ N\big)
+$$
 
 są nietrywialnymi dzielnikami $N$ (tożsamość $a^r-1=(a^{r/2}-1)(a^{r/2}+1)$).
 
@@ -98,7 +106,9 @@ dla $q=2^n$ (typowo $N^2\le q<2N^2$), liczymy $\lvert x\rangle\to\lvert x\rangle
 (odwracalnie, przez kontrolowane mnożenia), a następnie stosujemy **odwrotną QFT** mod $q$ na
 pierwszym rejestrze. Pomiar drugiego rejestru rzutuje pierwszy na superpozycję $x\equiv x_0\pmod r$:
 
-$$\frac{1}{\sqrt{q/r}}\sum_{j=0}^{q/r-1}\lvert x_0+jr\rangle .$$
+$$
+\frac{1}{\sqrt{q/r}}\sum_{j=0}^{q/r-1}\lvert x_0+jr\rangle .
+$$
 
 Po QFT amplitudy koncentrują się na wielokrotnościach $q/r$, więc pomiar daje $m\approx s\,q/r$.
 
@@ -119,8 +129,10 @@ wobec subeksponialnego najlepszego klasycznego **sita GNFS** ($\exp O(n^{1/3}\lo
 Dla $N$ stanów bazowych i jednego wyróżnionego, zaczynając od równomiernej superpozycji
 $\lvert s\rangle$, kąt spełnia $\sin\theta=1/\sqrt N$, a po $k$ iteracjach
 
-$$P_{\rm sukces}(k)=\sin^2\big((2k+1)\theta\big),\qquad
-k_{\rm opt}=\mathrm{round}\Big(\tfrac{\pi}{4}\sqrt N-\tfrac12\Big).$$
+$$
+P_{\rm sukces}(k)=\sin^2\big((2k+1)\theta\big),\qquad
+k_{\rm opt}=\mathrm{round}\Big(\tfrac{\pi}{4}\sqrt N-\tfrac12\Big).
+$$
 
 Geometrycznie każda iteracja to **dwa odbicia**: od wyróżnionego stanu (wyrocznia) i od $\lvert s\rangle$
 (dyfuzja $2\lvert s\rangle\langle s\rvert-I$) — suma dwóch odbić to obrót o $2\theta$.
@@ -147,9 +159,11 @@ $\varphi\approx m/2^t$ z dokładnością $\sim2^{-t}$. Estymacja fazy jest serce
 Problem: rozwiązać $A\lvert x\rangle=\lvert b\rangle$ dla rzadkiej, hermitowskiej, dobrze
 uwarunkowanej $A$ (współczynnik uwarunkowania $\kappa$). Algorytm HHL:
 
-$$\lvert b\rangle\ \xrightarrow{\text{estymacja fazy }e^{iAt}}\ \sum_j\beta_j\lvert\lambda_j\rangle\lvert\lambda_j\rangle
+$$
+\lvert b\rangle\ \xrightarrow{\text{estymacja fazy }e^{iAt}}\ \sum_j\beta_j\lvert\lambda_j\rangle\lvert\lambda_j\rangle
 \ \xrightarrow{\text{odwrócenie własności}}\ \sum_j\beta_j\lambda_j^{-1}\lvert\lambda_j\rangle\lvert0\rangle
-=\lvert x\rangle .$$
+=\lvert x\rangle .
+$$
 
 Złożoność $O(\log N\cdot\kappa^2/\varepsilon)$ na **kwantowy** stan $\lvert x\rangle$.
 
@@ -169,7 +183,9 @@ granicy $\Omega(\sqrt N)$ na liczbę zapytań o wyrocznię.
 
 **Twierdzenie Holevo.** Dla zbioru $\{p_i,\rho_i\}$ informacja dostępna w dowolnym pomiarze spełnia
 
-$$\chi=S\Big(\sum_ip_i\rho_i\Big)-\sum_ip_iS(\rho_i)\ \le\ S\Big(\sum_ip_i\rho_i\Big)\ \le\ \log_2d .$$
+$$
+\chi=S\Big(\sum_ip_i\rho_i\Big)-\sum_ip_iS(\rho_i)\ \le\ S\Big(\sum_ip_i\rho_i\Big)\ \le\ \log_2d .
+$$
 
 **Przykład.** $\{\tfrac12,\lvert0\rangle;\ \tfrac12,\lvert+\rangle\}$: $\rho_{\rm avg}=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}$
 ma wartości własne $0{,}8536,0{,}1464$, więc $\chi\le S=0{,}6009$ bita — **mniej** niż 1 bit, mimo
@@ -217,7 +233,9 @@ trudność” siedzi w bramkach nie-Cliffordowskich, najlepiej w jednej — $T$.
 można aproksymować do dokładności $\varepsilon$ (w normie operatorowej) obwodem o długości
 $O(\log^{c}(1/\varepsilon))$; w praktyce liczba bramek $T$ (T-count) rośnie jak $\approx3\log_2(1/\varepsilon)$:
 
-$$\varepsilon=10^{-3}\to\approx30,\quad10^{-6}\to\approx60,\quad10^{-10}\to\approx100 .$$
+$$
+\varepsilon=10^{-3}\to\approx30,\quad10^{-6}\to\approx60,\quad10^{-10}\to\approx100 .
+$$
 
 Dlatego w erze NISQ raportuje się **T-count** i **głębokość** obwodu — to one decydują o koszcie.
 

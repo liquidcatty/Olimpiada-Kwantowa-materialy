@@ -9,16 +9,22 @@ Dane: $z_1=2-3i$, $z_2=1+5i$.
 
 **(a)** Dodajemy części rzeczywiste i urojone oddzielnie:
 
-$$z_1+z_2=(2+1)+(-3+5)i=3+2i.$$
+$$
+z_1+z_2=(2+1)+(-3+5)i=3+2i.
+$$
 
 **(b)** Mnożymy rozdzielnie, korzystając z $i^2=-1$:
 
-$$z_1z_2=(2-3i)(1+5i)=2+10i-3i-15i^2=2+7i+15=17+7i.$$
+$$
+z_1z_2=(2-3i)(1+5i)=2+10i-3i-15i^2=2+7i+15=17+7i.
+$$
 
 **(c)** Mnożymy licznik i mianownik przez sprzężenie $z_2^*=1-5i$:
 
-$$\frac{2-3i}{1+5i}=\frac{(2-3i)(1-5i)}{1^2+5^2}
-=\frac{2-10i-3i+15i^2}{26}=\frac{2-13i-15}{26}=\frac{-13-13i}{26}.$$
+$$
+\frac{2-3i}{1+5i}=\frac{(2-3i)(1-5i)}{1^2+5^2}
+=\frac{2-10i-3i+15i^2}{26}=\frac{2-13i-15}{26}=\frac{-13-13i}{26}.
+$$
 
 **Odpowiedź:** **(a)** $3+2i$, **(b)** $17+7i$, **(c)** $-\tfrac12-\tfrac12 i$.
 
@@ -45,11 +51,15 @@ o $8\cdot(-\pi/2)=-4\pi$, czyli wraca do zera — dlatego wynik jest dodatni i r
 
 **(a)** $\sqrt3+i=2\bigl(\tfrac{\sqrt3}{2}+\tfrac12 i\bigr)=2e^{i\pi/6}$. Zatem
 
-$$(\sqrt3+i)^6=\bigl(2e^{i\pi/6}\bigr)^6=2^6e^{i\pi}=64\cdot(-1)=-64.$$
+$$
+(\sqrt3+i)^6=\bigl(2e^{i\pi/6}\bigr)^6=2^6e^{i\pi}=64\cdot(-1)=-64.
+$$
 
 **(b)** $8i=8e^{i\pi/2}$. Pierwiastki trzeciego stopnia:
 
-$$z_k=2\exp\!\Bigl(i\Bigl(\tfrac{\pi}{6}+\tfrac{2\pi k}{3}\Bigr)\Bigr),\quad k=0,1,2.$$
+$$
+z_k=2\exp\!\Bigl(i\Bigl(\tfrac{\pi}{6}+\tfrac{2\pi k}{3}\Bigr)\Bigr),\quad k=0,1,2.
+$$
 
 Kolejno: $z_0=2e^{i\pi/6}=\sqrt3+i$, $z_1=2e^{i5\pi/6}=-\sqrt3+i$,
 $z_2=2e^{i3\pi/2}=-2i$.
@@ -68,7 +78,9 @@ okręgu o promieniu $2$; ich „środek ciężkości” wypada w zerze.
 
 **(a)** Niech $z=a+bi$. Wtedy $z^2=(a^2-b^2)+2ab\,i=3-4i$, więc
 
-$$a^2-b^2=3,\qquad 2ab=-4\ \Rightarrow\ ab=-2.$$
+$$
+a^2-b^2=3,\qquad 2ab=-4\ \Rightarrow\ ab=-2.
+$$
 
 Z drugiego $b=-2/a$; podstawiając: $a^2-\dfrac{4}{a^2}=3$, czyli $a^4-3a^2-4=0$,
 $(a^2-4)(a^2+1)=0$. Dla rzeczywistego $a$: $a^2=4\Rightarrow a=\pm2$, $b=\mp1$.
@@ -96,7 +108,9 @@ koło** o środku $i$ i promieniu $1$.
 
 **(c)** Z nierówności trójkąta (i jej wersji różnicowej):
 
-$$\bigl||z_2|-|z_1|\bigr|\le|z_1+z_2|\le|z_1|+|z_2|,\qquad 1\le|z_1+z_2|\le7.$$
+$$
+\bigl||z_2|-|z_1|\bigr|\le|z_1+z_2|\le|z_1|+|z_2|,\qquad 1\le|z_1+z_2|\le7.
+$$
 
 Minimum $|z_1+z_2|=1$ zachodzi, gdy $z_1$ i $z_2$ są **przeciwnie skierowane**
 ($z_2=-\tfrac{4}{3}z_1$); maksimum $7$ — gdy są zgodnie skierowane.
@@ -115,7 +129,9 @@ Dane: $|\psi\rangle=(2+i)|0\rangle+(1-2i)|1\rangle$.
 **(a)** Liczymy moduły kwadratowe: $|2+i|^2=4+1=5$, $|1-2i|^2=1+4=5$, razem
 $N^2=5+5=10$, więc $N=\sqrt{10}$. Stan znormalizowany:
 
-$$|\psi\rangle=\frac{2+i}{\sqrt{10}}|0\rangle+\frac{1-2i}{\sqrt{10}}|1\rangle.$$
+$$
+|\psi\rangle=\frac{2+i}{\sqrt{10}}|0\rangle+\frac{1-2i}{\sqrt{10}}|1\rangle.
+$$
 
 **(b)** Prawdopodobieństwa (reguła Borna):
 $P(0)=\bigl|\tfrac{2+i}{\sqrt{10}}\bigr|^2=\tfrac{5}{10}=\tfrac12$,
@@ -123,8 +139,10 @@ $P(1)=\tfrac{5}{10}=\tfrac12$. Sumują się do $1$ ✓.
 
 **(c)** Faza względna:
 
-$$\frac{c_1}{c_0}=\frac{1-2i}{2+i}=\frac{(1-2i)(2-i)}{(2+i)(2-i)}
-=\frac{2-i-4i+2i^2}{5}=\frac{2-5i-2}{5}=-i=e^{-i\pi/2}.$$
+$$
+\frac{c_1}{c_0}=\frac{1-2i}{2+i}=\frac{(1-2i)(2-i)}{(2+i)(2-i)}
+=\frac{2-i-4i+2i^2}{5}=\frac{2-5i-2}{5}=-i=e^{-i\pi/2}.
+$$
 
 **Odpowiedź:** **(a)** $\tfrac{2+i}{\sqrt{10}}|0\rangle+\tfrac{1-2i}{\sqrt{10}}|1\rangle$,
 **(b)** $P(0)=P(1)=\tfrac12$, **(c)** $c_1/c_0=e^{-i\pi/2}$.
@@ -138,23 +156,27 @@ Dana $U=\dfrac{1}{\sqrt2}\begin{pmatrix}1&i\\ i&1\end{pmatrix}$.
 
 **(a)** $U^\dagger=\dfrac{1}{\sqrt2}\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}$. Liczymy
 
-$$U^\dagger U=\frac12\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}
+$$
+U^\dagger U=\frac12\begin{pmatrix}1&-i\\ -i&1\end{pmatrix}
 \begin{pmatrix}1&i\\ i&1\end{pmatrix}
 =\frac12\begin{pmatrix}1-i^2&i-i\\ -i+i& -i^2+1\end{pmatrix}
-=\frac12\begin{pmatrix}2&0\\ 0&2\end{pmatrix}=I.$$
+=\frac12\begin{pmatrix}2&0\\ 0&2\end{pmatrix}=I.
+$$
 
 Skoro $U^\dagger U=I$, to $U$ jest unitarna.
 
-**(b)** $\operatorname{Tr}U=\dfrac{2}{\sqrt2}=\sqrt2$, $\det U=\dfrac{1}{2}\bigl(1\cdot1-i\cdot i\bigr) =\dfrac{1}{2}\bigl(1-i^2\bigr)=\dfrac{1}{2}(2)=1$. Jeśli $\lambda_1\lambda_2=1$ i
+**(b)** $\mathrm{Tr}U=\dfrac{2}{\sqrt2}=\sqrt2$, $\det U=\dfrac{1}{2}\bigl(1\cdot1-i\cdot i\bigr) =\dfrac{1}{2}\bigl(1-i^2\bigr)=\dfrac{1}{2}(2)=1$. Jeśli $\lambda_1\lambda_2=1$ i
 $\lambda_1+\lambda_2=\sqrt2=\lambda+\lambda^{-1}$, to $\lambda=e^{\pm i\pi/4}$
 ($\lambda=e^{i\pi/4},e^{-i\pi/4}$).
 
 **(c)** Dla $|\pm\rangle=\tfrac{1}{\sqrt2}(1,\pm1)^T$:
 
-$$U|+\rangle=\frac{1}{2}\begin{pmatrix}1+i\\ i+1\end{pmatrix}
+$$
+U|+\rangle=\frac{1}{2}\begin{pmatrix}1+i\\ i+1\end{pmatrix}
 =\frac{1+i}{\sqrt2}\cdot\frac{1}{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}
 =e^{i\pi/4}|+\rangle,\qquad
-U|-\rangle=e^{-i\pi/4}|-\rangle.$$
+U|-\rangle=e^{-i\pi/4}|-\rangle.
+$$
 
 **Odpowiedź:** **(a)** $U^\dagger U=I$ (unitarna), **(b)** $\lambda=e^{\pm i\pi/4}$,
 **(c)** wektory własne to $|\pm\rangle$ z fazami $\pm\pi/4$.
@@ -168,7 +190,9 @@ nietrywialna tylko względem wybranej bazy.
 **(a)** Pierwiastki to $1,\omega,\omega^2,\dots,\omega^{n-1}$ z $\omega=e^{2\pi i/n}$.
 Suma to ciąg geometryczny o ilorazie $\omega\ne1$:
 
-$$\sum_{k=0}^{n-1}\omega^k=\frac{1-\omega^n}{1-\omega}=\frac{1-1}{1-\omega}=0.$$
+$$
+\sum_{k=0}^{n-1}\omega^k=\frac{1-\omega^n}{1-\omega}=\frac{1-1}{1-\omega}=0.
+$$
 
 **(b)** $z^n-1=\prod_{k}(z-\omega^k)$, więc z twierdzenia Viète'a iloczyn pierwiastków
 równa się $(-1)^n\cdot(\text{wyraz wolny})=(-1)^n\cdot(-1)=(-1)^{n-1}$.

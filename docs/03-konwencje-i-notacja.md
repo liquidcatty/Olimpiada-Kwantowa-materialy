@@ -133,30 +133,42 @@ wymienionych niżej jako błędne.
 | --- | --- |
 | inline `$\psi$` w akapicie, w liście, w tabeli, w nagłówku | tak |
 | inline w wariancie z backtickami (gdy wzór zawiera znaki kolidujące z Markdownem) | tak |
-| blok `$$...$$` rozpoczynający akapit (pusta linia przed nim) | tak |
-| blok `$$...$$` bezpośrednio po nagłówku | tak |
-| dwa bloki `$$` pod rząd | tak |
-| blok `$$` w tej samej linii co tekst | **nie** |
-| blok `$$` w akapicie, w linii zaraz po tekście (bez pustej linii) | **nie** |
+| blok: otwierające `$$` w osobnej linii, treść, zamykające `$$` w osobnej linii | tak |
+| blok: `$$` w osobnej linii, treść, a zamykające `$$` na końcu ostatniej linii treści | tak |
+| blok: `$$treść` na początku linii, a zamykające `$$` w osobnej linii | tak |
+| blok `$$treść$$` w jednej linii, w osobnym akapicie | tak |
+| blok: **oba** delimitery doklejone do treści (`$$treść` … `treść$$`) | **nie** |
+| blok `$$` w tym samym akapicie co tekst (bez pustej linii przed nim) | **nie** |
 | blok `$$` w elemencie listy bez pustej linii przed nim | **nie** |
 | blok `$$` wewnątrz cytatu | **nie** |
 | blok `$$` w wierszu tabeli | **nie** |
 | inline `$...$` złamane na dwa wiersze | **nie** |
+| `\operatorname{...}` | **nie** — błąd „the following macros are not allowed: operatorname”; używaj `\mathrm{...}` |
+| `\tag{N}` we wzorze | ryzykowne — numer wpisuj jako `\qquad (N)` wewnątrz wzoru |
 | goła kreska pionowa wewnątrz wzoru w tabeli (zamiast `\lvert`) | **nie** (rozbija tabelę) |
 
 Praktyczne konsekwencje dla autora:
 
-1. **Inline `$...$` musi zmieścić się w jednej linii.** Długi wzór albo skracaj, albo
-   przenieś do bloku `$$`.
-2. **Przed każdym blokiem `$$` zostaw pustą linię.** Wyjątkiem jest blok rozpoczęty
-   bezpośrednio po nagłówku albo po innym bloku `$$`.
-3. **Po zamykającym `$$` też zostaw pustą linię**, jeśli dalej idzie tekst.
-4. W tabelach używaj `\lvert`/`\rvert`, nigdy gołego `|`.
-5. Blok wewnątrz elementu listy zapisuj z pustą linią przed nim i wcięciem
-   (np. trzy spacje), inaczej trafi do akapitu i przestanie się renderować.
+1. **Blok `$$` zapisuj w formie kanonicznej**: `$$` w osobnej linii, treść, `$$` w osobnej
+   linii. Wystarczy, że jeden delimiter stoi w osobnej linii — ale oba doklejone do treści
+   to błąd, który nie renderuje się wcale.
+2. **Zostaw pustą linię przed blokiem i po nim** (wyjątkiem jest blok zaraz po nagłówku).
+3. **Inline `$...$` musi zmieścić się w jednej linii.** Długi wzór przenieś do bloku `$$`.
+4. **Zamiast `\operatorname{Tr}` pisz `\mathrm{Tr}`**, a zamiast `\tag{3}` — `\qquad (3)`
+   wewnątrz wzoru.
+5. W tabelach używaj `\lvert`/`\rvert`, nigdy gołego `|`.
+6. Blok wewnątrz elementu listy zapisuj z pustą linią przed nim i wcięciem.
 
-Automatyczna kontrola: `python tools/audit_github_math.py` (ma zwracać 0 problemów).
-Narzędzia pomocnicze: `tools/fix_math_wrap.py` (scala inline złamane na dwa wiersze),
-`tools/fix_block_math.py` (wstawia puste linie wokół bloków `$$`).
+Automatyczna kontrola:
+
+- `python tools/audit_github_math.py` — reguły zapisu bloków i tabel (0 problemów),
+- `python tools/audit_content.py --math` — składnia LaTeX, w tym `\operatorname` i `\tag`.
+
+Narzędzia naprawcze: `tools/fix_display_math.py` (forma kanoniczna bloków `$$`),
+`tools/fix_math_wrap.py` (scala inline złamane na dwa wiersze),
+`tools/fix_tex_macros.py` (`\operatorname` → `\mathrm`, `\tag` → `\qquad (N)`),
+`tools/probe_github_math.py` (sonda: co faktycznie renderuje GitHub),
+`tools/list_tex_macros.py` (inwentarz makr używanych w repo).
+
 
 

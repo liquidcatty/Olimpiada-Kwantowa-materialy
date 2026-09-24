@@ -36,7 +36,9 @@ wykładniczego przyspieszenia.
 
 (a)
 
-$$\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}.$$
+$$
+\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}.
+$$
 
 Unitarność: kolumny są ortogonalne i mają normę $1$ ($\lVert M^\dagger M-I\rVert<10^{-16}$).
 
@@ -57,7 +59,9 @@ i SWAP.
 
 (a) $\sin\theta=1/\sqrt8\Rightarrow\theta=\arcsin(1/\sqrt8)\approx0{,}3614$ rad.
 
-$$k_{\text{opt}}\approx\frac{\pi}{4\theta}-\frac12=\frac{\pi}{1{,}4455}-0{,}5\approx2{,}174-0{,}5=1{,}67\ \Rightarrow\ k=2.$$
+$$
+k_{\text{opt}}\approx\frac{\pi}{4\theta}-\frac12=\frac{\pi}{1{,}4455}-0{,}5\approx2{,}174-0{,}5=1{,}67\ \Rightarrow\ k=2.
+$$
 
 (b) $P=\sin^2\big((2k+1)\theta\big)$:
 $k=1$: $P=\sin^2(3\theta)\approx0{,}78125$; $k=2$: $P=\sin^2(5\theta)\approx0{,}9453$.

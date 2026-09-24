@@ -191,7 +191,9 @@ data, poziom optymalizacji i użyta mitygacja (warunek powtarzalności, rozdzia�
 Liczniki zamieniamy na prawdopodobieństwa, dzieląc przez liczbę shotów, a niepewność szacujemy
 jak dla rozkładu dwumianowego (rozdział 03):
 
-$$p_i=\frac{n_i}{n}, \qquad \Delta p_i=\sqrt{\frac{p_i(1-p_i)}{n}} .$$
+$$
+p_i=\frac{n_i}{n}, \qquad \Delta p_i=\sqrt{\frac{p_i(1-p_i)}{n}} .
+$$
 
 Dla `{'00': 505, '11': 519}` (n = 1024) mamy $p_{00}=0{,}493\pm0{,}016$ i $p_{11}=0{,}507\pm0{,}016$ —
 oba zgodne z idealnym $\tfrac12$ w granicach błędu statystycznego.
@@ -209,7 +211,9 @@ oba zgodne z idealnym $\tfrac12$ w granicach błędu statystycznego.
 
 **Zasada wariacyjna:** dla dowolnego stanu $\lvert\psi(\vec\theta)\rangle$
 
-$$\langle\psi(\vec\theta)\rvert H\lvert\psi(\vec\theta)\rangle\ \ge\ E_0 ,$$
+$$
+\langle\psi(\vec\theta)\rvert H\lvert\psi(\vec\theta)\rangle\ \ge\ E_0 ,
+$$
 
 więc minimalizując energię po parametrach obwodu, zbliżamy się do **energii stanu podstawowego**.
 Schemat VQE (*variational quantum eigensolver*): obwód z parametrami (ansatz) $\to$ pomiar
@@ -280,7 +284,9 @@ i o statystyczne pomiary to już pełnoprawne narzędzie badawcze.
 $\lvert\Phi^+\rangle=\frac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)$. Zatem
 $p_{00}=p_{11}=\tfrac12$, $p_{01}=p_{10}=0$ oraz
 
-$$\langle ZZ\rangle=\tfrac12(+1)+\tfrac12(+1)=1,\qquad \langle XX\rangle=1,\qquad \langle Z\otimes I\rangle=0 .$$
+$$
+\langle ZZ\rangle=\tfrac12(+1)+\tfrac12(+1)=1,\qquad \langle XX\rangle=1,\qquad \langle Z\otimes I\rangle=0 .
+$$
 
 **Symulacja (kod z 3.3):** `sv.probabilities_dict()` daje `{'00': 0.5, '11': 0.5}`,
 `sv.expectation_value("ZZ")` daje `1.0`, a liczniki: `{'00': 505, '11': 519}`.
@@ -300,7 +306,9 @@ $q_0-q_1-q_2$; wierność bramki dwukubitowej $99{,}7\%$.
 **Rachunek:** w linii odległość między $q_0$ i $q_2$ wynosi $2$, więc transpilator wstawia
 $2$ SWAP-y, a każdy SWAP to $3$ CNOT:
 
-$$2\cdot3=6\ \text{CNOT}\ \text{zamiast }1 .$$
+$$
+2\cdot3=6\ \text{CNOT}\ \text{zamiast }1 .
+$$
 
 Wierność „transportu”: $0{,}997^{6}=0{,}982$ — samo **przeniesienie** kubita kosztuje prawie
 $2$ punkty procentowe wierności. Gdyby obwód miał $50$ takich bramek ($300$ CNOT), wierność

@@ -61,7 +61,7 @@ Ogólne wymagania (dotyczą wszystkich zadań):
 4. **Interpretacja.** Jedno zdanie „co to znaczy” (np. zgodność z teorią, splątanie,
    minimalna nieoznaczoność).
 5. **Oznaczenie wspomagania.** Jeśli użyto numpy/AI, wskaż, gdzie i w jakim zakresie
-   (wymóg regulaminu Etapu I).
+   (wymagane).
 
 ## Wskazówki i odpowiedzi
 
@@ -98,22 +98,28 @@ $\mathcal T=2\pi/\Omega$).
 (małoendianowo); kubit 1 = górny (starszy bit), kubit 0 = dolny (młodszy).
 (a) Krok po kroku:
 
-$$|00\rangle\xrightarrow{H\otimes I}\tfrac{1}{\sqrt2}(|00\rangle+|10\rangle)
+$$
+|00\rangle\xrightarrow{H\otimes I}\tfrac{1}{\sqrt2}(|00\rangle+|10\rangle)
 \xrightarrow{I\otimes R_Y(\pi/3)}
 \tfrac{1}{\sqrt2}\Bigl[\tfrac{\sqrt3}{2}|00\rangle+\tfrac12|01\rangle
-+\tfrac{\sqrt3}{2}|10\rangle+\tfrac12|11\rangle\Bigr].$$
++\tfrac{\sqrt3}{2}|10\rangle+\tfrac12|11\rangle\Bigr].
+$$
 
 CNOT (kontrola = kubit 1) zamienia $|10\rangle\leftrightarrow|11\rangle$:
 
-$$|\psi_{\rm out}\rangle=\frac{\sqrt3}{2\sqrt2}|00\rangle+\frac{1}{2\sqrt2}|01\rangle
-+\frac{1}{2\sqrt2}|10\rangle+\frac{\sqrt3}{2\sqrt2}|11\rangle.$$
+$$
+|\psi_{\rm out}\rangle=\frac{\sqrt3}{2\sqrt2}|00\rangle+\frac{1}{2\sqrt2}|01\rangle
++\frac{1}{2\sqrt2}|10\rangle+\frac{\sqrt3}{2\sqrt2}|11\rangle.
+$$
 
 (b) $P(00)=P(11)=\frac38=0{,}375$, $P(01)=P(10)=\frac18=0{,}125$ (suma $=1$ ✓).
 (c) Macierz współczynników
 $\begin{pmatrix}\sqrt3&1\\1&\sqrt3\end{pmatrix}/(2\sqrt2)$ ma wartości osobliwe
 
-$$s_1=\frac{\sqrt3+1}{2\sqrt2}\approx0{,}966,\qquad s_2=\frac{\sqrt3-1}{2\sqrt2}
-\approx0{,}259.$$
+$$
+s_1=\frac{\sqrt3+1}{2\sqrt2}\approx0{,}966,\qquad s_2=\frac{\sqrt3-1}{2\sqrt2}
+\approx0{,}259.
+$$
 
 Obie są niezerowe ($s_1^2\approx0{,}933$, $s_2^2\approx0{,}067$), więc stan **jest splątany**;
 jego entropia splątania $S=-s_1^2\log_2 s_1^2-s_2^2\log_2 s_2^2\approx0{,}35$ bita.

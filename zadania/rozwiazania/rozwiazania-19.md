@@ -8,10 +8,12 @@ $\lvert11\rangle=\tfrac{1}{\sqrt2}(\lvert\Phi^+\rangle-\lvert\Phi^-\rangle)$,
 $\lvert01\rangle=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle+\lvert\Psi^-\rangle)$,
 $\lvert10\rangle=\tfrac{1}{\sqrt2}(\lvert\Psi^+\rangle-\lvert\Psi^-\rangle)$):
 
-$$\lvert\Psi\rangle=\tfrac12\Big[\lvert\Phi^+\rangle_{12}(\alpha\lvert0\rangle+\beta\lvert1\rangle)_3
+$$
+\lvert\Psi\rangle=\tfrac12\Big[\lvert\Phi^+\rangle_{12}(\alpha\lvert0\rangle+\beta\lvert1\rangle)_3
 +\lvert\Phi^-\rangle_{12}(\alpha\lvert0\rangle-\beta\lvert1\rangle)_3
 +\lvert\Psi^+\rangle_{12}(\beta\lvert0\rangle+\alpha\lvert1\rangle)_3
-+\lvert\Psi^-\rangle_{12}(-\beta\lvert0\rangle+\alpha\lvert1\rangle)_3\Big].$$
++\lvert\Psi^-\rangle_{12}(-\beta\lvert0\rangle+\alpha\lvert1\rangle)_3\Big].
+$$
 
 (b) Z porównania ze stanem wyjściowym: $\lvert\Phi^+\rangle\to I$, $\lvert\Phi^-\rangle\to Z$
 (zmienia znak $\beta$), $\lvert\Psi^+\rangle\to X$ (zamienia $\alpha\leftrightarrow\beta$),
@@ -68,7 +70,9 @@ oscylacja wokół optimum.
 (a) Oba stany wejściowe są czyste, więc $\sum_ip_iS(\rho_i)=0$ i
 $\chi=S(\rho_{\rm avg})$. Macierz
 
-$$\rho_{\rm avg}=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert+\rangle\langle+\rvert=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}$$
+$$
+\rho_{\rm avg}=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert+\rangle\langle+\rvert=\begin{pmatrix}0{,}75&0{,}25\\0{,}25&0{,}25\end{pmatrix}
+$$
 
 ma wartości własne $0{,}8536$ i $0{,}1464$, więc
 $\chi=-0{,}8536\log_20{,}8536-0{,}1464\log_20{,}1464=0{,}6009$ bita.

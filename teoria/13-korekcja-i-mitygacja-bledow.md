@@ -106,7 +106,9 @@ $\lvert+\rangle_L$, przechodząc niezauważenie.
 **Zysk.** Jeśli każdy z $3$ kubitów ma niezależnie błąd $X$ z prawdopodobieństwem $p$,
 korekcja zawodzi przy $\ge2$ błędach:
 
-$$P_{\rm fail}=3p^2(1-p)+p^3=3p^2-2p^3 .$$
+$$
+P_{\rm fail}=3p^2(1-p)+p^3=3p^2-2p^3 .
+$$
 
 Dla $p=0{,}01$: $P_{\rm fail}=2{,}98\cdot10^{-4}$ — **$34\times$ lepiej** niż $p$. Dla
 $p=0{,}05$: $7{,}25\cdot10^{-3}$ ($6{,}9\times$ lepiej). Kod przestaje pomagać, gdy
@@ -124,9 +126,11 @@ $Z$ na wskazanym kubicie.
 3 „blokach” po 3 kubity, gdzie każde $\lvert0\rangle/\lvert1\rangle$ bloku samo jest kodem
 bit-flip:
 
-$$\lvert0\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle+\lvert111\rangle\bigr)^{ \otimes 3},
+$$
+\lvert0\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle+\lvert111\rangle\bigr)^{ \otimes 3},
 \qquad
-\lvert1\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle-\lvert111\rangle\bigr)^{ \otimes 3}.$$
+\lvert1\rangle_L=\frac{1}{2\sqrt2}\bigl(\lvert000\rangle-\lvert111\rangle\bigr)^{ \otimes 3}.
+$$
 
 - Błąd bit-flip $X$ na jednym kubicie jest wychwytywany **wewnątrz bloku** (syndromy $Z_iZ_j$),
   a błąd fazowy $Z$ zmienia znak całego bloku ($\lvert000\rangle+\lvert111\rangle\to\lvert000\rangle-\lvert111\rangle$),
@@ -143,9 +147,13 @@ Kod Steane'a to kod **CSS** (*Calderbank–Shor–Steane*) zbudowany z klasyczne
 $[7,4,3]$: bity parzystości dają stabilizatory, a komutowanie wynika z parzystej liczby
 wspólnych kubitów. Sześć generatorów ($q_1$–$q_7$):
 
-$$g_1=X_4X_5X_6X_7,\quad g_2=X_2X_3X_6X_7,\quad g_3=X_1X_3X_5X_7,$$
+$$
+g_1=X_4X_5X_6X_7,\quad g_2=X_2X_3X_6X_7,\quad g_3=X_1X_3X_5X_7,
+$$
 
-$$g_4=Z_4Z_5Z_6Z_7,\quad g_5=Z_2Z_3Z_6Z_7,\quad g_6=Z_1Z_3Z_5Z_7 .$$
+$$
+g_4=Z_4Z_5Z_6Z_7,\quad g_5=Z_2Z_3Z_6Z_7,\quad g_6=Z_1Z_3Z_5Z_7 .
+$$
 
 Stan logiczny $\lvert0\rangle_L$ jest równą superpozycją ośmiu słów **o parzystej wadze**:
 $\{0000000,\ 0001111,\ 0110011,\ 0111100,\ 1010101,\ 1011010,\ 1100110,\ 1101001\}$,
@@ -177,8 +185,10 @@ odporności na błędy (*fault tolerance*).
 Kod stabilizatorowy zadaje **przemienna podgrupa** $S\subset\mathcal{P}_n$:
 podprzestrzeń kodu to wspólna przestrzeń własna $+1$ wszystkich elementów $S$:
 
-$$\lvert\psi_L\rangle\ \text{jest w kodzie}\iff \hat S\lvert\psi_L\rangle=+\lvert\psi_L\rangle
-\ \text{ dla każdego } \hat S\in S .$$
+$$
+\lvert\psi_L\rangle\ \text{jest w kodzie}\iff \hat S\lvert\psi_L\rangle=+\lvert\psi_L\rangle
+\ \text{ dla każdego } \hat S\in S .
+$$
 
 Dla $\lbrack\!\lbrack n,k,d\rbrack\!\rbrack$ grupa $S$ ma $n-k$ niezależnych generatorów,
 więc syndrom ma $n-k$ bitów i istnieje $2^{\,n-k}$ klas błędów. **Dystans** $d$ to minimalna
@@ -221,7 +231,9 @@ ułożonych w łańcuch, żeby oszukać dekoder.
 przy szumie obejmującym bramki i pomiary: $p_{\rm thr}\approx0{,}5$–$1\%$) błąd logiczny maleje
 wykładniczo z dystansem:
 
-$$p_L\propto\Lambda^{-(d+1)/2},\qquad \Lambda>1 .$$
+$$
+p_L\propto\Lambda^{-(d+1)/2},\qquad \Lambda>1 .
+$$
 
 Google (2024, kod powierzchniowy na 105 kubitach „Willow”) zaraportował $\Lambda\approx2{,}14$
 i $p_L\approx0{,}14\%$ na cykl dla $d=7$ (przy $d=5$: $\approx0{,}65\%$, przy $d=3$: $\approx3\%$)

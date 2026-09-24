@@ -16,7 +16,7 @@ $c_0=\cos\tfrac\pi8\approx0{,}9239$, $c_1=\sin\tfrac\pi8\approx0{,}3827$.
 **(b)** $\langle Z\rangle=P(0)-P(1)=\cos^2\tfrac\pi8-\sin^2\tfrac\pi8=\cos\tfrac\pi4 =\tfrac{1}{\sqrt2}\approx0{,}7071$. Ponieważ współczynniki są rzeczywiste,
 $\langle X\rangle=2c_0c_1=\sin\tfrac\pi4=\tfrac{1}{\sqrt2}\approx0{,}7071$.
 
-**(c)** $\operatorname{Var}(Z)=\langle Z^2\rangle-\langle Z\rangle^2=1-\tfrac12=\tfrac12$,
+**(c)** $\mathrm{Var}(Z)=\langle Z^2\rangle-\langle Z\rangle^2=1-\tfrac12=\tfrac12$,
 $\Delta Z=\tfrac{1}{\sqrt2}\approx0{,}7071$.
 
 **Odpowiedź:** **(a)** $P(0)\approx0{,}8536$, $P(1)\approx0{,}1464$;
@@ -31,8 +31,10 @@ $|\vec r|=1$ — stan „przechylony” między osiami $X$ i $Z$, w płaszczyźn
 
 **(a)** $E_1=\dfrac{\pi^2\hbar^2}{2m_eL^2}$ dla $L=2$ nm:
 
-$$E_1=\frac{\pi^2(1{,}0546\cdot10^{-34})^2}{2\cdot9{,}109\cdot10^{-31}\cdot(2\cdot10^{-9})^2}
-\approx1{,}506\cdot10^{-20}\ \text{J}\approx0{,}0940\ \text{eV}.$$
+$$
+E_1=\frac{\pi^2(1{,}0546\cdot10^{-34})^2}{2\cdot9{,}109\cdot10^{-31}\cdot(2\cdot10^{-9})^2}
+\approx1{,}506\cdot10^{-20}\ \text{J}\approx0{,}0940\ \text{eV}.
+$$
 
 **(b)** $E_n\propto n^2$, więc $E_3/E_1=9$.
 
@@ -65,8 +67,10 @@ ustalony względem osi $X$ — komplementarność osi pomiarowych.
 **(a)** Działamy komutatorem na $\psi$: $\hat x\psi=x\psi$,
 $\hat p\psi=-i\hbar\psi'$. Wtedy
 
-$$\hat x\hat p\psi=-i\hbar x\psi',\qquad
-\hat p\hat x\psi=-i\hbar(x\psi)'=-i\hbar(\psi+x\psi'),$$
+$$
+\hat x\hat p\psi=-i\hbar x\psi',\qquad
+\hat p\hat x\psi=-i\hbar(x\psi)'=-i\hbar(\psi+x\psi'),
+$$
 
 skąd $[\hat x,\hat p]\psi=-i\hbar x\psi'+i\hbar\psi+i\hbar x\psi'=i\hbar\psi$, czyli
 $[\hat x,\hat p]=i\hbar$.
@@ -104,16 +108,20 @@ nowy stan, nie będący prostopadłym do wejściowego — efekt nieklasyczny.
 
 **(a)** Bariera prostokątna $V_0>E$:
 
-$$T=\Bigl[1+\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)}\Bigr]^{-1},\qquad
-\kappa=\frac{\sqrt{2m_e(V_0-E)}}{\hbar}.$$
+$$
+T=\Bigl[1+\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)}\Bigr]^{-1},\qquad
+\kappa=\frac{\sqrt{2m_e(V_0-E)}}{\hbar}.
+$$
 
 **(b)** $\kappa=\dfrac{\sqrt{2\cdot9{,}109\cdot10^{-31}\cdot4\cdot1{,}602\cdot10^{-19}}}{1{,}0546\cdot10^{-34}} \approx1{,}025\cdot10^{10}\ \text{m}^{-1}$, więc
 $\kappa a\approx1{,}025\cdot10^{10}\cdot0{,}5\cdot10^{-9}\approx5{,}12$.
 Wtedy $\sinh(5{,}12)\approx83{,}6$ i
 
-$$T=\Bigl[1+\frac{(5\cdot1{,}602\cdot10^{-19})^2\cdot(83{,}6)^2}
+$$
+T=\Bigl[1+\frac{(5\cdot1{,}602\cdot10^{-19})^2\cdot(83{,}6)^2}
 {4\cdot1{,}602\cdot10^{-19}\cdot4\cdot1{,}602\cdot10^{-19}}\Bigr]^{-1}
-\approx9{,}08\cdot10^{-5}.$$
+\approx9{,}08\cdot10^{-5}.
+$$
 
 **(c)** Podwojenie $a$ daje $2\kappa a\approx10{,}25$ i $T\approx3{,}22\cdot10^{-9}$;
 stosunek $\approx3{,}55\cdot10^{-5}\approx e^{-2\kappa a}$ — gwałtowny, wykładniczy spadek.
@@ -129,7 +137,9 @@ prąd STM zmienia się o rzędy wielkości przy zmianie odległości o jedną wa
 **(a)** Dla studni $L=1$ nm: $E_1=\dfrac{\pi^2\hbar^2}{2m_eL^2}\approx6{,}025\cdot10^{-20}$ J.
 Wtedy $E_2=4E_1$ i
 
-$$\omega_{21}=\frac{E_2-E_1}{\hbar}=\frac{3E_1}{\hbar}\approx1{,}71\cdot10^{15}\ \text{rad/s}.$$
+$$
+\omega_{21}=\frac{E_2-E_1}{\hbar}=\frac{3E_1}{\hbar}\approx1{,}71\cdot10^{15}\ \text{rad/s}.
+$$
 
 **(b)** Okres dudnień $T=\dfrac{2\pi}{\omega_{21}}\approx3{,}67\cdot10^{-15}$ s
 $=3{,}67$ fs.
@@ -148,9 +158,11 @@ prawdopodobieństwa — klasycznie cząstka jakby „odbijała się” między �
 
 **(a)** Rozwiązujemy $i\hbar\frac{d}{dt}\lvert\psi\rangle=\tfrac{\hbar\Omega}{2}X\lvert\psi\rangle$:
 
-$$\lvert\psi(t)\rangle=e^{-iHt/\hbar}\lvert0\rangle
+$$
+\lvert\psi(t)\rangle=e^{-iHt/\hbar}\lvert0\rangle
 =\Bigl(\cos\tfrac{\Omega t}{2}I-i\sin\tfrac{\Omega t}{2}X\Bigr)\lvert0\rangle
-=\cos\tfrac{\Omega t}{2}\lvert0\rangle-i\sin\tfrac{\Omega t}{2}\lvert1\rangle.$$
+=\cos\tfrac{\Omega t}{2}\lvert0\rangle-i\sin\tfrac{\Omega t}{2}\lvert1\rangle.
+$$
 
 **(b)** $P(1)=\bigl|-i\sin\tfrac{\Omega t}{2}\bigr|^2=\sin^2\tfrac{\Omega t}{2}$.
 Dla $\Omega t=\pi/2$: $P(1)=\sin^2\tfrac\pi4=\tfrac12$.

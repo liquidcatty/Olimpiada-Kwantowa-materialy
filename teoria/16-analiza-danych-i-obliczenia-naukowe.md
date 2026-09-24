@@ -117,8 +117,10 @@ Dla modelu liniowego w parametrach — np. $y=a x+b$ albo $y=a_0+a_1x+a_2x^2$ �
 `np.polyfit(x, y, stopien)` (metoda najmniejszych kwadratów). Dla wag (różne niepewności)
 budujemy **macierz Vandermonde’a** i rozwiązujemy układ normalny:
 
-$$W=\mathrm{diag}(1/\sigma_i^2),\qquad \hat\beta=(V^{\mathsf T}W V)^{-1}V^{\mathsf T}W\,y,\qquad
-\mathrm{Cov}(\hat\beta)=(V^{\mathsf T}W V)^{-1}.$$
+$$
+W=\mathrm{diag}(1/\sigma_i^2),\qquad \hat\beta=(V^{\mathsf T}W V)^{-1}V^{\mathsf T}W\,y,\qquad
+\mathrm{Cov}(\hat\beta)=(V^{\mathsf T}W V)^{-1}.
+$$
 
 Pierwiastek z przekątnej $\mathrm{Cov}$ to niepewność parametru. Dla modeli **nieliniowych**
 (np. $y=Ae^{-t/T_2}$) trzy drogi: (i) linearyzacja przez logarytm i `polyfit`, (ii) własna
@@ -128,9 +130,11 @@ minimalizacja $\chi^2$, (iii) `scipy.optimize.curve_fit` (opcjonalnie — patrz 
 
 Trzy liczby odpowiadają na trzy różne pytania:
 
-$$\chi^2=\sum_i\frac{(y_i-f(x_i))^2}{\sigma_i^2},\qquad
+$$
+\chi^2=\sum_i\frac{(y_i-f(x_i))^2}{\sigma_i^2},\qquad
 \chi^2_{\rm red}=\frac{\chi^2}{\mathrm{ndof}},\qquad
-R^2=1-\frac{\sum_i r_i^2}{\sum_i (y_i-\bar y)^2}.$$
+R^2=1-\frac{\sum_i r_i^2}{\sum_i (y_i-\bar y)^2}.
+$$
 
 $\mathrm{ndof}=N-p$ ($p$ = liczba parametrów). **$\chi^2_{\rm red}\approx1$** → model zgodny z
 danymi *i* niepewności są realistyczne; $\gg1$ → zły model lub zaniżone $\sigma_i$;
@@ -142,7 +146,9 @@ weryfikuje niepewności. Dlatego zawsze raportujemy razem $\chi^2_{\rm red}$ i $
 Gdy wynik $z$ liczymy z kilku zmierzonych wielkości, niepewności się **propagują**. Dla
 niezależnych zmiennych:
 
-$$u_z^2=\sum_j\Big(\frac{\partial f}{\partial x_j}\Big)^2 u_{x_j}^2 .$$
+$$
+u_z^2=\sum_j\Big(\frac{\partial f}{\partial x_j}\Big)^2 u_{x_j}^2 .
+$$
 
 Jeśli parametry dopasowania są skorelowane (niezerowe pozadiagonalne
 elementy $\mathrm{Cov}$), trzeba użyć pełnej formy $u_z^2=\vec g^{\mathsf T}\mathrm{Cov}\,\vec g$,
@@ -210,9 +216,11 @@ $\hat\beta=(V^{\mathsf T}WV)^{-1}V^{\mathsf T}Wy$.
 
 **Rachunek.** $W=(1/0{,}04)I$, więc
 
-$$V^{\mathsf T}WV=\frac{1}{0{,}04}\begin{pmatrix}\sum x_i^2&\sum x_i\\ \sum x_i&6\end{pmatrix}
+$$
+V^{\mathsf T}WV=\frac{1}{0{,}04}\begin{pmatrix}\sum x_i^2&\sum x_i\\ \sum x_i&6\end{pmatrix}
 =\begin{pmatrix}2275&525\\ 525&150\end{pmatrix},\qquad
-(V^{\mathsf T}WV)^{-1}=\begin{pmatrix}0{,}002286&-0{,}008\\ -0{,}008&0{,}034667\end{pmatrix}.$$
+(V^{\mathsf T}WV)^{-1}=\begin{pmatrix}0{,}002286&-0{,}008\\ -0{,}008&0{,}034667\end{pmatrix}.
+$$
 
 Z $\sum x_iy_i=182{,}1$, $\sum y_i=42{,}2$ dostajemy $\hat\beta=(1{,}9657,\ 0{,}1533)$.
 Niepewności to pierwiastki z przekątnej: $u_a=\sqrt{0{,}002286}=0{,}0478$,
@@ -241,8 +249,10 @@ $\chi^2$ (krok adaptacyjny), niepewności z numerycznego hesjanu; kontrolnie **b
 $\mathrm{ndof}=58$, czyli $\chi^2_{\rm red}=0{,}772$. Numeryczny hesjan daje
 $u_{T_2}=0{,}0238$ s, $u_A=0{,}0065$. Propagacja na $y(3)=Ae^{-3/T_2}=0{,}2914$:
 
-$$u_y^2=\Big(e^{-3/T_2}\Big)^2u_A^2+\Big(Ae^{-3/T_2}\tfrac{3}{T_2^2}\Big)^2u_{T_2}^2
-\;\Rightarrow\; u_y=0{,}0040 .$$
+$$
+u_y^2=\Big(e^{-3/T_2}\Big)^2u_A^2+\Big(Ae^{-3/T_2}\tfrac{3}{T_2^2}\Big)^2u_{T_2}^2
+\;\Rightarrow\; u_y=0{,}0040 .
+$$
 
 Bootstrap (16.–84. percentyl) daje $T_2\in[2{,}427;\ 2{,}485]$ s, szerokość $0{,}058$ s —
 zgodnie z $2u_{T_2}=0{,}048$ s.

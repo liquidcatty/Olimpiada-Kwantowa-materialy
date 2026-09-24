@@ -24,7 +24,9 @@ $ad=\frac14=bc$ — **iloczynowy** ($=\lvert+\rangle\otimes\lvert+\rangle$), wi�
 $M=\frac{1}{\sqrt2}\begin{pmatrix}0&1\\-1&0\end{pmatrix}$. $MM^\dagger=\frac12 I$, wartości szczególne
 $\frac{1}{\sqrt2},\frac{1}{\sqrt2}$, więc $\lambda_1=\lambda_2=\frac12$:
 
-$$\lvert\Psi^-\rangle=\tfrac{1}{\sqrt2}\lvert u_1\rangle\lvert v_1\rangle-\tfrac{1}{\sqrt2}\lvert u_2\rangle\lvert v_2\rangle$$
+$$
+\lvert\Psi^-\rangle=\tfrac{1}{\sqrt2}\lvert u_1\rangle\lvert v_1\rangle-\tfrac{1}{\sqrt2}\lvert u_2\rangle\lvert v_2\rangle
+$$
 
 (rozkład Schmidta z równymi współczynnikami — stan maksymalnie splątany).
 
@@ -42,7 +44,9 @@ dla dwóch kubitów.
 
 (a) $\rho_W^{T_B}$ dla $\rho_W=p\lvert\Phi^+\rangle\langle\Phi^+\rvert+\frac{1-p}{4}I$ ma wartości własne
 
-$$\lambda=\frac{1+p}{4}\ (\times3),\qquad \lambda=\frac{1-3p}{4}\ (\times1).$$
+$$
+\lambda=\frac{1+p}{4}\ (\times3),\qquad \lambda=\frac{1-3p}{4}\ (\times1).
+$$
 
 (Suma $=3\frac{1+p}{4}+\frac{1-3p}{4}=1$; zgadza się z $\mathrm{Tr}\,\rho_W^{T_B}=1$.)
 
@@ -64,7 +68,9 @@ więc $\lvert S\rvert=\lvert\int S(\lambda)\rho\,d\lambda\rvert\le\int\lvert S\r
 (b) Z $E(a,b)=-\cos(\theta_a-\theta_b)$:
 $E(0,45)=-\frac{\sqrt2}{2}$, $E(0,135)=+\frac{\sqrt2}{2}$, $E(90,45)=-\frac{\sqrt2}{2}$, $E(90,135)=-\frac{\sqrt2}{2}$,
 
-$$S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2\ \Rightarrow\ \lvert S\rvert=2\sqrt2.$$
+$$
+S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2\ \Rightarrow\ \lvert S\rvert=2\sqrt2.
+$$
 
 (c) Brak korelacji $\Rightarrow$ każda $E(a,b)=0$, więc $S=0$ — trywialnie w granicach LHV.
 
@@ -97,7 +103,9 @@ splątanie dwustronne.
 (a) $\rho=(1-p)\lvert\Phi^+\rangle\langle\Phi^+\rvert+p\,\frac{I}{4}$ w bazie Bella ma wagi
 $\lambda_{\Phi^+}=1-\frac{3p}{4}$ oraz $\frac p4$ dla pozostałych. Concurrence dla stanów Bella-diagonalnych:
 
-$$C=\max\!\Big(0,\,2\big(1-\tfrac{3p}{4}\big)-1\Big)=\max\!\big(0,\,1-\tfrac{3p}{2}\big).$$
+$$
+C=\max\!\Big(0,\,2\big(1-\tfrac{3p}{4}\big)-1\Big)=\max\!\big(0,\,1-\tfrac{3p}{2}\big).
+$$
 
 (b) $C=0\iff 1-\frac{3p}{2}\le0\iff p\ge\frac23$. W Z-09.3(b) (parametr „sygnału” $p'=1-p$) próg PPT
 to $p'>\frac13$, czyli $1-p>\frac13\Rightarrow p<\frac23$ — **ten sam próg** $p=\frac23$.

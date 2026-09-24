@@ -9,8 +9,10 @@ dla wszystkich $\lvert\psi\rangle$.
 (b) Gdyby $U$ klonował (pomijamy otoczenie), to $U\lvert0\rangle\lvert0\rangle=\lvert00\rangle$,
 $U\lvert1\rangle\lvert0\rangle=\lvert11\rangle$, a z liniowości
 
-$$U\lvert+\rangle\lvert0\rangle=\tfrac{1}{\sqrt2}(U\lvert00\rangle+U\lvert10\rangle)
-=\tfrac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)=\lvert\Phi^+\rangle.$$
+$$
+U\lvert+\rangle\lvert0\rangle=\tfrac{1}{\sqrt2}(U\lvert00\rangle+U\lvert10\rangle)
+=\tfrac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)=\lvert\Phi^+\rangle.
+$$
 
 Klonowanie wymagałoby jednak $\lvert+\rangle\lvert+\rangle=\frac12(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle)$
 — to inny stan. Sprzeczność.
@@ -35,8 +37,10 @@ leżą w tej samej podprzestrzeni własnej i muszą być ortogonalne. Dla nieort
 
 (b) Granica Helstroma dla jednakowych prawdopodobieństw:
 
-$$p_{\text{poprawne}}=\tfrac12\Big(1+\sqrt{1-\lvert\langle0\vert+\rangle\rvert^2}\Big)
-=\tfrac12\Big(1+\sqrt{1-\tfrac12}\Big)=\tfrac12\Big(1+\tfrac{1}{\sqrt2}\Big)\approx0{,}8536.$$
+$$
+p_{\text{poprawne}}=\tfrac12\Big(1+\sqrt{1-\lvert\langle0\vert+\rangle\rvert^2}\Big)
+=\tfrac12\Big(1+\sqrt{1-\tfrac12}\Big)=\tfrac12\Big(1+\tfrac{1}{\sqrt2}\Big)\approx0{,}8536.
+$$
 
 (c) Eve nie odróżni $\lvert0\rangle$ od $\lvert+\rangle$ lepiej niż $85{,}4\%$ (i to w optymalnym
 pomiarze) — czyli z istotnym błędem. Próba odczytu bitu przez Eve wprowadza więc błędy, które
@@ -84,12 +88,16 @@ są jednoznacznie powiązane.
 
 (a) Zespół: $\frac12$ na $\lvert0\rangle$, $\frac12$ na $\lvert+\rangle$. Średni stan
 
-$$\bar\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert+\rangle\langle+\rvert
-=\begin{pmatrix}3/4&1/4\\1/4&1/4\end{pmatrix}.$$
+$$
+\bar\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert+\rangle\langle+\rvert
+=\begin{pmatrix}3/4&1/4\\1/4&1/4\end{pmatrix}.
+$$
 
 Wartości własne: $\frac12(1\pm\frac{1}{\sqrt2})\approx0{,}8536,\,0{,}1464$. Entropia
 
-$$S(\bar\rho)\approx-0{,}8536\log_2 0{,}8536-0{,}1464\log_2 0{,}1464\approx0{,}601\ \text{bitu}.$$
+$$
+S(\bar\rho)\approx-0{,}8536\log_2 0{,}8536-0{,}1464\log_2 0{,}1464\approx0{,}601\ \text{bitu}.
+$$
 
 Oba stany czyste $\Rightarrow S(\rho_i)=0$, więc $\chi=S(\bar\rho)\approx0{,}601$ bita.
 

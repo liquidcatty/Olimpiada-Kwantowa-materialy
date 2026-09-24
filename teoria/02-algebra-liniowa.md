@@ -25,8 +25,8 @@ P2 (polaryzatory), P3 (bramki $H,Z,H$) i P4 (obwód z $R_Y(\theta)$ i CNOT).
 - **Wektory własne i wartości własne**: $A|a\rangle=a|a\rangle$; dla hermitowskiego
   $a\in\mathbb{R}$, a wektory własne różnych wartości są ortogonalne.
 - **Rozkład spektralny**: $A=\sum_a a\,|a\rangle\langle a|$.
-- **Ślad** $\operatorname{Tr}A=\sum_i A_{ii}$; **wyznacznik** $\det A$;
-  **rząd** $\operatorname{rank}A$ = wymiar obrazu.
+- **Ślad** $\mathrm{Tr}A=\sum_i A_{ii}$; **wyznacznik** $\det A$;
+  **rząd** $\mathrm{rank}A$ = wymiar obrazu.
 - **Iloczyn tensorowy (kron)**: $(A\otimes B)_{(ip),(jq)}=A_{ij}B_{pq}$.
 - **Rozkład Blocha**: $\rho=\frac12(I+\vec r\cdot\vec\sigma)$, $|\vec r|\le1$.
 
@@ -90,10 +90,12 @@ wartości własne rzeczywiste, wektory własne różnych wartości ortogonalne.
 
 **Twierdzenie spektralne.** Każdy operator hermitowski $A$ ma ortonormalną bazę
 wektorów własnych i rozkład $A=\sum_a a\,|a\rangle\langle a|$. W tej bazie $A$ jest
-macierzą diagonalną $D=\operatorname{diag}(a_1,\dots,a_n)$, a przejście realizuje
+macierzą diagonalną $D=\mathrm{diag}(a_1,\dots,a_n)$, a przejście realizuje
 macierz unitarna $U$ (kolumny = wektory własne):
 
-$$A=U D U^\dagger,\qquad D=U^\dagger A U.$$
+$$
+A=U D U^\dagger,\qquad D=U^\dagger A U.
+$$
 
 Posługując się rozkładem spektralnym, każdą „sensowną” funkcję $f$ liczymy na
 wartościach własnych: $f(A)=\sum_a f(a)|a\rangle\langle a|$.
@@ -102,7 +104,9 @@ wartościach własnych: $f(A)=\sum_a f(a)|a\rangle\langle a|$.
 
 Dla hermitowskiego $H$ definiujemy
 
-$$e^{-iHt/\hbar}=\sum_a e^{-ia t/\hbar}|a\rangle\langle a|,$$
+$$
+e^{-iHt/\hbar}=\sum_a e^{-ia t/\hbar}|a\rangle\langle a|,
+$$
 
 gdzie $a$ to wartości własne $H$. To rozwiązanie równania Schrödingera:
 $|\psi(t)\rangle=e^{-iHt/\hbar}|\psi(0)\rangle$. Praktycznie: diagonalizujemy $H$,
@@ -111,28 +115,32 @@ podnosimy $e^{-iat/\hbar}$ i wracamy do oryginalnej bazy.
 **Przykład 2×2.** Dla $H=\tfrac{\hbar\omega}{2}Z$ wartości własne to $\pm\tfrac{\hbar\omega}{2}$,
 więc
 
-$$e^{-iHt/\hbar}=e^{-i\omega t Z/2}=\cos\!\Bigl(\tfrac{\omega t}{2}\Bigr)I-i\sin\!\Bigl(\tfrac{\omega t}{2}\Bigr)Z
-=\operatorname{diag}\!\bigl(e^{-i\omega t/2},e^{i\omega t/2}\bigr).$$
+$$
+e^{-iHt/\hbar}=e^{-i\omega t Z/2}=\cos\!\Bigl(\tfrac{\omega t}{2}\Bigr)I-i\sin\!\Bigl(\tfrac{\omega t}{2}\Bigr)Z
+=\mathrm{diag}\!\bigl(e^{-i\omega t/2},e^{i\omega t/2}\bigr).
+$$
 
 Ostatnia macierz to dokładnie $R_Z(\omega t)$ w notacji konwencji (kąt $\theta/2$).
 
 ### 3.9 Ślad, wyznacznik, rząd
 
-- **Ślad** $\operatorname{Tr}A=\sum_iA_{ii}$: liniowy, cykliczny
-  $\operatorname{Tr}(AB)=\operatorname{Tr}(BA)$, niezmienniczy na zmianę bazy.
-  $\operatorname{Tr}A=\sum_a a$ (suma wartości własnych).
+- **Ślad** $\mathrm{Tr}A=\sum_iA_{ii}$: liniowy, cykliczny
+  $\mathrm{Tr}(AB)=\mathrm{Tr}(BA)$, niezmienniczy na zmianę bazy.
+  $\mathrm{Tr}A=\sum_a a$ (suma wartości własnych).
 - **Wyznacznik** $\det A=\prod_a a$; $\det(AB)=\det A\det B$. $\det A\ne0 \Leftrightarrow A$ odwracalny.
-- **Rząd** $\operatorname{rank}A$ = liczba niezerowych wartości osobliwych = wymiar
-  obrazu. Dla macierzy $A$ zachodzi $\operatorname{rank}A+\dim\ker A=n$.
+- **Rząd** $\mathrm{rank}A$ = liczba niezerowych wartości osobliwych = wymiar
+  obrazu. Dla macierzy $A$ zachodzi $\mathrm{rank}A+\dim\ker A=n$.
 
-Dla macierzy $2\times2$: $\operatorname{Tr}M=m_{11}+m_{22}$,
+Dla macierzy $2\times2$: $\mathrm{Tr}M=m_{11}+m_{22}$,
 $\det M=m_{11}m_{22}-m_{12}m_{21}$.
 
 ### 3.10 Iloczyn tensorowy (kron)
 
 Dla macierzy $A$ ($m\times n$) i $B$ ($p\times q$) blokowe złożenie:
 
-$$A\otimes B=\begin{pmatrix}A_{11}B&\cdots&A_{1n}B\\ \vdots&&\vdots\\ A_{m1}B&\cdots&A_{mn}B\end{pmatrix},$$
+$$
+A\otimes B=\begin{pmatrix}A_{11}B&\cdots&A_{1n}B\\ \vdots&&\vdots\\ A_{m1}B&\cdots&A_{mn}B\end{pmatrix},
+$$
 
 wymiar $mp\times nq$. Dla wektorów: $(a\otimes b)_{ip}=a_ib_p$. Dla $n$ kubitów
 $\dim=2^n$.
@@ -144,16 +152,20 @@ Zawsze jawnie podaje się konwencję.
 
 ### 3.11 Macierze Pauliego, komutatory i antykomutatory
 
-$$\sigma_x=X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+$$
+\sigma_x=X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
 \sigma_y=Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\quad
-\sigma_z=Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.$$
+\sigma_z=Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+$$
 
 Relacje:
 
-$$[\sigma_a,\sigma_b]=2i\sum_c\varepsilon_{abc}\sigma_c,\qquad
+$$
+[\sigma_a,\sigma_b]=2i\sum_c\varepsilon_{abc}\sigma_c,\qquad
 \{\sigma_a,\sigma_b\}=2\delta_{ab}I,\qquad
 \sigma_a\sigma_b=\delta_{ab}I+i\sum_c\varepsilon_{abc}\sigma_c,\qquad
-\sigma_a^2=I.$$
+\sigma_a^2=I.
+$$
 
 W szczególności $[X,Y]=2iZ$, $[Y,Z]=2iX$, $[Z,X]=2iY$, a $\{X,Y\}=0$ (antykomutują).
 Skąd to się bierze: kolejność mnożenia Pauliego a Pauliego to „obrót o inny Pauli”,
@@ -164,8 +176,10 @@ a antykomutacja znika, bo każda $\sigma$ podniesiona do kwadratu daje $I$.
 Dowolny stan czysty kubitu (z dokładnością do fazy globalnej) to punkt na sferze
 jednostkowej:
 
-$$|\psi\rangle=\cos\tfrac\theta2|0\rangle+e^{i\varphi}\sin\tfrac\theta2|1\rangle,\qquad
-\vec r=(\langle X\rangle,\langle Y\rangle,\langle Z\rangle).$$
+$$
+|\psi\rangle=\cos\tfrac\theta2|0\rangle+e^{i\varphi}\sin\tfrac\theta2|1\rangle,\qquad
+\vec r=(\langle X\rangle,\langle Y\rangle,\langle Z\rangle).
+$$
 
 Kąt $\theta$ to odchylenie od osi $Z$ („biegun $|0\rangle$”), $\varphi$ to azymut.
 Przykłady: $|0\rangle\to\vec r=(0,0,1)$; $|+\rangle\to(1,0,0)$; $|i\rangle\to(0,1,0)$.
@@ -177,7 +191,9 @@ $\rho=\tfrac12(I+\vec r\cdot\vec\sigma)$.
 Dla dwukubitowego stanu $|\psi\rangle\in\mathbb{C}^2\otimes\mathbb{C}^2$ istnieje
 rozkład
 
-$$|\psi\rangle=s_1|u_1\rangle|v_1\rangle+s_2|u_2\rangle|v_2\rangle,$$
+$$
+|\psi\rangle=s_1|u_1\rangle|v_1\rangle+s_2|u_2\rangle|v_2\rangle,
+$$
 
 gdzie $s_1\ge s_2\ge0$ to **wartości osobliwe** (Schmidta) macierzy współczynników,
 a $\{|u_k\rangle\},\{|v_k\rangle\}$ to bazy ortonormalne. Stan jest **iloczynowy**
@@ -192,12 +208,16 @@ miarą splątania jest entropia $S=-\sum_k s_k^2\log_2 s_k^2$. Szczegóły w
 Kontrolowany NOT działa tak: jeśli kubit kontrolny jest w $|1\rangle$, odwraca kubit
 docelowy (X); jeśli w $|0\rangle$ — nic nie robi. Jako operator:
 
-$$\mathrm{CNOT}=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X,$$
+$$
+\mathrm{CNOT}=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X,
+$$
 
 gdzie pierwszy czynnik to kubit kontrolny (**górny, kubit 1** w naszej konwencji), a
 drugi to docelowy (**kubit 0**). Zapisując w porządku $|00\rangle,|01\rangle,|10\rangle,|11\rangle$:
 
-$$\mathrm{CNOT}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.$$
+$$
+\mathrm{CNOT}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.
+$$
 
 Iloczyn tensorowy $|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X$
 daje powyższą macierz. CNOT jest unitarny i hermitowski ($\mathrm{CNOT}^2=I$).
@@ -214,17 +234,21 @@ z $\det(M-aI)=0$, wektory własne z $(M-aI)v=0$, złożyć $D=U^\dagger MU$.
 **Rachunek.** Sprzężenie: $M^\dagger=\begin{pmatrix}2&1-i\\ 1+i&3\end{pmatrix}=M$ ✓
 (przekątna rzeczywista, wyrazy poza przekątną sprzężone). Równanie charakterystyczne:
 
-$$\det(M-aI)=(2-a)(3-a)-(1-i)(1+i)=(2-a)(3-a)-2=a^2-5a+4=0,$$
+$$
+\det(M-aI)=(2-a)(3-a)-(1-i)(1+i)=(2-a)(3-a)-2=a^2-5a+4=0,
+$$
 
 stąd $a_1=1$, $a_2=4$. Wektory własne:
 
-$$a_1=1:\ (M-I)v=0\Rightarrow v_1=(-1+i,\,1)/\sqrt3,\qquad
-a_2=4:\ (M-4I)v=0\Rightarrow v_2=(1-i,\,2)/\sqrt6.$$
+$$
+a_1=1:\ (M-I)v=0\Rightarrow v_1=(-1+i,\,1)/\sqrt3,\qquad
+a_2=4:\ (M-4I)v=0\Rightarrow v_2=(1-i,\,2)/\sqrt6.
+$$
 
 Sprawdzamy $M v_1=1\cdot v_1$, $M v_2=4\cdot v_2$ (wartości $\{1,4\}$) ✓.
 
 **Wynik:** wartości własne $\{1,4\}$; $U=[v_1\ v_2]$ diagonalizuje:
-$\operatorname{diag}(1,4)=U^\dagger MU$.
+$\mathrm{diag}(1,4)=U^\dagger MU$.
 
 **Interpretacja:** skoro $M$ jest hermitowska, jej wartości własne są rzeczywiste i
 odpowiadają możliwym wynikom pomiaru; prawdopodobieństwa wyników dostajemy rzutując
@@ -241,9 +265,11 @@ działanie przez mnożenie macierzy.
 **Rachunek.** $|0\rangle\langle0|=\begin{pmatrix}1&0\\0&0\end{pmatrix}$,
 $|1\rangle\langle1|=\begin{pmatrix}0&0\\0&1\end{pmatrix}$, $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$.
 
-$$\mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes\begin{pmatrix}1&0\\0&1\end{pmatrix}
+$$
+\mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes\begin{pmatrix}1&0\\0&1\end{pmatrix}
 +\begin{pmatrix}0&0\\0&1\end{pmatrix}\otimes\begin{pmatrix}0&1\\1&0\end{pmatrix}
-=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.$$
+=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.
+$$
 
 Działanie: $\mathrm{CNOT}|10\rangle=|11\rangle$, $\mathrm{CNOT}|11\rangle=|10\rangle$
 (kubit 0 się odwraca, bo kontrolny $=1$); $\mathrm{CNOT}|00\rangle=|00\rangle$,
@@ -264,8 +290,10 @@ traktowana jako hamiltonian), $\hbar=1$, $t=\pi/4$.
 
 **Rachunek:** $\cos(\pi/4)=\sin(\pi/4)=1/\sqrt2$,
 
-$$e^{-iH\pi/4}=\tfrac{1}{\sqrt2}I-\tfrac{i}{\sqrt2}H
-=\begin{pmatrix}\frac{1}{\sqrt2}-\frac{i}{2}&-\frac{i}{2}\\-\frac{i}{2}&\frac{1}{\sqrt2}+\frac{i}{2}\end{pmatrix}.$$
+$$
+e^{-iH\pi/4}=\tfrac{1}{\sqrt2}I-\tfrac{i}{\sqrt2}H
+=\begin{pmatrix}\frac{1}{\sqrt2}-\frac{i}{2}&-\frac{i}{2}\\-\frac{i}{2}&\frac{1}{\sqrt2}+\frac{i}{2}\end{pmatrix}.
+$$
 
 Wartości: przekątna $0{,}7071\mp0{,}5i$, pozadiagonalne $-0{,}5i$ ✓.
 
@@ -287,7 +315,7 @@ hermitowskim hamiltonianem a unitarną ewolucją; wykorzystamy to przy bramkach 
 5. **Branie wartości własnych $e^{-iHt/\hbar}$ zamiast $e^{-iat/\hbar}$.** Najpierw
    diagonalizuj $H$, potem eksponuj **jego** wartości własne $a$.
 6. **Mylenie rzędu z wyznacznikiem.** $\det A=0$ równoważne brakowi odwracalności i
-   $\operatorname{rank}A<n$, ale mały wyznacznik nie znaczy „mały rząd”.
+   $\mathrm{rank}A<n$, ale mały wyznacznik nie znaczy „mały rząd”.
 
 ## 6. Zadania (Z-02)
 
@@ -309,8 +337,8 @@ zapisz rozkład spektralny; policz $\langle+|M|+\rangle$.
 (b) Wykaż unitarność. (c) Policz $R_Z(\pi/2)$ i jego działanie na $|0\rangle,|1\rangle$.
 
 **Z-02.5.** Dana $M=\begin{pmatrix}2&0&1\\1&3&0\\0&1&1\end{pmatrix}$.
-(a) Policz $\operatorname{Tr}M$. (b) Policz $\det M$. (c) Wyznacz
-$\operatorname{rank}M$ i rozstrzygnij o odwracalności.
+(a) Policz $\mathrm{Tr}M$. (b) Policz $\det M$. (c) Wyznacz
+$\mathrm{rank}M$ i rozstrzygnij o odwracalności.
 
 **Z-02.6.** Bramka CNOT (kontrolny = kubit 1).
 (a) Zbuduj macierz z $|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X$.

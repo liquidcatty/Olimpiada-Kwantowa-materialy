@@ -36,7 +36,9 @@ z obliczeniem wartości $2\sqrt2$.
 
 Każdy stan dwóch układów $\lvert\psi\rangle_{AB}$ można zapisać w **rozkładzie Schmidta**
 
-$$\lvert\psi\rangle_{AB}=\sum_{i=1}^{r}\sqrt{\lambda_i}\,\lvert u_i\rangle_A\otimes\lvert v_i\rangle_B,$$
+$$
+\lvert\psi\rangle_{AB}=\sum_{i=1}^{r}\sqrt{\lambda_i}\,\lvert u_i\rangle_A\otimes\lvert v_i\rangle_B,
+$$
 
 gdzie $\{\lvert u_i\rangle\},\{\lvert v_i\rangle\}$ to ortonormalne bazy, $\lambda_i\ge0$, $\sum_i\lambda_i=1$,
 a $r$ to rząd Schmidta. **Skąd to się bierze:** rozkład SVD macierzy współczynników
@@ -53,7 +55,9 @@ iloczynowy $\iff ad=bc$; **concurrence** $C=2\lvert ad-bc\rvert\in[0,1]$ mierzy 
 Stany Bella tworzą ortonormalną bazę $\mathbb{C}^4$ i mają maksymalne splątanie. Powstają z
 $\lvert00\rangle$ przez $H$ na górnym kubicie i CNOT (rozdział 06). Trójstronny odpowiednik to
 
-$$\lvert\mathrm{GHZ}\rangle=\tfrac{1}{\sqrt2}(\lvert000\rangle+\lvert111\rangle).$$
+$$
+\lvert\mathrm{GHZ}\rangle=\tfrac{1}{\sqrt2}(\lvert000\rangle+\lvert111\rangle).
+$$
 
 GHZ pokazuje **monogamię** (sekcja 3.9): po odrzuceniu jednego kubita pozostała para jest
 *separowalna*, choć całość ma maksymalne splątanie trójstronne. To odróżnia GHZ od stanu W
@@ -73,7 +77,9 @@ Transpozycja częściowa $\rho^{T_B}$ (transpozycja po indeksach $B$) dla stanu 
 półokreślona dodatnio, bo $(\rho_k^A\otimes\rho_k^B)^{T_B}=\rho_k^A\otimes(\rho_k^B)^T\succeq0$ i suma
 dodatnich składników też jest dodatnia. Zatem
 
-$$\text{separowalny}\ \Rightarrow\ \rho^{T_B}\succeq0,\qquad \rho^{T_B}\not\succeq0\ \Rightarrow\ \text{splątany}.$$
+$$
+\text{separowalny}\ \Rightarrow\ \rho^{T_B}\succeq0,\qquad \rho^{T_B}\not\succeq0\ \Rightarrow\ \text{splątany}.
+$$
 
 Peres (1996) udowodnił, że dla układów $2\times2$ i $2\times3$ jest to kryterium **konieczne i wystarczające**;
 dla większych wymiarów istnieją stany PPT-splątane (bound entangled).
@@ -88,7 +94,9 @@ wartość własna wynosi $+0{,}025$, a dla $p=0{,}7$ wynosi $-0{,}275$.
 Gdy PPT jest zbyt słabe (duże wymiary), używa się **świadków**. Świadek to obserwabla $W$ taka, że
 $\mathrm{Tr}(W\sigma)\ge0$ dla wszystkich separowalnych $\sigma$. Kanoniczny przykład:
 
-$$W=\tfrac12 I-\lvert\Phi^+\rangle\langle\Phi^+\rvert.$$
+$$
+W=\tfrac12 I-\lvert\Phi^+\rangle\langle\Phi^+\rvert.
+$$
 
 Dla stanu Wernera $\mathrm{Tr}(W\rho_W)=\tfrac12-p-\tfrac{1-p}{4}=\tfrac{1-3p}{4}$, więc $W$ „wykrywa”
 splątanie dokładnie dla $p>\frac13$ — zgodnie z PPT. Każdy splątany stan ma świadka (twierdzenie
@@ -103,13 +111,17 @@ $E(a,b)=\int A_a(\lambda)B_b(\lambda)\rho(\lambda)\,d\lambda$.
 
 **Wyprowadzenie nierówności.** Rozważ
 
-$$S(\lambda)=A_a(\lambda)\bigl(B_b(\lambda)-B_{b'}(\lambda)\bigr)+A_{a'}(\lambda)\bigl(B_b(\lambda)+B_{b'}(\lambda)\bigr).$$
+$$
+S(\lambda)=A_a(\lambda)\bigl(B_b(\lambda)-B_{b'}(\lambda)\bigr)+A_{a'}(\lambda)\bigl(B_b(\lambda)+B_{b'}(\lambda)\bigr).
+$$
 
 Dla ustalonego $\lambda$ zachodzi albo $B_b=B_{b'}$ (wtedy pierwszy nawias $=0$, drugi $=\pm2$),
 albo $B_b=-B_{b'}$ (wtedy drugi $=0$, pierwszy $=\pm2$). Ponieważ $\lvert A_a\rvert=\lvert A_{a'}\rvert=1$,
 w obu przypadkach $\lvert S(\lambda)\rvert=2$. Całkując i korzystając z $\lvert\int f\rho\,d\lambda\rvert\le\int\lvert f\rvert\rho\,d\lambda$:
 
-$$\boxed{\ \lvert S\rvert=\bigl\lvert E(a,b)-E(a,b')+E(a',b)+E(a',b')\bigr\rvert\ \le\ 2\ }$$
+$$
+\boxed{\ \lvert S\rvert=\bigl\lvert E(a,b)-E(a,b')+E(a',b)+E(a',b')\bigr\rvert\ \le\ 2\ }
+$$
 
 dla **każdego** modelu LHV (lokalnego realistycznego).
 
@@ -117,16 +129,22 @@ dla **każdego** modelu LHV (lokalnego realistycznego).
 
 Dla stanu singletowego $\lvert\Psi^-\rangle$ i pomiarów w płaszczyźnie pod kątami $\theta_a,\theta_b$:
 
-$$E(a,b)=-\cos(\theta_a-\theta_b),$$
+$$
+E(a,b)=-\cos(\theta_a-\theta_b),
+$$
 
 co wynika z $\langle\Psi^-\rvert(\hat a\cdot\vec\sigma)\otimes(\hat b\cdot\vec\sigma)\lvert\Psi^-\rangle=-\hat a\cdot\hat b$.
 Optymalny zestaw (Tsirelson): $\theta_a=0^\circ$, $\theta_{a'}=90^\circ$, $\theta_b=45^\circ$,
 $\theta_{b'}=135^\circ$:
 
-$$E(a,b)=-\tfrac{\sqrt2}{2},\quad E(a,b')=+\tfrac{\sqrt2}{2},\quad E(a',b)=-\tfrac{\sqrt2}{2},\quad E(a',b')=-\tfrac{\sqrt2}{2},$$
+$$
+E(a,b)=-\tfrac{\sqrt2}{2},\quad E(a,b')=+\tfrac{\sqrt2}{2},\quad E(a',b)=-\tfrac{\sqrt2}{2},\quad E(a',b')=-\tfrac{\sqrt2}{2},
+$$
 
-$$S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2
-\quad\Rightarrow\quad \lvert S\rvert=2\sqrt2\approx2{,}828.$$
+$$
+S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2
+\quad\Rightarrow\quad \lvert S\rvert=2\sqrt2\approx2{,}828.
+$$
 
 To **narusza** ograniczenie $\lvert S\rvert\le2$; maksimum kwantowe $2\sqrt2$ to **granica Tsirelsona**.
 
@@ -146,7 +164,9 @@ je jednocześnie i potwierdzają naruszenia CHSH.
 
 Splątanie jest zasobem **monogamicznym**. Dla stanu trójstronnego $\lvert\psi\rangle_{ABC}$:
 
-$$C(A,B)^2+C(A,C)^2\le C(A,BC)^2,$$
+$$
+C(A,B)^2+C(A,C)^2\le C(A,BC)^2,
+$$
 
 gdzie $C$ to concurrence. Jeśli Alicja jest maksymalnie splątana z Bobem, nie może (tak samo silnie)
 być splątana z Karolem. **Przykład GHZ:** dla $\lvert\mathrm{GHZ}\rangle$ całość $A|BC$ jest maksymalnie
@@ -180,7 +200,9 @@ walczy głównie z utratą splątania.
 
 **Dane.** Stan dwukubitowy
 
-$$\lvert\psi\rangle=\frac{1}{\sqrt3}\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle\big).$$
+$$
+\lvert\psi\rangle=\frac{1}{\sqrt3}\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle\big).
+$$
 
 **Metoda.** Macierz współczynników $M=\frac{1}{\sqrt3}\begin{pmatrix}1&1\\1&0\end{pmatrix}$
 (wiersz = kubit $A$, kolumna = kubit $B$); wykonujemy SVD, wartości szczególne to $\sqrt{\lambda_i}$.
@@ -188,15 +210,21 @@ $$\lvert\psi\rangle=\frac{1}{\sqrt3}\big(\lvert00\rangle+\lvert01\rangle+\lvert1
 **Rachunek.** $MM^\dagger=\frac13\begin{pmatrix}2&1\\1&1\end{pmatrix}$, $\mathrm{Tr}=1$,
 $\det=\frac19$, więc wartości własne
 
-$$\lambda_{1,2}=\frac{1}{2}\Big(1\pm\frac{\sqrt5}{3}\Big)\ \Rightarrow\ \lambda_1\approx0{,}8727,\ \lambda_2\approx0{,}1273.$$
+$$
+\lambda_{1,2}=\frac{1}{2}\Big(1\pm\frac{\sqrt5}{3}\Big)\ \Rightarrow\ \lambda_1\approx0{,}8727,\ \lambda_2\approx0{,}1273.
+$$
 
 Wartości szczególne: $\sqrt{\lambda_1}\approx0{,}9342$, $\sqrt{\lambda_2}\approx0{,}3568$, więc
 
-$$\lvert\psi\rangle\approx0{,}9342\,\lvert u_1\rangle\lvert v_1\rangle+0{,}3568\,\lvert u_2\rangle\lvert v_2\rangle.$$
+$$
+\lvert\psi\rangle\approx0{,}9342\,\lvert u_1\rangle\lvert v_1\rangle+0{,}3568\,\lvert u_2\rangle\lvert v_2\rangle.
+$$
 
 Rząd Schmidta $r=2>1$ $\Rightarrow$ stan **splątany**. Entropia splątania:
 
-$$S=-\lambda_1\log_2\lambda_1-\lambda_2\log_2\lambda_2\approx0{,}550\ \text{bitu}.$$
+$$
+S=-\lambda_1\log_2\lambda_1-\lambda_2\log_2\lambda_2\approx0{,}550\ \text{bitu}.
+$$
 
 **Wynik.** Rząd Schmidta $2$; **$\lambda_{1,2}=\frac12(1\pm\frac{\sqrt5}{3})$**; **entropia splątania
 $\approx0{,}550$ bitu**.
@@ -216,13 +244,19 @@ $S=E(a,b)-E(a,b')+E(a',b)+E(a',b')$.
 
 **Rachunek.** (Wszystkie kąty w stopniach.)
 
-$$E(a,b)=-\cos(-45^\circ)=-\tfrac{\sqrt2}{2},\qquad E(a,b')=-\cos(-135^\circ)=+\tfrac{\sqrt2}{2},$$
+$$
+E(a,b)=-\cos(-45^\circ)=-\tfrac{\sqrt2}{2},\qquad E(a,b')=-\cos(-135^\circ)=+\tfrac{\sqrt2}{2},
+$$
 
-$$E(a',b)=-\cos(45^\circ)=-\tfrac{\sqrt2}{2},\qquad E(a',b')=-\cos(-45^\circ)=-\tfrac{\sqrt2}{2}.$$
+$$
+E(a',b)=-\cos(45^\circ)=-\tfrac{\sqrt2}{2},\qquad E(a',b')=-\cos(-45^\circ)=-\tfrac{\sqrt2}{2}.
+$$
 
 Zatem
 
-$$S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2.$$
+$$
+S=-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}=-2\sqrt2.
+$$
 
 **Wynik.** **$\lvert S\rvert=2\sqrt2\approx2{,}828>2$** — korelacje kwantowe łamią ograniczenie LHV.
 

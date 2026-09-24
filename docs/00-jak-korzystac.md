@@ -73,5 +73,4 @@ wyników. Zgodność z symulacją oznacza, że rachunki z teorii są poprawne.
 ## 7. Źródła i uczciwość
 
 Podawaj źródła, których użyłeś (podręcznik, wykład, artykuł). Nie kopiuj cudzych
-rozwiązań: to podstawa dyskwalifikacji ([Regulamin](https://olimpiadakwantowa.pl/regulamin/),
-Rozdział VII).
+rozwiązań: to podstawa dyskwalifikacji.

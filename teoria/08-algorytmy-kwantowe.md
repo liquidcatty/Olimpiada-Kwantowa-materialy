@@ -47,8 +47,10 @@ $U_f\lvert x\rangle\lvert-\rangle=(-1)^{f(x)}\lvert x\rangle\lvert-\rangle$ (**k
 
 **Rachunek.** Na wejściu $(H\otimes H)\lvert0\rangle\lvert1\rangle=\lvert+\rangle\lvert-\rangle =\frac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)\lvert-\rangle$. Po $U_f$:
 
-$$\frac{1}{\sqrt2}\big((-1)^{f(0)}\lvert0\rangle+(-1)^{f(1)}\lvert1\rangle\big)\lvert-\rangle
-=\pm\begin{cases}\lvert+\rangle\lvert-\rangle, & f\ \text{stała},\\ \lvert-\rangle\lvert-\rangle, & f\ \text{zbalansowana}.\end{cases}$$
+$$
+\frac{1}{\sqrt2}\big((-1)^{f(0)}\lvert0\rangle+(-1)^{f(1)}\lvert1\rangle\big)\lvert-\rangle
+=\pm\begin{cases}\lvert+\rangle\lvert-\rangle, & f\ \text{stała},\\ \lvert-\rangle\lvert-\rangle, & f\ \text{zbalansowana}.\end{cases}
+$$
 
 Po $H$ na pierwszym kubicie: $\lvert+\rangle\to\lvert0\rangle$, $\lvert-\rangle\to\lvert1\rangle$.
 Zatem **zmierzony pierwszy kubit: $0$ $\Rightarrow$ stała, $1$ $\Rightarrow$ zbalansowana**.
@@ -60,13 +62,17 @@ Klasycznie w najgorszym razie $2^{n-1}+1$ zapytań; kwantowo **1**.
 
 **Obwód.** $\lvert0\rangle^{\otimes n}\lvert1\rangle\to(H^{\otimes n}\otimes H)\to U_f\to(H^{\otimes n}\otimes I) \to$ pomiar rejestru $n$ kubitów. Dla $\lvert x\rangle$:
 
-$$U_f\lvert x\rangle\lvert-\rangle=(-1)^{f(x)}\lvert x\rangle\lvert-\rangle.$$
+$$
+U_f\lvert x\rangle\lvert-\rangle=(-1)^{f(x)}\lvert x\rangle\lvert-\rangle.
+$$
 
 Po pierwszej warstwie $H^{\otimes n}$ stan to $\frac{1}{\sqrt N}\sum_x\lvert x\rangle\lvert-\rangle$, $N=2^n$.
 Po $U_f$: $\frac{1}{\sqrt N}\sum_x(-1)^{f(x)}\lvert x\rangle\lvert-\rangle$. Po $H^{\otimes n}$ amplituda
 stanu $\lvert0\rangle^{\otimes n}$ wynosi
 
-$$\frac{1}{N}\sum_x(-1)^{f(x)}=\begin{cases}\pm1, & f\ \text{stała},\\ 0, & f\ \text{zbalansowana}.\end{cases}$$
+$$
+\frac{1}{N}\sum_x(-1)^{f(x)}=\begin{cases}\pm1, & f\ \text{stała},\\ 0, & f\ \text{zbalansowana}.\end{cases}
+$$
 
 **Wynik:** $P(0\dots0)=1$ dla stałej, $0$ dla zbalansowanej — jedno zapytanie rozstrzyga.
 
@@ -90,8 +96,10 @@ $\mathbb{F}_2$ odtwarzamy $s$. Simon to historyczny poprzednik Shora.
 
 Dla $N=2^n$ definiujemy **dyskretną** QFT działającą na indeksie bazy:
 
-$$\mathrm{QFT}\lvert j\rangle=\frac{1}{\sqrt N}\sum_{k=0}^{N-1}e^{2\pi i\,jk/N}\lvert k\rangle
-\quad\Rightarrow\quad (\mathrm{QFT})_{jk}=\frac{1}{\sqrt N}\,\omega^{jk},\ \ \omega=e^{2\pi i/N}.$$
+$$
+\mathrm{QFT}\lvert j\rangle=\frac{1}{\sqrt N}\sum_{k=0}^{N-1}e^{2\pi i\,jk/N}\lvert k\rangle
+\quad\Rightarrow\quad (\mathrm{QFT})_{jk}=\frac{1}{\sqrt N}\,\omega^{jk},\ \ \omega=e^{2\pi i/N}.
+$$
 
 Macierz jest unitarna i symetryczna. **Jawne macierze:**
 
@@ -99,7 +107,9 @@ $n=1$ ($N=2$, $\omega=e^{i\pi}=-1$): $\mathrm{QFT}_1=\frac{1}{\sqrt2}\begin{pmat
 
 $n=2$ ($N=4$, $\omega=i$):
 
-$$\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}.$$
+$$
+\mathrm{QFT}_2=\frac12\begin{pmatrix}1&1&1&1\\1&i&-1&-i\\1&-1&1&-1\\1&-i&-1&i\end{pmatrix}.
+$$
 
 $n=3$ ($N=8$, $\omega=e^{i\pi/4}$): $(\mathrm{QFT}_3)_{jk}=\frac{1}{\sqrt8}\omega^{jk}$, np. pierwszy
 wiersz/kolumna to $\frac{1}{\sqrt8}(1,1,1,1,1,1,1,1)$, a element $(1,1)$ to $\omega=e^{i\pi/4}$.
@@ -139,17 +149,23 @@ kwantowo $O(\sqrt N)$.
 oraz $\lvert\beta\rangle=\lvert x_0\rangle$ (dobry). Stan początkowy $\lvert s\rangle=H^{\otimes n}\lvert0\rangle =\sin\theta\lvert\beta\rangle+\cos\theta\lvert\alpha\rangle$ z $\sin\theta=1/\sqrt N$. Obwód Grovera to
 **dwa odbicia**:
 
-$$G=\underbrace{\big(2\lvert s\rangle\langle s\rvert-I\big)}_{\text{dyfuzja}}\underbrace{O}_{\text{wyrocznia}}.$$
+$$
+G=\underbrace{\big(2\lvert s\rangle\langle s\rvert-I\big)}_{\text{dyfuzja}}\underbrace{O}_{\text{wyrocznia}}.
+$$
 
 Oba odbicia zachowują dwuwymiarową podprzestrzeń $\mathrm{span}\{\lvert\alpha\rangle,\lvert\beta\rangle\}$
 i składają się na **obrót o kąt $2\theta$**. Po $k$ iteracjach
 
-$$\lvert\psi_k\rangle=\sin\big((2k+1)\theta\big)\lvert\beta\rangle+\cos\big((2k+1)\theta\big)\lvert\alpha\rangle
-\quad\Rightarrow\quad P_{\text{sukces}}=\sin^2\big((2k+1)\theta\big).$$
+$$
+\lvert\psi_k\rangle=\sin\big((2k+1)\theta\big)\lvert\beta\rangle+\cos\big((2k+1)\theta\big)\lvert\alpha\rangle
+\quad\Rightarrow\quad P_{\text{sukces}}=\sin^2\big((2k+1)\theta\big).
+$$
 
 **Liczba iteracji.** Maksimum dla $(2k+1)\theta\approx\pi/2$, czyli
 
-$$k_{\text{opt}}\approx\frac{\pi}{4\theta}-\frac12\xrightarrow{\ \theta\approx1/\sqrt N\ }\frac{\pi}{4}\sqrt N.$$
+$$
+k_{\text{opt}}\approx\frac{\pi}{4\theta}-\frac12\xrightarrow{\ \theta\approx1/\sqrt N\ }\frac{\pi}{4}\sqrt N.
+$$
 
 Dla $N=2^n$ błąd rośnie, gdy wykonamy zbyt wiele iteracji (stan przestrzeliwuje rozwiązanie).
 
@@ -224,8 +240,10 @@ $U_f\lvert x\rangle\lvert y\rangle=\lvert x\rangle\lvert y\oplus x\rangle$, czyl
 **Rachunek.** Start $\lvert0\rangle\lvert1\rangle$. Po $H\otimes H$: $\lvert+\rangle\lvert-\rangle$.
 Kick-back: $U_f\lvert x\rangle\lvert-\rangle=(-1)^x\lvert x\rangle\lvert-\rangle$, więc
 
-$$U_f\lvert+\rangle\lvert-\rangle=\tfrac{1}{\sqrt2}\big((-1)^0\lvert0\rangle+(-1)^1\lvert1\rangle\big)\lvert-\rangle
-=\tfrac{1}{\sqrt2}(\lvert0\rangle-\lvert1\rangle)\lvert-\rangle=\lvert-\rangle\lvert-\rangle.$$
+$$
+U_f\lvert+\rangle\lvert-\rangle=\tfrac{1}{\sqrt2}\big((-1)^0\lvert0\rangle+(-1)^1\lvert1\rangle\big)\lvert-\rangle
+=\tfrac{1}{\sqrt2}(\lvert0\rangle-\lvert1\rangle)\lvert-\rangle=\lvert-\rangle\lvert-\rangle.
+$$
 
 Po $H$ na pierwszym kubicie: $H\lvert-\rangle=\lvert1\rangle$.
 
@@ -248,9 +266,11 @@ Po wyroczni: $O\lvert s\rangle=\tfrac12(-1,1,1,1)^\mathsf{T}$.
 Dyfuzja (względem średniej $\bar c=\tfrac{-1+1+1+1}{4}=\tfrac14$): amplitudy zmieniają się na
 $c_i\mapsto 2\bar c-c_i$, czyli
 
-$$D\,O\lvert s\rangle=2\cdot\tfrac14\begin{pmatrix}1\\1\\1\\1\end{pmatrix}-\frac12\begin{pmatrix}-1\\1\\1\\1\end{pmatrix}
+$$
+D\,O\lvert s\rangle=2\cdot\tfrac14\begin{pmatrix}1\\1\\1\\1\end{pmatrix}-\frac12\begin{pmatrix}-1\\1\\1\\1\end{pmatrix}
 =\frac12\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\frac12\begin{pmatrix}1\\-1\\-1\\-1\end{pmatrix}
-=\begin{pmatrix}1\\0\\0\\0\end{pmatrix}.$$
+=\begin{pmatrix}1\\0\\0\\0\end{pmatrix}.
+$$
 
 **Wynik.** Po jednej iteracji $\lvert\psi\rangle=\lvert00\rangle$, więc **$P(\text{sukces})=1$**.
 Zgodność z wzorem: $\sin\theta=1/\sqrt4=1/2\Rightarrow\theta=\pi/6$, a $P=\sin^2(3\theta)=\sin^2(\pi/2)=1$.

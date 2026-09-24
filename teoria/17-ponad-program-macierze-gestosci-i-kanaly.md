@@ -54,19 +54,25 @@ wektor $\lvert\psi\rangle$ opisujący naszą wiedzę: każdy pomiar w bazie $X$ 
 czystego jednoznaczny wynik, a my dostajemy losowo $0$ lub $1$. Zbiór możliwych statystyk opisuje
 **macierz**:
 
-$$\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert1\rangle\langle1\rvert=\tfrac12 I .$$
+$$
+\rho=\tfrac12\lvert0\rangle\langle0\rvert+\tfrac12\lvert1\rangle\langle1\rvert=\tfrac12 I .
+$$
 
 Ta sama macierz pojawia się, gdy bierzemy **ślad częściowy** stanu splątanego — ignorancja i
 splątanie prowadzą do identycznego formalizmu.
 
 ### 3.2 Macierz gęstości: definicja i własności
 
-$$\rho=\sum_k p_k\lvert\psi_k\rangle\langle\psi_k\rvert .$$
+$$
+\rho=\sum_k p_k\lvert\psi_k\rangle\langle\psi_k\rvert .
+$$
 
 Trzy warunki ($\rho^\dagger=\rho$, $\mathrm{Tr}\rho=1$, $\rho\succeq0$) są **konieczne i wystarczające**,
 by $\rho$ opisywał jakiś stan. Wartość oczekiwana obserwabli i prawdopodobieństwo wyniku to
 
-$$\langle A\rangle=\mathrm{Tr}(\rho A),\qquad P(m)=\mathrm{Tr}(P_m\rho),\qquad P_m=\lvert m\rangle\langle m\rvert .$$
+$$
+\langle A\rangle=\mathrm{Tr}(\rho A),\qquad P(m)=\mathrm{Tr}(P_m\rho),\qquad P_m=\lvert m\rangle\langle m\rvert .
+$$
 
 Czystość stanu mierzymy przez $\mathrm{Tr}\,\rho^2$: równa $1$ tylko dla stanu czystego.
 
@@ -74,7 +80,9 @@ Czystość stanu mierzymy przez $\mathrm{Tr}\,\rho^2$: równa $1$ tylko dla stan
 
 Ponieważ $\rho$ jest hermitowska i dodatnia, ma rozkład własny
 
-$$\rho=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,\qquad \lambda_i\ge0,\quad\sum_i\lambda_i=1 .$$
+$$
+\rho=\sum_i\lambda_i\lvert i\rangle\langle i\rvert,\qquad \lambda_i\ge0,\quad\sum_i\lambda_i=1 .
+$$
 
 Ten sam $\rho$ ma **nieskończenie wiele** rozkładów na stany czyste (np. $\tfrac12I$ z dowolnej
 bazy), ale **jedno** widmo — dlatego wszystkie miary oparte na wartościach własnych (entropia,
@@ -82,7 +90,9 @@ purity) są dobrze określone. **Oczyszczenie**: każdy stan mieszany
 $\rho_A=\sum_i\lambda_i\lvert i\rangle\langle i\rvert$ można przedstawić jako ślad częściowy stanu
 czystego
 
-$$\lvert\psi\rangle_{AR}=\sum_i\sqrt{\lambda_i}\,\lvert i\rangle_A\lvert i\rangle_R .$$
+$$
+\lvert\psi\rangle_{AR}=\sum_i\sqrt{\lambda_i}\,\lvert i\rangle_A\lvert i\rangle_R .
+$$
 
 Kluczowy wniosek: **każdy szum można potraktować jako splątanie z otoczeniem**.
 
@@ -90,12 +100,16 @@ Kluczowy wniosek: **każdy szum można potraktować jako splątanie z otoczeniem
 
 Każdą macierz $2\times2$ rozkładamy w bazie $\{I,\sigma_x,\sigma_y,\sigma_z\}$:
 
-$$\rho=\tfrac12\big(I+r_x\sigma_x+r_y\sigma_y+r_z\sigma_z\big),\qquad \vec r\cdot\vec\sigma=\sum_j r_j\sigma_j .$$
+$$
+\rho=\tfrac12\big(I+r_x\sigma_x+r_y\sigma_y+r_z\sigma_z\big),\qquad \vec r\cdot\vec\sigma=\sum_j r_j\sigma_j .
+$$
 
 **Skąd to się bierze:** identyczność $\mathrm{Tr}\,\sigma_j=0$ i $\mathrm{Tr}(\sigma_j\sigma_k)=2\delta_{jk}$
 dają $r_j=\mathrm{Tr}(\rho\sigma_j)$; z tego natychmiast
 
-$$r_x=2\,\mathrm{Re}\,\rho_{01},\qquad r_y=-2\,\mathrm{Im}\,\rho_{01},\qquad r_z=\rho_{00}-\rho_{11}.$$
+$$
+r_x=2\,\mathrm{Re}\,\rho_{01},\qquad r_y=-2\,\mathrm{Im}\,\rho_{01},\qquad r_z=\rho_{00}-\rho_{11}.
+$$
 
 Sprawdzenie dodatniości: $\det\rho=\tfrac14(1-\lvert\vec r\rvert^2)\ge0$, więc $\lvert\vec r\rvert\le1$.
 Stan czysty $\Leftrightarrow\lvert\vec r\rvert=1$ (punkt na sferze Blocha).
@@ -104,14 +118,18 @@ Stan czysty $\Leftrightarrow\lvert\vec r\rvert=1$ (punkt na sferze Blocha).
 
 Dla $\rho_{AB}$ w bazie $\{\lvert i\rangle_A\lvert j\rangle_B\}$ definiujemy
 
-$$(\rho_A)_{ii'}=\sum_j(\rho_{AB})_{ij,i'j}=\mathrm{Tr}_B\,\rho_{AB}.$$
+$$
+(\rho_A)_{ii'}=\sum_j(\rho_{AB})_{ij,i'j}=\mathrm{Tr}_B\,\rho_{AB}.
+$$
 
 **Przykład fundamentalny.** Dla $\lvert\Phi^+\rangle=\tfrac{1}{\sqrt2}(\lvert00\rangle+\lvert11\rangle)$
 macierz $\rho=\lvert\Phi^+\rangle\langle\Phi^+\rvert$ ma niezerowe elementy $(0,0),(0,3),(3,0),(3,3)=1/2$.
 Sumując po indeksie $B$:
 
-$$\rho_A=\begin{pmatrix}\rho_{00,00}+\rho_{01,01}&\rho_{00,10}+\rho_{01,11}\\ \rho_{10,00}+\rho_{11,01}&\rho_{10,10}+\rho_{11,11}\end{pmatrix}
-=\begin{pmatrix}\tfrac12&0\\0&\tfrac12\end{pmatrix}=\tfrac I2 .$$
+$$
+\rho_A=\begin{pmatrix}\rho_{00,00}+\rho_{01,01}&\rho_{00,10}+\rho_{01,11}\\ \rho_{10,00}+\rho_{11,01}&\rho_{10,10}+\rho_{11,11}\end{pmatrix}
+=\begin{pmatrix}\tfrac12&0\\0&\tfrac12\end{pmatrix}=\tfrac I2 .
+$$
 
 Stan czysty dwóch kubitów, po „zapomnieniu” jednego, daje **maksymalnie mieszany** kubit
 ($\mathrm{Tr}\,\rho_A^2=\tfrac12$, $\lvert\vec r\rvert=0$). To ilościowa twarz splątania.
@@ -141,7 +159,9 @@ po rozszerzeniu o dowolny układ pomocniczy) i **zachowująca ślad** (TP — *t
 **Twierdzenie Krausa (operator-sum).** $\mathcal E$ jest CPTP **wtedy i tylko wtedy**, gdy istnieją
 operatory $K_i$ (operatory Krausa) takie, że
 
-$$\mathcal E(\rho)=\sum_i K_i\,\rho\,K_i^\dagger,\qquad \sum_i K_i^\dagger K_i=I .$$
+$$
+\mathcal E(\rho)=\sum_i K_i\,\rho\,K_i^\dagger,\qquad \sum_i K_i^\dagger K_i=I .
+$$
 
 Warunek unitalności ($\sum_iK_iK_i^\dagger=I$) zachodzi np. dla kanału unitarnego i
 depolaryzującego; dla tłumienia amplitudowego **nie** zachodzi. Liczba operatorów Krausa zależy od
@@ -165,13 +185,17 @@ amplitudowego $K_0^\dagger K_0+K_1^\dagger K_1=\mathrm{diag}(1,1-\gamma)+\mathrm
 Złożenie dwóch kanałów $\mathcal E=\mathcal E_2\circ\mathcal E_1$ to złożenie ich operatorów Krausa
 indeksowane parami; dla kanałów „o jednym parametrze” często dostajemy kanał tego samego typu:
 
-$$D_{p_1}\circ D_{p_2}=D_{p},\qquad (1-p)=(1-p_1)(1-p_2).$$
+$$
+D_{p_1}\circ D_{p_2}=D_{p},\qquad (1-p)=(1-p_1)(1-p_2).
+$$
 
 Dla tłumienia amplitudowego $(1-\gamma)=(1-\gamma_1)(1-\gamma_2)$ — to sedno wykładniczego zaniku
 $T_1$. Alternatywny opis to **macierz $\chi$**: rozwijamy $\rho$ i $\mathcal E(\rho)$ w bazie
 Pauliowskiej $\{P_0,\dots,P_3\}=\{I,X,Y,Z\}$ i piszemy
 
-$$\mathcal E(\rho)=\sum_{m,n=0}^{3}\chi_{mn}\,P_m\,\rho\,P_n .$$
+$$
+\mathcal E(\rho)=\sum_{m,n=0}^{3}\chi_{mn}\,P_m\,\rho\,P_n .
+$$
 
 np. bit-flip o prawdopodobieństwie $p$ ma $\chi=\mathrm{diag}(1-p,\ p,\ 0,\ 0)$.
 
@@ -184,8 +208,10 @@ widzialność korelacji — w rozdziale 18 policzymy z tego spadek $S$ w nierów
 
 Dwie metryki odległości między stanami:
 
-$$D(\rho,\sigma)=\tfrac12\mathrm{Tr}\lvert\rho-\sigma\rvert,\qquad
-F(\rho,\sigma)=\Big(\mathrm{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\Big)^2 .$$
+$$
+D(\rho,\sigma)=\tfrac12\mathrm{Tr}\lvert\rho-\sigma\rvert,\qquad
+F(\rho,\sigma)=\Big(\mathrm{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\Big)^2 .
+$$
 
 $D=0\Leftrightarrow\rho=\sigma$, $D=1$ dla stanów ortogonalnych (nośniki rozłączne). **Nierówność
 Fuchsa–van de Graafa** $1-\sqrt F\le D\le\sqrt{1-F}$ wiąże obie miary: znajomość jednej daje
@@ -224,9 +250,11 @@ $(1-p)=(1-p_1)(1-p_2)$.
 
 **Rachunek.** (a) $K_0=\mathrm{diag}(1,\sqrt{0{,}7})$, $K_1=\lvert0\rangle\langle1\rvert\sqrt{0{,}3}$:
 
-$$K_0\lvert1\rangle\langle1\rvert K_0^\dagger+K_1\lvert1\rangle\langle1\rvert K_1^\dagger
+$$
+K_0\lvert1\rangle\langle1\rvert K_0^\dagger+K_1\lvert1\rangle\langle1\rvert K_1^\dagger
 =\mathrm{diag}(0{,}3;\ 0{,}7),\qquad
-\mathcal E(\lvert+\rangle\langle+\rvert)=\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}.$$
+\mathcal E(\lvert+\rangle\langle+\rvert)=\begin{pmatrix}0{,}65&0{,}4183\\0{,}4183&0{,}35\end{pmatrix}.
+$$
 
 Populacja $\lvert1\rangle$ spadła $1\to0{,}7$ (ubyło $0{,}3$), koherencja $\tfrac12\to0{,}4183$.
 (b) $(0{,}7)\lvert0\rangle\langle0\rvert+0{,}3\cdot\tfrac I2=\mathrm{diag}(0{,}85;0{,}15)$;

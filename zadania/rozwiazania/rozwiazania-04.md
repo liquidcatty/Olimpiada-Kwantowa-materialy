@@ -26,12 +26,16 @@ Gaussa — tam „gęstość” przestaje rosnąć i maleć.
 
 **(a)** Przez części z $u=x$, $dv=e^{-x}dx$ (więc $du=dx$, $v=-e^{-x}$):
 
-$$\int_0^\infty xe^{-x}dx=\bigl[-xe^{-x}\bigr]_0^\infty+\int_0^\infty e^{-x}dx
-=0+1=1.$$
+$$
+\int_0^\infty xe^{-x}dx=\bigl[-xe^{-x}\bigr]_0^\infty+\int_0^\infty e^{-x}dx
+=0+1=1.
+$$
 
 **(b)** Podstawiając $u=-x^2$, $du=-2x\,dx$:
 
-$$\int xe^{-x^2}dx=-\tfrac12\int e^{u}du=-\tfrac12e^{-x^2}+C.$$
+$$
+\int xe^{-x^2}dx=-\tfrac12\int e^{u}du=-\tfrac12e^{-x^2}+C.
+$$
 
 **(c)** $\int_0^\infty e^{-2x}dx=\bigl[-\tfrac12e^{-2x}\bigr]_0^\infty=\tfrac12$.
 
@@ -44,18 +48,20 @@ opisują np. średni czas życia stanu wzbudzonego.
 
 **(a)** $(1+x)^{1/2}=1+\tfrac12x-\tfrac18x^2+\dots$ Dla $x=0{,}04$:
 
-$$\sqrt{1{,}04}\approx1+0{,}02-\tfrac18(0{,}0016)=1+0{,}02-0{,}0002=1{,}0198.$$
+$$
+\sqrt{1{,}04}\approx1+0{,}02-\tfrac18(0{,}0016)=1+0{,}02-0{,}0002=1{,}0198.
+$$
 
 Wartość dokładna $1{,}019804$ — zgadza się do $\approx4\cdot10^{-6}$.
 
-**(b)** $e^{i\theta}=\cos\theta+i\sin\theta$, więc $\operatorname{Re}= \cos\theta$,
-$\operatorname{Im}=\sin\theta$; moduł $\lvert e^{i\theta}\rvert=1$.
+**(b)** $e^{i\theta}=\cos\theta+i\sin\theta$, więc $\mathrm{Re}= \cos\theta$,
+$\mathrm{Im}=\sin\theta$; moduł $\lvert e^{i\theta}\rvert=1$.
 
 **(c)** Błąd $\cos\theta-(1-\tfrac{\theta^2}{2})\approx\frac{\theta^4}{24}$. Dla
 $\theta=0{,}2$: $\frac{0{,}0016}{24}\approx6{,}7\cdot10^{-5}$.
 
-**Odpowiedź:** **(a)** $\approx1{,}0198$; **(b)** $\operatorname{Re}=\cos\theta$,
-$\operatorname{Im}=\sin\theta$; **(c)** $\approx6{,}7\cdot10^{-5}$.
+**Odpowiedź:** **(a)** $\approx1{,}0198$; **(b)** $\mathrm{Re}=\cos\theta$,
+$\mathrm{Im}=\sin\theta$; **(c)** $\approx6{,}7\cdot10^{-5}$.
 
 *Interpretacja:* przybliżenie małokątowe $\cos\theta\approx1-\theta^2/2$ jest znakomite
 do $\theta\approx0{,}3$ rad; dalej trzeba brać więcej wyrazów.
@@ -98,14 +104,18 @@ harmonicznego); to cecha odróżniająca go od wahadła matematycznego przy duż
 **(a)** Dla fali prostokątnej nieparzystej (wartość $+1$ na połowie okresu, $-1$
 na drugiej) współczynniki cosinusowe znikają, a
 
-$$b_n=\frac{4}{n\pi}\quad(n=1,3,5,\dots).$$
+$$
+b_n=\frac{4}{n\pi}\quad(n=1,3,5,\dots).
+$$
 
 Wartości $b_1\approx1{,}273$, $b_3\approx0{,}424$, $b_5\approx0{,}255$.
 
 **(b)** Średni kwadrat fali wynosi $\frac1T\int f^2dt=1$. Z Parsevala
 
-$$\frac1T\int f^2dt=\sum_{n\ \text{nieparzyste}}\frac{b_n^2}{2}
-=\sum_{n\ \text{nieparzyste}}\frac{8}{n^2\pi^2}=\frac{8}{\pi^2}\cdot\frac{\pi^2}{8}=1.$$
+$$
+\frac1T\int f^2dt=\sum_{n\ \text{nieparzyste}}\frac{b_n^2}{2}
+=\sum_{n\ \text{nieparzyste}}\frac{8}{n^2\pi^2}=\frac{8}{\pi^2}\cdot\frac{\pi^2}{8}=1.
+$$
 
 Zgadza się (korzystamy z $\sum_{n\ \text{nieparzyste}}1/n^2=\pi^2/8$).
 
@@ -141,13 +151,17 @@ klasyczna” paczka kwantowa, jaką można przygotować.
 
 **(a)** Dla swobodnej paczki gaussowskiej o początkowym odchyleniu $\sigma_0$:
 
-$$\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.$$
+$$
+\sigma(t)=\sigma_0\sqrt{1+\Bigl(\frac{\hbar t}{2m\sigma_0^2}\Bigr)^2}.
+$$
 
 **(b)** Dla elektronu $m=m_e=9{,}109\cdot10^{-31}$ kg, $\sigma_0=10^{-9}$ m,
 $t=10^{-12}$ s:
 
-$$\frac{\hbar t}{2m\sigma_0^2}=\frac{1{,}0546\cdot10^{-34}\cdot10^{-12}}
-{2\cdot9{,}109\cdot10^{-31}\cdot10^{-18}}\approx57{,}892,$$
+$$
+\frac{\hbar t}{2m\sigma_0^2}=\frac{1{,}0546\cdot10^{-34}\cdot10^{-12}}
+{2\cdot9{,}109\cdot10^{-31}\cdot10^{-18}}\approx57{,}892,
+$$
 
 skąd $\sigma\approx10^{-9}\cdot57{,}892\approx5{,}79\cdot10^{-8}$ m $=57{,}9$ nm.
 

@@ -56,7 +56,7 @@ Dla każdego zadania z Etapu I odpowiedz pisemnie na 5 pytań:
 - Nie oddawaj pracy, której nie rozumiesz.
 - Nie korzystaj z pomocy osób trzecich w trakcie rozmowy.
 - Nie udostępniaj swoich rozwiązań innym przed zakończeniem etapu — to może
-  naruszać Regulamin (Rozdział VII: uczciwość i bezpieczeństwo).
+  naruszać zasady uczciwości i bezpieczeństwa.
 
 ## 6. Dwanaście pytań kontrolnych
 

@@ -13,8 +13,8 @@ P1 (cząstka w studni potencjału) i P2 (polaryzatory i pojedynczy foton).
 ## 2. Najważniejsze definicje
 
 - **Jednostka urojona** $i$: liczba spełniająca $i^2=-1$.
-- **Liczba zespolona**: $z=a+bi$, gdzie $a,b\in\mathbb{R}$. $a=\operatorname{Re}z$
-  (część rzeczywista), $b=\operatorname{Im}z$ (część urojona).
+- **Liczba zespolona**: $z=a+bi$, gdzie $a,b\in\mathbb{R}$. $a=\mathrm{Re}z$
+  (część rzeczywista), $b=\mathrm{Im}z$ (część urojona).
 - **Sprzężenie** (*complex conjugate*): $z^*=a-bi$. W kodzie `z.conjugate()`.
 - **Moduł** (*modulus*): $\lvert z\rvert=\sqrt{a^2+b^2}=\sqrt{z^*z}$.
 - **Postać biegunowa**: $z=\lvert z\rvert(\cos\varphi+i\sin\varphi)=\lvert z\rvert e^{i\varphi}$,
@@ -33,16 +33,22 @@ P1 (cząstka w studni potencjału) i P2 (polaryzatory i pojedynczy foton).
 Liczby zespolone dodajemy i mnożemy tak jak wielomiany zmiennej $i$, stosując
 tylko regułę $i^2=-1$:
 
-$$(a+bi)+(c+di)=(a+c)+(b+d)i,$$
+$$
+(a+bi)+(c+di)=(a+c)+(b+d)i,
+$$
 
-$$(a+bi)(c+di)=(ac-bd)+(ad+bc)i.$$
+$$
+(a+bi)(c+di)=(ac-bd)+(ad+bc)i.
+$$
 
 Ostatni wzór bierze się z rozdzielności: $ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i$.
 
 **Dzielenie** sprowadzamy do mnożenia przez sprzężenie mianownika:
 
-$$\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{c^2+d^2}
-=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\,i.$$
+$$
+\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{c^2+d^2}
+=\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}\,i.
+$$
 
 Mnożymy licznik i mianownik przez $c-di$, bo $c^2+d^2$ jest rzeczywiste — to ta sama
 sztuczka, co „usuwanie niewymierności” z mianownika.
@@ -51,10 +57,14 @@ sztuczka, co „usuwanie niewymierności” z mianownika.
 
 Zachodzą następujące tożsamości (wynikają bezpośrednio z definicji):
 
-$$z+z^*=2a,\qquad z-z^*=2bi,\qquad zz^*=\lvert z\rvert^2,$$
+$$
+z+z^*=2a,\qquad z-z^*=2bi,\qquad zz^*=\lvert z\rvert^2,
+$$
 
-$$(z_1z_2)^*=z_1^*z_2^*,\qquad (z_1+z_2)^*=z_1^*+z_2^*,\qquad
-\left\lvert z_1z_2\right\rvert=\lvert z_1\rvert\lvert z_2\rvert.$$
+$$
+(z_1z_2)^*=z_1^*z_2^*,\qquad (z_1+z_2)^*=z_1^*+z_2^*,\qquad
+\left\lvert z_1z_2\right\rvert=\lvert z_1\rvert\lvert z_2\rvert.
+$$
 
 Sprzężenie „odbija” liczbę względem osi rzeczywistej, a moduł to jej odległość od zera.
 
@@ -67,12 +77,16 @@ Wzór Eulera $e^{i\varphi}=\cos\varphi+i\sin\varphi$ łączy oba opisy.
 
 Szczególne przypadki:
 
-$$e^{i0}=1,\qquad e^{i\pi/2}=i,\qquad e^{i\pi}=-1,\qquad e^{i3\pi/2}=-i.$$
+$$
+e^{i0}=1,\qquad e^{i\pi/2}=i,\qquad e^{i\pi}=-1,\qquad e^{i3\pi/2}=-i.
+$$
 
 Równość $e^{i\pi}+1=0$ (tożsamość Eulera) wiąże pięć podstawowych stałych. Mnożenie
 w postaci biegunowej: **moduły się mnożą, a fazy dodają**,
 
-$$z_1z_2=\lvert z_1\rvert\lvert z_2\rvert\,e^{i(\varphi_1+\varphi_2)}.$$
+$$
+z_1z_2=\lvert z_1\rvert\lvert z_2\rvert\,e^{i(\varphi_1+\varphi_2)}.
+$$
 
 W szczególności $e^{i\alpha}e^{i\beta}=e^{i(\alpha+\beta)}$ — to źródło wszystkich
 zjawisk interferencyjnych.
@@ -82,7 +96,9 @@ zjawisk interferencyjnych.
 Podnosząc $e^{i\varphi}=\cos\varphi+i\sin\varphi$ do potęgi $n$ i porównując obie
 strony, dostajemy **wzór de Moivre'a**:
 
-$$\bigl(\cos\varphi+i\sin\varphi\bigr)^n=\cos(n\varphi)+i\sin(n\varphi).$$
+$$
+\bigl(\cos\varphi+i\sin\varphi\bigr)^n=\cos(n\varphi)+i\sin(n\varphi).
+$$
 
 Wygodniej używać go w wersji $(e^{i\varphi})^n=e^{in\varphi}$: potęgowanie liczby
 zespolonej to potęgowanie modułu i **mnożenie kąta przez $n$**. Dlatego np.
@@ -93,7 +109,9 @@ $(1+i)^8$ liczymy w jednym kroku, bez ośmiokrotnego mnożenia nawiasów.
 Pierwiastkiem $n$-tego stopnia z $z=\lvert z\rvert e^{i\varphi}$ jest każda z $n$
 liczb
 
-$$w_k=\lvert z\rvert^{1/n}\exp\!\left(i\,\frac{\varphi+2\pi k}{n}\right),\qquad k=0,1,\dots,n-1.$$
+$$
+w_k=\lvert z\rvert^{1/n}\exp\!\left(i\,\frac{\varphi+2\pi k}{n}\right),\qquad k=0,1,\dots,n-1.
+$$
 
 Kąt $\varphi$ jest określony tylko modulo $2\pi$, więc ten sam $z$ ma $n$ różnych
 pierwiastków, leżących na okręgu o promieniu $\lvert z\rvert^{1/n}$, w wierzchołkach
@@ -114,7 +132,9 @@ niewiadome $a,b$) **albo** przechodzimy do postaci biegunowej, gdy równanie jes
 
 Dla modułu zachodzi **nierówność trójkąta**:
 
-$$\bigl\lvert z_1+z_2\bigr\rvert\le \lvert z_1\rvert+\lvert z_2\rvert,$$
+$$
+\bigl\lvert z_1+z_2\bigr\rvert\le \lvert z_1\rvert+\lvert z_2\rvert,
+$$
 
 z równością wtedy i tylko wtedy, gdy $z_1$ i $z_2$ mają ten sam argument (są
 „współliniowe” na płaszczyźnie). Interpretacja geometryczna: najkrótsza droga z $0$
@@ -129,8 +149,10 @@ $\lvert c_1\rvert+\lvert c_2\rvert$ — to właśnie wzmocnienie i wygaszanie.
 
 Stan kubitu zapisujemy jako superpozycję bazy:
 
-$$\lvert\psi\rangle=c_0\lvert 0\rangle+c_1\lvert 1\rangle,\qquad
-c_0,c_1\in\mathbb{C},\qquad \lvert c_0\rvert^2+\lvert c_1\rvert^2=1.$$
+$$
+\lvert\psi\rangle=c_0\lvert 0\rangle+c_1\lvert 1\rangle,\qquad
+c_0,c_1\in\mathbb{C},\qquad \lvert c_0\rvert^2+\lvert c_1\rvert^2=1.
+$$
 
 **Warunek normalizacji** gwarantuje, że prawdopodobieństwa sumują się do jedynki.
 Sprzężenie $c^*$ pojawia się tam, gdzie „wracamy” od amplitudy do prawdopodobieństwa
@@ -155,10 +177,12 @@ z prawdopodobieństwem $\lvert c_k\rvert^2$.
 
 Wektory stanu i operatory na $\mathbb{C}^2$ zapisujemy jako kolumny i macierze:
 
-$$\lvert 0\rangle=\begin{pmatrix}1\\0\end{pmatrix},\quad
+$$
+\lvert 0\rangle=\begin{pmatrix}1\\0\end{pmatrix},\quad
 \lvert 1\rangle=\begin{pmatrix}0\\1\end{pmatrix},\quad
 \lvert\psi\rangle=\begin{pmatrix}c_0\\c_1\end{pmatrix},\quad
-\langle\psi\rvert=(c_0^*\;\;c_1^*).$$
+\langle\psi\rvert=(c_0^*\;\;c_1^*).
+$$
 
 **Iloczyn skalarny** dwóch stanów to $\langle\phi\rvert\psi\rangle=\sum_k\phi_k^*\psi_k$ —
 liczba zespolona. **Norma** $\lVert\psi\rVert=\sqrt{\langle\psi\rvert\psi\rangle}$.
@@ -197,10 +221,14 @@ argument z $\tan\varphi=b/a$ z uwzględnieniem ćwiartki.
 
 **Rachunek:**
 
-$$z_1z_2=(3+4i)(1-2i)=3-6i+4i-8i^2=3-2i+8=11-2i.$$
+$$
+z_1z_2=(3+4i)(1-2i)=3-6i+4i-8i^2=3-2i+8=11-2i.
+$$
 
-$$\lvert z_1\rvert=\sqrt{3^2+4^2}=\sqrt{25}=5,\qquad
-\lvert z_1z_2\rvert=\lvert 11-2i\rvert=\sqrt{121+4}=\sqrt{125}\approx11{,}2.$$
+$$
+\lvert z_1\rvert=\sqrt{3^2+4^2}=\sqrt{25}=5,\qquad
+\lvert z_1z_2\rvert=\lvert 11-2i\rvert=\sqrt{121+4}=\sqrt{125}\approx11{,}2.
+$$
 
 Sprawdzamy zgodność: $\lvert z_1\rvert\lvert z_2\rvert=5\cdot\sqrt{5}=5\sqrt5=\sqrt{125}$ ✓
 (argument: $z_1$ w I ćwiartce, $\varphi_1=\arctan(4/3)\approx53{,}1^\circ$).
@@ -217,8 +245,10 @@ Sprawdzamy zgodność: $\lvert z_1\rvert\lvert z_2\rvert=5\cdot\sqrt{5}=5\sqrt5=
 **(a) Pierwiastki.** Zapisujemy $-1=e^{i\pi}=e^{i(\pi+2\pi k)}$, więc
 $z=\exp\!\bigl(i\frac{\pi+2\pi k}{4}\bigr)$ dla $k=0,1,2,3$:
 
-$$z_k=\exp\!\left(i\left(\tfrac{\pi}{4}+\tfrac{k\pi}{2}\right)\right)
-=\tfrac{1}{\sqrt2}(\pm1\pm i).$$
+$$
+z_k=\exp\!\left(i\left(\tfrac{\pi}{4}+\tfrac{k\pi}{2}\right)\right)
+=\tfrac{1}{\sqrt2}(\pm1\pm i).
+$$
 
 Wartości: $z_0=\tfrac{1+i}{\sqrt2}$, $z_1=\tfrac{-1+i}{\sqrt2}$,
 $z_2=\tfrac{-1-i}{\sqrt2}$, $z_3=\tfrac{1-i}{\sqrt2}$
@@ -227,18 +257,22 @@ $z_2=\tfrac{-1-i}{\sqrt2}$, $z_3=\tfrac{1-i}{\sqrt2}$
 **(b) Normalizacja i fazy.** Liczymy $\lvert 1+i\rvert^2=2$, $\lvert 1-i\rvert^2=2$, razem $4$.
 Stan znormalizowany:
 
-$$\lvert\psi\rangle=\tfrac{1+i}{2}\lvert 0\rangle+\tfrac{1-i}{2}\lvert 1\rangle.$$
+$$
+\lvert\psi\rangle=\tfrac{1+i}{2}\lvert 0\rangle+\tfrac{1-i}{2}\lvert 1\rangle.
+$$
 
 Prawdopodobieństwa: $P(0)=\lvert(1+i)/2\rvert^2=1/2$, $P(1)=1/2$. Faza względna
 
-$$\frac{c_1}{c_0}=\frac{1-i}{1+i}=\frac{(1-i)^2}{(1+i)(1-i)}=\frac{-2i}{2}=-i=e^{-i\pi/2}.$$
+$$
+\frac{c_1}{c_0}=\frac{1-i}{1+i}=\frac{(1-i)^2}{(1+i)(1-i)}=\frac{-2i}{2}=-i=e^{-i\pi/2}.
+$$
 
 **Wynik:** pierwiastki $z_k=\tfrac{1}{\sqrt2}(\pm1\pm i)$; stan
 $\tfrac{1+i}{2}\lvert0\rangle+\tfrac{1-i}{2}\lvert1\rangle$ z fazą względną $-i=e^{-i\pi/2}$.
 
 **Interpretacja:** pomiar w bazie $\{\lvert0\rangle,\lvert1\rangle\}$ da wynik losowy
 $1/2$–$1/2$, niezależnie od fazy; tę fazę ujawni dopiero pomiar w innej bazie (np.
-$\lvert\pm\rangle$), bo tam wchodzi $1\pm 2\operatorname{Re}$ członu interferencyjnego.
+$\lvert\pm\rangle$), bo tam wchodzi $1\pm 2\mathrm{Re}$ członu interferencyjnego.
 
 ### Przykład 3 (trudniejszy): równanie $z^2=3-4i$ i nierówność trójkąta
 
@@ -250,7 +284,9 @@ przy oszacowaniu — nierówność trójkąta.
 
 **Rachunek:** $(a+bi)^2=(a^2-b^2)+2ab\,i=3-4i$, więc
 
-$$a^2-b^2=3,\qquad 2ab=-4\ \Rightarrow\ ab=-2.$$
+$$
+a^2-b^2=3,\qquad 2ab=-4\ \Rightarrow\ ab=-2.
+$$
 
 Z drugiego $b=-2/a$; po podstawieniu $a^2-4/a^2=3$, czyli $(a^2-4)(a^2+1)=0$.
 Rzeczywiste $a^2=4\Rightarrow a=\pm2$, $b=\mp1$. Zatem $z=\pm(2-i)$
@@ -327,7 +363,7 @@ zerem. (b) Ile wynosi ich iloczyn? (c) Potwierdź wynik dla $n=5$ numerycznie w 
 - **Z-01.6.** Policz $\lvert2+i\rvert^2+\lvert1-2i\rvert^2$; do fazy użyj
   $\frac{c_1}{c_0}=\frac{(1-2i)(2-i)}{(2+i)(2-i)}$.
 - **Z-01.7.** (a) policz $U^\dagger U$; (b) skorzystaj ze śladu i wyznacznika
-  ($\det U=1$, $\operatorname{Tr}U=\sqrt2$); (c) podstaw $\lvert\pm\rangle$.
+  ($\det U=1$, $\mathrm{Tr}U=\sqrt2$); (c) podstaw $\lvert\pm\rangle$.
 - **Z-01.8.** [★] Ze wzoru na sumę ciągu geometrycznego dla $\omega\ne1$;
   iloczyn — z twierdzenia Viète'a dla $z^n-1=0$.
 
@@ -341,6 +377,5 @@ Malusa (zadanie P2) i przy superpozycjach stanów stacjonarnych (zadanie P1).
 Rozwiązania zadań są w [rozwiazania-01.md](../zadania/rozwiazania/rozwiazania-01.md),
 a zadania łączące rozdziały 01–05 to [PD-1](../praca-domowa/praca-domowa-01.md).
 
-**Bibliografia.** Zasady i notacja: [konwencje](../docs/03-konwencje-i-notacja.md);
-zakres i terminy: [zakres materiału](../docs/02-zakres-materialu.md). Pozycje
-książkowe — wykaz literatury w `docs/bibliografia.md`.
+**Bibliografia.** Zasady i notacja: [konwencje](../docs/03-konwencje-i-notacja.md).
+Pozycje książkowe — wykaz literatury w `docs/bibliografia.md`.

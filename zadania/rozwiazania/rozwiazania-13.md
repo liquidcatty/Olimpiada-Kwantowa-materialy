@@ -33,14 +33,18 @@ zapisać jednym parametrem $p_d=\frac{4p}{3}$ jako $\mathcal{E}(\rho)=(1-p_d)\rh
 
 (b) Dla stanu czystego $\langle X\rangle^2+\langle Y\rangle^2+\langle Z\rangle^2=1$, więc
 
-$$F=\langle\psi\rvert\mathcal{E}(\lvert\psi\rangle\langle\psi\rvert)\lvert\psi\rangle
-=(1-p)+\frac p3=\left(1-\frac{4p}{3}\right)+\frac{4p}{3}\cdot\frac12=1-\frac{2p}{3}=1-\frac{p_d}{2}.$$
+$$
+F=\langle\psi\rvert\mathcal{E}(\lvert\psi\rangle\langle\psi\rvert)\lvert\psi\rangle
+=(1-p)+\frac p3=\left(1-\frac{4p}{3}\right)+\frac{4p}{3}\cdot\frac12=1-\frac{2p}{3}=1-\frac{p_d}{2}.
+$$
 
 Dla $p=0{,}05$: $F=1-0{,}0333=\mathbf{0{,}9667}$ (i $p_d=0{,}0667$, $1-p_d/2=0{,}9667$ ✓).
 
 (c) Kolejne kanały mnożą wierność: $F^n=(0{,}9667)^n$. Warunek $0{,}9667^n<0{,}9$:
 
-$$n>\frac{\ln0{,}9}{\ln0{,}9667}=\frac{-0{,}1054}{-0{,}0339}=3{,}11\ \Rightarrow\ n=4 .$$
+$$
+n>\frac{\ln0{,}9}{\ln0{,}9667}=\frac{-0{,}1054}{-0{,}0339}=3{,}11\ \Rightarrow\ n=4 .
+$$
 
 **Odpowiedź:** (a) jak wyżej; (b) $F=\mathbf{0{,}9667}$ (zgodne z $1-p_d/2$);
 (c) po $\mathbf{4}$ kanałach ($0{,}9667^3=0{,}903$, $0{,}9667^4=0{,}873$).
@@ -60,8 +64,10 @@ $0{,}1/0{,}028=3{,}57\times$.
 
 (c) Kod przestaje pomagać, gdy $P_{\rm fail}=p$:
 
-$$3p^2-2p^3=p\ \Rightarrow\ 2p^2-3p+1=0\ \Rightarrow\ (2p-1)(p-1)=0
-\ \Rightarrow\ p=\tfrac12\ \text{lub}\ p=1 .$$
+$$
+3p^2-2p^3=p\ \Rightarrow\ 2p^2-3p+1=0\ \Rightarrow\ (2p-1)(p-1)=0
+\ \Rightarrow\ p=\tfrac12\ \text{lub}\ p=1 .
+$$
 
 Poniżej $p=\frac12$ kod zawsze zmniejsza prawdopodobieństwo błędu.
 
@@ -75,8 +81,10 @@ dlatego wszystkie praktyczne kody wymagają błędu fizycznego znacznie poniżej
 
 (a) Generatory kodu Steane'a (kubity $q_1$–$q_7$), każdy o wadze $4$:
 
-$$X_4X_5X_6X_7,\quad X_2X_3X_6X_7,\quad X_1X_3X_5X_7,\quad
-Z_4Z_5Z_6Z_7,\quad Z_2Z_3Z_6Z_7,\quad Z_1Z_3Z_5Z_7 .$$
+$$
+X_4X_5X_6X_7,\quad X_2X_3X_6X_7,\quad X_1X_3X_5X_7,\quad
+Z_4Z_5Z_6Z_7,\quad Z_2Z_3Z_6Z_7,\quad Z_1Z_3Z_5Z_7 .
+$$
 
 Komutują, bo każde dwa mają **parzystą** liczbę wspólnych kubitów ($0,2$ lub $4$).
 
@@ -108,7 +116,9 @@ pomiarowe są już wliczone w $2d^2-1$).
 
 (c) Każdy krok $d\to d+2$ zmniejsza $p_L$ o czynnik $\Lambda=2{,}14$. Potrzebujemy
 
-$$\Lambda^{k}=\frac{0{,}00143}{10^{-6}}=1430\ \Rightarrow\ k=\frac{\ln1430}{\ln2{,}14}=9{,}55,$$
+$$
+\Lambda^{k}=\frac{0{,}00143}{10^{-6}}=1430\ \Rightarrow\ k=\frac{\ln1430}{\ln2{,}14}=9{,}55,
+$$
 
 czyli $d\approx7+2\cdot9{,}55=26{,}1$ — bierzemy najbliższy nieparzysty dystans $\mathbf{d=27}$
 ($1457$ kubitów fizycznych na kubit logiczny).
@@ -124,8 +134,10 @@ między rozmiarem a dokładnością i ogromne liczby kubitów potrzebne do prakt
 
 (a) Dopasowanie prostej $E(\lambda)=E(0)+a\lambda$ do $(1;0{,}90)$, $(2;0{,}79)$, $(3;0{,}68)$:
 
-$$a=\frac{E(3)-E(1)}{3-1}=\frac{0{,}68-0{,}90}{2}=-0{,}11,\qquad
-E(0)=E(1)-a=0{,}90+0{,}11=1{,}01 .$$
+$$
+a=\frac{E(3)-E(1)}{3-1}=\frac{0{,}68-0{,}90}{2}=-0{,}11,\qquad
+E(0)=E(1)-a=0{,}90+0{,}11=1{,}01 .
+$$
 
 Wynik $E(0)=1{,}01>1$ jest **niemożliwy** dla wartości oczekiwanej operatora o widmie $[-1,1]$,
 co sygnalizuje, że model liniowy jest zbyt prosty (albo dane mają fluktuacje) — w praktyce

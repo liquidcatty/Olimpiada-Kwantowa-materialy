@@ -4,13 +4,17 @@
 
 (a) Dla $\varphi=\pi/2$ mamy $\varphi/2=\pi/4$, więc z (11.1):
 
-$$p(+)=\cos^2\frac{\pi}{4}=\left(\frac{\sqrt2}{2}\right)^2=\frac12,\qquad p(-)=\sin^2\frac{\pi}{4}=\frac12 .$$
+$$
+p(+)=\cos^2\frac{\pi}{4}=\left(\frac{\sqrt2}{2}\right)^2=\frac12,\qquad p(-)=\sin^2\frac{\pi}{4}=\frac12 .
+$$
 
 Suma $=\frac12+\frac12=1$ ✓ (rozkład jednostajny — maksymalna informacja o fazie).
 
 (b) $\partial_\varphi p_\pm=\mp\frac12\sin\varphi=\mp\frac12$ dla $\varphi=\pi/2$, więc
 
-$$F=\frac{(1/2)^2}{1/2}+\frac{(1/2)^2}{1/2}=\frac12+\frac12=1 .$$
+$$
+F=\frac{(1/2)^2}{1/2}+\frac{(1/2)^2}{1/2}=\frac12+\frac12=1 .
+$$
 
 Nierówność Craméra–Rao: $\Delta\varphi\ge\frac{1}{\sqrt{\nu F}}=\frac{1}{\sqrt{100}}=\mathbf{0{,}1}$ **rad**.
 
@@ -80,7 +84,9 @@ $0{,}0707/0{,}00513=13{,}8$ (zamiast $14{,}1$).
 
 (c) Zysk $\sqrt2$ oznacza $F_Q=2N$:
 
-$$pN^2+(1-p)N=2N\ \Rightarrow\ pN^2-pN=N\ \Rightarrow\ p=\frac{1}{N-1}=\frac{1}{199}=\mathbf{5{,}03\cdot10^{-3}}.$$
+$$
+pN^2+(1-p)N=2N\ \Rightarrow\ pN^2-pN=N\ \Rightarrow\ p=\frac{1}{N-1}=\frac{1}{199}=\mathbf{5{,}03\cdot10^{-3}}.
+$$
 
 **Odpowiedź:** (a) $40\,000$ i $200$; (b) $F_Q=38\,010$, $\Delta\varphi=\mathbf{5{,}13\cdot10^{-3}}$ rad,
 zysk $13{,}8$; (c) $p=\mathbf{1/199\approx0{,}5\%}$.
@@ -118,7 +124,9 @@ czynnik (np. $2\times$ przy $6$ dB), a stany N00N dają zmianę wykładnika skal
 $\cos(N_{k+1}\varphi)$ o okresie $\dfrac{2\pi}{N_{k+1}}$, więc jednoznaczny odczyt wymaga, by
 $\delta_k$ było mniejsze od połowy okresu:
 
-$$\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\quad\Longleftrightarrow\quad N_{k+1}<\pi N_k .$$
+$$
+\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\quad\Longleftrightarrow\quad N_{k+1}<\pi N_k .
+$$
 
 Iloraz $c=3$ jest bezpieczny, bo $3<\pi=3{,}1416$ (margines $4{,}7\%$). Dla $c\ge\pi$ kolejny
 etap „przeskoczyłby” o pełny okres i wynik byłby niejednoznaczny.
@@ -154,7 +162,9 @@ czyli $\Delta\nu/\nu=\mathbf{3{,}71\cdot10^{-19}}$.
 (c) Cel $\Delta\nu/\nu=10^{-19}$ daje $\Delta\nu=4{,}292\cdot10^{14}\cdot10^{-19}=4{,}292\cdot10^{-5}$ Hz.
 Z $\Delta\nu=\frac{1}{2\pi T\sqrt N}$ przy $T=1$ s:
 
-$$\sqrt N=\frac{1}{2\pi\cdot4{,}292\cdot10^{-5}}=3708\ \Rightarrow\ N=1{,}38\cdot10^7\ \text{atomów}.$$
+$$
+\sqrt N=\frac{1}{2\pi\cdot4{,}292\cdot10^{-5}}=3708\ \Rightarrow\ N=1{,}38\cdot10^7\ \text{atomów}.
+$$
 
 Przy $N=10^5$ ($\sqrt N=316{,}23$) potrzeba
 $T=\dfrac{1}{2\pi\cdot316{,}23\cdot4{,}292\cdot10^{-5}}=\mathbf{11{,}7}$ **s** — czyli samo

@@ -42,8 +42,10 @@ $k_1,\dots,k_\nu$ o rozkładzie $p(k\mid\varphi)$. Przykład kanoniczny: foton w
 $\lvert\psi(\varphi)\rangle=\frac{1}{\sqrt2}(\lvert0\rangle+e^{i\varphi}\lvert1\rangle)$ i pomiar w bazie
 $X=\{\lvert+\rangle,\lvert-\rangle\}$; z reguły Borna
 
-$$p(+\mid\varphi)=\lvert\langle+\vert\psi(\varphi)\rangle\rvert^2=\frac{1+\cos\varphi}{2}=\cos^2\frac{\varphi}{2},
-\qquad p(-\mid\varphi)=\sin^2\frac{\varphi}{2}. \tag{11.1}$$
+$$
+p(+\mid\varphi)=\lvert\langle+\vert\psi(\varphi)\rangle\rvert^2=\frac{1+\cos\varphi}{2}=\cos^2\frac{\varphi}{2},
+\qquad p(-\mid\varphi)=\sin^2\frac{\varphi}{2}. \qquad (11.1)
+$$
 
 Zapis $\cos^2(\varphi/2)$ (a nie $\cos^2\varphi$) to ta sama konwencja $\theta/2$, co
 w bramkach $R_X,R_Y,R_Z$ — patrz [konwencje](../docs/03-konwencje-i-notacja.md).
@@ -53,8 +55,10 @@ w bramkach $R_X,R_Y,R_Z$ — patrz [konwencje](../docs/03-konwencje-i-notacja.md
 **Skąd się bierze CFI.** Różniczkujemy tożsamość $\sum_k p(k\mid\varphi)=1$ i stosujemy
 nierówność Cauchy'ego–Schwarza (rozdział 03):
 
-$$\mathrm{Var}(\hat\varphi)\ \ge\ \frac{1}{\nu F(\varphi)},\qquad
-F(\varphi)=\sum_k\frac{\bigl(\partial_\varphi p(k\mid\varphi)\bigr)^2}{p(k\mid\varphi)}. \tag{11.2}$$
+$$
+\mathrm{Var}(\hat\varphi)\ \ge\ \frac{1}{\nu F(\varphi)},\qquad
+F(\varphi)=\sum_k\frac{\bigl(\partial_\varphi p(k\mid\varphi)\bigr)^2}{p(k\mid\varphi)}. \qquad (11.2)
+$$
 
 $F$ to informacja o $\varphi$ z jednego pomiaru, a $\nu F$ rośnie liniowo z liczbą powtórzeń.
 
@@ -67,13 +71,17 @@ Zatem dla jednego fotonu **$F=1$ dla każdego $\varphi$** i $\Delta\varphi\ge1/\
 Dla jednego fotonu stan po pierwszym BS to $\frac{1}{\sqrt2}(\lvert\text{góra}\rangle+\lvert\text{dół}\rangle)$,
 a prawdopodobieństwa detekcji są jak (11.1). Cały układ realizuje
 
-$$U=U_{\rm BS}\,\mathrm{diag}(1,e^{i\varphi})\,U_{\rm BS},\qquad
-U_{\rm BS}=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}=H,$$
+$$
+U=U_{\rm BS}\,\mathrm{diag}(1,e^{i\varphi})\,U_{\rm BS},\qquad
+U_{\rm BS}=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}=H,
+$$
 
 czyli „$H$–faza–$H$”: **interferometr to dosłownie Hadamard, faza, Hadamard** (por. zadanie P3).
 Dla wielu fotonów piszemy $\lvert n_a,n_b\rangle$ i używamy generatora
 
-$$H_{\rm gen}=\tfrac12(n_a-n_b),\qquad \lvert\psi(\varphi)\rangle=e^{-i\varphi H_{\rm gen}}\lvert\psi_0\rangle . \tag{11.3}$$
+$$
+H_{\rm gen}=\tfrac12(n_a-n_b),\qquad \lvert\psi(\varphi)\rangle=e^{-i\varphi H_{\rm gen}}\lvert\psi_0\rangle . \qquad (11.3)
+$$
 
 To definicja modelu: $\varphi$ jest fazą względną nagromadzoną między odnogami.
 
@@ -83,7 +91,9 @@ $N$ niezależnych fotonów w tym samym stanie: liczba zliczeń jest zmienną dwu
 $\mathrm{Var}(k)=Np(1-p)$ (rozdział 03). Największa czułość jest w punkcie pracy
 $\varphi=\pi/2$ ($p=\frac12$), gdzie informacja Fishera dodaje się liniowo:
 
-$$F_N=N F_1=N,\qquad \boxed{\Delta\varphi=\frac{1}{\sqrt N}}\quad\text{(SNL)}. \tag{11.4}$$
+$$
+F_N=N F_1=N,\qquad \boxed{\Delta\varphi=\frac{1}{\sqrt N}}\quad\text{(SNL)}. \qquad (11.4)
+$$
 
 „Śrut” to ziarnistość światła: każdy foton jest niezależnym losowaniem.
 
@@ -98,7 +108,9 @@ $$F_N=N F_1=N,\qquad \boxed{\Delta\varphi=\frac{1}{\sqrt N}}\quad\text{(SNL)}. \
 
 Dla stanu **czystego** ewoluującego unitarnie $e^{-i\varphi H}$:
 
-$$F_Q=4\,\mathrm{Var}(H)=4\bigl(\langle H^2\rangle-\langle H\rangle^2\bigr). \tag{11.5}$$
+$$
+F_Q=4\,\mathrm{Var}(H)=4\bigl(\langle H^2\rangle-\langle H\rangle^2\bigr). \qquad (11.5)
+$$
 
 Intuicja: parametr „obraca wskazówkę” o kąt proporcjonalny do $H$, więc im większa
 nieoznaczoność $H$, tym szybciej rozkład wyników zmienia się z $\varphi$.
@@ -108,7 +120,9 @@ $H_{\rm gen}=n_a-N/2$, czyli $\mathrm{Var}(H_{\rm gen})=\mathrm{Var}(n_a)$. Zmie
 przyjmuje wartości tylko w $[0,N]$, a wariancja zmiennej ograniczonej do przedziału długości
 $N$ nie przekracza $(N/2)^2$. Stąd
 
-$$\boxed{F_Q\le N^2,\qquad \Delta\varphi\ge\frac{1}{N}}\quad\text{(HL)}. \tag{11.6}$$
+$$
+\boxed{F_Q\le N^2,\qquad \Delta\varphi\ge\frac{1}{N}}\quad\text{(HL)}. \qquad (11.6)
+$$
 
 QFI rośnie **kwadratowo** z liczbą cząstek — dlatego splątanie daje zysk $\sqrt N$, a nie
 stały czynnik.
@@ -163,7 +177,9 @@ Nieoznaczoność $\varphi$ modulo $2\pi/N$ rozwiązuje się **drabinką** pomiar
 etap używa $N_k$ cząstek i daje $1/N_k$. Kolejny etap wymaga, by jego okres był dłuższy niż
 niepewność poprzedniego:
 
-$$\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\qquad\Longleftrightarrow\qquad N_{k+1}<\pi N_k . \tag{11.8}$$
+$$
+\frac{1}{N_k}<\frac{\pi}{N_{k+1}}\qquad\Longleftrightarrow\qquad N_{k+1}<\pi N_k . \qquad (11.8)
+$$
 
 Wystarczy mnożyć $N$ przez $c<3{,}14$ (np. przez $3$); suma ciągu geometrycznego o ilorazie
 $1/3$ to tylko $1{,}5$ ostatniego wyrazu, więc **budżet całkowity jest $\sim2\times$ większy
@@ -180,7 +196,9 @@ $1/300=3{,}33\cdot10^{-3}<\pi/900=3{,}49\cdot10^{-3}$.
 fluktuacje jednej kwadratury kosztem drugiej (zasada nieoznaczoności pozostaje spełniona).
 Parametr $r$: wariancja maleje o $e^{-2r}$, amplituda (czyli niepewność fazy) o $e^{-r}$:
 
-$$\Delta\varphi_{\rm squ}=\frac{e^{-r}}{\sqrt{\bar n}},\qquad \text{ściśnięcie [dB]}=10\log_{10}(e^{2r}). \tag{11.9}$$
+$$
+\Delta\varphi_{\rm squ}=\frac{e^{-r}}{\sqrt{\bar n}},\qquad \text{ściśnięcie [dB]}=10\log_{10}(e^{2r}). \qquad (11.9)
+$$
 
 | ściśnięcie | $e^{2r}$ (wariancja) | $e^{r}$ (poprawa amplitudy) |
 | --- | --- | --- |
@@ -203,7 +221,9 @@ oznacza stan metrologicznie użyteczny. Ściśnięcie spinowe *implikuje* spląt
 Jeśli koherencja stanu N00N/GHZ przetrwa z prawdopodobieństwem $p$, a z $1-p$ układ traci
 informację fazową (wraca do SNL), to
 
-$$F_Q(p)=pN^2+(1-p)N . \tag{11.10}$$
+$$
+F_Q(p)=pN^2+(1-p)N . \qquad (11.10)
+$$
 
 Dla $N=100$ (idealnie $\Delta\varphi=0{,}01$):
 
@@ -233,7 +253,9 @@ jest **kruche**: istnieje dla szumu skorelowanego (kolektywnego), nie dla lokaln
 **Zegar atomowy.** Schemat Ramseya: atomy w stanie $\lvert+\rangle$ (lub GHZ), czas swobodnej
 ewolucji $T$, pomiar. Szum projekcyjny ogranicza częstość:
 
-$$\Delta\nu=\frac{1}{2\pi T\sqrt N}\ (\text{SNL}),\qquad \Delta\nu=\frac{1}{2\pi T N}\ (\text{HL}).$$
+$$
+\Delta\nu=\frac{1}{2\pi T\sqrt N}\ (\text{SNL}),\qquad \Delta\nu=\frac{1}{2\pi T N}\ (\text{HL}).
+$$
 
 Dla optycznego zegara strontowego ($\nu=429\,228\,004\,229\,873$ Hz, przejście $^1S_0\to{}^3P_0$):
 

@@ -77,7 +77,7 @@ git config --global core.autocrlf true   # Windows: końce linii
 `*.ipynb_checkpoints/`, `.vscode/`, `*.tmp`. Jeśli przez pomyłkę zacommitowałeś hasło:
 `git rm --cached plik` i **natychmiast zmień hasło** (historia bywa publiczna). Praca
 zespołowa z opiekunem: gałąź na każde zadanie + pull request, konflikty rozwiązuje się ręcznie.
-Wspólne rozwiązywanie zadań jest niedozwolone ([zakres materiału](../docs/02-zakres-materialu.md)) —
+Wspólne rozwiązywanie zadań jest niedozwolone —
 git służy do własnej archiwizacji, nie do wymiany rozwiązań.
 
 ### 3.3 Markdown, LaTeX i PDF

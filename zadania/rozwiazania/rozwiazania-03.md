@@ -30,12 +30,16 @@ $7$ warunek „pierwsza $=3$” nie zmienia prawdopodobieństwa, bo $7$ jest „
 $P(+)=0{,}99\cdot0{,}001+0{,}05\cdot0{,}999=0{,}00099+0{,}04995=0{,}05094$.
 Z Bayesa
 
-$$P(C\mid +)=\frac{0{,}99\cdot0{,}001}{0{,}05094}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.$$
+$$
+P(C\mid +)=\frac{0{,}99\cdot0{,}001}{0{,}05094}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.
+$$
 
 **(b)** Dla wyniku negatywnego prawdopodobieństwo całkowite
 $P(-)=0{,}01\cdot0{,}001+0{,}95\cdot0{,}999=0{,}00001+0{,}94905=0{,}94906$;
 
-$$P(H\mid -)=\frac{0{,}95\cdot0{,}999}{0{,}94906}\approx0{,}99999.$$
+$$
+P(H\mid -)=\frac{0{,}95\cdot0{,}999}{0{,}94906}\approx0{,}99999.
+$$
 
 **(c)** Dodatni wynik daje tylko $\approx1{,}9\%$ szansy choroby, choć test jest
 „dobry” (czułość $99\%$). Decyduje **małe prawdopodobieństwo aprioryczne**
@@ -53,10 +57,10 @@ zwykle szumem; potrzebna jest powtórna weryfikacja.
 **(a)** $\mathbb{E}X=\dfrac16(1+2+3+4+5+6)=\dfrac{21}{6}=3{,}5$.
 
 **(b)** $\mathbb{E}X^2=\dfrac16(1+4+9+16+25+36)=\dfrac{91}{6}\approx15{,}167$,
-więc $\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=\dfrac{91}{6}-\dfrac{49}{4} =\dfrac{182-147}{12}=\dfrac{35}{12}\approx2{,}917$.
+więc $\mathrm{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=\dfrac{91}{6}-\dfrac{49}{4} =\dfrac{182-147}{12}=\dfrac{35}{12}\approx2{,}917$.
 
 **(c)** Otrzymaliśmy $\mathbb{E}X^2=\dfrac{91}{6}\approx15{,}17$, a związek
-$\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=15{,}167-12{,}25=2{,}917$ się zgadza.
+$\mathrm{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2=15{,}167-12{,}25=2{,}917$ się zgadza.
 
 **Odpowiedź:** **(a)** $3{,}5$; **(b)** $\tfrac{35}{12}\approx2{,}92$;
 **(c)** $\mathbb{E}X^2=\tfrac{91}{6}\approx15{,}17$, związek spełniony.
@@ -71,13 +75,13 @@ to środek rozkładu, nie „typowa” realizacja.
 **(b)** $P(K=2)=e^{-3}\dfrac{3^2}{2!}=e^{-3}\cdot4{,}5\approx0{,}2240$;
 $P(K=0)=e^{-3}\approx0{,}0498$.
 
-**(c)** Dwumianowy: $\mathbb{E}X=np=5$, $\operatorname{Var}X=np(1-p)=2{,}5$.
-Poisson: $\mathbb{E}K=\operatorname{Var}K=\lambda=3$. Poisson powstaje z dwumianowego
+**(c)** Dwumianowy: $\mathbb{E}X=np=5$, $\mathrm{Var}X=np(1-p)=2{,}5$.
+Poisson: $\mathbb{E}K=\mathrm{Var}K=\lambda=3$. Poisson powstaje z dwumianowego
 w granicy rzadkich zdarzeń: $n\to\infty$, $p\to0$ przy $\lambda=np$ ustalonym
-(wtedy $\operatorname{Var}=np(1-p)\to np=\lambda$, bo $1-p\to1$).
+(wtedy $\mathrm{Var}=np(1-p)\to np=\lambda$, bo $1-p\to1$).
 
 **Odpowiedź:** **(a)** $0{,}1172$; **(b)** $P(K=2)\approx0{,}224$, $P(K=0)\approx0{,}050$;
-**(c)** Poisson ma $\mathbb{E}=\operatorname{Var}=\lambda$; jest granicą dwumianowego.
+**(c)** Poisson ma $\mathbb{E}=\mathrm{Var}=\lambda$; jest granicą dwumianowego.
 
 *Interpretacja:* w granicy rzadkich zdarzeń wariancja „przestaje” maleć z $p$ —
 dlatego zliczenia fotonów cechuje charakterystyczny szum $\sqrt\lambda$.
@@ -89,9 +93,13 @@ dlatego zliczenia fotonów cechuje charakterystyczny szum $\sqrt\lambda$.
 **(b)** $X\sim\mathrm{Bin}(100,\tfrac12)$: $\mu=np=50$, $\sigma=\sqrt{np(1-p)}=\sqrt{25}=5$.
 Z korekcją ciągłości zamieniamy $45\le X\le55$ na $44{,}5\le X\le55{,}5$:
 
-$$z_1=\frac{44{,}5-50}{5}=-1{,}1,\qquad z_2=\frac{55{,}5-50}{5}=1{,}1,$$
+$$
+z_1=\frac{44{,}5-50}{5}=-1{,}1,\qquad z_2=\frac{55{,}5-50}{5}=1{,}1,
+$$
 
-$$P\approx\Phi(1{,}1)-\Phi(-1{,}1)=2\Phi(1{,}1)-1\approx0{,}7287.$$
+$$
+P\approx\Phi(1{,}1)-\Phi(-1{,}1)=2\Phi(1{,}1)-1\approx0{,}7287.
+$$
 
 **(c)** Dokładnie $\sum_{k=45}^{55}\binom{100}{k}/2^{100}\approx0{,}7287$ — zgadza się
 do czterech cyfr. CTG z korekcją ciągłości daje praktycznie dokładny wynik nawet dla
@@ -109,8 +117,10 @@ standardowym kryterium rozrzutu, także przy pomiarach kwantowych.
 
 **(b)** Dla ilorazu niepewności względne dodają się kwadratowo:
 
-$$\frac{\sigma_\rho}{\rho}=\sqrt{\Bigl(\frac{\sigma_m}{m}\Bigr)^2+\Bigl(\frac{\sigma_V}{V}\Bigr)^2}
-=\sqrt{(0{,}01)^2+(0{,}01)^2}=0{,}01414,$$
+$$
+\frac{\sigma_\rho}{\rho}=\sqrt{\Bigl(\frac{\sigma_m}{m}\Bigr)^2+\Bigl(\frac{\sigma_V}{V}\Bigr)^2}
+=\sqrt{(0{,}01)^2+(0{,}01)^2}=0{,}01414,
+$$
 
 skąd $\sigma_\rho=4{,}00\cdot0{,}01414\approx0{,}0566\ \text{g/mL}$.
 
@@ -151,22 +161,28 @@ $\sigma_{\hat\pi}=4\sqrt{\hat p(1-\hat p)/N}\approx0{,}0052$.
 
 **(b)** $\bar x=3$, $\bar y=4$. Liczymy
 
-$$\mathbb{E}XY=\tfrac{1\cdot2+2\cdot4+3\cdot5+4\cdot4+5\cdot5}{5}
-=\tfrac{2+8+15+16+25}{5}=\tfrac{66}{5}=13{,}2,$$
+$$
+\mathbb{E}XY=\tfrac{1\cdot2+2\cdot4+3\cdot5+4\cdot4+5\cdot5}{5}
+=\tfrac{2+8+15+16+25}{5}=\tfrac{66}{5}=13{,}2,
+$$
 
-$$\operatorname{Cov}(X,Y)=\mathbb{E}XY-\bar x\,\bar y=13{,}2-3\cdot4=1{,}2.$$
+$$
+\mathrm{Cov}(X,Y)=\mathbb{E}XY-\bar x\,\bar y=13{,}2-3\cdot4=1{,}2.
+$$
 
 Wariancje: $\sigma_x^2=\tfrac{1+4+9+16+25}{5}-3^2=11-9=2$,
 $\sigma_y^2=\tfrac{4+16+25+16+25}{5}-4^2=17{,}2-16=1{,}2$, więc
 
-$$\rho=\frac{1{,}2}{\sqrt{2\cdot1{,}2}}=\frac{1{,}2}{\sqrt{2{,}4}}\approx0{,}7746.$$
+$$
+\rho=\frac{1{,}2}{\sqrt{2\cdot1{,}2}}=\frac{1{,}2}{\sqrt{2{,}4}}\approx0{,}7746.
+$$
 
 **(c)** $|\rho|<1$ oznacza, że związki są **liniowe tylko częściowo** — punkty nie
 leżą dokładnie na prostej. $\rho\approx0{,}77$ to silna, ale nie doskonała korelacja
 dodatnia: większym $x$ towarzyszą przeciętnie większe $y$, z rozrzutem.
 
 **Odpowiedź:** **(a)** $\hat\pi\approx3{,}1446$ (błąd $\approx0{,}005$); **(b)**
-$\operatorname{Cov}=1{,}2$, $\rho\approx0{,}775$; **(c)** korelacja silna, lecz
+$\mathrm{Cov}=1{,}2$, $\rho\approx0{,}775$; **(c)** korelacja silna, lecz
 nie doskonała.
 
 *Interpretacja:* Monte Carlo „zamienia całkowanie na losowanie” i ma błąd malejący

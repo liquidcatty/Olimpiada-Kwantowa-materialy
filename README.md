@@ -15,35 +15,35 @@ Kolejność czytania:
 
 1. [Jak korzystać z przewodnika](docs/00-jak-korzystac.md) — konwencje pracy, jak
    odrabiać pracę domową, jak sprawdzać swoje wyniki.
-2. [Zakres materiału](docs/02-zakres-materialu.md) — mapowanie 16 warsztatów
-   Olimpiady na rozdziały tego repo.
-3. [Konwencje i notacja](docs/03-konwencje-i-notacja.md) — jeden język symboli
+2. [Konwencje i notacja](docs/03-konwencje-i-notacja.md) — jeden język symboli
    w całym repo (Dirac, sfera Blocha, kolejność kubitów).
-4. [Zadania przykładowe organizatora (P1–P4) z pełnymi rozwiązaniami](zadania/treningowe/README.md).
+3. [Zadania przykładowe organizatora (P1–P4) z pełnymi rozwiązaniami](zadania/treningowe/README.md).
 
 ## 2. Struktura repozytorium
 
 ```
 .
 ├── README.md                     ← ten plik (start tutaj)
-├── docs/                         ← plan nauki, zakres, notacja, ściąga wzorów, bibliografia
-│   ├── 00-jak-korzystac.md
-│   ├── 01-plan-nauki.md
-│   ├── 02-zakres-materialu.md
-│   ├── 03-konwencje-i-notacja.md
+├── docs/                         ← plan nauki, notacja, strategia, ściąga wzorów, słownik, bibliografia
+│   ├── 00-jak-korzystac.md            ← kolejność pracy, wysyłka pracy, check-lista
+│   ├── 01-plan-nauki.md               ← plan 20 tygodni / 4 tygodnie / wariant 3-dniowy
+│   ├── 03-konwencje-i-notacja.md      ← notacja, konwencje kodu, zasady matematyki na GitHub
 │   ├── 04-strategia-rozwiazywania-zadan.md
 │   ├── 05-przygotowanie-do-etapu-2.md
-│   ├── 06-sciaga-wzorow.md
-│   ├── bibliografia.md
-│   └── _szablon-rozdzialu.md
-├── teoria/                       ← 20 rozdziałów: teoria + przykłady + zadania
+│   ├── 06-sciaga-wzorow.md            ← wszystkie wzory w jednym miejscu
+│   ├── 07-faq-i-organizacja.md        ← terminy, formaty plików, wysyłka pracy
+│   ├── 08-slownik-pojec-pl-en.md      ← słownik pojęć polsko-angielski
+│   ├── bibliografia.md                ← książki, kursy, dokumentacje
+│   └── _szablon-rozdzialu.md          ← wzorzec rozdziału dla autorów
+├── teoria/                       ← 20 rozdziałów (NN-*.md) + README: teoria + przykłady + zadania Z-NN
 ├── zadania/
-│   ├── treningowe/               ← oficjalne P1–P4 (treść + rozwiązania modelowe)
-│   └── rozwiazania/              ← pełne rozwiązania zadań Z-NN z rozdziałów teorii
-├── praca-domowa/                 ← PD-1 … PD-4 (do oddania) + kryteria oceny
-├── kod/                          ← symulatory i weryfikacja numeryczna (Python + NumPy)
-├── tools/                        ← skrypty pomocnicze (kontrola linków w CI)
-└── .github/workflows/            ← CI: uruchamia verify_all.py i kontrolę linków
+│   ├── README.md                 ← indeks materiału zadaniowego
+│   ├── treningowe/               ← P1–P4 (treść) + rozwiazania-P.md (rozwiązania modelowe)
+│   └── rozwiazania/              ← rozwiazania-01.md … rozwiazania-20.md
+├── praca-domowa/                 ← PD-1 … PD-4 + README (zasady i skala ocen)
+├── kod/                          ← 12 skryptów NumPy + verify_all.py + requirements.txt
+├── tools/                        ← audyty jakości (używane w CI) + README
+└── .github/workflows/verify.yml  ← CI: kod, linki, renderowanie matematyki, struktura
 ```
 
 ## 3. Spis rozdziałów teorii
@@ -133,7 +133,6 @@ python kod/verify_all.py               # uruchamia wszystkie skrypty i wypisuje 
 | --- | --- |
 | [docs/00-jak-korzystac.md](docs/00-jak-korzystac.md) | pętla nauki, wysyłka pracy, check-lista |
 | [docs/01-plan-nauki.md](docs/01-plan-nauki.md) | plan 20 tygodni, plan 4 tygodni, plan ratunkowy |
-| [docs/02-zakres-materialu.md](docs/02-zakres-materialu.md) | mapa warsztatów i tematy rozszerzające |
 | [docs/03-konwencje-i-notacja.md](docs/03-konwencje-i-notacja.md) | jeden język symboli, konwencje kodu |
 | [docs/04-strategia-rozwiazywania-zadan.md](docs/04-strategia-rozwiazywania-zadan.md) | schematy rozwiązań, jak nie tracić punktów |
 | [docs/05-przygotowanie-do-etapu-2.md](docs/05-przygotowanie-do-etapu-2.md) | rozmowa kwalifikacyjna: pytania i odpowiedzi |

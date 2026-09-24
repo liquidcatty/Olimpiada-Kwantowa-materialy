@@ -8,7 +8,6 @@ uczelnianych. Kolejność: od najłatwiejszych do najbardziej zaawansowanych.
 | Źródło | Adres | Co tam jest |
 | --- | --- | --- |
 | Strona Olimpiady Kwantowej | <https://olimpiadakwantowa.pl/> | harmonogram, zadania, warsztaty, wyniki |
-| Regulamin | <https://olimpiadakwantowa.pl/regulamin/> | zasady etapów, ocenianie, uczciwość |
 | Zadania i arkusze | <https://olimpiadakwantowa.pl/zadania/> | zadania etapów + arkusz przykładowy P1–P4 |
 | Warsztaty (harmonogram) | <https://olimpiadakwantowa.pl/warsztaty/> | 16 tematów i prowadzący |
 | Kanał YouTube | <https://www.youtube.com/@OlimpiadaKwantowa> | nagrania warsztatów |

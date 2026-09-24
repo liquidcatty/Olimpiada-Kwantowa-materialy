@@ -20,10 +20,10 @@ zliczenia fotonów) oraz analizy danych.
 - **Prawdopodobieństwo całkowite**: $P(A)=\sum_i P(A\mid B_i)P(B_i)$ dla rozbicia $\{B_i\}$.
 - **Zmienna losowa** $X$; **dystrybuanta** $F(x)=P(X\le x)$; **gęstość/prawdopodobieństwo**.
 - **Wartość oczekiwana** $\mathbb{E}X=\sum_k x_kP(X=x_k)$ (lub $\int x\,f(x)\,dx$).
-- **Wariancja** $\operatorname{Var}X=\mathbb{E}(X-\mathbb{E}X)^2=\mathbb{E}X^2-(\mathbb{E}X)^2$;
-  **odchylenie** $\sigma=\sqrt{\operatorname{Var}X}$.
-- **Kowariancja** $\operatorname{Cov}(X,Y)=\mathbb{E}XY-\mathbb{E}X\,\mathbb{E}Y$;
-  **korelacja** $\rho=\operatorname{Cov}(X,Y)/(\sigma_X\sigma_Y)\in[-1,1]$.
+- **Wariancja** $\mathrm{Var}X=\mathbb{E}(X-\mathbb{E}X)^2=\mathbb{E}X^2-(\mathbb{E}X)^2$;
+  **odchylenie** $\sigma=\sqrt{\mathrm{Var}X}$.
+- **Kowariancja** $\mathrm{Cov}(X,Y)=\mathbb{E}XY-\mathbb{E}X\,\mathbb{E}Y$;
+  **korelacja** $\rho=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)\in[-1,1]$.
 - **Entropia Shannona** $H=-\sum_k p_k\log_2 p_k$ (w bitach).
 - **Estymator** $\hat\theta$ (funkcja danych); **przedział ufności** o poziomie $1-\alpha$.
 - **Test $\chi^2$**: $\chi^2=\sum_i\frac{(O_i-E_i)^2}{E_i}$ (**O** — obserwowane,
@@ -51,23 +51,25 @@ są wręcz maksymalnie zależne (znając $A$, wiesz, że $B$ nie zaszło).
 
 Z $P(A\cap B)=P(A\mid B)P(B)=P(B\mid A)P(A)$:
 
-$$P(B\mid A)=\frac{P(A\mid B)P(B)}{P(A)},\qquad
-P(A)=\sum_i P(A\mid B_i)P(B_i).$$
+$$
+P(B\mid A)=\frac{P(A\mid B)P(B)}{P(A)},\qquad
+P(A)=\sum_i P(A\mid B_i)P(B_i).
+$$
 
 Bayes „odwraca” warunkowanie: ze znajomości $P(\text{wynik}\mid\text{hipoteza})$
 wnioskujemy o $P(\text{hipoteza}\mid\text{wynik})$. To podstawa diagnostyki i analizy
 danych pomiarowych.
 
-### 3.4 Zmienne losowe, $E$ i $\operatorname{Var}$
+### 3.4 Zmienne losowe, $E$ i $\mathrm{Var}$
 
 Wartość oczekiwana jest liniowa: $\mathbb{E}(aX+bY)=a\mathbb{E}X+b\mathbb{E}Y$.
-Wariancja: $\operatorname{Var}(aX+b)=a^2\operatorname{Var}X$, a dla **niezależnych**
-$\operatorname{Var}(X+Y)=\operatorname{Var}X+\operatorname{Var}Y$. Dla $n$ niezależnych
+Wariancja: $\mathrm{Var}(aX+b)=a^2\mathrm{Var}X$, a dla **niezależnych**
+$\mathrm{Var}(X+Y)=\mathrm{Var}X+\mathrm{Var}Y$. Dla $n$ niezależnych
 kopii: $\sigma_{\bar X}=\sigma/\sqrt n$ (błąd maleje jak $1/\sqrt n$).
 
 ### 3.5 Rozkłady
 
-| Rozkład | Parametry | $P$ lub gęstość | $\mathbb{E}X$ | $\operatorname{Var}X$ |
+| Rozkład | Parametry | $P$ lub gęstość | $\mathbb{E}X$ | $\mathrm{Var}X$ |
 | --- | --- | --- | --- | --- |
 | Bernoulliego | $p$ | $P(1)=p$, $P(0)=1-p$ | $p$ | $p(1-p)$ |
 | dwumianowy | $n,p$ | $\binom nk p^k(1-p)^{n-k}$ | $np$ | $np(1-p)$ |
@@ -88,7 +90,9 @@ prawdopodobieństwo”.
 **Centralne twierdzenie graniczne (CTG).** Dla $n$ niezależnych zmiennych o skończonej
 wariancji suma (po standaryzacji) dąży do rozkładu normalnego:
 
-$$\frac{\sum_i X_i-n\mu}{\sigma\sqrt n}\xrightarrow{\,d\,}\mathcal{N}(0,1).$$
+$$
+\frac{\sum_i X_i-n\mu}{\sigma\sqrt n}\xrightarrow{\,d\,}\mathcal{N}(0,1).
+$$
 
 Praktycznie: sumy i średnie z wielu małych, niezależnych przyczyn są w przybliżeniu
 normalne. Wartości krytyczne: $P(|Z|<1)\approx0{,}683$, $P(|Z|<2)\approx0{,}954$,
@@ -98,9 +102,11 @@ $P(|Z|<3)\approx0{,}997$.
 
 Dla wielkości $f(x_1,\dots,x_n)$ o **niezależnych** niepewnościach $\sigma_{x_i}$:
 
-$$\sigma_f^2=\sum_i\left(\frac{\partial f}{\partial x_i}\right)^2\sigma_{x_i}^2,
+$$
+\sigma_f^2=\sum_i\left(\frac{\partial f}{\partial x_i}\right)^2\sigma_{x_i}^2,
 \qquad\text{a dla iloczynu/ilorazu}\qquad
-\left(\frac{\sigma_f}{|f|}\right)^2=\sum_i\left(\frac{\sigma_{x_i}}{x_i}\right)^2.$$
+\left(\frac{\sigma_f}{|f|}\right)^2=\sum_i\left(\frac{\sigma_{x_i}}{x_i}\right)^2.
+$$
 
 Szczególnie dla $f=x/y$ niepewności względne dodają się **kwadratowo**.
 
@@ -124,10 +130,10 @@ $P(\chi^2>x)=e^{-x/2}$.
 
 ### 3.10 Kowariancja i korelacja
 
-$\operatorname{Cov}(X,Y)=\mathbb{E}XY-\mathbb{E}X\mathbb{E}Y$ mierzy wspólną zmienność;
-$\rho=\operatorname{Cov}(X,Y)/(\sigma_X\sigma_Y)$ jest znormalizowane do $[-1,1]$.
+$\mathrm{Cov}(X,Y)=\mathbb{E}XY-\mathbb{E}X\mathbb{E}Y$ mierzy wspólną zmienność;
+$\rho=\mathrm{Cov}(X,Y)/(\sigma_X\sigma_Y)$ jest znormalizowane do $[-1,1]$.
 $\rho=0$ oznacza brak **liniowej** korelacji (nie brak zależności!). Kowariancja
-macierzy gęstości to $\operatorname{Cov}(A,B)=\langle AB\rangle-\langle A\rangle\langle B\rangle$
+macierzy gęstości to $\mathrm{Cov}(A,B)=\langle AB\rangle-\langle A\rangle\langle B\rangle$
 — dla niezależnych obserwabli znika.
 
 ### 3.11 Entropia Shannona
@@ -149,7 +155,7 @@ $\hat I=(b-a)\frac1N\sum f(x_i)$, z błędem $\sim\sigma/\sqrt N$. Przykład: po
 
 Detektor fotonów w ustalonym okienku czasu rejestruje **rzadkie, niezależne** zdarzenia
 — liczba zliczeń $K$ ma rozkład Poissona: $P(K=k)=e^{-\lambda}\lambda^k/k!$ z
-$\lambda=$ średnia liczba fotonów. Charakterystyka: $\mathbb{E}K=\operatorname{Var}K=\lambda$,
+$\lambda=$ średnia liczba fotonów. Charakterystyka: $\mathbb{E}K=\mathrm{Var}K=\lambda$,
 więc szum zliczeń („shot noise”) ma $\sigma_K=\sqrt\lambda$ i względny błąd
 $1/\sqrt\lambda$ — by poprawić precyzję dwukrotnie, trzeba czterokrotnie więcej
 fotonów. To ta sama logika, co błąd $\sigma/\sqrt n$ przy uśrednianiu pomiarów.
@@ -166,10 +172,10 @@ teorię (np. prawo Malusa z zadania P2).
 **Dane:** rzucamy symetryczną monetą $n=10$ razy; $X$ = liczba orłów.
 
 **Metoda:** $X\sim\mathrm{Bin}(10,\tfrac12)$; wzór $\binom nk p^k(1-p)^{n-k}$;
-$\mathbb{E}X=np$, $\operatorname{Var}X=np(1-p)$.
+$\mathbb{E}X=np$, $\mathrm{Var}X=np(1-p)$.
 
 **Rachunek:** $P(X=3)=\binom{10}{3}\bigl(\tfrac12\bigr)^{10}=\dfrac{120}{1024} \approx0{,}1172$. Wartość oczekiwana $\mathbb{E}X=10\cdot\tfrac12=5$, wariancja
-$\operatorname{Var}X=10\cdot\tfrac12\cdot\tfrac12=2{,}5$, odchylenie $\sqrt{2{,}5}\approx1{,}58$.
+$\mathrm{Var}X=10\cdot\tfrac12\cdot\tfrac12=2{,}5$, odchylenie $\sqrt{2{,}5}\approx1{,}58$.
 
 **Wynik:** $P(X=3)\approx0{,}117$, $\mathbb{E}X=5$, $\sigma_X\approx1{,}58$.
 
@@ -185,9 +191,13 @@ $P({+}\mid C)=0{,}99$ i swoistość $P({-}\mid H)=0{,}95$ ($H$ = zdrowy).
 
 **Rachunek:**
 
-$$P(+)={0{,}99\cdot0{,}001}+{0{,}05\cdot0{,}999}=0{,}00099+0{,}04995=0{,}05094,$$
+$$
+P(+)={0{,}99\cdot0{,}001}+{0{,}05\cdot0{,}999}=0{,}00099+0{,}04995=0{,}05094,
+$$
 
-$$P(C\mid{+})=\frac{P({+}\mid C)P(C)}{P(+)}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.$$
+$$
+P(C\mid{+})=\frac{P({+}\mid C)P(C)}{P(+)}=\frac{0{,}00099}{0{,}05094}\approx0{,}0194.
+$$
 
 Dla wyniku negatywnego:
 $P(H\mid{-})=\dfrac{0{,}95\cdot0{,}999}{0{,}95\cdot0{,}999+0{,}01\cdot0{,}001} \approx0{,}99999$.
@@ -205,7 +215,7 @@ szansy choroby — bo choroba jest rzadka, więc większość dodatnich wyników
 **Metoda:** $P(K=k)=e^{-\lambda}\lambda^k/k!$.
 
 **Rachunek:** $P(K=2)=e^{-3}\dfrac{3^2}{2}=e^{-3}\cdot4{,}5\approx0{,}2240$;
-$P(K=0)=e^{-3}\approx0{,}0498$. Średnia i wariancja: $\mathbb{E}K=\operatorname{Var}K=3$,
+$P(K=0)=e^{-3}\approx0{,}0498$. Średnia i wariancja: $\mathbb{E}K=\mathrm{Var}K=3$,
 szum $\sigma_K=\sqrt3\approx1{,}73$.
 
 **Wynik:** $P(K=2)\approx0{,}224$, $P(K=0)\approx0{,}050$, $\sigma_K\approx1{,}73$.
@@ -237,12 +247,12 @@ $1/\sqrt3\approx58\%$ — żeby uzyskać $1\%$ precyzji, trzeba $\sim10^4$ foton
 prawdopodobieństwa apriorycznego.
 
 **Z-03.3.** $X$ = wynik rzutu jedną kostką.
-(a) Policz $\mathbb{E}X$. (b) Policz $\operatorname{Var}X$. (c) Policz $\mathbb{E}X^2$
-i sprawdź związek $\operatorname{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2$.
+(a) Policz $\mathbb{E}X$. (b) Policz $\mathrm{Var}X$. (c) Policz $\mathbb{E}X^2$
+i sprawdź związek $\mathrm{Var}X=\mathbb{E}X^2-(\mathbb{E}X)^2$.
 
 **Z-03.4.** (a) Dla $X\sim\mathrm{Bin}(10,\tfrac12)$ policz $P(X=3)$.
 (b) Dla $K\sim\mathrm{Pois}(3)$ policz $P(K=2)$ i $P(K=0)$.
-(c) Porównaj $\mathbb{E}$ i $\operatorname{Var}$ obu rozkładów i wyjaśnij związek
+(c) Porównaj $\mathbb{E}$ i $\mathrm{Var}$ obu rozkładów i wyjaśnij związek
 dwumianowego z Poissona.
 
 **Z-03.5.** (a) Podaj $P(|Z|<2)$ dla $Z\sim\mathcal{N}(0,1)$.
@@ -259,7 +269,7 @@ i uzasadnij.
 
 **Z-03.8. [★]** (a) Opisz, jak estymować $\pi$ metodą Monte Carlo, i podaj wynik dla
 $N=10^5$ (ziarno $0$). (b) Dla danych $x=(1,2,3,4,5)$, $y=(2,4,5,4,5)$ policz
-$\operatorname{Cov}$ i $\rho$. (c) Zinterpretuj $|\rho|<1$.
+$\mathrm{Cov}$ i $\rho$. (c) Zinterpretuj $|\rho|<1$.
 
 ## 7. Wskazówki do zadań
 

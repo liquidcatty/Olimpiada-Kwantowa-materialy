@@ -40,7 +40,9 @@ konkluzywnych).
 (a) Eve z prawdopodobieństwem $\frac12$ wybiera właściwą bazę (odtwarza stan bez błędu), a z $\frac12$
 złą; wtedy Bob (we właściwej bazie) myli się z prawdopodobieństwem $\frac12$. Stąd
 
-$$\text{QBER}=\tfrac12\cdot\tfrac12=\tfrac14=25\%.$$
+$$
+\text{QBER}=\tfrac12\cdot\tfrac12=\tfrac14=25\%.
+$$
 
 (b) $H_2(0{,}25)=-0{,}25\log_2 0{,}25-0{,}75\log_2 0{,}75=0{,}5+0{,}3113=0{,}8113$ bita. Wtedy
 $r=1-2H_2(0{,}25)=1-1{,}6226=-0{,}62<0$ — **klucz niemożliwy**.

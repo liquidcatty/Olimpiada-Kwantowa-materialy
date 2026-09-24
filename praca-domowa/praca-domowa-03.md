@@ -88,7 +88,7 @@ Wymagania ogólne:
    jawnie deklaruj kolejność kubitów.
 3. **Jednostki i dokładność** (rad, mHz, %, liczba kubitów) z trzema cyframi znaczącymi.
 4. **Kod** w PD-3.8–PD-3.9: krótki, czytelny, z wynikiem uruchomienia i komentarzem.
-5. **Oznaczenie narzędzi.** Jeśli użyto numpy, sympy lub AI — wskaż gdzie (wymóg regulaminu Etapu I).
+5. **Oznaczenie narzędzi.** Jeśli użyto numpy, sympy lub AI — wskaż gdzie (wymagane).
 
 ## Wskazówki i odpowiedzi
 

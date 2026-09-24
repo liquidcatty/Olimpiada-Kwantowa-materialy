@@ -44,7 +44,9 @@ i kryptografii (08–10).
 
 Każdy stan czysty jednego kubita można zapisać w postaci parametrycznej
 
-$$\lvert\psi(\theta,\varphi)\rangle=\cos\frac{\theta}{2}\,\lvert0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\,\lvert1\rangle,$$
+$$
+\lvert\psi(\theta,\varphi)\rangle=\cos\frac{\theta}{2}\,\lvert0\rangle+e^{i\varphi}\sin\frac{\theta}{2}\,\lvert1\rangle,
+$$
 
 gdzie $\theta\in[0,\pi]$ to kąt od osi $z$, a $\varphi\in[0,2\pi)$ to faza. **Skąd to się
 bierze:** z rozwiązania warunku normalizacji $\lvert\alpha\rvert^2+\lvert\beta\rvert^2=1$ —
@@ -54,8 +56,10 @@ $\theta=\pi/2,\varphi=0$: $\lvert+\rangle$; $\theta=\pi$: $\lvert1\rangle$.
 
 Wektor Blocha $\vec r=(r_x,r_y,r_z)$ odczytujemy z wartości oczekiwanych macierzy Pauliego:
 
-$$r_x=\langle X\rangle,\quad r_y=\langle Y\rangle,\quad r_z=\langle Z\rangle,\qquad
-\lvert\psi\rangle\ \text{czysty}\iff \lvert\vec r\rvert=1.$$
+$$
+r_x=\langle X\rangle,\quad r_y=\langle Y\rangle,\quad r_z=\langle Z\rangle,\qquad
+\lvert\psi\rangle\ \text{czysty}\iff \lvert\vec r\rvert=1.
+$$
 
 Zapis macierzowy: $\rho=\tfrac12(I+\vec r\cdot\vec\sigma)$. Bieguny sfery to $\lvert0\rangle$
 i $\lvert1\rangle$ (stany własne $Z$), a równik — superpozycje z równymi modułami ($\lvert+\rangle$,
@@ -90,8 +94,10 @@ stan zapisujemy $\lvert q_1 q_0\rangle$, gdzie $q_1$ to górny (starszy) kubit, 
 dolny. Bierzemy CNOT z **kontrolą na górnym kubicie ($q_1$) i celem na dolnym ($q_0$)** —
 dokładnie jak w P4:
 
-$$\mathrm{CNOT}=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes X
-=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix},$$
+$$
+\mathrm{CNOT}=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\otimes X
+=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix},
+$$
 
 w bazie $(\lvert00\rangle,\lvert01\rangle,\lvert10\rangle,\lvert11\rangle)$. Działanie na
 stany bazowe (kolumna = wejście, przejście = wyjście): $\lvert00\rangle\to\lvert00\rangle$,
@@ -100,9 +106,11 @@ $\lvert11\rangle\to\lvert10\rangle$ — czyli „flip $q_0$, gdy $q_1=1$”.
 
 Pozostałe bramki dwukubitowe:
 
-$$\mathrm{CZ}=\mathrm{diag}(1,1,1,-1),\qquad
+$$
+\mathrm{CZ}=\mathrm{diag}(1,1,1,-1),\qquad
 \mathrm{SWAP}=\begin{pmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix},\qquad
-\mathrm{iSWAP}=\begin{pmatrix}1&0&0&0\\0&0&i&0\\0&i&0&0\\0&0&0&1\end{pmatrix}.$$
+\mathrm{iSWAP}=\begin{pmatrix}1&0&0&0\\0&0&i&0\\0&i&0&0\\0&0&0&1\end{pmatrix}.
+$$
 
 **CZ** zmienia znak tylko $\lvert11\rangle$ (jest symetryczna względem zamiany kubitów).
 **SWAP** wymienia stany obu kubitów. Relacja użyteczna w dowodach: $\mathrm{CNOT}=(I\otimes H)\,\mathrm{CZ}\,(I\otimes H)$.
@@ -113,7 +121,9 @@ Obwód czytamy od lewej do prawej (czas rośnie w prawo), ale **mnożenie macier
 odwrotne**: bramka wykonana *później* stoi *bardziej z lewej* w iloczynie. Dla sekwencji
 $G_1$, potem $G_2$, potem $G_3$ na stanie $\lvert\psi\rangle$:
 
-$$\lvert\psi'\rangle=G_3\,G_2\,G_1\,\lvert\psi\rangle.$$
+$$
+\lvert\psi'\rangle=G_3\,G_2\,G_1\,\lvert\psi\rangle.
+$$
 
 Bramka na kubicie $q_0$ (dolnym) to $I\otimes G$ — bo $\lvert q_1q_0\rangle=\lvert q_1\rangle\otimes\lvert q_0\rangle$,
 więc operator działający na prawym czynniku ma $I$ na lewym miejscu. Bramka na kubicie $q_1$
@@ -155,8 +165,10 @@ $\lvert\psi_i\rangle=\frac{1}{\sqrt{P(i)}}\sum_j c_{ij}\lvert j\rangle$ (dla dru
 
 Cztery **stany Bella** (maksymalnie splątane, baza dwukubitowa):
 
-$$\lvert\Phi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert00\rangle\pm\lvert11\rangle),\qquad
-\lvert\Psi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert01\rangle\pm\lvert10\rangle).$$
+$$
+\lvert\Phi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert00\rangle\pm\lvert11\rangle),\qquad
+\lvert\Psi^\pm\rangle=\tfrac{1}{\sqrt2}(\lvert01\rangle\pm\lvert10\rangle).
+$$
 
 Powstają z $\lvert00\rangle$ przez $H$ na górnym kubicie i $\mathrm{CNOT}$ (kontrola górny,
 cel dolny). Sprawdzenie splątania: dla $\lvert\Phi^+\rangle$ nie istnieje rozkład
@@ -178,7 +190,9 @@ $\Lambda(U)=\lvert0\rangle\langle0\rvert\otimes I+\lvert1\rangle\langle1\rvert\o
 (kontrola to kubit górny). Fakt: jeśli rozłożymy $U=e^{i\alpha}AXBXC$ przy $ABC=I$,
 to (z dokładnością do fazy na kubicie kontrolnym)
 
-$$\Lambda(U)=(I\otimes A)\,\mathrm{CNOT}\,(I\otimes B)\,\mathrm{CNOT}\,(I\otimes C),$$
+$$
+\Lambda(U)=(I\otimes A)\,\mathrm{CNOT}\,(I\otimes B)\,\mathrm{CNOT}\,(I\otimes C),
+$$
 
 gdzie $A,B,C$ działają na kubicie docelowym, a faza $e^{i\alpha}$ realizowana jest bramką
 fazową na kubicie kontrolnym. **Przykład:** dla $U=R_Y(\theta)$
@@ -187,7 +201,9 @@ $A\,X\,B\,X\,C=R_Y(\theta)$, a powyższy obwód daje dokładnie $\Lambda(R_Y(\th
 
 Wielokrotne kontrole budujemy rekurencyjnie: jeśli $V^2=U$, to
 
-$$C^{n}U=\big(C^{n-1}V\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V^\dagger\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V\big)$$
+$$
+C^{n}U=\big(C^{n-1}V\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V^\dagger\big)\cdot\big(C^{n-1}X\big)\cdot\big(C^{n-1}V\big)
+$$
 
 (gdzie $C^{n-1}$ działają na kontrolach $1,\dots,n-1$, a $X$ i $V$ na kubicie kontrolowanym).
 Bramka Toffolego ($C^2X$) powstaje tak z $U=X$ oraz $V=\sqrt{X}=R_X(\pi/2)$.
@@ -208,16 +224,20 @@ potem prawdopodobieństwa $P(k)=\lvert\langle k\vert\psi\rangle\rvert^2$; na kon
 
 **Rachunek.** Krok po kroku:
 
-$$H\lvert0\rangle=\tfrac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)=\lvert+\rangle,\quad
+$$
+H\lvert0\rangle=\tfrac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)=\lvert+\rangle,\quad
 Z\lvert+\rangle=\tfrac{1}{\sqrt2}(\lvert0\rangle-\lvert1\rangle)=\lvert-\rangle,\quad
-H\lvert-\rangle=\lvert1\rangle.$$
+H\lvert-\rangle=\lvert1\rangle.
+$$
 
 Zatem $\lvert\psi\rangle=\lvert1\rangle$ i $P(0)=0$, $P(1)=1$.
 
 Macierz złożenia (mnożymy od prawej, uwzględniając kolejność $H$, potem $Z$, potem $H$):
 
-$$HZH=\tfrac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
-=\tfrac12\begin{pmatrix}0&2\\2&0\end{pmatrix}=\begin{pmatrix}0&1\\1&0\end{pmatrix}=X.$$
+$$
+HZH=\tfrac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}\begin{pmatrix}1&0\\0&-1\end{pmatrix}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+=\tfrac12\begin{pmatrix}0&2\\2&0\end{pmatrix}=\begin{pmatrix}0&1\\1&0\end{pmatrix}=X.
+$$
 
 **Wynik.** Stan przed pomiarem: $\lvert\psi\rangle=\lvert1\rangle$; **$P(0)=0$, $P(1)=1$**;
 oraz **$HZH=X$**.
@@ -232,33 +252,43 @@ konjugacyjnie $Z$ w $X$.
 $R_Y(\theta)$ na dolnym ($q_0$), a następnie CNOT (kontrola $q_1$, cel $q_0$). Konwencja
 małoendianowa: stan bazowy $\lvert q_1q_0\rangle$, bramka na $q_1$ to $G\otimes I$, na $q_0$ to $I\otimes G$.
 
-$$R_Y(\theta)=\begin{pmatrix}\cos\frac\theta2&-\sin\frac\theta2\\ \sin\frac\theta2&\cos\frac\theta2\end{pmatrix}.$$
+$$
+R_Y(\theta)=\begin{pmatrix}\cos\frac\theta2&-\sin\frac\theta2\\ \sin\frac\theta2&\cos\frac\theta2\end{pmatrix}.
+$$
 
 **Metoda.** Złożymy stan po obu „warstwowych” bramkach, zastosujemy CNOT (na wektorach bazowych),
 a potem odczytamy amplitudy $c_{00},c_{01},c_{10},c_{11}$ i prawdopodobieństwa $P_{ij}=\lvert c_{ij}\rvert^2$.
 
 **Rachunek.** Krok 1 (stan po $H\otimes R_Y(\theta)$):
 
-$$\big(H\lvert0\rangle\big)\otimes\big(R_Y(\theta)\lvert0\rangle\big)
+$$
+\big(H\lvert0\rangle\big)\otimes\big(R_Y(\theta)\lvert0\rangle\big)
 =\tfrac{1}{\sqrt2}(\lvert0\rangle+\lvert1\rangle)\otimes\Big(\cos\tfrac\theta2\lvert0\rangle+\sin\tfrac\theta2\lvert1\rangle\Big)
-=\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\cos\tfrac\theta2\lvert10\rangle+\sin\tfrac\theta2\lvert11\rangle\Big).$$
+=\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\cos\tfrac\theta2\lvert10\rangle+\sin\tfrac\theta2\lvert11\rangle\Big).
+$$
 
 Krok 2 (CNOT: $\lvert00\rangle\!\to\!\lvert00\rangle$, $\lvert01\rangle\!\to\!\lvert01\rangle$,
 $\lvert10\rangle\!\to\!\lvert11\rangle$, $\lvert11\rangle\!\to\!\lvert10\rangle$):
 
-$$\lvert\psi\rangle=\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\sin\tfrac\theta2\lvert10\rangle+\cos\tfrac\theta2\lvert11\rangle\Big).$$
+$$
+\lvert\psi\rangle=\tfrac{1}{\sqrt2}\Big(\cos\tfrac\theta2\lvert00\rangle+\sin\tfrac\theta2\lvert01\rangle+\sin\tfrac\theta2\lvert10\rangle+\cos\tfrac\theta2\lvert11\rangle\Big).
+$$
 
 Prawdopodobieństwa:
 
-$$P_{00}=P_{11}=\tfrac12\cos^2\tfrac\theta2=\tfrac{1+\cos\theta}{4},\qquad
-P_{01}=P_{10}=\tfrac12\sin^2\tfrac\theta2=\tfrac{1-\cos\theta}{4}.$$
+$$
+P_{00}=P_{11}=\tfrac12\cos^2\tfrac\theta2=\tfrac{1+\cos\theta}{4},\qquad
+P_{01}=P_{10}=\tfrac12\sin^2\tfrac\theta2=\tfrac{1-\cos\theta}{4}.
+$$
 
 Suma: $\tfrac{1+\cos\theta}{4}+\tfrac{1-\cos\theta}{4}+\tfrac{1-\cos\theta}{4}+\tfrac{1+\cos\theta}{4}=1$ ✓.
 
 Prawdopodobieństwo zgodnych wyników: $P_{00}+P_{11}=\tfrac{1+\cos\theta}{2}=\cos^2\tfrac\theta2$.
 Wartość oczekiwana $\langle Z\otimes Z\rangle$ (bo $Z\otimes Z=\mathrm{diag}(1,-1,-1,1)$):
 
-$$\langle Z\otimes Z\rangle=P_{00}-P_{01}-P_{10}+P_{11}=\cos\theta.$$
+$$
+\langle Z\otimes Z\rangle=P_{00}-P_{01}-P_{10}+P_{11}=\cos\theta.
+$$
 
 Zgadza się to z $P(\text{zgodne})=\tfrac{1+\langle Z\otimes Z\rangle}{2}$.
 

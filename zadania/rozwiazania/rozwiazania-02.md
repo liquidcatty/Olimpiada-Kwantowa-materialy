@@ -15,13 +15,17 @@ $\lVert v\rVert=\sqrt{|i|^2+|1|^2}=\sqrt2$.
 **(c)** Po normalizacji $|u'\rangle=\tfrac{1}{\sqrt2}(1,i)^T$,
 $|v'\rangle=\tfrac{1}{\sqrt2}(i,1)^T$. Działamy $Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix}$:
 
-$$Y|u'\rangle=\tfrac{1}{\sqrt2}\begin{pmatrix}-i\cdot i\\ i\cdot1\end{pmatrix}
+$$
+Y|u'\rangle=\tfrac{1}{\sqrt2}\begin{pmatrix}-i\cdot i\\ i\cdot1\end{pmatrix}
 =\tfrac{1}{\sqrt2}\begin{pmatrix}1\\ i\end{pmatrix}=|u'\rangle
-\ \Rightarrow \text{wartość }+1,$$
+\ \Rightarrow \text{wartość }+1,
+$$
 
-$$Y|v'\rangle=\tfrac{1}{\sqrt2}\begin{pmatrix}-i\cdot1\\ i\cdot i\end{pmatrix}
+$$
+Y|v'\rangle=\tfrac{1}{\sqrt2}\begin{pmatrix}-i\cdot1\\ i\cdot i\end{pmatrix}
 =\tfrac{1}{\sqrt2}\begin{pmatrix}-i\\ -1\end{pmatrix}=-|v'\rangle
-\ \Rightarrow \text{wartość }-1.$$
+\ \Rightarrow \text{wartość }-1.
+$$
 
 **Odpowiedź:** **(a)** $\langle u|v\rangle=0$; **(b)** $\lVert u\rVert=\lVert v\rVert=\sqrt2$;
 **(c)** $|u'\rangle$ ma $Y=+1$, $|v'\rangle$ ma $Y=-1$.
@@ -36,17 +40,19 @@ konwencji stany $|{+}i\rangle$ i $|{-}i\rangle$ na sferze Blocha (bieguny osi $Y
 **(b)** $U=[|+\rangle\ |-\rangle]=\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$,
 $U^\dagger=U$ (rzeczywista symetryczna). Liczymy
 
-$$X'=U^\dagger XU=\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+$$
+X'=U^\dagger XU=\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}
 \begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
 =\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}\begin{pmatrix}1&-1\\1&1\end{pmatrix}
-=\begin{pmatrix}1&0\\0&-1\end{pmatrix}=Z.$$
+=\begin{pmatrix}1&0\\0&-1\end{pmatrix}=Z.
+$$
 
 **(c)** W bazie $\{|\pm\rangle\}$ operator $X$ jest diagonalny z wartościami
 własnymi $+1$ (stan $|+\rangle$) i $-1$ (stan $|-\rangle$). Zgadza się z faktem, że
 $|\pm\rangle$ to stany własne $X$.
 
 **Odpowiedź:** **(a)** $X=\begin{pmatrix}0&1\\1&0\end{pmatrix}$;
-**(b)** $X'=\operatorname{diag}(1,-1)=Z$; **(c)** $X$ w bazie $X$-owej jest diagonalny.
+**(b)** $X'=\mathrm{diag}(1,-1)=Z$; **(c)** $X$ w bazie $X$-owej jest diagonalny.
 
 *Interpretacja:* ta sama obserwabla w różnej bazie ma inną macierz; wybór bazy
 $X$ zamienia role $X$ i $Z$ — dlatego mówimy o „bazie $X$” i „bazie $Z$”.
@@ -64,8 +70,10 @@ elementy poza przekątną sprzężone.)
 nieparzystych. Rozwijamy $R_Z(\theta)=e^{-i\theta Z/2}=\sum_k\frac{(-i\theta/2)^k}{k!}Z^k$
 i rozdzielamy obie części:
 
-$$\sum_{m}\frac{(-1)^m(\theta/2)^{2m}}{(2m)!}\,I=\cos\tfrac\theta2\,I,\qquad
-\sum_{m}\frac{-i(-1)^m(\theta/2)^{2m+1}}{(2m+1)!}\,Z=-i\sin\tfrac\theta2\,Z,$$
+$$
+\sum_{m}\frac{(-1)^m(\theta/2)^{2m}}{(2m)!}\,I=\cos\tfrac\theta2\,I,\qquad
+\sum_{m}\frac{-i(-1)^m(\theta/2)^{2m+1}}{(2m+1)!}\,Z=-i\sin\tfrac\theta2\,Z,
+$$
 
 skąd $R_Z(\theta)=\cos\tfrac\theta2 I-i\sin\tfrac\theta2 Z$.
 
@@ -73,28 +81,32 @@ skąd $R_Z(\theta)=\cos\tfrac\theta2 I-i\sin\tfrac\theta2 Z$.
 
 **(c)** Dla $\theta=\pi/2$: $\cos\tfrac\pi4=\sin\tfrac\pi4=\tfrac{1}{\sqrt2}$, więc
 
-$$R_Z(\tfrac\pi2)=\operatorname{diag}\!\Bigl(e^{-i\pi/4},e^{i\pi/4}\Bigr)
-=\operatorname{diag}\!\bigl(0{,}7071-0{,}7071i,\ 0{,}7071+0{,}7071i\bigr).$$
+$$
+R_Z(\tfrac\pi2)=\mathrm{diag}\!\Bigl(e^{-i\pi/4},e^{i\pi/4}\Bigr)
+=\mathrm{diag}\!\bigl(0{,}7071-0{,}7071i,\ 0{,}7071+0{,}7071i\bigr).
+$$
 
 Działanie: $R_Z(\tfrac\pi2)|0\rangle=e^{-i\pi/4}|0\rangle$,
 $R_Z(\tfrac\pi2)|1\rangle=e^{i\pi/4}|1\rangle$ — same fazy, bez zmiany prawdopodobieństw.
 
 **Odpowiedź:** **(a)** $R_Z(\theta)=\cos\tfrac\theta2 I-i\sin\tfrac\theta2 Z$;
-**(b)** unitarna; **(c)** $R_Z(\pi/2)=\operatorname{diag}(e^{-i\pi/4},e^{i\pi/4})$.
+**(b)** unitarna; **(c)** $R_Z(\pi/2)=\mathrm{diag}(e^{-i\pi/4},e^{i\pi/4})$.
 
 *Interpretacja:* $R_Z$ obraca stan wokół osi $Z$ na sferze Blocha o kąt $\theta$;
 na biegunach $|0\rangle,|1\rangle$ obrót objawia się tylko fazą.
 
 ## Z-02.5
 
-**(a)** $\operatorname{Tr}M=2+3+1=6$.
+**(a)** $\mathrm{Tr}M=2+3+1=6$.
 
 **(b)** Rozwinięcie względem pierwszego wiersza:
 
-$$\det M=2\begin{vmatrix}3&0\\1&1\end{vmatrix}-0+1\begin{vmatrix}1&3\\0&1\end{vmatrix}
-=2\cdot3+1\cdot1=7.$$
+$$
+\det M=2\begin{vmatrix}3&0\\1&1\end{vmatrix}-0+1\begin{vmatrix}1&3\\0&1\end{vmatrix}
+=2\cdot3+1\cdot1=7.
+$$
 
-**(c)** $\operatorname{rank}M=3$ (równoważnie
+**(c)** $\mathrm{rank}M=3$ (równoważnie
 $\det M=7\ne0$), więc $M$ jest odwracalna.
 
 **Odpowiedź:** **(a)** $6$; **(b)** $7$; **(c)** rząd $3$, macierz **odwracalna**.
@@ -110,11 +122,15 @@ Deklaracja: kontrolny = kubit 1 (górny), docelowy = kubit 0 (dolny), baza
 
 **(a)** Z definicji komutatora $[A,B]=AB-BA$ i mnożenia macierzy:
 
-$$XY=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}
-=\begin{pmatrix}i&0\\0&-i\end{pmatrix}=iZ,$$
+$$
+XY=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}0&-i\\i&0\end{pmatrix}
+=\begin{pmatrix}i&0\\0&-i\end{pmatrix}=iZ,
+$$
 
-$$YX=\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}
-=\begin{pmatrix}-i&0\\0&i\end{pmatrix}=-iZ.$$
+$$
+YX=\begin{pmatrix}0&-i\\i&0\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix}
+=\begin{pmatrix}-i&0\\0&i\end{pmatrix}=-iZ.
+$$
 
 Stąd $[X,Y]=(i-(-i))Z=2iZ$. Cyklicznie: $[Y,Z]=2iX$, $[Z,X]=2iY$.
 
@@ -143,7 +159,9 @@ to wartości bezwzględne elementów przekątnej: $s_1=|\cos0{,}6|$, $s_2=|\sin0
 
 **(b)** $s_1^2=\cos^2 0{,}6\approx0{,}6812$, $s_2^2=\sin^2 0{,}6\approx0{,}3188$.
 
-$$S=-\bigl(0{,}6812\log_2 0{,}6812+0{,}3188\log_2 0{,}3188\bigr)\approx0{,}903\ \text{bita}.$$
+$$
+S=-\bigl(0{,}6812\log_2 0{,}6812+0{,}3188\log_2 0{,}3188\bigr)\approx0{,}903\ \text{bita}.
+$$
 
 **(c)** Stan jest iloczynowy, gdy $S=0$, czyli gdy jeden ze współczynników znika:
 $\sin\alpha=0$ (wtedy $|\psi\rangle=|00\rangle$) lub $\cos\alpha=0$ (wtedy
@@ -160,9 +178,11 @@ $|00\rangle,|01\rangle,|10\rangle,|11\rangle$.
 
 **(a)** Zgodnie ze wzorem $\mathrm{CNOT}=|0\rangle\langle0|\otimes I+|1\rangle\langle1|\otimes X$:
 
-$$\mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes I
+$$
+\mathrm{CNOT}=\begin{pmatrix}1&0\\0&0\end{pmatrix}\otimes I
 +\begin{pmatrix}0&0\\0&1\end{pmatrix}\otimes X
-=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.$$
+=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}.
+$$
 
 **(b)** $\mathrm{CNOT}|00\rangle=|00\rangle$, $\mathrm{CNOT}|01\rangle=|01\rangle$,
 $\mathrm{CNOT}|10\rangle=|11\rangle$, $\mathrm{CNOT}|11\rangle=|10\rangle$.
@@ -181,13 +201,17 @@ $a=1$ lub $a=4$.
 **(c)** Wektory własne: dla $a=1$ z $(M-I)v=0$ dostajemy $v_1=(-1+i,1)/\sqrt3$;
 dla $a=4$ z $(M-4I)v=0$ dostajemy $v_2=(1-i,2)/\sqrt6$. Rozkład spektralny:
 
-$$M=1\cdot v_1v_1^\dagger+4\cdot v_2v_2^\dagger.$$
+$$
+M=1\cdot v_1v_1^\dagger+4\cdot v_2v_2^\dagger.
+$$
 
 Oczekiwana wartość w $|+\rangle=\tfrac{1}{\sqrt2}(1,1)^T$:
 
-$$\langle+|M|+\rangle=\tfrac12\begin{pmatrix}1&1\end{pmatrix}
+$$
+\langle+|M|+\rangle=\tfrac12\begin{pmatrix}1&1\end{pmatrix}
 \begin{pmatrix}2&1-i\\1+i&3\end{pmatrix}\begin{pmatrix}1\\1\end{pmatrix}
-=\tfrac12(3-i+4+i)=\tfrac72=3{,}5.$$
+=\tfrac12(3-i+4+i)=\tfrac72=3{,}5.
+$$
 
 **Odpowiedź:** **(a)** $M=M^\dagger$; **(b)** $a\in\{1,4\}$;
 **(c)** $v_1=\tfrac{1}{\sqrt3}(-1+i,1)^T$, $v_2=\tfrac{1}{\sqrt6}(1-i,2)^T$;

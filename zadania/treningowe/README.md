@@ -20,18 +20,9 @@ należą do Fundacji Quantum AI / Komitetu Merytorycznego Olimpiady Kwantowej.
 
 ## Spis
 
-| # | Tytuł | Działka teorii | Rozwiązanie |
+| # | Tytuł | Teoria | Rozwiązanie |
 | --- | --- | --- | --- |
 | [P1](P1.md) | Cząstka w nieskończonej studni potencjału | [rozdział 05](../../teoria/05-podstawy-mechaniki-kwantowej.md) | [P1](rozwiazania-P.md#p1-cząstka-w-nieskończonej-studni-potencjału) |
 | [P2](P2.md) | Polaryzatory i pojedynczy foton | [rozdział 05](../../teoria/05-podstawy-mechaniki-kwantowej.md) | [P2](rozwiazania-P.md#p2-polaryzatory-i-pojedynczy-foton) |
 | [P3](P3.md) | Bramki H, Z, H na kubicie | [rozdział 06](../../teoria/06-kubity-bramki-obwody-pomiary.md) | [P3](rozwiazania-P.md#p3-bramki-h-z-h-na-kubicie) |
 | [P4](P4.md) | Obwód dwukubitowy z bramką $R_Y(\theta)$ i CNOT | [rozdział 06](../../teoria/06-kubity-bramki-obwody-pomiary.md) | [P4](rozwiazania-P.md#p4-obwód-dwukubitowy-z-ryi-cnot) |
-
-## Czego te zadania uczą (mapa kompetencji)
-
-| Zadanie | Umiejętności, które sprawdza |
-| --- | --- |
-| P1 | normalizacja stanu, rozkład na stany własne, prawdopodobieństwa, wartość oczekiwana |
-| P2 | prawo Malusa, polaryzacja fotonu, superpozycja, pomiar w bazie obróconej |
-| P3 | mnożenie macierzy bramek, kolejność operacji, pomiar w bazie obliczeniowej, rozpoznawanie tożsamości bramek |
-| P4 | stany dwukubitowe, CNOT, splątanie, prawdopodobieństwa łączne, wartość oczekiwana $\langle Z\otimes Z\rangle$ |

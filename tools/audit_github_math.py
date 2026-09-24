@@ -52,7 +52,7 @@ def check_text(rel: str, text: str) -> tuple[list[str], dict[str, int]]:
     """Zwraca (lista problemow, licznik kategorii) dla tresci jednego pliku."""
     issues: list[str] = []
     counts = {"inline_multi": 0, "block_after_text": 0, "block_and_text": 0,
-              "heading_math_info": 0, "table_math_pipe": 0}
+              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0}
     lines = text.splitlines()
     fence = False
     clean: list[str] = []          # tresc bez code-spanow i bez blokow kodu
@@ -64,6 +64,8 @@ def check_text(rel: str, text: str) -> tuple[list[str], dict[str, int]]:
         clean.append("" if fence else strip_code_spans(raw))
 
     inside_block = False
+    block_start_line = 0
+    block_start_glued = False
     for i, line in enumerate(clean, 1):
         stripped = line.strip()
         if not stripped:
@@ -79,10 +81,21 @@ def check_text(rel: str, text: str) -> tuple[list[str], dict[str, int]]:
                     and not prev.rstrip().endswith("\\") and not prev.strip().startswith("$$"):
                 issues.append(f"  {rel}:{i} [blok] $$ po linii tekstu bez pustej linii")
                 counts["block_after_text"] += 1
-            if not (stripped.endswith("$$") and len(stripped) > 2):
+            if stripped.endswith("$$") and len(stripped) > 2:
+                # $$tresc$$ w jednej linii: dziala tylko w osobnym akapicie
+                pass
+            else:
                 inside_block = True
+                block_start_line = i
+                block_start_glued = len(stripped) > 2
         elif inside_block and stripped.endswith("$$"):
             inside_block = False
+            # GitHub renderuje blok tylko wtedy, gdy przynajmniej jeden delimiter
+            # stoi w osobnej linii; gdy oba sa doklejone do tresci, wzor sie nie renderuje
+            if block_start_glued and not stripped.startswith("$$"):
+                issues.append(f"  {rel}:{i} [blok] oba $$ doklejone do tresci "
+                              f"(blok od linii {block_start_line}) - GitHub tego nie renderuje")
+                counts["block_glued"] += 1
         elif not inside_block and "$$" in line:
             issues.append(f"  {rel}:{i} [blok] $$ w linii z tekstem: {stripped[:60]}")
             counts["block_and_text"] += 1
@@ -124,6 +137,9 @@ SELF_TEST_CASES: list[tuple[str, str, bool]] = [
     ("inline zlamane na dwa wiersze", "Tekst $a = b\n+ c$ dalej.\n", True),
     ("blok w code-fence", "```\n$$\nx = y\n$$\n```\n", False),
     ("dokumentacja skladni w code-spanach", "| blok `$$` w linii z tekstem | nie |\n", False),
+    ("blok z oba $$ doklejonymi", "Tekst.\n\n$$x = y\n+ z$$\n\nTekst.\n", True),
+    ("blok z otwarciem w osobnej linii", "Tekst.\n\n$$\nx = y\n$$\n\nTekst.\n", False),
+    ("blok z zamknieciem w osobnej linii", "Tekst.\n\n$$x = y\n$$\n\nTekst.\n", False),
 ]
 
 
@@ -154,7 +170,7 @@ def main() -> int:
 
     issues: list[str] = []
     totals = {"inline_multi": 0, "block_after_text": 0, "block_and_text": 0,
-              "heading_math_info": 0, "table_math_pipe": 0}
+              "block_glued": 0, "heading_math_info": 0, "table_math_pipe": 0}
     for path in iter_md():
         file_issues, counts = check_text(path.relative_to(ROOT).as_posix(),
                                          path.read_text(encoding="utf-8"))

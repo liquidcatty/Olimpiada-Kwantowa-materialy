@@ -47,12 +47,16 @@ QKD) i [rozdziale 13](13-korekcja-i-mitygacja-bledow.md) (kontekst kodów korekc
 Entropia von Neumanna mierzy **nieokreśloność** stanu; dla stanu czystego jest zero, dla
 $\tfrac I2$ równa 1 bit:
 
-$$S(\rho)=-\mathrm{Tr}\,\rho\log_2\rho=-\sum_i\lambda_i\log_2\lambda_i,\qquad
-S(\tfrac I2)=1\ \text{bit},\quad S(\lvert0\rangle\langle0\rvert)=0 .$$
+$$
+S(\rho)=-\mathrm{Tr}\,\rho\log_2\rho=-\sum_i\lambda_i\log_2\lambda_i,\qquad
+S(\tfrac I2)=1\ \text{bit},\quad S(\lvert0\rangle\langle0\rvert)=0 .
+$$
 
 Dla stanu czystego **dwóch** układów definiujemy **entropię splątania**
 
-$$E(\lvert\psi\rangle_{AB})=S(\rho_A)=S(\rho_B),$$
+$$
+E(\lvert\psi\rangle_{AB})=S(\rho_A)=S(\rho_B),
+$$
 
 równą zero dla iloczynu i maksymalną ($\log_2 d$) dla $\lvert\Phi^+\rangle$. Przykład: dla
 $\lvert\psi\rangle=\cos\theta\lvert00\rangle+\sin\theta\lvert11\rangle$ wartości własne $\rho_A$ to
@@ -62,9 +66,11 @@ $\cos^2\theta,\sin^2\theta$, więc $E=h(\cos^2\theta)$ z $h(x)=-x\log_2x-(1-x)\l
 
 Dla **dwóch** kubitów najlepszą „jednoznaczną” miarą jest **concurrence**
 
-$$C(\rho)=\max\Big(0,\ \lambda_1-\lambda_2-\lambda_3-\lambda_4\Big),\qquad
+$$
+C(\rho)=\max\Big(0,\ \lambda_1-\lambda_2-\lambda_3-\lambda_4\Big),\qquad
 \lambda_k=\text{(malejąco)}\ \sqrt{\text{eigen}(\rho\,\tilde\rho)},\quad
-\tilde\rho=(Y\otimes Y)\rho^*(Y\otimes Y).$$
+\tilde\rho=(Y\otimes Y)\rho^*(Y\otimes Y).
+$$
 
 Dla stanu czystego $C=2\lvert\alpha\beta\rvert$ (dla $\alpha\lvert00\rangle+\beta\lvert11\rangle$).
 Granice: $0\le C\le1$; $C=1$ dla stanów Bella. **Formuła Woottersa** zamienia $C$ na entropię
@@ -76,8 +82,10 @@ formacji $E_{\rm f}=h\big(\tfrac{1+\sqrt{1-C^2}}2\big)$; dla stanów czystych $E
 $\rho^{T_B}\succeq0$ (transpozycja tylko po jednym podukładzie). Z tego budujemy
 **negatywność** i **log-negatywność**:
 
-$$N(\rho)=\frac{\lVert\rho^{T_B}\rVert_1-1}{2}=\sum_{\lambda_i<0}\lvert\lambda_i\rvert,\qquad
-E_N(\rho)=\log_2\lVert\rho^{T_B}\rVert_1=\log_2(1+2N).$$
+$$
+N(\rho)=\frac{\lVert\rho^{T_B}\rVert_1-1}{2}=\sum_{\lambda_i<0}\lvert\lambda_i\rvert,\qquad
+E_N(\rho)=\log_2\lVert\rho^{T_B}\rVert_1=\log_2(1+2N).
+$$
 
 $N>0$ **dowodzi** splątania; $N=0$ (dla 2 kubitów) dowodzi separowalności. Negatywność jest tania
 w rachunku, ale nie wykrywa splątania „związanego” (*bound entanglement*).
@@ -89,8 +97,10 @@ separowalnych i $\mathrm{Tr}(W\rho_{\rm ent})<0$ dla pewnego stanu splątanego. 
 dla $\lvert\Phi^+\rangle$ to $W_{\Phi^+}=\tfrac I2-\lvert\Phi^+\rangle\langle\Phi^+\rvert$: na stanie
 Wernera $p\lvert\Phi^+\rangle\langle\Phi^+\rvert+\tfrac{1-p}4I$ mamy
 
-$$\mathrm{Tr}(W\rho)=\tfrac12-\langle\Phi^+\rvert\rho\lvert\Phi^+\rangle
-=\tfrac12-\Big(p+\tfrac{1-p}4\Big)=\frac{1-3p}4,$$
+$$
+\mathrm{Tr}(W\rho)=\tfrac12-\langle\Phi^+\rvert\rho\lvert\Phi^+\rangle
+=\tfrac12-\Big(p+\tfrac{1-p}4\Big)=\frac{1-3p}4,
+$$
 
 więc świadek wykrywa splątanie dla $p>\tfrac13$. To wyjaśnia, dlaczego weryfikacja splątania w
 laboratorium (rozdział 09) wymaga **kilku** pomiarów.
@@ -99,7 +109,9 @@ laboratorium (rozdział 09) wymaga **kilku** pomiarów.
 
 Splątanie nie „rozmnaża się”: dla trzech kubitów $A,B,C$
 
-$$C^2_{AB}+C^2_{AC}\le C^2_{A(BC)}\qquad\text{(Coffman–Kundu–Wootters)} .$$
+$$
+C^2_{AB}+C^2_{AC}\le C^2_{A(BC)}\qquad\text{(Coffman–Kundu–Wootters)} .
+$$
 
 Dla stanu $\lvert\mathrm{GHZ}\rangle$: $C_{A(BC)}=1$ (bo $\rho_A=\tfrac I2$), ale $C_{AB}=C_{AC}=0$ —
 splątanie jest „globalne”. Dla stanu $\lvert W\rangle$: $C_{AB}^2=C_{AC}^2=\tfrac49$,
@@ -128,15 +140,19 @@ To dlatego symulacja takich stanów metodami sieci tensorowych (MPS) jest efekty
 
 Dwa najprostsze modele dekoherencji to kanały z rozdziału 17:
 
-$$\text{depolaryzujący: } \vec r\to(1-p)\vec r,\qquad
-\text{tłumienie fazy: } \rho_{01}\to(1-\lambda)\rho_{01},\quad \rho_{00},\rho_{11}\ \text{bez zmian}.$$
+$$
+\text{depolaryzujący: } \vec r\to(1-p)\vec r,\qquad
+\text{tłumienie fazy: } \rho_{01}\to(1-\lambda)\rho_{01},\quad \rho_{00},\rho_{11}\ \text{bez zmian}.
+$$
 
 Tłumienie fazy nie zmienia populacji, a mimo to **niszczy splątanie** — bo splątanie „siedzi” w
 koherencjach. Dla pary Bella $\lvert\Phi^+\rangle$:
 
-$$\rho(t)=\tfrac12\Big(\lvert00\rangle\langle00\rvert+\lvert11\rangle\langle11\rvert
+$$
+\rho(t)=\tfrac12\Big(\lvert00\rangle\langle00\rvert+\lvert11\rangle\langle11\rvert
 +e^{-t/T_2}\big(\lvert00\rangle\langle11\rvert+\lvert11\rangle\langle00\rvert\big)\Big),\qquad
-C(t)=e^{-t/T_2}.$$
+C(t)=e^{-t/T_2}.
+$$
 
 Concurrence zanika więc **wykładniczo** z czasem $T_2$ — stąd walka o długie $T_2$ w sprzęcie
 (rozdział 12).
@@ -147,13 +163,17 @@ Populacje relaksują z czasem $T_1$ (emisja/absorpcja), koherencje z czasem $T_2
 W modelu qubit–otoczenie z **przybliżeniem Borna–Markowa** (słabe sprzężenie + brak pamięci
 otoczenia) ewolucja $\rho$ spełnia **równanie Lindblada**
 
-$$\dot\rho=-\tfrac i\hbar[H,\rho]+\sum_k\gamma_k\Big(L_k\rho L_k^\dagger-\tfrac12\{L_k^\dagger L_k,\rho\}\Big),$$
+$$
+\dot\rho=-\tfrac i\hbar[H,\rho]+\sum_k\gamma_k\Big(L_k\rho L_k^\dagger-\tfrac12\{L_k^\dagger L_k,\rho\}\Big),
+$$
 
 np. $L=\sigma_-$ daje $T_1$, a $L=\sigma_z$ — $T_2$. Dla jednego kubita wygodniej użyć
 **równania Blocha** na wektor Blocha:
 
-$$\dot r_x=-\tfrac{r_x}{T_2},\qquad \dot r_y=-\tfrac{r_y}{T_2},\qquad
-\dot r_z=-\tfrac{r_z-r_z^{\rm eq}}{T_1}.$$
+$$
+\dot r_x=-\tfrac{r_x}{T_2},\qquad \dot r_y=-\tfrac{r_y}{T_2},\qquad
+\dot r_z=-\tfrac{r_z-r_z^{\rm eq}}{T_1}.
+$$
 
 Z relacji $T_2\le2T_1$ wynika, że **nie da się** mieć dowolnie długiej koherencji fazy bez
 równoczesnej relaksacji populacji.
@@ -162,7 +182,9 @@ równoczesnej relaksacji populacji.
 
 Pod kanałem depolaryzującym o parametrze $p$ korelacje maleją liniowo, więc
 
-$$S(p)=2\sqrt2\,(1-p)\ \xrightarrow{\ \le\ }\ 2\ \text{ dla }\ p\ge1-\tfrac1{\sqrt2}=0{,}2929 .$$
+$$
+S(p)=2\sqrt2\,(1-p)\ \xrightarrow{\ \le\ }\ 2\ \text{ dla }\ p\ge1-\tfrac1{\sqrt2}=0{,}2929 .
+$$
 
 Innymi słowy: **~29% depolaryzowania wystarcza, by zniszczyć naruszenie CHSH** — i to jest jedna z
 najczęstszych przyczyn „niespełnionej nierówności Bella” w eksperymencie. Analogiczna analiza dla
@@ -173,7 +195,9 @@ a próg naruszenia CHSH $p>1/\sqrt2=0{,}7071$.
 
 **Zasada Landauera.** Aby usunąć (skasować) jeden bit informacji, trzeba wydać ciepło co najmniej
 
-$$Q\ge kT\ln2 .$$
+$$
+Q\ge kT\ln2 .
+$$
 
 Dla $T=300$ K: $Q_{\min}=k_BT\ln2=2{,}871\cdot10^{-21}$ J $=0{,}0179$ eV. To fundamentalne: pamięć
 komputera *musi* grzać się przy zapisie zer.

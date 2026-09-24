@@ -23,7 +23,9 @@ identyczny.
 (a) Niepewność pojedynczego pomiaru szacujemy odchyleniem standardowym próbki $s$ (z $N-1$ w
 mianowniku), a niepewność **średniej** to $u=s/\sqrt N$. Dane:
 
-$$s=\sqrt{\tfrac{1}{N-1}\sum(x_i-\bar x)^2}=4{,}85,\qquad u=\frac{4{,}85}{\sqrt{12}}=1{,}40 .$$
+$$
+s=\sqrt{\tfrac{1}{N-1}\sum(x_i-\bar x)^2}=4{,}85,\qquad u=\frac{4{,}85}{\sqrt{12}}=1{,}40 .
+$$
 
 (b) Dla rozkładu Poissona wariancja równa się średniej. Tu $\bar n=24{,}42$, $s^2=23{,}54$ —
 iloraz $s^2/\bar n=0{,}96\approx1$, więc dane **zgadzają się** z rozkładem Poissona.
@@ -53,7 +55,9 @@ $\mathbf{\chi^2_{\rm red}=0{,}70}$, $\mathbf{R^2=0{,}998}$, $\mathbf{y(7)=13{,}9
 (a) $y=Ae^{-t/T_2}=0{,}99\,e^{-1{,}2}=0{,}2982$;
 $\partial y/\partial A=e^{-1{,}2}=0{,}3012$, $\partial y/\partial T_2=Ae^{-1{,}2}t/T_2^2=0{,}1431$, więc
 
-$$u_y=\sqrt{(0{,}3012\cdot0{,}01)^2+(0{,}1431\cdot0{,}05)^2}=\sqrt{6{,}03\cdot10^{-5}}=0{,}0078 .$$
+$$
+u_y=\sqrt{(0{,}3012\cdot0{,}01)^2+(0{,}1431\cdot0{,}05)^2}=\sqrt{6{,}03\cdot10^{-5}}=0{,}0078 .
+$$
 
 (b) Monte Carlo ($10^4$–$10^5$ próbek, $A\sim\mathcal N(0{,}99,0{,}01)$,
 $T_2\sim\mathcal N(2{,}5,0{,}05)$) daje $y=0{,}2981\pm0{,}0078$ — zgodne z (a).

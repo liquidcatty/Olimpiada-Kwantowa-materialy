@@ -31,11 +31,15 @@ systemu” (1, 4) — większość współczesnych trudności leży właśnie w 
 
 (a) Liczba bramek w czasie koherencji:
 
-$$\frac{T_2}{t_g}=\frac{200\ \mu\text{s}}{50\ \text{ns}}=\frac{2\cdot10^{-4}}{5\cdot10^{-8}}=4000 .$$
+$$
+\frac{T_2}{t_g}=\frac{200\ \mu\text{s}}{50\ \text{ns}}=\frac{2\cdot10^{-4}}{5\cdot10^{-8}}=4000 .
+$$
 
 (b) Po $n$ bramkach sukces $\approx F^n$ z $F=0{,}998$:
 
-$$0{,}998^{500}=0{,}368\ (36{,}8\%),\qquad 0{,}998^{5000}=4{,}49\cdot10^{-5}\ (\approx0{,}004\%).$$
+$$
+0{,}998^{500}=0{,}368\ (36{,}8\%),\qquad 0{,}998^{5000}=4{,}49\cdot10^{-5}\ (\approx0{,}004\%).
+$$
 
 (c) $0{,}998^n=0{,}5\Rightarrow n=\frac{\ln0{,}5}{\ln0{,}998}=\frac{-0{,}6931}{-0{,}002002}=346{,}2$,
 czyli **po 347 bramkach**.
@@ -54,8 +58,10 @@ Jon wygrywa „budżetem bramek” dwukrotnie, choć każda jego bramka jest $\a
 
 (b) Dla $n=200$ bramek dwukubitowych:
 
-$$0{,}997^{200}=0{,}548\ (54{,}8\%)\ \text{(transmon)},\qquad
-0{,}999^{200}=0{,}819\ (81{,}9\%)\ \text{(jon)} .$$
+$$
+0{,}997^{200}=0{,}548\ (54{,}8\%)\ \text{(transmon)},\qquad
+0{,}999^{200}=0{,}819\ (81{,}9\%)\ \text{(jon)} .
+$$
 
 (c) Dla $10^3$ bramek: transmon $0{,}997^{1000}=0{,}050$, jon $0{,}999^{1000}=0{,}368$.
 **Wybór: jon**, jeśli liczy się wierność końcowa (ponad siedmiokrotnie wyższe
@@ -75,7 +81,9 @@ a nie od samej liczby kubitów.
 
 (a) Odległość $d=6$ (w bramkach) wymaga $d=6$ SWAP-ów, a każdy SWAP to $3$ CNOT:
 
-$$6\cdot3=18\ \text{CNOT}.$$
+$$
+6\cdot3=18\ \text{CNOT}.
+$$
 
 (b) Łączna wierność „transportu”: $0{,}997^{18}=0{,}947$ (czyli $94{,}7\%$), podczas gdy
 pojedynczy CNOT miałby $99{,}7\%$ — koszt odległości to $5{,}3$ punktu procentowego wierności.
@@ -104,7 +112,9 @@ porównanie wymaga miar „całościowych”: QV, EPLG, CLOPS oraz wierności br
 
 (c) CLOPS to liczba **warstw** obwodu na sekundę. Obwód o $20$ warstwach przy $5000$ CLOPS:
 
-$$t=\frac{20}{5000}\ \text{s}=0{,}004\ \text{s}=\mathbf{4}\ \text{ms}.$$
+$$
+t=\frac{20}{5000}\ \text{s}=0{,}004\ \text{s}=\mathbf{4}\ \text{ms}.
+$$
 
 **Odpowiedź:** (a) QV: zintegrowana jakość $2^n$; XEB: zgodność rozkładu z idealnym;
 (b) liczba kubitów pomija wierności i łączność; (c) $\mathbf{4}$ ms.

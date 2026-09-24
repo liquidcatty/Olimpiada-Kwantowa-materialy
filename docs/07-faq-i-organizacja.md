@@ -1,7 +1,7 @@
 # FAQ i organizacja udziału
 
 Wszystkie odpowiedzi pochodzą z publicznych dokumentów Olimpiady Kwantowej
-(Regulamin, FAQ, harmonogram — stan na dzień tworzenia przewodnika). **Zawsze
+(stan na dzień tworzenia przewodnika). **Zawsze
 sprawdzaj aktualną wersję na <https://olimpiadakwantowa.pl/>.**
 
 ## 1. Rejestracja i konto
@@ -70,7 +70,6 @@ dopuszczonych w ZOZ danego etapu; komunikacja z innymi osobami jest zabroniona.
 
 - Organizator: Fundacja Quantum AI, ul. Sanocka 9/103, 02-110 Warszawa,
   `contact@qaif.org`, +48 507 982 292.
-- Dokumenty: [Regulamin](https://olimpiadakwantowa.pl/regulamin/),
-  [Polityka RODO](https://olimpiadakwantowa.pl/dokumenty/rodo/),
+- Dokumenty: [Polityka RODO](https://olimpiadakwantowa.pl/dokumenty/rodo/),
   [Standardy ochrony małoletnich](https://olimpiadakwantowa.pl/dokumenty/standardy-ochrony-maloletnich/).
 - Zgłoszenia problemów technicznych: formularz „Zgłoś problem” w serwisie.

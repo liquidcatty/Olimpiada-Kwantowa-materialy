@@ -47,10 +47,12 @@ prawdopodobieństwo $\lvert c\rvert^2$.
 
 **Macierze Pauliego**
 
-$$X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+$$
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
 Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\quad
 Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
-I=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
+I=\begin{pmatrix}1&0\\0&1\end{pmatrix}
+$$
 
 - $\sigma_i^2=I$, $\{\sigma_i,\sigma_j\}=2\delta_{ij}I$ (antykomutacja),
   $[\sigma_i,\sigma_j]=2i\varepsilon_{ijk}\sigma_k$.
@@ -60,11 +62,17 @@ I=\begin{pmatrix}1&0\\0&1\end{pmatrix}$$
 
 **Szybkie tożsamości bramek**
 
-$$HXH=Z,\quad HZH=X,\quad H YH=-Y,\quad H^2=I,\quad XZX=-Z,\quad H=\tfrac{1}{\sqrt2}(X+Z)$$
+$$
+HXH=Z,\quad HZH=X,\quad H YH=-Y,\quad H^2=I,\quad XZX=-Z,\quad H=\tfrac{1}{\sqrt2}(X+Z)
+$$
 
-$$H^{\otimes 2}\lvert00\rangle=\tfrac12\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle\big)$$
+$$
+H^{\otimes 2}\lvert00\rangle=\tfrac12\big(\lvert00\rangle+\lvert01\rangle+\lvert10\rangle+\lvert11\rangle\big)
+$$
 
-$$S=T^2,\quad T^2S=Z\cdot e^{i\pi/4}\ \text{(do fazy)}\quad\text{— uwaga na fazy globalne}$$
+$$
+S=T^2,\quad T^2S=Z\cdot e^{i\pi/4}\ \text{(do fazy)}\quad\text{— uwaga na fazy globalne}
+$$
 
 ## 3. Rachunek prawdopodobieństwa i statystyka (rozdział 03)
 
@@ -164,9 +172,11 @@ $\hat p=-i\hbar\frac{d}{dx}$; relacja $E=\hbar\omega$, $p=\hbar k$.
 
 **Przykład dla $|\Phi^+\rangle=\frac{1}{\sqrt2}(|00\rangle+|11\rangle)$:**
 
-$$\rho=\frac12\begin{pmatrix}1&0&0&1\\0&0&0&0\\0&0&0&0\\1&0&0&1\end{pmatrix}
+$$
+\rho=\frac12\begin{pmatrix}1&0&0&1\\0&0&0&0\\0&0&0&0\\1&0&0&1\end{pmatrix}
 \ \Rightarrow\ \rho_A=\mathrm{Tr}_B\rho=\begin{pmatrix}\frac12&0\\0&\frac12\end{pmatrix}=\frac I2
-\ \Rightarrow\ S(\rho_A)=1\ \text{bit (maksimum splątania).}$$
+\ \Rightarrow\ S(\rho_A)=1\ \text{bit (maksimum splątania).}
+$$
 
 ## 7. Kwantowa teoria informacji (rozdział 07)
 
